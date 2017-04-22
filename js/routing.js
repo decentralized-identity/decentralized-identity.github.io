@@ -1,4 +1,5 @@
 (function(){
+  
   var redirect = sessionStorage.redirect;
   delete sessionStorage.redirect;
   if (redirect && redirect != location.href) {
@@ -10,4 +11,5 @@
     // REMOVE THIS - just showing the redirect route in the UI
     document.documentElement.setAttribute('message', 'This page was loaded directly from the index.html file');
   }
+
 })();

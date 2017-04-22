@@ -7,7 +7,7 @@
 
   <title>DIF</title>
   <link rel="icon" type="image/png" href="images/favicon.png" />
-  <link href='https://fonts.googleapis.com/css?family=Hind:400' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/global.css" />
 
   <script src="js/routing.js"></script>
@@ -17,24 +17,26 @@
 
 <header>
   <img id="header_logo" src="images/logo-96.png"/>
-  <h1>Decentralized<br/>Identity<br/>Foundation</h1>
-  <a href="#">DIF on Github</a>
+  <h1><div>Decentralized</div><div>Identity</div><div>Foundation</div></h1>
+  <!--<a href="#">DIF on Github</a>-->
 </header>
 
-<section></section>
+<section id="home_section"></section>
 
-<section></section>
+<section id="wg_section"></section>
 
-<section></section>
+<section id="code_section"></section>
 
-<section></section>
+<section id="membership_section"></section>
 
-<menu>
-  <a href="#">Home</a>
-  <a href="#">Specs</a>
-  <a href="#">Implementations</a>
-  <a href="#">Membership</a>
-</menu>
+<nav id="global_nav" font="mono">
+  <input id="global_nav_checkbox" type="checkbox" />
+  <div>Menu</div>
+  <a href="/">Home</a>
+  <a href="/wg">Working Groups</a>
+  <a href="/membership">Membership</a>
+  <a href="https://github.com/decentralized-identity"><img src="images/github.svg" />Code</a>
+</nav>
 
 <script src="js/global.js"></script>
 
