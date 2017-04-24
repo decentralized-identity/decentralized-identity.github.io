@@ -33,6 +33,37 @@ header {
   box-shadow: 0 1px 5px -1px rgba(0,0,0,0.15);
 }
 
+main {
+  position: relative;
+  width: 90%;
+  min-width: 280px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+section {
+  position: absolute;
+  top: 8em;
+  width: 100%;
+  min-height: 600px;
+  max-height: 600px;
+  opacity: 0;
+  z-index: 0;
+  background: #fff;
+  overflow: hidden;
+  transition: opacity 0.75s ease;
+}
+
+[shadow-box] {
+  border: 1px solid;
+  border-color: #eee #dfdfdf #d9d9d9;
+  box-shadow: 0 1px 3px 0px rgba(0,0,0,0.1);
+}
+
+#svg_source {
+  display: none;
+}
+
 #global_nav {
   display: flex;
   align-items: center;
@@ -112,26 +143,6 @@ h1 div::first-letter {
   box-shadow: 0 1px 4px -1px rgba(0,0,0,0.6);
 }
 
-section {
-  position: absolute;
-  top: 8em;
-  left: 50%;
-  width: 90%;
-  min-width: 320px;
-  max-width: 800px;
-  min-height: 600px;
-  max-height: 600px;
-  background: #fff;
-  border: 1px solid #e4eaf3;
-  border-top-color: #e7ebf1;
-  border-bottom-color: #d8e0eb;
-  opacity: 0;
-  z-index: 0;
-  overflow: hidden;
-  transform: translate3d(-50%, 4em, 0);
-  transition: transform 0.75s ease, opacity 0.75s ease;
-}
-
 body[path="/"] #home_section, body:not([path]) #home_section,
 body[path="/wg"] #wg_section,
 body[path="/code"] #code_section,
@@ -139,7 +150,6 @@ body[path="/membership"] #membership_section {
   z-index: 1;
   opacity: 1;
   max-height: none;
-  transform: translate3d(-50%, 0em, 0);
 }
 
 
