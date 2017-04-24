@@ -6,12 +6,12 @@ html, body {
 
 body {
   overflow-y: scroll !important;
+  background: url(../images/checker-bk.png);
 }
 
 body, input {
   font-family: Arial, sans-serif;
   font-size: calc(0.85em + 0.4vmin);
-  background: #eef2f5;
 }
 
 header, #global_nav {
@@ -28,7 +28,8 @@ header {
   z-index: 2;
   align-items: center;
   background: #fff;
-  border-bottom: 1px solid #d0dae6;
+  border-bottom: 1px solid #d9d9d9;
+  box-shadow: 0 1px 5px -1px rgba(0,0,0,0.15);
 }
 
 #global_nav {
@@ -51,7 +52,8 @@ header {
   text-align: center;
 }
 
-#global_nav img {
+#global_nav img, #global_nav svg {
+  width: 1em;
   height: 1em;
   margin-right: 0.2em;
   display: inline-block;
