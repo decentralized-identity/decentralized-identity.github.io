@@ -56,7 +56,7 @@ section {
 
 [shadow-box] {
   border: 1px solid;
-  border-color: #eee #dfdfdf #d9d9d9;
+  border-color: #eee #dfdfdf #d3d3d3;
   box-shadow: 0 1px 3px 0px rgba(0,0,0,0.1);
 }
 
@@ -99,6 +99,7 @@ section {
 
 #global_nav a {
   display: inline-block;
+  box-sizing: border-box;
   height: 100%;
   padding: 0 0.85em;
   line-height: 4em;
@@ -152,6 +153,12 @@ body[path="/membership"] #membership_section {
   max-height: none;
 }
 
+body[path="/"] #global_nav a[href="/"], body:not([path]) #global_nav a[href="/"],
+body[path="/wg"] #global_nav a[href="/wg"],
+body[path="/membership"] #global_nav a[href="/membership"] {
+  border-bottom: 0.25em solid #19346e;
+}
+
 
 /* Media Queries */
 
@@ -186,13 +193,15 @@ body[path="/membership"] #membership_section {
 
   #global_nav a {
     display: block;
+    box-sizing: content-box;
     height: 2em;
     margin: 0;
+    padding: 0.4em 0.9em;
     opacity: 0;
     clear: both;
     line-height: 2em;
     background: #fff;
-    border-bottom: 1px solid #d7dfe9;
+    border-bottom: 1px solid #d7dfe9 !important;
     box-shadow: 0 1px 5px -1px rgba(0,0,0,0.2);
     transform: translateX(100%);
     transition: opacity 0.3s ease;
@@ -205,5 +214,12 @@ body[path="/membership"] #membership_section {
 
   #global_nav input:checked + div {
     background-color: #fafafa;
+  }
+
+  body[path="/"] #global_nav a[href="/"], body:not([path]) #global_nav a[href="/"],
+  body[path="/wg"] #global_nav a[href="/wg"],
+  body[path="/membership"] #global_nav a[href="/membership"] {
+    border-bottom: none;
+    border-left: 0.25em solid #19346e;
   }
 }
