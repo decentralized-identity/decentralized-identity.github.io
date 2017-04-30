@@ -71,11 +71,50 @@
   <header>
     <img id="header_logo" src="images/logo-96.png"/>
     <h1><div>Decentralized</div><div>Identity</div><div>Foundation</div></h1>
-    <!--<a href="#">DIF on Github</a>-->
+    <nav id="global_nav" font="mono">
+      <input id="global_nav_checkbox" type="checkbox" />
+      <div>Menu</div>
+      <a href="/"><svg><use xlink:href="#network"></use></svg>Home</a>
+      <a href="/wg"><svg><use xlink:href="#flow"></use></svg>Working Groups</a>
+      <a href="/membership"><svg><use xlink:href="#people"></use></svg>Membership</a>
+      <a href="https://github.com/decentralized-identity"><img src="images/github.svg" />Code</a>
+    </nav>
   </header>
 
   <main>
-    <section id="home_section" shadow-box></section>
+    <section id="home_section">
+
+      <h2>Join us in building an 
+      <span font="green">open source</span> 
+      <span font="blue">decentralized identity ecosystem</span> 
+      for people, organizations, apps, and devices.</h2>
+
+      <hr />
+
+      <h3>identity that answers to you</h3>
+
+      <ul id="home_descriptors">
+        <li>SELF-SOVEREIGN <span font="blue">IDENTITIES</span></li>
+        <li>composed of</li>
+        <li>SEMANTIC <span font="blue">DATA</span></li>
+        <li>anchored by</li>
+        <li>BLOCKCHAIN <span font="blue">IDs</span></li>
+        <li>that  are</li>
+        <li>UNIVERSALLY <span font="blue">DISCOVERABLE</span></li>
+      </ul>
+
+      <h3>help build the future</h3>
+
+      <div class="logo-grid">
+        <img src="/images/logos/tierion.png" />
+        <img src="/images/logos/gem.png" />
+        <img src="/images/logos/civic.png" />
+        <img src="/images/logos/microsoft.png" />
+        <img src="/images/logos/blockstack.png" />
+        <img src="/images/logos/uport.png" />
+      </div>
+
+    </section>
 
     <section id="wg_section" shadow-box></section>
 
@@ -83,15 +122,6 @@
 
     <section id="membership_section" shadow-box></section>
   </main>
-
-  <nav id="global_nav" font="mono">
-    <input id="global_nav_checkbox" type="checkbox" />
-    <div>Menu</div>
-    <a href="/"><svg><use xlink:href="#network"></use></svg>Home</a>
-    <a href="/wg"><svg><use xlink:href="#flow"></use></svg>Working Groups</a>
-    <a href="/membership"><svg><use xlink:href="#people"></use></svg>Membership</a>
-    <a href="https://github.com/decentralized-identity"><img src="images/github.svg" />Code</a>
-  </nav>
 
 <script src="js/global.js"></script>
 </body>
