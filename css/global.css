@@ -292,10 +292,6 @@ body[path="/membership"] #global_nav a[href="/membership"] {
   box-shadow: 0 1px 1px 0px rgba(0,0,0,0.2);
 }
 
-#wg_list dd {
-  
-}
-
 #wg_list dd li {
   margin: 0.25em 0;  
 }
