@@ -142,10 +142,11 @@ menu:not([bulleted]) {
 
 #global_nav img,
 #global_nav svg {
+  display: inline-block;
   width: 1em;
   height: 1em;
   margin-right: 0.3em;
-  display: inline-block;
+  pointer-events: none;
   vertical-align: text-top;
 }
 
