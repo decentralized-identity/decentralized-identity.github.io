@@ -46,7 +46,6 @@ section {
   top: 8em;
   width: 100%;
   min-height: 600px;
-  max-height: 600px;
   padding-bottom: 4em;
   opacity: 0;
   z-index: 0;
@@ -79,7 +78,7 @@ h2 {
 h3 {
   display: table;
   margin: 3em auto 2.5em;
-  padding: 0.5em 0.7em 0.45em;
+  padding: 0.5em 0.7em 0.4em;
   border: 0.125em solid #496fa1;
   color: #000;
   text-transform: uppercase;
@@ -176,10 +175,10 @@ menu:not([bulleted]) {
 }
 
 h1 {
-  margin: 0.1em 0 0 0.4em;
+  margin: 0.15em 0 0 0.4em;
   color: #777;
   font-size: 0.85em;
-  line-height: 0.95em;
+  line-height: 1em;
   font-weight: normal;
 }
 
@@ -197,7 +196,7 @@ h1 div::first-letter {
   height: 3em;
   background: #fff;
   border-radius: 50%;
-  box-shadow: 0 1px 4px -1px rgba(0,0,0,0.6);
+  box-shadow: 0 0.5px 2px 0px rgba(0,0,0,0.4);
 }
 
 body[path="/"] #home_section, body:not([path]) #home_section,
@@ -206,7 +205,6 @@ body[path="/code"] #code_section,
 body[path="/membership"] #membership_section {
   z-index: 1;
   opacity: 1;
-  max-height: none;
 }
 
 body[path="/"] #global_nav a[href="/"], body:not([path]) #global_nav a[href="/"],
