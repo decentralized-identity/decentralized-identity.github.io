@@ -16,6 +16,6 @@ document.addEventListener('click', function(e){
       routeUpdate(e.target.href);
     }
   }
-}, true)
+}, true);
 
 })();

@@ -15,6 +15,10 @@ body, input {
   font-size: calc(0.8em + 0.4vmin);
 }
 
+a {
+  text-decoration: none;
+}
+
 header,
 #global_nav {
   height: 3.75em;
@@ -43,20 +47,21 @@ main {
 
 section {
   position: absolute;
-  top: 8em;
+  top: 7em;
   width: 100%;
   min-height: 600px;
+  max-height: 90vh;
   padding-bottom: 4em;
   opacity: 0;
   z-index: 0;
-  overflow: hidden;
-  transition: opacity 0.75s ease;
+  overflow: visible;
+  transition: opacity 0.5s ease;
 }
 
 hr {
   width: 5em;
   height: 1em;
-  margin: 3.5em auto 3em !important;
+  margin: 3em auto;
   border: none;
   background: -webkit-linear-gradient(to right, rgba(48,52,60,0.15), rgba(48,52,60,0.15) 1em,
   transparent 1em, transparent 2em,
@@ -85,10 +90,26 @@ h3 {
   text-transform: uppercase;
 }
 
+h4 {
+  font-size: 120%;
+  margin: 1em 0;
+  padding-bottom: 0.5em;
+  border-bottom: 0.125em solid #19346e;
+}
+
 ul:not([bulleted]),
 menu:not([bulleted]) {
     padding: 0;
     list-style: none;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  font-size: 0.85em;
+  margin: 0.8em 0.4em 1.6em;
 }
 
 [shadow-box] {
@@ -98,11 +119,11 @@ menu:not([bulleted]) {
   box-shadow: 0 1px 3px 0px rgba(0,0,0,0.1);
 }
 
-[font~="green"] {
+[font~="green"], dt {
   color: #479574;
 }
 
-[font~="blue"] {
+[font~="blue"], h4 {
   color: #496fa1;
 }
 
@@ -205,6 +226,7 @@ body[path="/"] #home_section, body:not([path]) #home_section,
 body[path="/wg"] #wg_section,
 body[path="/code"] #code_section,
 body[path="/membership"] #membership_section {
+  max-height: none;
   z-index: 1;
   opacity: 1;
 }
@@ -215,7 +237,7 @@ body[path="/membership"] #global_nav a[href="/membership"] {
   border-bottom: 0.2em solid #19346e;
 }
 
-/* Home Descriptors */
+/* Home Section */
 
 #home_descriptors {
   text-align: center;
@@ -229,6 +251,54 @@ body[path="/membership"] #global_nav a[href="/membership"] {
   color: #479574;
 }
 
+/* WG Section */
+
+#wg_list {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+#wg_list > li {
+  position: relative;
+  margin: 2em 0 0; 
+}
+
+#wg_list > li > div {
+  position: relative;
+  padding: 0 1em;
+  overflow: hidden;
+  box-shadow: 0 2px 2px -1px rgba(0,0,0,0.2);
+}
+
+#wg_list .wg-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+#wg_list h4 * {
+  vertical-align: middle;
+}
+
+#wg_list dl {
+  margin: 0;
+  padding: 1.25em 1em 1em;
+  background: #f1f1f1;
+}
+
+#wg_list dt {
+  padding: 0.15em 0.3em;
+  background: #fff;
+  box-shadow: 0 1px 1px 0px rgba(0,0,0,0.2);
+}
+
+#wg_list dd {
+  
+}
+
+#wg_list dd li {
+  margin: 0.25em 0;  
+}
 
 /* Media Queries */
 
