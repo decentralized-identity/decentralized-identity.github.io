@@ -79,7 +79,7 @@ h2 {
 h3 {
   display: table;
   margin: 3em auto 2.5em;
-  padding: 0.5em 0.7em 0.5em;
+  padding: 0.5em 0.7em 0.45em;
   border: 0.125em solid #496fa1;
   color: #000;
   text-transform: uppercase;
@@ -111,8 +111,8 @@ menu:not([bulleted]) {
 }
 
 .logo-grid > * {
-    max-width: 200px;
-    max-height: 90px;
+    max-width: 9em;
+    max-height: 5em;
     margin: 0 1.75em 1.75em;
     display: inline-block;
     vertical-align: middle;
@@ -234,6 +234,10 @@ body[path="/membership"] #global_nav a[href="/membership"] {
 
 @media all and (max-width: 650px) {
 
+  section {
+    top: 6em;
+  }
+
   #global_nav {
     display: block;
     padding: 0;
@@ -290,5 +294,9 @@ body[path="/membership"] #global_nav a[href="/membership"] {
   body[path="/membership"] #global_nav a[href="/membership"] {
     border-bottom: none;
     border-left: 0.2em solid #19346e;
+  }
+
+  .logo-grid > * {
+    max-width: 30%;
   }
 }

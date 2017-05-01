@@ -13,9 +13,7 @@ document.addEventListener('click', function(e){
     e.preventDefault();
     navCheckbox.checked = false;
     if (e.target.href != location.href) {
-      document.title = 'DIF - ' + e.target.textContent;
-      history.pushState(null, 'DIF - ' + e.target.textContent, e.target.href);     
-      document.body.setAttribute('path', location.pathname);       
+      routeUpdate(e.target.href);
     }
   }
 }, true)
