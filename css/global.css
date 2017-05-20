@@ -120,7 +120,7 @@ dd {
 }
 
 [font~="green"], dt {
-  color: #479574;
+  color: #26905c;
 }
 
 [font~="blue"], h4 {
@@ -233,7 +233,7 @@ body[path="/"] #global_nav a[href="/"],
 body:not([path]) #global_nav a[href="/"],
 body[path="/wg"] #global_nav a[href="/wg"],
 body[path="/membership"] #global_nav a[href="/membership"] {
-  border-bottom: 0.2em solid #19346e;
+  border-bottom: 0.2em solid #0161a6;
 }
 
 /* Home Section */
@@ -247,7 +247,6 @@ body[path="/membership"] #global_nav a[href="/membership"] {
   margin: 0.5em auto;
   font-size: 130%;
   font-weight: bold;
-  color: #479574;
 }
 
 /* WG Section */
