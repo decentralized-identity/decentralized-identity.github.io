@@ -124,7 +124,7 @@ dd {
 }
 
 [font~="blue"], h4 {
-  color: #496fa1;
+  color: #0161a6;
 }
 
 .logo-grid {
@@ -213,16 +213,14 @@ h1 div::first-letter {
 
 #header_logo {
   display: block;
-  margin: 0 0 0 0.35em;
+  margin: 0 0 0 0.65em;
   padding: 0;
-  width: 3em;
-  height: 3em;
+  height: 2em;
   background: #fff;
-  border-radius: 50%;
-  box-shadow: 0 0.5px 2px 0px rgba(0,0,0,0.4);
 }
 
-body[path="/"] #home_section, body:not([path]) #home_section,
+body[path="/"] #home_section,
+body:not([path]) #home_section,
 body[path="/wg"] #wg_section,
 body[path="/code"] #code_section,
 body[path="/membership"] #membership_section {
@@ -231,7 +229,8 @@ body[path="/membership"] #membership_section {
   opacity: 1;
 }
 
-body[path="/"] #global_nav a[href="/"], body:not([path]) #global_nav a[href="/"],
+body[path="/"] #global_nav a[href="/"],
+body:not([path]) #global_nav a[href="/"],
 body[path="/wg"] #global_nav a[href="/wg"],
 body[path="/membership"] #global_nav a[href="/membership"] {
   border-bottom: 0.2em solid #19346e;
