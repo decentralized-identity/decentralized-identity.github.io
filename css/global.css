@@ -51,7 +51,7 @@ section {
   width: 100%;
   min-height: 600px;
   max-height: 90vh;
-  margin: 7em 0 3em;
+  margin: 8em 0 3em;
   opacity: 0;
   z-index: 0;
   overflow: visible;
@@ -238,6 +238,75 @@ body[path="/membership"] #global_nav a[href="/membership"] {
 
 #home_section h2 {
   margin: 0;
+}
+
+#inquiry_form {
+  display: block;
+  width: 290px;
+  margin: 0 auto;
+
+}
+
+#inquiry_form > div {
+  margin-bottom: 1em;
+}
+
+#inquiry_form .radio-bar {
+  overflow: hidden;
+}
+
+#inquiry_form .radio-bar,
+#inquiry_form input:not([type="radio"]) {
+  border: 0.075em solid #5181a4;
+  border-radius: 3px;
+}
+
+#inquiry_form label {
+  display: block;
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
+#inquiry_form label div {
+  padding: 0.4em 0;
+}
+
+#inquiry_form input[type="radio"] {
+  float: left;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+}
+
+#inquiry_form .radio-bar div {
+  color: #777;
+  background: #f0f0f0;
+}
+
+#inquiry_form input[type="radio"]:checked + div {
+  color: #000;
+  background: #fff;
+}
+
+#inquiry_form input:not([type="radio"]) {
+  display: block;
+  width: 100%;
+  padding: 0.5em;
+  box-sizing: border-box;
+}
+
+#inquiry_form button {
+  display: table;
+  background: #496fa1;
+  color: #fff;
+  padding: 0.75em 1.5em;
+  margin: 0 auto;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 #home_descriptors {
