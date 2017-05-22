@@ -310,6 +310,7 @@ body[path="/membership"] #global_nav a[href="/membership"] {
 }
 
 .inquiry-submitted {
+  font-weight: bold;
   text-align: center;
 }
 
