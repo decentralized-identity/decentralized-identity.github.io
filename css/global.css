@@ -309,6 +309,10 @@ body[path="/membership"] #global_nav a[href="/membership"] {
   cursor: pointer;
 }
 
+.inquiry-submitted {
+  text-align: center;
+}
+
 #home_descriptors {
   text-align: center;
   color: #888;

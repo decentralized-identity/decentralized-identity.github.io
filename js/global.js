@@ -19,12 +19,16 @@ document.addEventListener('click', function(e){
 }, true);
 
 document.getElementById('inquiry_form').addEventListener('submit', function(e){
-  console.log(e);
-  e.preventDefault();
-  var request = new XMLHttpRequest();
-  request.open('POST', 'https://docs.google.com/forms/d/e/1FAIpQLSe0ZVMdZGGpuSjf7chsXEnh9nISy7eTFDYwEJ41sT4R2KN15Q/formResponse');
-  request.send(new FormData(this));
-  this.innerHTML = 'Thank you for your interest!';
+  try {
+    e.preventDefault();
+    var request = new XMLHttpRequest();
+    request.open('POST', 'https://docs.google.com/forms/d/e/1FAIpQLSe0ZVMdZGGpuSjf7chsXEnh9nISy7eTFDYwEJ41sT4R2KN15Q/formResponse');
+    request.send(new FormData(this));
+    this.innerHTML = '<div class="inquiry-submitted">Thank you for your interest!<div>';
+  }
+  catch (e){
+    console.log(e);
+  }
 });
 
 })();
