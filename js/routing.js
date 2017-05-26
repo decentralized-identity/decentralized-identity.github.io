@@ -4,7 +4,7 @@
 
   var titles = {
     '/': 'Home',
-    '/wg': 'Working Groups',
+    '/working-groups': 'Working Groups',
     '/membership': 'Membership'
   };
 
