@@ -17,7 +17,7 @@
         page: location.pathname,
         title: title
       });
-      ga('send', 'pageview');
+      ga('send', 'pageview')
     }
     document.body.setAttribute('path', location.pathname);   
   }
