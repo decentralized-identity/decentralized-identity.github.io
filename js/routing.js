@@ -13,7 +13,11 @@
     document.title = 'DIF - ' + title;
     if (push !== false) {
       history.pushState(null, 'DIF - ' + title, href);
-      ga('send', 'pageview', location.pathname);
+      ga('set', {
+        page: location.pathname,
+        title: title
+      });
+      ga('send', 'pageview');
     }
     document.body.setAttribute('path', location.pathname);   
   }
