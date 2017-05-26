@@ -11,7 +11,10 @@
   window.routeUpdate = function routeUpdate(href, push) {
     var title = titles[location.pathname];
     document.title = 'DIF - ' + title;
-    if (push !== false) history.pushState(null, 'DIF - ' + title, href);     
+    if (push !== false) {
+      history.pushState(null, 'DIF - ' + title, href);
+      ga('send', 'pageview', location.pathname);
+    }
     document.body.setAttribute('path', location.pathname);   
   }
   
