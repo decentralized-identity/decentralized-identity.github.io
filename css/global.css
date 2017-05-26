@@ -222,7 +222,7 @@ h1 div::first-letter {
 
 body[path="/"] #home_section,
 body:not([path]) #home_section,
-body[path="/wg"] #wg_section,
+body[path="/working-groups"] #wg_section,
 body[path="/code"] #code_section,
 body[path="/membership"] #membership_section {
   position: relative;
@@ -233,7 +233,7 @@ body[path="/membership"] #membership_section {
 
 body[path="/"] #global_nav a[href="/"],
 body:not([path]) #global_nav a[href="/"],
-body[path="/wg"] #global_nav a[href="/wg"],
+body[path="/working-groups"] #global_nav a[href="/working-groups"],
 body[path="/membership"] #global_nav a[href="/membership"] {
   border-bottom: 0.2em solid #19346e;
 }
@@ -436,7 +436,7 @@ body[path="/membership"] #global_nav a[href="/membership"] {
   }
 
   body[path="/"] #global_nav a[href="/"], body:not([path]) #global_nav a[href="/"],
-  body[path="/wg"] #global_nav a[href="/wg"],
+  body[path="/working-groups"] #global_nav a[href="/working-groups"],
   body[path="/membership"] #global_nav a[href="/membership"] {
     border-bottom: none;
     border-left: 0.2em solid #19346e;
