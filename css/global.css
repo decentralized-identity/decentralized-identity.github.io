@@ -287,16 +287,15 @@ body[path="/membership"] #global_nav a[href="/membership"] {
 }
 
 #inquiry_form .radio-bar div {
-  position: relative;
   color: #777;
   background: #f0f0f0;
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.3) inset;
 }
 
 #inquiry_form input[type="radio"]:checked + div {
   color: #000;
   background: #fff;
-  box-shadow: 0 0px 10px -1px rgba(0,0,0,0.4);
-  z-index: 2;
+  box-shadow: none;
 }
 
 #inquiry_form input:not([type="radio"]) {
