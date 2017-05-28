@@ -25,6 +25,7 @@ document.getElementById('inquiry_form').addEventListener('submit', function(e){
     request.open('POST', 'https://docs.google.com/forms/d/e/1FAIpQLSe0ZVMdZGGpuSjf7chsXEnh9nISy7eTFDYwEJ41sT4R2KN15Q/formResponse');
     request.send(new FormData(this));
     this.innerHTML = '<div class="inquiry-submitted">Thank you for your interest!<div>';
+    ga('send', 'event', 'Inquiry', 'submit', 'Membership/press form submission');
   }
   catch (e){
     console.log(e);
