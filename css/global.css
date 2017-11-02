@@ -376,6 +376,25 @@ body[path="/membership"] #global_nav a[href="/membership"] {
   margin: 0.25em 0;  
 }
 
+.wg-docs {
+  margin: 1em 0.4em 0em;
+}
+
+.wg-docs a {
+  display: inline-block;
+  padding: 1em;
+  max-width: 9em;
+  text-align: center;
+  vertical-align: top;
+}
+
+.wg-docs svg {
+  display: block;
+  width: 3em;
+  height: 3em;
+  margin: 0 auto 1em;
+}
+
 /* Media Queries */
 
 @media all and (max-width: 650px) {
