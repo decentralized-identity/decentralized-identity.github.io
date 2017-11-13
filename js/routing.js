@@ -5,35 +5,73 @@
     '/working-groups': 'Working Groups',
     '/membership': 'Membership'
   };
+  var state = {
+    previous: 0,
+    current: 0
+  };
 
-  var routeUpdate = window.routeUpdate = function routeUpdate(href, push) {
-    if (!href) {
-      throw new Error('Must pass `href` as the first parameter to `routeUpdate`');
+  var routeUpdate = window.routeUpdate = function routeUpdate(pathname, push) {
+    if (!pathname) {
+      throw new Error('Must pass a pathname as the first parameter to `routeUpdate`');
     }
-    href = href.replace(/.html$/, '');
-    var title = 'DIF - ' + (titles[href] || titles['/']);
-    var prevState = {
-      path: location.pathname,
-      title: document.title
-    };
+    pathname = pathname.replace(/.html$/, '');
+    var title = 'DIF - ' + (titles[pathname] || titles['/']);
     document.title = title;
-    if (history.scrollRestoration !== 'auto') {
-      window.scrollTo(0, 0);
+    if (push !== false) {
+      historyPush(title, pathname);
     }
     if (push === false) {
-      history.replaceState(prevState, null, href);
-    } else {
-      history.pushState(prevState, title, href);
-      if ('ga' in window) {
-        ga('set', {
-          page: location.pathname,
-          title: state.title
-        });
-        ga('send', 'pageview');
-      }
+      historyReplace(title, pathname);
     }
     document.body.setAttribute('path', location.pathname);
   };
+
+  function historyPush(title, pathname) {
+    window.scrollTo(0, 0);  // Ignore `history.scrollRestoration`.
+    state = {
+      previous: state.current,
+      current: state.current + 1
+    };
+    history.pushState({sequence: state}, null, pathname);
+    if ('ga' in window) {
+      ga('set', {
+        page: location.pathname,
+        title: title
+      });
+      ga('send', 'pageview');
+    }
+  }
+
+  function historyReplace(title, pathname) {
+    history.replaceState({sequence: state}, null, pathname);
+    if ('ga' in window) {
+      ga('set', {
+        page: location.pathname,
+        title: title
+      });
+      ga('send', 'pageview');
+    }
+  }
+
+  function handleNavBack() {
+    return routeUpdate(location.pathname, false);
+  }
+
+  function handleNavForward() {
+    return routeUpdate(location.pathname, false);
+  }
+
+  function handleNav() {
+    var to = history.state ? history.state.sequence : false;
+    var from = state;
+    if (!to || from.previous === to.current) {
+      handleNavBack();
+    }
+    if (from.current === to.previous) {
+      handleNavForward();
+    }
+    state = to;
+  }
 
   var redirect = null;
   try {
@@ -52,7 +90,7 @@
     document.documentElement.setAttribute('message', 'This page was loaded directly from the index.html file');
   }
 
-  window.onpopstate = function(e) {
-    routeUpdate(e.state.path, false);
+  window.onpopstate = function() {
+    handleNav();
   };
 })();
