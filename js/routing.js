@@ -6,8 +6,7 @@
     '/membership': 'Membership'
   };
   var state = {
-    previous: 0,
-    current: 0
+    pathname: location.pathname
   };
 
   var routeUpdate = window.routeUpdate = function routeUpdate(pathname, push) {
@@ -17,10 +16,9 @@
     pathname = pathname.replace(/.html$/, '');
     var title = 'DIF - ' + (titles[pathname] || titles['/']);
     document.title = title;
-    if (push !== false) {
+    if (push === true) {
       historyPush(title, pathname);
-    }
-    if (push === false) {
+    } else if (push === false) {
       historyReplace(title, pathname);
     }
     document.body.setAttribute('path', location.pathname);
@@ -28,49 +26,25 @@
 
   function historyPush(title, pathname) {
     window.scrollTo(0, 0);  // Ignore `history.scrollRestoration`.
-    state = {
-      previous: state.current,
-      current: state.current + 1
-    };
-    history.pushState({sequence: state}, null, pathname);
-    if ('ga' in window) {
-      ga('set', {
-        page: location.pathname,
-        title: title
-      });
-      ga('send', 'pageview');
-    }
+    state = {pathname: pathname};
+    history.pushState(state, null, pathname);
+    gaSendPageview(title, location.pathname);
   }
 
   function historyReplace(title, pathname) {
-    history.replaceState({sequence: state}, null, pathname);
+    state = {pathname: pathname};
+    history.replaceState(state, null, pathname);
+    gaSendPageview(title, location.pathname);
+  }
+
+  function gaSendPageview(title, pathname) {
     if ('ga' in window) {
       ga('set', {
-        page: location.pathname,
+        page: pathname,
         title: title
       });
       ga('send', 'pageview');
     }
-  }
-
-  function handleNavBack() {
-    return routeUpdate(location.pathname, false);
-  }
-
-  function handleNavForward() {
-    return routeUpdate(location.pathname, false);
-  }
-
-  function handleNav() {
-    var to = history.state ? history.state.sequence : false;
-    var from = state;
-    if (!to || from.previous === to.current) {
-      handleNavBack();
-    }
-    if (from.current === to.previous) {
-      handleNavForward();
-    }
-    state = to;
   }
 
   var redirect = null;
@@ -79,18 +53,23 @@
     delete window.sessionStorage.redirect;
   } catch (err) {
   }
-  if (redirect && redirect !== location.href) {
+  if (redirect && redirect !== location.pathname) {
     routeUpdate(redirect, false);
     // REMOVE THIS - just showing the redirect route in the UI
     document.documentElement.setAttribute('message', 'This page was redirected by 404.html, from the route: ' + redirect);
   }
   else {
-    routeUpdate(location.pathname, true);
+    // console.log(`[2] routeUpdate(pathname=${location.pathname}, push=true)`);
+    // routeUpdate(location.pathname, true);
     // REMOVE THIS - just showing the redirect route in the UI
     document.documentElement.setAttribute('message', 'This page was loaded directly from the index.html file');
   }
 
-  window.onpopstate = function() {
-    handleNav();
+  window.onpopstate = function(e) {
+    if (e.state && e.state.pathname) {
+      routeUpdate(e.state.pathname);
+    }
   };
+
+  routeUpdate(location.pathname, false);
 })();

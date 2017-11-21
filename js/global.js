@@ -12,8 +12,8 @@ document.addEventListener('click', function(e) {
   if (e.target.host === location.host) {
     e.preventDefault();
     navCheckbox.checked = false;
-    if (e.target.href !== location.href) {
-      routeUpdate(e.target.pathname);
+    if (e.target.pathname !== location.pathname) {
+      routeUpdate(e.target.pathname, true);
     }
   }
 }, true);
