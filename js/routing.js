@@ -5,9 +5,12 @@
     '/working-groups': 'Working Groups',
     '/membership': 'Membership'
   };
-  var state = {
-    pathname: location.pathname
-  };
+  try {
+    localStorage.titles = JSON.stringify(titles);
+  } catch (err) {
+  }
+
+  var state = {pathname: location.pathname};
 
   var routeUpdate = window.routeUpdate = function routeUpdate(pathname, push) {
     if (!pathname) {
