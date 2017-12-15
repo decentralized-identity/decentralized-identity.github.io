@@ -1,24 +1,24 @@
+/* global ga, routeUpdate */
+(function() {
 
-(function(){
- 
 var nav = document.getElementById('global_nav');
 var navCheckbox = document.getElementById('global_nav_checkbox');
 
-navCheckbox.addEventListener('blur', function(e){
+navCheckbox.addEventListener('blur', function(e) {
   if (!nav.contains(e.relatedTarget)) this.checked = false;
-})
+});
 
-document.addEventListener('click', function(e){
-  if (e.target.host == location.host) {
+document.addEventListener('click', function(e) {
+  if (e.target.host === location.host) {
     e.preventDefault();
     navCheckbox.checked = false;
-    if (e.target.href != location.href) {
-      routeUpdate(e.target.href);
+    if (e.target.pathname !== location.pathname) {
+      routeUpdate(e.target.pathname, true);
     }
   }
 }, true);
 
-document.getElementById('inquiry_form').addEventListener('submit', function(e){
+document.getElementById('inquiry_form').addEventListener('submit', function(e) {
   try {
     e.preventDefault();
     var request = new XMLHttpRequest();
@@ -27,8 +27,8 @@ document.getElementById('inquiry_form').addEventListener('submit', function(e){
     this.innerHTML = '<div class="inquiry-submitted">Thank you for your interest!<div>';
     ga('send', 'event', 'Inquiry', 'submit', 'Membership/press form submission');
   }
-  catch (e){
-    console.log(e);
+  catch (err) {
+    console.warn('Form submission error:', err);
   }
 });
 
