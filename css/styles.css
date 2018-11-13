@@ -177,6 +177,14 @@ svg {
   fill: currentColor;
 }
 
+dl dt {
+  color: var(--dark-blue);
+}
+
+dl dd {
+  margin: 0 0 1.5em 0;
+}
+
 .section {
   padding: 90px 0;
 }

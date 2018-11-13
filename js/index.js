@@ -2,7 +2,6 @@
 
   fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/decentralized-identity').then(res => res.json()).then(json => {
     blog_posts.innerHTML = json.items.slice(0, 3).map(post => {
-      console.log(post);
       return `
         <div class="col-12 col-md-6 col-lg-4">
           <div class="blog-item md-m-15px-tb">
