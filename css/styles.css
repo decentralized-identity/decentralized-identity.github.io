@@ -226,6 +226,41 @@ svg {
   color: #fff;
 }
 
+.icon-link {
+  display: inline-block;
+  margin: 0.5em 1.5em 0.5em 0;
+}
+
+.icon-link:before {
+  content: " ";
+  margin: 0 0.35em 0 0;
+  color: #000;
+  height: 1.25em;
+  width: 1.25em;
+  display: inline-block;
+  vertical-align: sub;
+}
+
+.icon-link[href*="github.com"]:before {
+  background: url(/icons/github.svg);
+  background-size: cover;
+}
+
+.icon-link[href$=".md"]:before, .icon-link[href*="hackmd.io"]:before {
+  background: url(/icons/file.svg);
+  background-size: cover;
+  margin: 0 0.25em 0 0;
+}
+
+.icon-link[href$=".png"]:before,
+.icon-link[href$=".gif"]:before,
+.icon-link[href$=".jpg"]:before,
+.icon-link[href$=".jpeg"]:before {
+  background: url(/icons/image.svg);
+  background-size: cover;
+  margin: 0 0.4em 0 0;
+}
+
 /*---------------------------------
 * 03. Section title
 -----------------------------------*/
