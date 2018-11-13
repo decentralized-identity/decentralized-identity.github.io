@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+
+  <title>DIF - Decentralized Identity Foundation</title>
+  <link rel="icon" type="image/png" href="images/favicon.png?r1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="css/global.css">
+</head>
+
+<body>
+
+<script src="js/routing.js"></script>
+
+<svg id="svg_source">
+  <defs>
+    <symbol id="twitter" width="100%" height="1em" viewBox="0 0 32 32">
+      <path d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z"></path>
+    </symbol>
+    <symbol id="people" width="100%" height="1em" viewBox="0 0 28 32">
+      <path fill="inherit" d="M24 12h-20c-2.208 0-4 1.792-4 4v2c0 1.477 0.808 2.752 2 3.445v6.555h8v4h8v-4h8v-6.555c1.191-0.693 2-1.967 2-3.445v-2c0-2.208-1.793-4-4-4zM8 26h-4v-8h-2v-2c0-1.104 0.897-2 2-2h2.554c-0.344 0.59-0.554 1.268-0.554 2v4c0 1.477 0.808 2.752 2 3.445v2.555zM18 22v-4h-2v12h-4v-12h-2v4c-1.104 0-2-0.895-2-2v-4c0-1.104 0.896-2 2-2h8c1.105 0 2 0.896 2 2v4c0 1.105-0.895 2-2 2zM26 18h-2v8h-4v-2.555c1.191-0.693 2-1.967 2-3.445v-4c0-0.732-0.211-1.41-0.555-2h2.555c1.105 0 2 0.896 2 2v2zM9.49 9.918c1.1 1.266 2.702 2.082 4.51 2.082s3.41-0.816 4.51-2.082c0.682 1.236 1.98 2.082 3.49 2.082 2.207 0 4-1.792 4-4s-1.793-4-4-4c-0.801 0-1.543 0.24-2.168 0.646-0.617-2.66-2.986-4.646-5.832-4.646s-5.216 1.986-5.832 4.646c-0.626-0.406-1.368-0.647-2.168-0.647-2.208 0-4 1.792-4 4s1.792 4 4 4c1.51 0 2.808-0.846 3.49-2.082zM22 6c1.105 0 2 0.894 2 2s-0.895 2-2 2c-1.104 0-2-0.894-2-2s0.896-2 2-2zM14 2c2.207 0 4 1.792 4 4s-1.793 4-4 4c-2.208 0-4-1.792-4-4s1.792-4 4-4zM6 10c-1.104 0-2-0.894-2-2s0.896-2 2-2c1.106 0 2 0.894 2 2s-0.894 2-2 2z"></path>
+    </symbol>
+    <symbol id="package" width="100%" height="1em" viewBox="0 0 32 32">
+      <path fill="inherit" d="M15 2l-15 4v18l15 4 15-4v-18l-15-4zM1.996 22.529l-0.012-13.529 12.016 3.204 0 13.526-12.004-3.201zM1.984 7l5.008-1.335 13.008 3.473-5 1.333-13.016-3.471zM28.004 22.529l-12.004 3.201 0-13.526 4-1.067v4.875l4-1.067v-4.875l4.016-1.071-0.012 13.529zM24 8.071v-0.004l-13.008-3.469 4.008-1.069 13.016 3.471-4.016 1.071z"></path>
+    </symbol>
+    <symbol id="quill" width="100%" height="1em" viewBox="0 0 32 32">
+     <path fill="inherit" d="M0 32c4-12 14.469-32 32-32-8.219 6.594-12 22-18 22s-6 0-6 0l-6 10h-2z"></path>
+    </symbol>
+    <symbol id="docs" width="100%" height="1em" viewBox="0 0 24 32">
+      <path fill="inherit" d="M9 12l-5 5 5 5 2-2-3-3 3-3-2-2zM13 14l3 3-3 3 2 2 5-5-5-5-2 2zM18 2h-18v28h24v-22l-6-6zM22 28h-20v-24h14l6 6v18z"></path>
+    </symbol>
+    <symbol id="fork" width="100%" height="1em" viewBox="-80 -60 950 1250">
+      <path fill="inherit" d="M768 128c0-71-57-128-128-128s-128 57-128 128c0 47 26 89 64 111v106l-192 212-192-212v-106c38-22 64-63 64-111 0-71-57-128-128-128s-128 57-128 128c0 47 26 89 64 111v156l256 282v109c-38 22-64 63-64 111 0 71 57 128 128 128s128-57 128-128c0-47-26-89-64-111v-109l256-282v-156c38-22 64-63 64-111zM128 65c34 0 62 28 62 62s-28 62-62 62-62-28-62-62 28-62 62-62zM384 956c-34 0-62-28-62-62s28-62 62-62 62 28 62 62-28 62-62 62zM640 65c34 0 62 28 62 62s-28 62-62 62-62-28-62-62 28-62 62-62z"></path>
+    </symbol>
+    <symbol id="tools" width="100%" height="1em" viewBox="0 0 1024 1024">
+      <path fill="inherit" d="M160.512 352.768c47.77-37.12 87.398-11.52 140.288 49.715 5.939 6.912 13.926-1.178 18.483-5.12 4.506-3.994 74.291-66.816 77.722-69.683 3.379-3.021 7.475-8.653 2.099-14.95-5.478-6.298-25.293-32-38.042-48.691-92.57-121.088 253.235-203.213 200.141-204.493-27.034-0.717-135.475-1.997-151.706-0.205-65.69 6.912-148.173 68.301-189.696 96.922-54.323 37.171-74.598 58.982-77.926 62.003-15.36 13.414-2.458 44.39-30.31 68.813-29.44 25.754-47.821 6.246-64.87 21.197-8.448 7.475-32.102 25.19-38.861 31.078-6.81 5.99-8.038 16.077-1.075 24.115 0 0 64.717 71.475 70.144 77.824 5.376 6.246 20.019 11.674 29.030 3.635 9.062-7.987 32.358-28.314 36.25-31.898 3.994-3.379-2.56-44.083 18.33-60.262zM452.762 379.238c-6.144-7.117-13.773-7.322-20.326-1.485l-73.421 64.102c-5.786 5.12-6.605 14.49-1.382 20.48l424.653 483.277c9.933 11.418 27.136 12.595 38.451 2.714l49.664-41.626c11.366-9.984 12.544-27.29 2.662-38.81l-420.301-488.653zM1018.982 173.568c-3.789-25.293-16.896-20.019-23.706-9.318-6.81 10.803-36.915 56.422-49.306 77.107-12.288 20.48-42.598 60.979-99.021 20.992-58.778-41.523-38.349-70.502-28.109-90.010 10.291-19.61 41.882-74.598 46.438-81.408 4.557-6.912-0.768-26.982-18.995-18.586-18.278 8.397-129.178 52.48-144.538 115.712-15.718 64.307 13.158 121.805-43.52 178.893l-68.762 71.68 69.069 80.179 84.685-80.384c20.173-20.275 63.283-39.987 102.298-31.078 83.61 18.893 129.229-12.493 156.723-64.41 24.678-46.387 20.582-144.077 16.742-169.37zM140.237 873.114c-10.65 10.701-10.65 28.109 0 38.81l48.691 47.616c10.65 10.701 27.546 6.195 38.195-4.506l251.238-246.989-76.954-87.757-261.171 252.826z"></path>
+    </symbol>
+    <symbol id="network" width="100%" height="1em" viewBox="0 0 20 20">
+      <path fill="inherit" d="M5.274 6.915c0.2 0 0.394 0.029 0.576 0.086 0.69-0.773 1.455-1.477 2.283-2.1-0.035-0.146-0.054-0.299-0.054-0.455 0-0.217 0.036-0.426 0.102-0.621-0.929-0.664-1.937-1.223-3.011-1.654-1.005 0.621-1.882 1.431-2.582 2.381 0.519 0.92 1.136 1.777 1.838 2.557 0.256-0.124 0.543-0.194 0.848-0.194zM3.316 8.872c0-0.275 0.058-0.537 0.159-0.773-0.628-0.692-1.197-1.436-1.695-2.229-0.625 1.242-0.98 2.645-0.98 4.131 0 1.719 0.474 3.328 1.295 4.705 0.294-1.654 0.851-3.219 1.62-4.652-0.25-0.328-0.399-0.739-0.399-1.182zM10.036 2.489c0.517 0 0.985 0.201 1.336 0.529 1.021-0.439 2.096-0.777 3.215-0.992-1.351-0.779-2.917-1.226-4.587-1.226-1.139 0-2.229 0.209-3.236 0.588 0.799 0.395 1.561 0.855 2.277 1.375 0.292-0.174 0.631-0.274 0.995-0.274zM12.962 11.708c0.122-0.254 0.295-0.479 0.509-0.656-0.578-1.777-1.493-3.404-2.672-4.803-0.234 0.1-0.492 0.154-0.764 0.154-0.425 0-0.816-0.137-1.137-0.365-0.71 0.539-1.367 1.143-1.964 1.803 0.188 0.299 0.297 0.652 0.297 1.031 0 0.203-0.031 0.4-0.090 0.586 1.717 1.146 3.694 1.934 5.821 2.25zM15.501 14.351c0.026 0.371 0.041 0.744 0.041 1.121 0 0.664-0.042 1.318-0.122 1.961 1.56-1.139 2.748-2.758 3.347-4.639-0.71 0.172-1.438 0.295-2.181 0.365-0.173 0.537-0.572 0.969-1.085 1.192zM12.504 13.024c-2.272-0.377-4.377-1.244-6.21-2.484-0.298 0.182-0.647 0.289-1.021 0.289-0.139 0-0.272-0.014-0.402-0.041-0.877 1.662-1.438 3.517-1.599 5.484 0.876 0.94 1.944 1.697 3.145 2.205 1.492-2.293 3.576-4.189 6.087-5.453zM16.176 3.181c-1.475 0.143-2.883 0.514-4.193 1.068 0.006 0.066 0.010 0.131 0.010 0.197 0 0.309-0.074 0.6-0.201 0.859 1.311 1.539 2.327 3.33 2.969 5.291 0.797 0.016 1.477 0.502 1.77 1.195 0.886-0.090 1.748-0.26 2.578-0.504 0.060-0.42 0.092-0.85 0.092-1.287-0.001-2.704-1.167-5.136-3.025-6.819zM13.489 14.069c-2.344 1.098-4.304 2.789-5.723 4.856 0.715 0.179 1.463 0.275 2.234 0.275 1.387 0 2.702-0.309 3.882-0.859 0.19-0.928 0.29-1.887 0.29-2.869 0-0.355-0.016-0.707-0.043-1.055-0.236-0.076-0.453-0.193-0.64-0.348z"></path>
+    </symbol>
+    <symbol id="flow" width="100%" height="1em" viewBox="0 0 32 32">
+      <path fill="inherit" d="M30.5 24h-0.5v-6.5c0-1.93-1.57-3.5-3.5-3.5h-8.5v-4h0.5c0.825 0 1.5-0.675 1.5-1.5v-5c0-0.825-0.675-1.5-1.5-1.5h-5c-0.825 0-1.5 0.675-1.5 1.5v5c0 0.825 0.675 1.5 1.5 1.5h0.5v4h-8.5c-1.93 0-3.5 1.57-3.5 3.5v6.5h-0.5c-0.825 0-1.5 0.675-1.5 1.5v5c0 0.825 0.675 1.5 1.5 1.5h5c0.825 0 1.5-0.675 1.5-1.5v-5c0-0.825-0.675-1.5-1.5-1.5h-0.5v-6h8v6h-0.5c-0.825 0-1.5 0.675-1.5 1.5v5c0 0.825 0.675 1.5 1.5 1.5h5c0.825 0 1.5-0.675 1.5-1.5v-5c0-0.825-0.675-1.5-1.5-1.5h-0.5v-6h8v6h-0.5c-0.825 0-1.5 0.675-1.5 1.5v5c0 0.825 0.675 1.5 1.5 1.5h5c0.825 0 1.5-0.675 1.5-1.5v-5c0-0.825-0.675-1.5-1.5-1.5zM6 30h-4v-4h4v4zM18 30h-4v-4h4v4zM14 8v-4h4v4h-4zM30 30h-4v-4h4v4z"></path>
+    </symbol>
+    <symbol id="dl" width="100%" height="1em" viewBox="0 0 32 32">
+      <path fill="inherit" d="M14 18.937c0 1.141-0.75 2.063-1.672 2.063h-6.656c-0.922 0-1.672-0.922-1.672-2.063 0-2.063 0.5-4.438 2.562-4.438 0.625 0.625 1.484 1 2.438 1s1.813-0.375 2.438-1c2.063 0 2.562 2.375 2.562 4.438zM12 12c0 1.656-1.344 3-3 3s-3-1.344-3-3 1.344-3 3-3 3 1.344 3 3zM28 18.5v1c0 0.281-0.219 0.5-0.5 0.5h-11c-0.281 0-0.5-0.219-0.5-0.5v-1c0-0.281 0.219-0.5 0.5-0.5h11c0.281 0 0.5 0.219 0.5 0.5zM22 14.5v1c0 0.281-0.219 0.5-0.5 0.5h-5c-0.281 0-0.5-0.219-0.5-0.5v-1c0-0.281 0.219-0.5 0.5-0.5h5c0.281 0 0.5 0.219 0.5 0.5zM28 14.5v1c0 0.281-0.219 0.5-0.5 0.5h-3c-0.281 0-0.5-0.219-0.5-0.5v-1c0-0.281 0.219-0.5 0.5-0.5h3c0.281 0 0.5 0.219 0.5 0.5zM28 10.5v1c0 0.281-0.219 0.5-0.5 0.5h-11c-0.281 0-0.5-0.219-0.5-0.5v-1c0-0.281 0.219-0.5 0.5-0.5h11c0.281 0 0.5 0.219 0.5 0.5zM30 23.5v-17.5h-28v17.5c0 0.266 0.234 0.5 0.5 0.5h27c0.266 0 0.5-0.234 0.5-0.5zM32 4.5v19c0 1.375-1.125 2.5-2.5 2.5h-27c-1.375 0-2.5-1.125-2.5-2.5v-19c0-1.375 1.125-2.5 2.5-2.5h27c1.375 0 2.5 1.125 2.5 2.5z"></path>
+    </symbol>
+    <symbol id="server" width="100%" height="1em" viewBox="0 0 32 32">
+      <path fill="inherit" d="M2 22h16v-2h-16v2zM2 14h16v-2h-16v2zM26.5 21c0-0.828-0.672-1.5-1.5-1.5s-1.5 0.672-1.5 1.5 0.672 1.5 1.5 1.5 1.5-0.672 1.5-1.5zM2 6h16v-2h-16v2zM26.5 13c0-0.828-0.672-1.5-1.5-1.5s-1.5 0.672-1.5 1.5 0.672 1.5 1.5 1.5 1.5-0.672 1.5-1.5zM26.5 5c0-0.828-0.672-1.5-1.5-1.5s-1.5 0.672-1.5 1.5 0.672 1.5 1.5 1.5 1.5-0.672 1.5-1.5zM28 18v6h-28v-6h28zM28 10v6h-28v-6h28zM28 2v6h-28v-6h28z"></path>
+    </symbol>
+    <symbol id="nodes" width="100%" height="1em" viewBox="0 0 1000 1000">
+      <path fill="inherit" d="M376.3,342.3L316.7,286c6.9-12.6,11.2-26.9,11.2-42.3c0-48.8-39.6-88.4-88.4-88.4c-48.8,0-88.5,39.5-88.5,88.4s39.6,88.4,88.5,88.4c17.2,0,33.2-5.1,46.8-13.6l59.5,56.3C354.8,362.8,364.9,351.9,376.3,342.3z"></path><path fill="inherit" d="M628.4,335.3L707.7,202c7.8,2.2,15.9,3.8,24.4,3.8c48.9,0,88.5-39.6,88.5-88.4C820.5,68.6,781,29,732,29c-48.8,0-88.4,39.5-88.4,88.4c0,24.3,9.8,46.2,25.6,62.2l-79,132.9C603.8,318.6,616.6,326.3,628.4,335.3z"></path><path fill="inherit" d="M901.6,446.9c-38,0-70.3,24.2-82.7,57.9l-110.1-10.9c0,0.8,0.1,1.6,0.1,2.4c0,14.3-1.6,28.3-4.4,41.9l110,10.9c6.7,42.2,43,74.6,87.1,74.6c48.8,0,88.4-39.5,88.4-88.4C990,486.4,950.5,446.9,901.6,446.9z"></path><path fill="inherit" d="M597.9,794.5L573.3,687c-13.9,4.8-28.3,8.3-43.4,10l24.6,107.5c-28.3,14.8-47.8,44-47.8,78.1c0,48.8,39.5,88.3,88.5,88.3c48.8,0,88.4-39.5,88.4-88.3C683.7,834.7,645.5,795.9,597.9,794.5z"></path><path fill="inherit" d="M309.4,539l-137,45.9c-15.8-24.2-43-40.2-74-40.2c-48.8,0-88.4,39.5-88.4,88.4c0,48.9,39.5,88.5,88.4,88.5c48.8,0,88.5-39.5,88.5-88.5c0-2-0.4-3.9-0.6-5.9l137.4-46C317.5,567.8,312.5,553.7,309.4,539z"></path><path fill="inherit" d="M506.9,344.7c83.7,0,151.6,67.9,151.6,151.6c0,83.7-67.9,151.6-151.6,151.6c-83.7,0-151.6-67.9-151.6-151.6C355.3,412.6,423.2,344.7,506.9,344.7z"></path>
+    </symbol>
+    <symbol id="cert" width="100%" height="1em" viewBox="0 0 252.643 252.643">
+      <path fill="inherit" d="M235.143,17.081H17.5c-9.649,0-17.5,7.851-17.5,17.5v147.658c0,9.649,7.851,17.5,17.5,17.5h126.911   l-3.832,23.37c-0.721,4.399,0.734,8.384,3.893,10.658c3.158,2.274,7.396,2.396,11.341,0.317l27.381-14.412   c0.764-0.392,2.869-0.392,3.633,0l27.381,14.412c1.873,0.986,3.813,1.477,5.672,1.477c2.056,0,4.012-0.601,5.67-1.795   c3.158-2.274,4.613-6.26,3.893-10.659l-3.831-23.369h9.532c9.649,0,17.5-7.851,17.5-17.5V34.581   C252.643,24.931,244.792,17.081,235.143,17.081z M185.011,169.743c-16.817,0-30.5-13.683-30.5-30.5c0-16.817,13.683-30.5,30.5-30.5   s30.5,13.683,30.5,30.5C215.511,156.06,201.828,169.743,185.011,169.743z M193.814,206.399c-5.101-2.686-12.506-2.686-17.606,0   l-19.358,10.189l6.154-37.539c6.527,3.623,14.029,5.693,22.008,5.693s15.48-2.071,22.008-5.693l2.398,14.635   c0.006,0.024,0.008,0.05,0.013,0.074l3.743,22.831L193.814,206.399z M237.643,182.239c0,1.355-1.145,2.5-2.5,2.5h-11.991   l-2.739-16.709c-0.011-0.066-0.029-0.129-0.042-0.195c6.335-7.818,10.141-17.768,10.141-28.592c0-25.089-20.411-45.5-45.5-45.5   c-25.089,0-45.5,20.411-45.5,45.5c0,10.824,3.806,20.772,10.141,28.592c-0.013,0.065-0.031,0.129-0.042,0.194l-2.741,16.723   c-0.084-0.003-0.165-0.013-0.249-0.013H17.5c-1.355,0-2.5-1.145-2.5-2.5V34.581c0-1.355,1.145-2.5,2.5-2.5h217.643   c1.355,0,2.5,1.145,2.5,2.5V182.239z"/>
+	    <path fill="inherit" d="M208.619,60.243h-170c-4.143,0-7.5,3.357-7.5,7.5c0,4.143,3.357,7.5,7.5,7.5h170   c4.143,0,7.5-3.357,7.5-7.5C216.119,63.6,212.762,60.243,208.619,60.243z"/>
+	    <path fill="inherit" d="M110.619,100.911h-72c-4.143,0-7.5,3.357-7.5,7.5c0,4.143,3.357,7.5,7.5,7.5h72   c4.143,0,7.5-3.357,7.5-7.5C118.119,104.268,114.762,100.911,110.619,100.911z"/>
+    </symbol>
+    <symbol id="checklist" width="100%" height="1em" viewBox="0 0 100 100">
+      <path fill="inherit" d="M29.837,40.026c0.854,1.277,2.155,2.046,3.562,2.106c0.064,0.005,0.127,0.005,0.192,0.005c1.349,0,2.645-0.655,3.559-1.796  l6.707-8.384c0.847-1.059,0.674-2.609-0.385-3.46c-1.026-0.817-2.643-0.633-3.457,0.387l-6.379,7.97l-1.992-2.989  c-0.727-1.09-2.315-1.413-3.412-0.685c-1.128,0.752-1.435,2.282-0.683,3.411L29.837,40.026z"/><path  fill="inherit" d="M67.346,33.833h-18.15c-1.355,0-2.46,1.104-2.46,2.46c0,1.355,1.105,2.46,2.46,2.46h18.15c1.356,0,2.461-1.104,2.461-2.46  S68.702,33.833,67.346,33.833z"/><path  fill="inherit" d="M29.837,58.458c0.854,1.28,2.156,2.05,3.562,2.108c0.064,0.004,0.129,0.006,0.192,0.006c1.349,0,2.646-0.654,3.559-1.797  l6.707-8.383c0.847-1.059,0.673-2.611-0.385-3.459c-1.026-0.816-2.641-0.634-3.457,0.385l-6.378,7.971L31.643,52.3  c-0.726-1.09-2.314-1.413-3.411-0.685c-1.128,0.753-1.435,2.283-0.683,3.412L29.837,58.458z"/><path  fill="inherit" d="M67.346,52.268h-18.15c-1.355,0-2.46,1.104-2.46,2.459c0,1.356,1.105,2.461,2.46,2.461h18.15  c1.356,0,2.461-1.104,2.461-2.461C69.807,53.372,68.702,52.268,67.346,52.268z"/><path  fill="inherit" d="M43.473,65.368c-1.023-0.819-2.642-0.64-3.458,0.382l-6.378,7.971l-1.994-2.99c-0.457-0.687-1.223-1.096-2.048-1.096  c-0.486,0-0.958,0.145-1.362,0.413c-0.547,0.363-0.919,0.918-1.049,1.562c-0.129,0.646,0,1.303,0.365,1.851l2.288,3.431  c0.854,1.282,2.157,2.051,3.581,2.109l0.173,0.005c1.349,0,2.646-0.655,3.559-1.796l6.706-8.384c0.411-0.513,0.598-1.155,0.524-1.81  C44.309,66.361,43.984,65.777,43.473,65.368z"/><path  fill="inherit" d="M67.346,70.7h-18.15c-1.355,0-2.46,1.104-2.46,2.461s1.105,2.46,2.46,2.46h18.15c1.356,0,2.461-1.104,2.461-2.46  S68.702,70.7,67.346,70.7z"/><path  fill="inherit" d="M73.633,12.09h-2.34C70.775,8.107,67.33,5,63.234,5H36.766c-4.096,0-7.541,3.107-8.059,7.09h-2.34  c-6.569,0-11.914,5.345-11.914,11.914v59.082C14.453,89.654,19.798,95,26.367,95h47.266c6.569,0,11.914-5.346,11.914-11.914V24.004  C85.547,17.435,80.202,12.09,73.633,12.09z M33.554,13.133c0-1.771,1.44-3.213,3.212-3.213h26.468c1.771,0,3.213,1.441,3.213,3.213  v2.835c0,1.771-1.44,3.213-3.213,3.213H36.766c-1.771,0-3.212-1.441-3.212-3.213V13.133z M80.627,83.086  c0,3.857-3.137,6.994-6.993,6.994H26.367c-3.856,0-6.993-3.137-6.993-6.994V24.004c0-3.856,3.137-6.994,6.993-6.994h2.34  c0.518,3.982,3.963,7.091,8.059,7.091h26.468c4.097,0,7.541-3.108,8.06-7.091h2.34c3.856,0,6.993,3.138,6.993,6.994V83.086z"/>
+    </symbol>
+    <symbol id="photo" viewBox="0 0 20 20">
+      <path fill="inherit" d="M19 2h-18c-0.553 0-1 0.447-1 1v14c0 0.552 0.447 1 1 1h18c0.553 0 1-0.448 1-1v-14c0-0.552-0.447-1-1-1zM18 16h-16v-12h16v12zM14.315 10.877l-3.231 1.605-3.77-6.101-3.314 7.619h12l-1.685-3.123zM13.25 9c0.69 0 1.25-0.56 1.25-1.25s-0.56-1.25-1.25-1.25-1.25 0.56-1.25 1.25 0.56 1.25 1.25 1.25z"></path>
+    </symbol>
+    <symbol id="doc" viewBox="0 0 24 24">
+      <path fill="inherit" d="M7 7h6v2h-6zM7 10h9v1h-9zM7 12h9v1h-9zM7 14h9v1h-9zM7 16h3v1h-3zM16.43 2h-13.43v21h17v-17.465l-3.57-3.535zM18 6.363v0.637h-3v-3h0.602l2.398 2.363zM5 21v-17h9v4h4v13h-13z"></path>
+    </symbol>
+    <symbol id="github" viewBox="0 0 32 32">
+      <path fill="inherit" d="M16 0.395c-8.836 0-16 7.163-16 16 0 7.069 4.585 13.067 10.942 15.182 0.8 0.148 1.094-0.347 1.094-0.77 0-0.381-0.015-1.642-0.022-2.979-4.452 0.968-5.391-1.888-5.391-1.888-0.728-1.849-1.776-2.341-1.776-2.341-1.452-0.993 0.11-0.973 0.11-0.973 1.606 0.113 2.452 1.649 2.452 1.649 1.427 2.446 3.743 1.739 4.656 1.33 0.143-1.034 0.558-1.74 1.016-2.14-3.554-0.404-7.29-1.777-7.29-7.907 0-1.747 0.625-3.174 1.649-4.295-0.166-0.403-0.714-2.030 0.155-4.234 0 0 1.344-0.43 4.401 1.64 1.276-0.355 2.645-0.532 4.005-0.539 1.359 0.006 2.729 0.184 4.008 0.539 3.054-2.070 4.395-1.64 4.395-1.64 0.871 2.204 0.323 3.831 0.157 4.234 1.026 1.12 1.647 2.548 1.647 4.295 0 6.145-3.743 7.498-7.306 7.895 0.574 0.497 1.085 1.47 1.085 2.963 0 2.141-0.019 3.864-0.019 4.391 0 0.426 0.288 0.925 1.099 0.768 6.354-2.118 10.933-8.113 10.933-15.18 0-8.837-7.164-16-16-16z"></path>
+    </symbol>
+  </defs>
+</svg>
+
+  <header>
+    <img id="header_logo" title="Decentralized Identity Foundation" alt="DIF" src="images/logo-small.png"/>
+    <nav id="global_nav" font="mono">
+      <input id="global_nav_checkbox" type="checkbox" />
+      <div>Menu</div>
+      <a href="/"><svg><use xlink:href="#network"></use></svg>Home</a>
+      <a href="/working-groups"><svg><use xlink:href="#flow"></use></svg>Working Groups</a>
+      <a href="https://github.com/decentralized-identity"><svg><use xlink:href="#github"></use></svg>Code</a>
+      <a href="https://medium.com/decentralized-identity"><svg><use xlink:href="#quill"></use></svg>Blog</a>
+      <a id="twitter_nav" href="https://twitter.com/DecentralizedID"><svg><use xlink:href="#twitter"></use></svg></a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home_section">
+
+      <h2>Join us in building an
+      <span font="green">open source</span>
+      <span font="blue">decentralized identity ecosystem</span>
+      for people, organizations, apps, and devices.</h2>
+
+      <hr />
+
+      <h3>the pillars of a new ecosystem</h3>
+
+      <ul id="home_descriptors">
+        <li font="green">DECENTRALIZED <span font="blue">IDENTITIES</span></li>
+        <li>anchored by</li>
+        <li font="green">BLOCKCHAIN <span font="blue">IDs</span></li>
+        <li>linked to</li>
+        <li font="green">ZERO-TRUST <span font="blue">DATASTORES</span></li>
+        <li>that are</li>
+        <li font="green">UNIVERSALLY <span font="blue">DISCOVERABLE</span></li>
+      </ul>
+
+      <h3>interested? &nbsp;&nbsp; Drop us a line</h3>
+
+      <form id="inquiry_form">
+        <div class="radio-bar">
+          <label><input name="entry.1501664113" value="membership" checked="checked" type="radio" /><div>Membership</div></label>
+          <label><input name="entry.1501664113" value="press" type="radio" /><div>Press</div></label>
+        </div>
+        <div>
+          <input name="entry.76121140" placeholder="Organization" type="text" />
+        </div>
+        <div>
+          <input name="entry.286710955" placeholder="Email" type="email" />
+        </div>
+
+        <button type="submit">Send</button>
+      </form>
+
+      <h3>building the future, together</h3>
+
+      <div class="logo-grid">
+        <img src="/images/logos/tierion.png" />
+        <img src="/images/logos/microsoft.png" />
+        <img src="/images/logos/gem.png" />
+        <img src="/images/logos/blockstack.svg" />
+        <img src="/images/logos/uport.png" />
+        <img src="/images/logos/evernym.png" />
+        <img src="/images/logos/ibm.png" />
+        <img src="/images/logos/hyperledger.png" />
+        <img src="/images/logos/civic.png" />
+        <img src="/images/logos/accenture.png" />
+        <img src="/images/logos/danube.png" />
+        <img src="/images/logos/netki.png" />
+        <img src="/images/logos/rsa.png" />
+        <img src="/images/logos/consent.png" />
+        <img src="/images/logos/sovrin.png" />
+        <img src="/images/logos/iota.png" />
+        <img src="/images/logos/mooti.png" />
+        <img src="/images/logos/aetna.png" />
+        <img src="/images/logos/r3.png" />
+        <img src="/images/logos/authenteq.png" />
+        <img src="/images/logos/bcf.png" />
+        <img src="/images/logos/validatedid.png" />
+        <img src="/images/logos/equinix.png" />
+        <img src="/images/logos/taqanu.png" />
+        <img src="/images/logos/kyc.png" />
+        <img src="/images/logos/blockpass.png" />
+        <img src="/images/logos/ockam.png" />
+        <img src="/images/logos/nuid.png" />
+        <img src="/images/logos/metax.png" />
+        <img src="/images/logos/gs1.png" />
+        <img src="/images/logos/diid.png" />
+        <img src="/images/logos/nuggets.png" />
+        <img src="/images/logos/trustedkey.png" />
+        <img src="/images/logos/zinc.png" />
+        <img src="/images/logos/ont.png" />
+        <img src="/images/logos/mastercard.png" />
+        <img src="/images/logos/link-e.png" />
+        <img src="/images/logos/id2020.jpg" />
+        <img src="/images/logos/veridium.png" />
+        <img src="/images/logos/meeco.png" />
+        <img src="/images/logos/pillar.png" />
+        <img src="/images/logos/dominode.png" />
+        <img src="/images/logos/enigma.png" />
+        <img src="/images/logos/humanized-internet.png" />
+        <img src="/images/logos/jolocom.png" />
+        <img src="/images/logos/datum.png" /> 
+        <img src="/images/logos/tai.png" />
+        <img src="/images/logos/onfido.png" />
+        <img src="/images/logos/auth0.png" />
+        <img src="/images/logos/1kosmos.png" />
+        <img src="/images/logos/gamecredits.png" />
+        <img src="/images/logos/secure-key.png" />       
+        <img src="/images/logos/wymsical.png" />
+        <img src="/images/logos/lifeid.png" />
+        <img src="/images/logos/centinal.png" />
+        <img src="/images/logos/identos.png" />
+        <img src="/images/logos/diwala.png" />
+        <img src="/images/logos/sitekit.png" />
+        <img src="/images/logos/juru.png" />
+        <img src="/images/logos/botlabs.png" />
+        <img src="/images/logos/eea.png" />
+        <img src="/images/logos/remme.png" />
+      </div>
+
+    </section>
+    <section id="wg_section">
+      <ul id="wg_list">
+        <li shadow-box>
+          <div>
+            <h4>
+              <svg class="wg-icon"><use xlink:href="#dl"></use></svg>
+              <span>Identifiers, Names, and Discovery</span>
+            </h4>
+            <p>
+              A key piece of the decentralized identity equation is how people, devices, and
+              other entities in the world are identified absent a centrally owned registry.
+              DIF seeks to address this by developing specifications, protocols, formats,
+              and implementations for cross-chain rooting, indexing, and resolution of
+              decentralized identifiers and names.
+            </p>
+          </div>
+          <dl>
+            <dt>Communication</dt>
+            <dd>
+              <ul>
+                <li><b>Chairs:</b> <a href="https://www.linkedin.com/in/jude-nelson-a3181b4a/">Jude Nelson</a> and <a href="https://www.linkedin.com/in/drummondreed/">Drummond Reed</a></li>
+              </ul>
+            </dd>
+            <dt>Documents</dt>
+            <dd class="wg-docs">
+              <ul>
+                <li>
+                  <a href="https://w3c-ccg.github.io/did-spec/"><svg><use xlink:href="#doc"></use></svg>W3C DID Spec</a>
+                  <a href="https://w3c-ccg.github.io/did-resolution/"><svg><use xlink:href="#doc"></use></svg>W3C DID Resolution Spec</a>
+                  <a href="https://github.com/decentralized-identity/universal-resolver"><svg><use xlink:href="#github"></use></svg>DIF Universal Resolver (for DIDs)</a>
+                  <a href="https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-spring2018/blob/master/final-documents/did-auth.md"><svg><use xlink:href="#doc"></use></svg>Intro to DID Auth</a>
+                </li>
+              </ul>
+            </dd>
+            <div></div>
+          </dl>
+        </li>
+        <li shadow-box>
+          <div>
+            <h4>
+              <svg class="wg-icon"><use xlink:href="#nodes"></use></svg>
+              <span>Storage &amp; Compute</span>
+            </h4>
+            <p>
+              Secure storage and computation of data is crucial to the decentralization
+              story. Just as identifiers and names must be self-sovereign to the owning
+              entity, so too must their data and control over it. To create a system
+              where these important features of data storage and compute are
+              universally understood, DIF is working on specifications, protocols, and
+              implementations of applications, services, packages, and libraries
+              that ensure interoperability across systems and providers.
+            </p>
+          </div>
+          <dl>
+            <dt>Communication</dt>
+            <dd>
+              <ul>
+                <li><b>Chairs:</b> <a href="https://www.linkedin.com/in/dbuchner/">Daniel Buchner</a> and <a href="https://www.linkedin.com/in/samcurren/">Sam Curren</a></li>
+              </ul>
+            </dd>
+            <dt>Documents</dt>
+            <dd class="wg-docs">
+              <a href="https://github.com/decentralized-identity/hubs/blob/master/explainer.md"><svg><use xlink:href="#doc"></use></svg>Identity Hubs Explainer</a>
+              <a href="https://raw.githubusercontent.com/decentralized-identity/hubs/master/diagrams/full-system.png"><svg><use xlink:href="#photo"></use></svg>Identity Hub System Diagram</a>
+            </dd>
+            <div></div>
+          </dl>
+        </li>
+        <li shadow-box>
+          <div>
+            <h4>
+              <svg class="wg-icon"><use xlink:href="#cert"></use></svg>
+              <span>Attestations &amp; Reputation</span>
+            </h4>
+            <p>
+              Attestations are the backbone of trust and basis of reputation in decentralized
+              identity systems. Attestations between groups of individuals and businesses
+              are use to make important decisions in personal and business life.
+              To address this area of identity, DIF intends to equip the decentralized
+              identity community with the protocols, tools, and implementations
+              necessary to create and validate identity attestations.
+            </p>
+          </div>
+          <dl>
+            <dt>Communication</dt>
+            <dd>
+              <ul>
+                <li><b>Chairs:</b> <a href="https://www.linkedin.com/in/wayne/">Wayne Vaughan</a> and <a href="https://www.linkedin.com/in/jonathan-smith-2b997a/">Jonathan Smith</a></li>
+              </ul>
+            </dd>
+            <dt>Documents</dt>
+            <dd class="wg-docs">
+              <a href="https://chainpoint.org/"><svg><use xlink:href="#doc"></use></svg>Chainpoint 3.0 Spec</a>
+            </dd>
+            <div></div>
+          </dl>
+        </li>
+        <li shadow-box>
+          <div>
+            <h4>
+              <svg class="wg-icon"><use xlink:href="#checklist"></use></svg>
+              <span>Use Cases &amp; Requirements</span>
+            </h4>
+            <p>
+              Understanding what to build based on the needs of people and organizations
+              is even more important that understanding how to build it. DIF will endeavor
+              to anchor its activities in the use cases and requirements it observes and
+              gathers from users and consumers of the specifications, protocols, and
+              implementations it develops.
+            </p>
+          </div>
+          <dl>
+            <dt>Communication</dt>
+            <dd>
+              <ul>
+                <li><b>Chairs:</b> <a href="https://www.linkedin.com/in/johnjordandesign/">John Jordan</a></li>
+              </ul>
+            </dd>
+            <!--<dt>Documents</dt>
+            <dd class="wg-docs">
+              <ul>
+                <li></li>
+              </ul>
+            </dd>-->
+            <div></div>
+          </dl>
+        </li>
+      </ul>
+    </section>
+
+    <!--<section id="code_section" shadow-box></section>
+
+    <section id="membership_section" shadow-box></section>-->
+  </main>
+
+<script src="js/global.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-100027201-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!--
+  Credits:
+
+  Font Awesome by Dave Gandy - http://fontawesome.io
+
+-->
+
+</body>
+</html>
