@@ -13,13 +13,6 @@ Copyright (c) 2018 - mital_04
     var LITE = {};
 
     /*--------------------
-      * Pre Load
-    ----------------------*/
-    LITE.WebLoad = function(){
-      document.getElementById("loading").style.display = "none"; 
-    }
-
-    /*--------------------
         * Header Class
     ----------------------*/
     LITE.HeaderSticky = function(){
@@ -199,38 +192,6 @@ Copyright (c) 2018 - mital_04
         }
     }
 
-    /*-----------------------
-    * Working Contact form
-    -------------------------*/
-    LITE.ContactForm = function(){
-      $(".contactform").on("submit", function() {
-          $(".output_message").text("Loading...");
-
-          var form = $(this);
-          $.ajax({
-              url: form.attr("action"),
-              method: form.attr("method"),
-              data: form.serialize(),
-              success: function(result) {
-                  if (result == "success") {
-                      $(".contactform").find(".output_message").addClass("success");
-                      $(".output_message").text("Message Sent!");
-                  } else {
-                      $(".contactform").find(".output_message").addClass("error");
-                      $(".output_message").text("Error Sending!");
-                  }
-              }
-          });
-
-          return false;
-      });
-    }
-
-    // Window on Load
-    $(window).on("load", function(){
-      LITE.WebLoad();
-    });
-
     $(document).on("ready", function(){
         LITE.WorkSlider(),
         LITE.PopupVideo(),
@@ -240,7 +201,6 @@ Copyright (c) 2018 - mital_04
         LITE.HeaderScroll(),
         LITE.Counter(),
         LITE.ProgressBar(),
-        LITE.ContactForm(),
         LITE.HeaderSticky();
     });
 
