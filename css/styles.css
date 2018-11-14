@@ -877,9 +877,6 @@ dl dd {
     top: 0;
     padding:10px 15px;
   }
-  .header-nav.fixed-header {
-    padding:10px 15px;
-  }
   .navbar-nav {
     flex-direction: row;
     flex-wrap: wrap;
