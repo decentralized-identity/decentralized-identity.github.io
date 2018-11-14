@@ -1685,7 +1685,7 @@ dl dd {
 
 .member-list > img {
   display: inline-block;
-  max-width: 12em;
+  max-width: 40%;
   max-height: 4em;
   margin: 0 1.5em 1.5em 0;
   padding: 1em 1.1em;
