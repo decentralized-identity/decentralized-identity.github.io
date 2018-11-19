@@ -221,7 +221,6 @@ dl dd {
   width: 30px;
   height: 30px;
   text-align: center;
-  line-height: 30px;
   color: #333;
   border-radius: 50%;
   -webkit-transition: ease all 0.3s;
@@ -232,6 +231,11 @@ dl dd {
 .social-icons li a:hover {
   background: #333;
   color: #fff;
+}
+
+.social-icons li svg {
+  height: 1em;
+  vertical-align: middle;
 }
 
 .icon-link {
@@ -1796,7 +1800,6 @@ dl dd {
   background: #333;
   color: #fff;
 }
-
 
 /*-----------------------------------------
 *  FAQ
