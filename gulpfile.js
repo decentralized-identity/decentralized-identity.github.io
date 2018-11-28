@@ -4,6 +4,7 @@ const uglify = require('gulp-uglify-es').default;
 const nunjucksRender = require('gulp-nunjucks-render');
 const gulpSequence = require('gulp-sequence');
 const del = require('del');
+const connect = require('gulp-connect');
 
 var assets = {
   js: [
@@ -23,7 +24,7 @@ var structure = {
     'identifiers-names-discovery.html',
     'storage-compute.html'
   ]
-}
+};
 
 gulp.task('assets', function() {
   return gulp.src(assets.js)
@@ -50,6 +51,13 @@ gulp.task('structure', function() {
 
 gulp.task('cleanup', function() {
   del('tmp/**');
+});
+
+gulp.task('connect', function() {
+  connect.server({
+    root: '.',
+    livereload: true
+  })
 });
 
 gulp.task('build', gulpSequence('assets', 'templates', 'structure', 'cleanup'));
