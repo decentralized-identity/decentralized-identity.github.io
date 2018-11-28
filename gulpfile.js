@@ -22,7 +22,8 @@ var structure = {
   '': 'index.html',
   'working-groups': [
     'identifiers-names-discovery.html',
-    'storage-compute.html'
+    'storage-compute.html',
+    'claims-credentials.html'
   ]
 };
 
