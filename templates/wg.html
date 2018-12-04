@@ -40,9 +40,11 @@
                 <dt>{{key}}</dt>
                 <dd>
                   <p>{{val.desc}}</p>
-                  {% for link in val.links %}
-                    <a class="icon-link" href="{{link.href}}">{{link.text}}</a>
-                  {% endfor %}
+                  {% if val.links %}
+                    {% for link in val.links %}
+                      <a class="icon-link" href="{{link.href}}">{{link.text}}</a>
+                    {% endfor %}
+                  {% endif %}
                 </dd>
               {% endfor %}
             </dl>
@@ -79,10 +81,10 @@
               </div>
               <ul class="social-icons">
                 {% if val.linkedin %}
-                  <li><a class="linkedin" href="{{val.linkedin}}"><svg><use xlink:href="#linkedin"></use></svg></a></li>
+                  <li><a class="linkedin" href="https://www.linkedin.com/in/{{val.linkedin}}"><svg><use xlink:href="#linkedin"></use></svg></a></li>
                 {% endif %}
                 {% if val.twitter %}
-                  <li><a class="twitter" href="{{val.twitter}}"><svg><use xlink:href="#twitter"></use></svg></a></li>
+                  <li><a class="twitter" href="https://twitter.com/{{val.twitter}}"><svg><use xlink:href="#twitter"></use></svg></a></li>
                 {% endif %}
               </ul>
             </div>
