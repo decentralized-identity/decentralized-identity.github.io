@@ -287,7 +287,7 @@ Copyright (c) 2018 - mital_04
     routeUpdate(redirect, false);
   }
   else {
-    routeUpdate(location.pathname, false);
+    gaSendPageview(document.title, location.href);
   }
 
   // window.onpopstate = function(e) {

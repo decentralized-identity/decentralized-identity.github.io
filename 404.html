@@ -11,7 +11,8 @@
         var routes = {
           'schemas': function(){
             return {
-              path: '/schemas'
+              file: '/schemas',
+              path: location.pathname
             }
           }
         };   
@@ -22,9 +23,9 @@
         } catch (err) {
         }
         
-        sessionStorage.redirect = location.pathname;
+        sessionStorage.redirect = route.path || '/';
         document.title = 'DIF - ' + route.title || 'Decentralized Identity Foundation';
-        location.replace(route.path || '/');
+        location.replace(route.file || '/');
       })();
     </script>
   </head>
