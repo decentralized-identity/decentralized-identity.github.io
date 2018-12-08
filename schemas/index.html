@@ -348,6 +348,17 @@
     </div> <!-- container -->   
   </section>
 </footer>
+    <script>
+      var schemas = JSON.parse('{"hub":{"title":"Identity Hub","desc":"Objects and formatted data used at the encrypted personal datastore layer.","types":["UserServiceEndpoint","HostServiceEndpoint"]},"claims":{"title":"Claims","desc":"Claim manifests, claim negotiation, and other claim-related descriptors.","types":["ClaimManifest"]}}');
+      router = function(segments){
+        var schema = schemas[segments[1]];
+        var object = schema ? schema.types.indexOf(segments[2]) > -1 : null;
+        return {
+          title: 'Schemas',
+          path: '/schemas/' + (object ? segments[1] + '/' + segments[2] : '')
+        }
+      };
+    </script>
     <script src="/js/base.js"></script>
     <script src="/js/schemas.js"></script>
   </body>

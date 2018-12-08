@@ -1,12 +1,77 @@
-/*========================================================================
-EXCLUSIVE ON themeforest.net
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Template Name   : AppLite
-Author          : mital_04
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Copyright (c) 2018 - mital_04
-========================================================================*/
+
+(function() {
+
+  router = window.router || function(){ return {} };
+  var state = { pathname: location.pathname };
+  var routeUpdate = window.routeUpdate = function routeUpdate(pathname, push) {
+    if (!pathname) {
+      throw new Error('Must pass a pathname as the first parameter to `routeUpdate`');
+    }
+    var path = pathname.replace(/.html$/, '');
+    var segments = path.split('?')[0].match(/(\w+)/g) || [];
+    var route = router(segments);
+    var title = 'DIF - ' + (route.title || 'Decentralized Identity Foundation')
+    document.title = title;
+    path = route.path || path;
+
+    if (push === true) historyPush(title, path);
+    else if (push === false) historyReplace(title, path);
+    document.body.setAttribute('path', path);
+  };
+
+  function historyPush(title, pathname) {
+    window.scrollTo(0, 0);  // Ignore `history.scrollRestoration`.
+    state = {pathname: pathname};
+    history.pushState(state, null, pathname);
+    gaSendPageview(title, location.pathname);
+  }
+
   
+  function historyReplace(title, pathname) {
+    state = {pathname: pathname};
+    history.replaceState(state, null, pathname);
+    gaSendPageview(title, location.pathname);
+  }
+
+  function gaSendPageview(title, pathname) {
+    if ('ga' in window) {
+      ga('set', {
+        page: pathname,
+        title: title
+      });
+      ga('send', 'pageview');
+    }
+  }
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-100027201-1', 'auto');
+
+  var redirect = null;
+  try {
+    redirect = sessionStorage.redirect;
+    delete sessionStorage.redirect;
+  } catch (err) {}
+  if (redirect && redirect !== location.pathname) {
+    console.log('redirect:', redirect, location.pathname);
+    routeUpdate(redirect, false);
+  }
+  else {
+    gaSendPageview(document.title, location.href);
+  }
+
+  window.onpopstate = function(e) {
+    if (e.state && e.state.pathname) {
+      routeUpdate(e.state.pathname);
+    }
+  };
+
+  
+})();
+
 
 (function($){
     "use strict"
@@ -39,16 +104,17 @@ Copyright (c) 2018 - mital_04
         * Smooth Scroll
     ----------------------*/
     LITE.HeaderScroll = function(){
-        $('header a[href*="#"]:not([href="#"])').on('click', function() {
+        $('header a[href*="#"]:not([href="#"])').on('click', function(e) {
           var PathName = location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') || location.hostname == this.hostname;
-            if (PathName) {
+            if (PathName) { 
               var target = $(this.hash);
                   target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
                   if (target.length) {
+                    e.originalEvent.preventDefault();
                     $('html,body').animate({
                       scrollTop: target.offset().top - 65,
                       }, 1000);
-                      return false;
+                    location.hash = this.hash;
                   }
             }
         });
@@ -209,97 +275,6 @@ Copyright (c) 2018 - mital_04
         LITE.ProgressBar(),
         LITE.HeaderFixed();
     });
-
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    
-      ga('create', 'UA-100027201-1', 'auto');
-      ga('send', 'pageview');
-
-(function() {
-
-  var route = {};
-  var routes = {
-    'schemas': function(){
-      return {
-        path: '/schemas'
-      }
-    }
-  };
-
-  var state = { pathname: location.pathname };
-
-  var routeUpdate = window.routeUpdate = function routeUpdate(pathname, push) {
-    console.log('routeUpdate');
-    if (!pathname) {
-      throw new Error('Must pass a pathname as the first parameter to `routeUpdate`');
-    }
-    pathname = pathname.replace(/.html$/, '');
-    
-    try {
-      var segments = pathname.split('?')[0].match(/(\w+)/g);
-      route = segments[0] ? routes[segments[0]](segments) : route;
-    } catch (err) {}
-
-    var title = 'DIF - ' + (route.title || 'Decentralized Identity Foundation')
-    document.title = title;
-
-    if (push === true) historyPush(title, pathname);
-    else if (push === false) historyReplace(title, pathname);
-    document.body.setAttribute('path', location.pathname);
-  };
-
-  function historyPush(title, pathname) {
-    console.log('historyPush');
-    window.scrollTo(0, 0);  // Ignore `history.scrollRestoration`.
-    state = {pathname: pathname};
-    history.pushState(state, null, pathname);
-    gaSendPageview(title, location.pathname);
-  }
-
-  function historyReplace(title, pathname) {
-    console.log('historyReplace');
-    state = {pathname: pathname};
-    history.replaceState(state, null, pathname);
-    gaSendPageview(title, location.pathname);
-  }
-
-  function gaSendPageview(title, pathname) {
-    console.log('gaSendPageview', pathname);
-    if ('ga' in window) {
-      ga('set', {
-        page: pathname,
-        title: title
-      });
-      ga('send', 'pageview');
-    }
-  }
-
-  var redirect = null;
-  try {
-    redirect = sessionStorage.redirect;
-    delete sessionStorage.redirect;
-  } catch (err) {}
-  if (redirect && redirect !== location.pathname) {
-    console.log('redirect:', redirect, location.pathname);
-    routeUpdate(redirect, false);
-  }
-  else {
-    gaSendPageview(document.title, location.href);
-  }
-
-  // window.onpopstate = function(e) {
-  //   console.log('test');
-  //   if (e.state && e.state.pathname) {
-  //     routeUpdate(e.state.pathname);
-  //   }
-  // };
-
-  
-})();
-
 
 })(jQuery);
 

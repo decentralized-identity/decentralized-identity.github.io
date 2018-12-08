@@ -5,28 +5,24 @@
     <title></title>
 
     <script>
-      (function () {
-
-        var route = {};
-        var routes = {
-          'schemas': function(){
-            return {
-              file: '/schemas',
-              path: location.pathname
-            }
+      var route = {};
+      var routes = {
+        'schemas': function(){
+          return {
+            location: '/schemas',
+            redirect: location.pathname
           }
-        };   
-
-        try {
-          var segments = location.pathname.split('?')[0].match(/(\w+)/g);
-          route = segments[0] ? routes[segments[0]](segments) : route;
-        } catch (err) {
         }
-        
-        sessionStorage.redirect = route.path || '/';
-        document.title = 'DIF - ' + route.title || 'Decentralized Identity Foundation';
-        location.replace(route.file || '/');
-      })();
+      };   
+
+      try {
+        var segments = location.pathname.split('?')[0].match(/(\w+)/g);
+        route = segments[0] ? routes[segments[0]](segments) : route;
+      } catch (err) {}
+      
+      sessionStorage.redirect = route.redirect || '/';
+      document.title = 'DIF - ' + route.title || 'Decentralized Identity Foundation';
+      location.replace(route.location || '/');
     </script>
   </head>
   <body>

@@ -5,17 +5,17 @@
   ]
 %}
 {% set schemas = {
-    'Identity Hub': {
+    'hub': {
+      title: 'Identity Hub',
       desc: 'Objects and formatted data used at the encrypted personal datastore layer.',
-      path: 'hub',
       types: [
         'UserServiceEndpoint',
         'HostServiceEndpoint'  
       ]
     },
-    'Claims': {
-      desc: 'Claim manifests, claim negotiation, and other claim-related descriptors.',
-      path: 'claims',
+    'claims': {
+      title: 'Claims',
+      desc: 'Claim manifests, claim negotiation, and other claim-related descriptors.',   
       types: [
         'ClaimManifest'
       ]
@@ -56,12 +56,12 @@
               <div class="section-title">
                 <dl>
                 {% for key, val in schemas %}
-                  <dt>{{key}}</dt>
+                  <dt>{{val.title}}</dt>
                   <dd>{{val.desc}}</dd>
                   <dd>
                     {% if val.types %}
                       {% for type in val.types %}
-                        <a class="block-link" data-description="{{type.toLowerCase()}}" href="/schemas/{{val.path}}/{{type}}">{{type}}</a>
+                        <a class="block-link" data-description="{{type.toLowerCase()}}" href="/schemas/{{key}}/{{type}}">{{type}}</a>
                       {% endfor %}
                     {% endif %}
                   </dd>
@@ -77,6 +77,17 @@
 
     </main>
     {% include "footer.html" %}
+    <script>
+      var schemas = JSON.parse('{{schemas | dump | safe}}');
+      router = function(segments){
+        var schema = schemas[segments[1]];
+        var object = schema ? schema.types.indexOf(segments[2]) > -1 : null;
+        return {
+          title: 'Schemas',
+          path: '/schemas/' + (object ? segments[1] + '/' + segments[2] : '')
+        }
+      };
+    </script>
     <script src="/js/base.js"></script>
     <script src="/js/schemas.js"></script>
   </body>

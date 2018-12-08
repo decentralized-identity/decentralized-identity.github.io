@@ -2,7 +2,6 @@
 
 (function(){
 
-
   sheet = document.head.appendChild(document.createElement('style')).sheet;
 
   function deleteRule(){
