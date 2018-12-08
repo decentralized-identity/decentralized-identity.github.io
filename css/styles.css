@@ -185,6 +185,10 @@ dl dd {
   margin: 0 0 1.5em 0;
 }
 
+main {
+  min-height: 100vh;
+}
+
 .section {
   padding: 90px 0;
 }
@@ -199,9 +203,19 @@ dl dd {
   } 
 }
 
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.block-link {
+  display: inline-block;
+  margin: 0 100% 0.5em 0;
+  padding: 0em 0.4em;
+}
 
 .gray-bg {
-  background: #f7fafc;
+  background: #eff4f7;
 }
 .white-bg {
   background: #fff;
@@ -1344,7 +1358,7 @@ dl dd {
     -moz-transform: skew(-47deg, 70deg) rotate(10deg);
     -ms-transform: skew(-47deg, 70deg) rotate(10deg);
     transform: rotate(-10deg);
-    background: #F7FAFD;
+    background: #eff4f7;
     left: -30vh;
     z-index: -1;
 }
@@ -2661,11 +2675,10 @@ blockquote.blockquote-left .parson { font-weight: 600; }
 .form-group .form-control {
     border:none;
     outline: none;
-    box-shadow: none;
+    box-shadow: 0 1px 3px 0px rgba(0,0,0,0.2);
     height: 40px;
-    padding-left: 0;
+    padding-left: 0.6em;
     padding-right: 0;
-    border-bottom: 1px solid #ddd;
     border-radius: 0;
     width: 100%;
     font-size: 14px;

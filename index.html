@@ -14,6 +14,7 @@
   <!-- Plugin CSS -->
   <link href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/plugins/owl-carousel/css/owl.carousel.min.css" rel="stylesheet">
+  
   <!-- / -->
 
   <!-- Theme Style -->
@@ -127,6 +128,61 @@
     <symbol id="linkedin" viewBox="0 0 32 32">
       <path fill="currentColor" d="M29 0h-26c-1.65 0-3 1.35-3 3v26c0 1.65 1.35 3 3 3h26c1.65 0 3-1.35 3-3v-26c0-1.65-1.35-3-3-3zM12 26h-4v-14h4v14zM10 10c-1.106 0-2-0.894-2-2s0.894-2 2-2c1.106 0 2 0.894 2 2s-0.894 2-2 2zM26 26h-4v-8c0-1.106-0.894-2-2-2s-2 0.894-2 2v8h-4v-14h4v2.481c0.825-1.131 2.087-2.481 3.5-2.481 2.488 0 4.5 2.238 4.5 5v9z"></path>
     </symbol>
+    <symbol id="arrow_back" viewBox="0 0 24 24">
+      <path d="M20.016 11.016v1.969h-12.188l5.578 5.625-1.406 1.406-8.016-8.016 8.016-8.016 1.406 1.406-5.578 5.625h12.188z"></path>
+    </symbol>
+    <symbol id="close_x" viewBox="0 0 24 24">
+      <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
+    </symbol>
+    <symbol id="blueprint" viewBox="0 0 512 512">
+      <g>
+        <g>
+          <path d="M336,211.16V120c0-4.416-3.584-8-8-8H152c-4.416,0-8,3.584-8,8v126.112l-47.16,94.312c-1.24,2.48-1.104,5.424,0.352,7.784
+            C98.656,350.56,101.224,352,104,352h124.992c16.632,28.648,47.568,48,83.008,48c52.936,0,96-43.064,96-96
+            C408,259.368,377.336,221.856,336,211.16z M221.6,336H116.944L192,185.888l35.928,71.856C220.344,271.48,216,287.24,216,304
+            C216,315.232,218.04,325.976,221.6,336z M199.152,164.424c-2.712-5.424-11.6-5.424-14.312,0L160,214.112V128h160v80.408
+            c-2.648-0.224-5.296-0.408-8-0.408c-29.608,0-56.12,13.488-73.744,34.632L199.152,164.424z M312,384c-44.112,0-80-35.888-80-80
+            s35.888-80,80-80s80,35.888,80,80S356.112,384,312,384z"/>
+        </g>
+      </g>
+      <g>
+        <g>
+          <path d="M504,64H8c-4.416,0-8,3.584-8,8v368c0,4.416,3.584,8,8,8h496c4.416,0,8-3.584,8-8V72C512,67.584,508.416,64,504,64z
+            M496,432H16V80h480V432z"/>
+        </g>
+      </g>
+      <g>
+        <g>
+          <path d="M448,128c-10.416,0-19.216,6.712-22.528,16H368c-2.672,0-5.168,1.336-6.656,3.56l-16,24l13.312,8.872L372.28,160h53.192
+            c3.312,9.288,12.112,16,22.528,16c13.232,0,24-10.768,24-24S461.232,128,448,128z M448,160c-4.408,0-8-3.592-8-8s3.592-8,8-8
+            c4.408,0,8,3.592,8,8S452.408,160,448,160z"/>
+        </g>
+      </g>
+      <g>
+        <g>
+          <path d="M136,368v16H86.528c-3.312-9.288-12.112-16-22.528-16c-13.232,0-24,10.768-24,24s10.768,24,24,24
+            c10.416,0,19.216-6.712,22.528-16H144c4.416,0,8-3.584,8-8v-24H136z M64,400c-4.408,0-8-3.592-8-8c0-4.408,3.592-8,8-8
+            s8,3.592,8,8C72,396.408,68.408,400,64,400z"/>
+        </g>
+      </g>
+      <g>
+        <g>
+          <path d="M461.256,352.624l-14.096-28.2C445.8,321.712,443.032,320,440,320h-24v16h19.056l9.512,19.032
+            C437.12,359.104,432,366.928,432,376c0,13.232,10.768,24,24,24s24-10.768,24-24C480,364.576,471.96,355.032,461.256,352.624z
+            M456,384c-4.408,0-8-3.592-8-8c0-4.408,3.592-8,8-8c4.408,0,8,3.592,8,8C464,380.408,460.408,384,456,384z"/>
+        </g>
+      </g>
+      <g>
+        <g>
+          <rect x="40" y="112" width="48" height="16"/>
+        </g>
+      </g>
+      <g>
+        <g>
+          <rect x="40" y="144" width="72" height="16"/>
+        </g>
+      </g>
+    </symbol>
   </svg>
        
   <header>
@@ -135,52 +191,54 @@
         <!-- Brand -->
         <a class="navbar-brand" href="/"><img src="/images/logo-white-small.png" /></a>
         <!-- / <span class="theme-bg"></span> -->
+        
+        
+          <!-- Mobile Toggle -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+              <span></span>
+              <span></span>
+              <span></span>
+          </button>
+          <!-- / -->
 
-        <!-- Mobile Toggle -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <!-- / -->
-
-        <!-- Top Menu -->
-        <div class="collapse navbar-collapse justify-content-end" id="navbar">
-         <ul class="navbar-nav">
-            <li><a class="nav-link" href="/#home">Home</a></li>
-            <li><a class="nav-link" href="/#about">Our Focus</a></li>
-            <li>
-              <!-- <span class="sub-menu-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span> -->
-              <a class="nav-link" href="/#wgs">Working Groups</a>
-              <!-- <ul class="sub-menu">
+          <!-- Top Menu -->
+          <div class="collapse navbar-collapse justify-content-end" id="navbar">
+              <ul class="navbar-nav">
+                <li><a class="nav-link" href="/#home">Home</a></li>
+                <li><a class="nav-link" href="/#about">Our Focus</a></li>
                 <li>
-                  <a href="about-us.html">Identifiers, Names, and Discovery</a>
-                </li>
-                <li>
-                  <a href="features.html">Storage and Compute</a>
-                </li>
-                <li>
-                  <a href="faq.html">Attestations and Reputation</a>
-                </li>
-              </ul> -->
-            </li>
-            <!-- <li><span class="sub-menu-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span> <a class="nav-link" href="javascript:;">Pages</a>
-              <ul class="sub-menu">
-                <li>
-                  <a href="faq.html">Faq's</a>
-                </li>
-                <li>
-                  <a href="blog.html">Blog List</a>
-                </li>
+                  <!-- <span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span> -->
+                  <a class="nav-link" href="/#wgs">Working Groups</a>
+                  <!-- <ul class="sub-menu">
+                    <li>
+                      <a href="/working-groups/identifiers-names-discovery.html">Identifiers, Names, and Discovery</a>
+                    </li>
+                    <li>
+                      <a href="/working-groups/storage-compute.html">Storage and Compute</a>
+                    </li>
+                    <li>
+                      <a href="/working-groups/claims-credentials.html">Claims and Credentials</a>
+                    </li>
+                  </ul>
+                </li> -->
+                <!-- <li><span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span> <a class="nav-link" href="javascript:;">Pages</a>
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="faq.html">Faq's</a>
+                    </li>
+                    <li>
+                      <a href="blog.html">Blog List</a>
+                    </li>
+                  </ul>
+                </li> -->
+                <li><a class="nav-link" href="/#contatus">Contact Us</a></li>
+                <li class="inline-nav-item"><a title="@DecentralizedID on Twitter" class="nav-link" href="https://twitter.com/DecentralizedID"><svg><use xlink:href="#twitter"></use></svg></a></li>
+                <li class="inline-nav-item"><a title="GitHub Repos" class="nav-link" href="https://github.com/decentralized-identity"><svg><use xlink:href="#github"></use></svg></a></li>
+                <li class="inline-nav-item"><a title="The DIF Blog" class="nav-link" href="https://medium.com/decentralized-identity"><svg><use xlink:href="#medium"></use></svg></a></li>
               </ul>
-            </li> -->
-            <li><a class="nav-link" href="/#contatus">Contact Us</a></li>
-            <li class="inline-nav-item"><a title="@DecentralizedID on Twitter" class="nav-link" href="https://twitter.com/DecentralizedID"><svg><use xlink:href="#twitter"></use></svg></a></li>
-            <li class="inline-nav-item"><a title="GitHub Repos" class="nav-link" href="https://github.com/decentralized-identity"><svg><use xlink:href="#github"></use></svg></a></li>
-            <li class="inline-nav-item"><a title="The DIF Blog" class="nav-link" href="https://medium.com/decentralized-identity"><svg><use xlink:href="#medium"></use></svg></a></li>
-          </ul>
-        </div>
-        <!-- / -->
+            
+          </div>
+        
 
       </div><!-- Container -->
     </nav>

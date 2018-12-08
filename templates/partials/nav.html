@@ -5,52 +5,54 @@
         <!-- Brand -->
         <a class="navbar-brand" href="/"><img src="/images/logo-white-small.png" /></a>
         <!-- / <span class="theme-bg"></span> -->
+        {% block nav_replacement %}{% endblock %}
+        {% if nav_empty == undefined %}
+          <!-- Mobile Toggle -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+              <span></span>
+              <span></span>
+              <span></span>
+          </button>
+          <!-- / -->
 
-        <!-- Mobile Toggle -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <!-- / -->
-
-        <!-- Top Menu -->
-        <div class="collapse navbar-collapse justify-content-end" id="navbar">
-         <ul class="navbar-nav">
-            <li><a class="nav-link" href="/#home">Home</a></li>
-            <li><a class="nav-link" href="/#about">Our Focus</a></li>
-            <li>
-              <!-- <span class="sub-menu-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span> -->
-              <a class="nav-link" href="/#wgs">Working Groups</a>
-              <!-- <ul class="sub-menu">
+          <!-- Top Menu -->
+          <div class="collapse navbar-collapse justify-content-end" id="navbar">
+              <ul class="navbar-nav">
+                <li><a class="nav-link" href="/#home">Home</a></li>
+                <li><a class="nav-link" href="/#about">Our Focus</a></li>
                 <li>
-                  <a href="about-us.html">Identifiers, Names, and Discovery</a>
-                </li>
-                <li>
-                  <a href="features.html">Storage and Compute</a>
-                </li>
-                <li>
-                  <a href="faq.html">Attestations and Reputation</a>
-                </li>
-              </ul> -->
-            </li>
-            <!-- <li><span class="sub-menu-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span> <a class="nav-link" href="javascript:;">Pages</a>
-              <ul class="sub-menu">
-                <li>
-                  <a href="faq.html">Faq's</a>
-                </li>
-                <li>
-                  <a href="blog.html">Blog List</a>
-                </li>
+                  <!-- <span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span> -->
+                  <a class="nav-link" href="/#wgs">Working Groups</a>
+                  <!-- <ul class="sub-menu">
+                    <li>
+                      <a href="/working-groups/identifiers-names-discovery.html">Identifiers, Names, and Discovery</a>
+                    </li>
+                    <li>
+                      <a href="/working-groups/storage-compute.html">Storage and Compute</a>
+                    </li>
+                    <li>
+                      <a href="/working-groups/claims-credentials.html">Claims and Credentials</a>
+                    </li>
+                  </ul>
+                </li> -->
+                <!-- <li><span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span> <a class="nav-link" href="javascript:;">Pages</a>
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="faq.html">Faq's</a>
+                    </li>
+                    <li>
+                      <a href="blog.html">Blog List</a>
+                    </li>
+                  </ul>
+                </li> -->
+                <li><a class="nav-link" href="/#contatus">Contact Us</a></li>
+                <li class="inline-nav-item"><a title="@DecentralizedID on Twitter" class="nav-link" href="https://twitter.com/DecentralizedID"><svg><use xlink:href="#twitter"></use></svg></a></li>
+                <li class="inline-nav-item"><a title="GitHub Repos" class="nav-link" href="https://github.com/decentralized-identity"><svg><use xlink:href="#github"></use></svg></a></li>
+                <li class="inline-nav-item"><a title="The DIF Blog" class="nav-link" href="https://medium.com/decentralized-identity"><svg><use xlink:href="#medium"></use></svg></a></li>
               </ul>
-            </li> -->
-            <li><a class="nav-link" href="/#contatus">Contact Us</a></li>
-            <li class="inline-nav-item"><a title="@DecentralizedID on Twitter" class="nav-link" href="https://twitter.com/DecentralizedID"><svg><use xlink:href="#twitter"></use></svg></a></li>
-            <li class="inline-nav-item"><a title="GitHub Repos" class="nav-link" href="https://github.com/decentralized-identity"><svg><use xlink:href="#github"></use></svg></a></li>
-            <li class="inline-nav-item"><a title="The DIF Blog" class="nav-link" href="https://medium.com/decentralized-identity"><svg><use xlink:href="#medium"></use></svg></a></li>
-          </ul>
-        </div>
-        <!-- / -->
+            
+          </div>
+        {% endif %}
 
       </div><!-- Container -->
     </nav>

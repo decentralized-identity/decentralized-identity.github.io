@@ -1,0 +1,84 @@
+
+{% set title = 'Schemas' %}
+{% set css = [
+    '/css/schemas.css'
+  ]
+%}
+{% set schemas = {
+    'Identity Hub': {
+      desc: 'Objects and formatted data used at the encrypted personal datastore layer.',
+      path: 'hub',
+      types: [
+        'UserServiceEndpoint',
+        'HostServiceEndpoint'  
+      ]
+    },
+    'Claims': {
+      desc: 'Claim manifests, claim negotiation, and other claim-related descriptors.',
+      path: 'claims',
+      types: [
+        'ClaimManifest'
+      ]
+    }
+  }
+%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include "head.html" %}
+
+  <body>
+    {% include "svg.html" %}
+    {% include "nav.html" %}
+    <main>
+      <section class="page-title theme-bg">
+        <div class="container">
+          <svg><use xlink:href="#blueprint"></use></svg>
+          <h1>Schemas</h1>
+        </div>
+      </section>
+
+      <section id="schema_filters" class="gray-bg">
+        <div class="row justify-content-center p-15px-rl p-30px-tb">
+          <div class="form-group">
+            <svg id="filter_back"><use xlink:href="#arrow_back"></use></svg>
+            <div id="filter_search"><input id="filter_search_input" class="form-control" type="text" placeholder="Filter by object type"></div>
+            <svg id="filter_clear"><use xlink:href="#close_x"></use></svg>
+          </div>
+        </div>
+      </section>
+      
+      <section id="schemas" class="m-50px-tb"> 
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-9 col-lg-7">
+              <div class="section-title">
+                <dl>
+                {% for key, val in schemas %}
+                  <dt>{{key}}</dt>
+                  <dd>{{val.desc}}</dd>
+                  <dd>
+                    {% if val.types %}
+                      {% for type in val.types %}
+                        <a class="block-link" data-description="{{type.toLowerCase()}}" href="/schemas/{{val.path}}/{{type}}">{{type}}</a>
+                      {% endfor %}
+                    {% endif %}
+                  </dd>
+                {% endfor %}
+                </dl>
+              </div>
+            </div> 
+          </div>
+          <!-- row -->
+        </div>
+        <!-- container -->
+      </section>
+
+    </main>
+    {% include "footer.html" %}
+    <script src="/js/base.js"></script>
+    <script src="/js/schemas.js"></script>
+  </body>
+
+</html>

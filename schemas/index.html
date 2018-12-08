@@ -1,3 +1,8 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,13 +12,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>DIF - Claims and Credentials Working Group</title>
+  <title>DIF - Schemas</title>
 
   <meta name="google-site-verification" content="8yJCkbG9ayv7Vbjgjk525YTGbDVCvUZ_Moviopr6f1M" />
 
   <!-- Plugin CSS -->
   <link href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/plugins/owl-carousel/css/owl.carousel.min.css" rel="stylesheet">
+  
+    <link href="/css/schemas.css" rel="stylesheet">
   
   <!-- / -->
 
@@ -244,160 +251,60 @@
     </nav>
   </header>
     <main>
+      <section class="page-title theme-bg">
+        <div class="container">
+          <svg><use xlink:href="#blueprint"></use></svg>
+          <h1>Schemas</h1>
+        </div>
+      </section>
+
+      <section id="schema_filters" class="gray-bg">
+        <div class="row justify-content-center p-15px-rl p-30px-tb">
+          <div class="form-group">
+            <svg id="filter_back"><use xlink:href="#arrow_back"></use></svg>
+            <div id="filter_search"><input id="filter_search_input" class="form-control" type="text" placeholder="Filter by object type"></div>
+            <svg id="filter_clear"><use xlink:href="#close_x"></use></svg>
+          </div>
+        </div>
+      </section>
       
-  <section class="page-title theme-bg">
-    <div class="container">
-      <svg><use xlink:href="#validate_user"></use></svg>
-      <h1>Claims and Credentials</h1>
-      <h3>Working Group</h3>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-9">
-          <div class="section-title text-center">
-            <h2 class="font-alt">Scope of Work</h2>
-            <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
-            <p>Join this group to contribute to the standards and technology that create, exchange, and verify claims and credentials in a decentralized identity ecosystem. For example, a cryptographically verifiable credential that proves an individual has a college degree or is of a certain age. Our members focus on specs that are vendor agnostic and based on industry standards.</p>
-            </div>
+      <section id="schemas" class="m-50px-tb"> 
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-9 col-lg-7">
+              <div class="section-title">
+                <dl>
+                
+                  <dt>Identity Hub</dt>
+                  <dd>Objects and formatted data used at the encrypted personal datastore layer.</dd>
+                  <dd>
+                    
+                      
+                        <a class="block-link" data-description="userserviceendpoint" href="/schemas/hub/UserServiceEndpoint">UserServiceEndpoint</a>
+                      
+                        <a class="block-link" data-description="hostserviceendpoint" href="/schemas/hub/HostServiceEndpoint">HostServiceEndpoint</a>
+                      
+                    
+                  </dd>
+                
+                  <dt>Claims</dt>
+                  <dd>Claim manifests, claim negotiation, and other claim-related descriptors.</dd>
+                  <dd>
+                    
+                      
+                        <a class="block-link" data-description="claimmanifest" href="/schemas/claims/ClaimManifest">ClaimManifest</a>
+                      
+                    
+                  </dd>
+                
+                </dl>
+              </div>
+            </div> 
+          </div>
+          <!-- row -->
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="counter-section gray-bg">
-    <div class="container">
-      <div class="counter-row">
-        <div class="row justify-content-center">
-          <div class="col-12">
-            <div class="section-title text-center">
-              <h2 class="font-alt">Specs &amp; Projects</h2>
-              <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
-              <p>The active work items that are underway in the DIF Claims and Credentials Working Group</p>
-            </div>
-          </div> 
-          <div class="col-10 col-md-8 col-lg-6 m-30px-t">
-            <dl>
-              
-                <dt>Chainpoint</dt>
-                <dd>
-                  <p>Industry standard for creating a timestamp proof of any data, file, or process.</p>
-                  
-                    
-                      <a class="icon-link" href="https://github.com/chainpoint/whitepaper/raw/master/chainpoint_white_paper.pdf">White Paper</a>
-                    
-                      <a class="icon-link" href="https://github.com/chainpoint">Repo</a>
-                    
-                  
-                </dd>
-              
-                <dt>Identity.com Credential Commons</dt>
-                <dd>
-                  <p>An implementation of Verifiable Credentials.</p>
-                  
-                    
-                      <a class="icon-link" href="https://github.com/identity-com/credential-commons/blob/master/README.md">Readme</a>
-                    
-                      <a class="icon-link" href="https://github.com/identity-com/credential-commons">Repo</a>
-                    
-                  
-                </dd>
-              
-                <dt>Identity.com Dynamic Scope Request</dt>
-                <dd>
-                  <p>(Coming Soon) Identity.com&#39;s implementation of a request protocol for presentation of credentials between Verifiers and Subjects / Holders.</p>
-                  
-                </dd>
-              
-            </dl>
-          </div>
-        </div>
-        <!-- row -->
-      </div>
-    </div>
-    <!-- container -->
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="row justify-content-center m-45px-b md-m-20px-b sm-m-15px-b">
-        <div class="col-12 col-md-10 col-lg-7">
-          <div class="section-title text-center">
-            <h2 class="font-alt">Chairs</h2>
-            <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
-            <p>The following DIF members lead the work in this group, contact them for more info on the projects, specs, and development happening within.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row justify-content-center">
-        
-          <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
-            <div class="our-team">
-              <div class="img">
-                <img src="/images/photos/wayne-vaughan.jpg" />
-              </div>
-              <div class="info">
-                <h6>Wayne Vaughan</h6>
-                <label>CEO @ Tierion</label>
-              </div>
-              <ul class="social-icons">
-                
-                  <li><a class="linkedin" href="https://www.linkedin.com/in/wayne"><svg><use xlink:href="#linkedin"></use></svg></a></li>
-                
-                
-                  <li><a class="twitter" href="https://twitter.com/waynevaughan"><svg><use xlink:href="#twitter"></use></svg></a></li>
-                
-              </ul>
-            </div>
-          </div>
-        
-          <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
-            <div class="our-team">
-              <div class="img">
-                <img src="/images/photos/martin-riedel.jpg" />
-              </div>
-              <div class="info">
-                <h6>Martin Riedel</h6>
-                <label>Product Manager @ Identity.com</label>
-              </div>
-              <ul class="social-icons">
-                
-                  <li><a class="linkedin" href="https://www.linkedin.com/in/rado0x54"><svg><use xlink:href="#linkedin"></use></svg></a></li>
-                
-                
-                  <li><a class="twitter" href="https://twitter.com/rado0x54"><svg><use xlink:href="#twitter"></use></svg></a></li>
-                
-              </ul>
-            </div>
-          </div>
-        
-          <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
-            <div class="our-team">
-              <div class="img">
-                <img src="/images/photos/kim-hamilton.jpg" />
-              </div>
-              <div class="info">
-                <h6>Kim (Hamilton) Duffy</h6>
-                <label>CTO @ Learning machine</label>
-              </div>
-              <ul class="social-icons">
-                
-                  <li><a class="linkedin" href="https://www.linkedin.com/in/kimdhamilton"><svg><use xlink:href="#linkedin"></use></svg></a></li>
-                
-                
-                  <li><a class="twitter" href="https://twitter.com/kimdhamilton"><svg><use xlink:href="#twitter"></use></svg></a></li>
-                
-              </ul>
-            </div>
-          </div>
-        
-      </div>
-
-    </div>
-  </section>
+        <!-- container -->
+      </section>
 
     </main>
     <footer class="footer">
@@ -442,7 +349,7 @@
   </section>
 </footer>
     <script src="/js/base.js"></script>
-    
+    <script src="/js/schemas.js"></script>
   </body>
 
 </html>

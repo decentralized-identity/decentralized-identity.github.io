@@ -3,8 +3,6 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify-es').default;
 const nunjucksRender = require('gulp-nunjucks-render');
 const gulpSequence = require('gulp-sequence');
-const del = require('del');
-const connect = require('gulp-connect');
 
 var assets = {
   js: [
@@ -19,12 +17,16 @@ var assets = {
 };
 
 var structure = {
-  '': 'index.html',
+  'index': [
+    'index.html'
+  ],
+  'schemas': [
+    'schemas.html'
+  ],
   'working-groups': [
     'identifiers-names-discovery.html',
     'storage-compute.html',
-    'claims-credentials.html',
-    'test-wg.html'
+    'claims-credentials.html'
   ]
 };
 
@@ -36,30 +38,15 @@ gulp.task('assets', function() {
 });
 
 gulp.task('templates', function() {
-  return gulp.src('templates/pages/*.html')
+  return gulp.src('templates/pages/**/*.html')
     .pipe(nunjucksRender({
       path: ['templates', 'templates/partials', 'templates/pages']
     }))
-    .pipe(gulp.dest('tmp'))
+    .pipe(gulp.dest('.'))
 });
 
-gulp.task('structure', function() {
-  for (let z in structure) {
-    (Array.isArray(structure[z]) ? structure[z] : [structure[z]]).forEach(file => {
-      gulp.src('tmp/' + file).pipe(gulp.dest(z));
-    });
-  }
+gulp.task('build', function(callback){
+  gulpSequence('assets', 'templates')(callback);
 });
 
-gulp.task('cleanup', function() {
-  del('tmp/**');
-});
-
-gulp.task('connect', function() {
-  connect.server({
-    root: '.',
-    livereload: true
-  })
-});
-
-gulp.task('build', gulpSequence('assets', 'templates', 'structure', 'cleanup'));
+gulp.task('watch', () => gulp.watch(['templates/**/*', 'js/**/*', '!js/base.js'], ['build']));

@@ -11,6 +11,9 @@
   <!-- Plugin CSS -->
   <link href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/plugins/owl-carousel/css/owl.carousel.min.css" rel="stylesheet">
+  {% for file in css %}
+    <link href="{{file}}" rel="stylesheet">
+  {% endfor %}
   <!-- / -->
 
   <!-- Theme Style -->

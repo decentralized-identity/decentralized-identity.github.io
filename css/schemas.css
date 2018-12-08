@@ -1,0 +1,41 @@
+
+#schema_filters .form-group {
+  display: flex;
+  max-width: 400px;
+  margin-bottom: 0;
+}
+
+#schema_filters .form-group svg {
+  height: 2em;
+  width: 3em;
+  margin: auto 0.3em;
+  padding: 0 0.5em;
+  cursor: pointer;
+}
+
+#filter_back,
+#filter_clear {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#filter_search {
+  flex: 1;
+}
+
+#schemas dt + dd {
+  font-size: 0.8em;
+}
+
+body[searching] #filter_clear {
+  opacity: 1;
+}
+
+body[searching] #schemas dt,
+body[searching] #schemas dt + dd {
+  display: none;
+}
+
+body[searching] #schemas dd {
+  margin: 0 0 0 0;
+}
