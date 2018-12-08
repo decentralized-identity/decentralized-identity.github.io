@@ -192,6 +192,7 @@ main {
 .section {
   padding: 90px 0;
 }
+
 @media (max-width: 991px){
  .section {
     padding: 70px 0;
