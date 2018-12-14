@@ -1,32 +1,60 @@
 
 (function() {
 
-  router = window.router || function(){ return {} };
+  router = Object.assign({
+    change: function(){},
+    parse: function(){ return {} }
+  }, window.router || {});
+
+  var navFilter = function(event) {
+    var match,
+        target = event.target,
+        root = event.currentTarget;
+    while (!match && target && target != root) {
+      if (target.tagName && target.matches('a[href]')) match = target;
+      target = target.parentNode;
+    }
+    if (!match && root.tagName && root.matches('a[href]')) match = root;
+    if (match && match.href.match(router.filter)) {
+      event.preventDefault();
+      routeUpdate(new URL(match.href).pathname, true);
+    }
+  }
+
+  window.onpopstate = router.change;
+  if (router.filter) {
+    document.addEventListener('click', navFilter);
+    // document.addEventListener('pointerup', navFilter);
+  }
+  
   var state = { pathname: location.pathname };
-  var routeUpdate = window.routeUpdate = function routeUpdate(pathname, push) {
+  var routeUpdate = window.routeUpdate = function routeUpdate(pathname) {
     if (!pathname) {
       throw new Error('Must pass a pathname as the first parameter to `routeUpdate`');
     }
     var path = pathname.replace(/.html$/, '');
     var segments = path.split('?')[0].match(/(\w+)/g) || [];
-    var route = router(segments);
+    var route = router.parse(segments);
     var title = 'DIF - ' + (route.title || 'Decentralized Identity Foundation')
     document.title = title;
     path = route.path || path;
 
-    if (push === true) historyPush(title, path);
-    else if (push === false) historyReplace(title, path);
-    document.body.setAttribute('path', path);
+    if (path !== location.pathname) {
+      historyPush(title, path);
+    }
+    else {
+      historyReplace(title, path);
+    }
   };
 
   function historyPush(title, pathname) {
-    window.scrollTo(0, 0);  // Ignore `history.scrollRestoration`.
+    window.scrollTo(0, 0);  // Ignore `history.scrollRestoration`
     state = {pathname: pathname};
     history.pushState(state, null, pathname);
+    router.change();
     gaSendPageview(title, location.pathname);
   }
 
-  
   function historyReplace(title, pathname) {
     state = {pathname: pathname};
     history.replaceState(state, null, pathname);
@@ -57,17 +85,11 @@
   } catch (err) {}
   if (redirect && redirect !== location.pathname) {
     console.log('redirect:', redirect, location.pathname);
-    routeUpdate(redirect, false);
+    routeUpdate(redirect);
   }
   else {
     gaSendPageview(document.title, location.href);
   }
-
-  window.onpopstate = function(e) {
-    if (e.state && e.state.pathname) {
-      routeUpdate(e.state.pathname);
-    }
-  };
 
   
 })();
@@ -131,94 +153,7 @@
         else {
            $('.navbar').removeClass('fixed-header');
         }
-    }    
-
-
-    /*--------------------
-    * owl Slider
-    ----------------------*/
-
-    LITE.ClientSlider = function(){
-      var testimonials_slider = $('#client-slider-single');
-        testimonials_slider.owlCarousel({
-            loop: true,
-            margin: 0,
-            nav:false,
-            dots:true,
-            responsive: {
-              0: {
-                items: 1
-              },
-              600: {
-                items: 1
-              },
-              768: {
-                items: 2
-              },
-              991: {
-                items: 3
-              },
-              1140: {
-                items: 3
-              }
-            }
-        });
     }
-
-    LITE.WorkSlider = function(){
-      var work_slider = $('#work-slider-single');
-        work_slider.owlCarousel({
-            loop: true,
-            margin: 0,
-            nav:false,
-            dots:true,
-            responsive: {
-              0: {
-                items: 1
-              },
-              600: {
-                items: 1
-              },
-              768: {
-                items: 2
-              },
-              991: {
-                items: 3
-              },
-              1140: {
-                items: 3
-              }
-            }
-        });
-    }
-
-    LITE.PopupVideo = function(){
-      $('.popup-video').magnificPopup({
-              disableOn: 700,
-              type: 'iframe',
-              mainClass: 'mfp-fade',
-              removalDelay: 160,
-              preloader: false,
-              fixedContentPos: false
-        });
-    }
-
-    LITE.LightboxGallery = function(){
-      $('.portfolio-col').magnificPopup({
-          delegate: '.lightbox-gallery',
-          type: 'image',
-          tLoading: '#%curr%',
-          mainClass: 'mfp-fade',
-          fixedContentPos: true,
-          closeBtnInside: true,
-          gallery: {
-              enabled: true,
-              navigateByImgClick: true,
-              preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
-          }
-      });
-    }
-    
 
     /*--------------------
         * Progress Bar 
@@ -259,10 +194,6 @@
     }
 
     $(document).on("ready", function(){
-        LITE.WorkSlider(),
-        LITE.PopupVideo(),
-        LITE.ClientSlider(),
-        LITE.LightboxGallery(),
         LITE.MenuClose(),
         LITE.HeaderScroll(),
         LITE.Counter(),

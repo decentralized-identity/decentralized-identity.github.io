@@ -1,8 +1,7 @@
 const gulp = require('gulp');
 const concat = require('gulp-concat');
-const uglify = require('gulp-uglify-es').default;
+const uglify = require('gulp-uglify');
 const nunjucksRender = require('gulp-nunjucks-render');
-const gulpSequence = require('gulp-sequence');
 
 var assets = {
   js: [
@@ -10,8 +9,6 @@ var assets = {
     'js/jquery-migrate-3.0.0.min.js',
     'plugins/bootstrap/js/popper.min.js',
     'plugins/bootstrap/js/bootstrap.min.js',
-    'plugins/owl-carousel/js/owl.carousel.min.js',
-    'plugins/magnific/jquery.magnific-popup.min.js',
     'js/custom.js'
   ]
 };
@@ -45,8 +42,6 @@ gulp.task('templates', function() {
     .pipe(gulp.dest('.'))
 });
 
-gulp.task('build', function(callback){
-  gulpSequence('assets', 'templates')(callback);
-});
+gulp.task('build', ['assets', 'templates']);
 
 gulp.task('watch', () => gulp.watch(['templates/**/*', 'js/**/*', '!js/base.js'], ['build']));

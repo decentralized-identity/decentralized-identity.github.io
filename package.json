@@ -13,8 +13,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.6.1",
     "gulp-nunjucks-render": "^2.2.2",
-    "gulp-sequence": "^1.0.0",
-    "gulp-uglify-es": "^0.1.11",
+    "gulp-uglify": "^3.0.1",
     "nunjucks": "^3.1.4",
     "serve": "^10.1.1"
   },

@@ -10,8 +10,9 @@
       {% block content %}{% endblock %}
     </main>
     {% include "footer.html" %}
-    <script src="/js/base.js"></script>
-    {% block scripts %}{% endblock %}
+    {% block scripts %}
+      <script src="/js/base.js"></script>
+    {% endblock %}
   </body>
 
 </html>

@@ -210,9 +210,9 @@ main {
 }
 
 .block-link {
-  display: inline-block;
-  margin: 0 100% 0.5em 0;
-  padding: 0em 0.4em;
+  display: table;
+  margin: 0.25em 0.5em;
+  padding: 0.2em 0.4em;
 }
 
 .gray-bg {
@@ -251,11 +251,6 @@ main {
 .social-icons li svg {
   height: 1em;
   vertical-align: middle;
-}
-
-.icon-link {
-  display: inline-block;
-  margin: 0.5em 1.5em 0.5em 0;
 }
 
 .icon-link:before {
@@ -899,10 +894,11 @@ main {
   .navbar-nav {
     flex-direction: row;
     flex-wrap: wrap;
-    padding-top: 5px;
+    padding: 0.25em 0.25em 0;
   }
   .header-nav .navbar-nav > li {
-    margin: 0 100% 0 0;
+    flex: 1 0 100%;
+    margin: 0;
     white-space: nowrap;
   }
   .header-nav .navbar-nav .nav-link {
@@ -910,6 +906,7 @@ main {
   }
 
   .header-nav .navbar-nav .inline-nav-item {
+    flex: 0;
     margin: 0 1.5em 0 0;
   }
 

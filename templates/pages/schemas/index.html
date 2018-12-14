@@ -1,95 +1,155 @@
 
 {% set title = 'Schemas' %}
 {% set css = [
-    '/css/schemas.css'
+    '/css/schemas.css',
+    '/css/prism.css'
   ]
 %}
 {% set schemas = {
     'hub': {
       title: 'Identity Hub',
       desc: 'Objects and formatted data used at the encrypted personal datastore layer.',
-      types: [
-        'UserServiceEndpoint',
-        'HostServiceEndpoint'  
-      ]
+      types: {
+        'UserServiceEndpoint': {
+          desc: "DID Document service endpoint descriptor object that specifies the keys and locations for the Hub instances of the user.",
+          examples: [
+            {
+              lang: 'json',
+              content: {
+                "@context": "https://identity.foundation/schemas",
+                "@type": "UserServiceEndpoint",
+                "instances": ["did:bar:456", "did:zaz:789"]
+              }
+            }
+          ]
+        },
+        'HostServiceEndpoint': {
+          desc: "DID Document service endpoint descriptor object that a Hub host uses with their Host DID to specify the location of their instances, and the keys required to address them.",
+          examples: [
+            {
+              lang: 'json',
+              content: {
+                "@context": "https://identity.foundation/schemas",
+                "@type": "HostServiceEndpoint",
+                "locations": [
+                  "https://foo.com/.identity",
+                  "https://bar.com/blah/.identity"
+                ]
+              }
+            }
+          ]
+        } 
+      }
     },
     'claims': {
       title: 'Claims',
       desc: 'Claim manifests, claim negotiation, and other claim-related descriptors.',   
-      types: [
-        'ClaimManifest'
-      ]
+      types: {
+        'ClaimManifest': {}
+      }
     }
   }
 %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% extends "default.html" %}
 
-  {% include "head.html" %}
+{% block content %}
 
-  <body>
-    {% include "svg.html" %}
-    {% include "nav.html" %}
-    <main>
-      <section class="page-title theme-bg">
-        <div class="container">
-          <svg><use xlink:href="#blueprint"></use></svg>
-          <h1>Schemas</h1>
+  <section class="page-title theme-bg">
+    <div class="container">
+      <svg><use xlink:href="#blueprint"></use></svg>
+      <h1>Schemas</h1>
+    </div>
+  </section>
+
+  <section id="schema_filters" class="gray-bg">
+    <div class="row justify-content-center p-15px-rl p-30px-tb">
+      <div class="form-group">
+        <div id="filter_search">
+          <input id="filter_search_input" class="form-control" type="text" placeholder="Filter by object type">
+          <a href="/schemas" id="filter_clear"><svg><use xlink:href="#close_x"></use></svg></a>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
+  
+  <section id="schemas" class="m-50px-tb"> 
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-9 col-lg-7">
+          <div id="schema_viewer" class="section-title">
 
-      <section id="schema_filters" class="gray-bg">
-        <div class="row justify-content-center p-15px-rl p-30px-tb">
-          <div class="form-group">
-            <svg id="filter_back"><use xlink:href="#arrow_back"></use></svg>
-            <div id="filter_search"><input id="filter_search_input" class="form-control" type="text" placeholder="Filter by object type"></div>
-            <svg id="filter_clear"><use xlink:href="#close_x"></use></svg>
-          </div>
-        </div>
-      </section>
-      
-      <section id="schemas" class="m-50px-tb"> 
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-12 col-md-9 col-lg-7">
-              <div class="section-title">
-                <dl>
-                {% for key, val in schemas %}
-                  <dt>{{val.title}}</dt>
-                  <dd>{{val.desc}}</dd>
-                  <dd>
-                    {% if val.types %}
-                      {% for type in val.types %}
-                        <a class="block-link" data-description="{{type.toLowerCase()}}" href="/schemas/{{key}}/{{type}}">{{type}}</a>
-                      {% endfor %}
-                    {% endif %}
-                  </dd>
+            <dl id="schema_list">
+              {% for schema, val in schemas %}
+                <dt>{{val.title}}</dt>
+                <dd>{{val.desc}}</dd>
+                <dd>
+                  {% if val.types %}
+                    {% for type, def in val.types %}
+                      <a class="block-link" data-description="{{type.toLowerCase()}}" href="/schemas/{{schema}}/{{type}}">{{type}}</a>
+                    {% endfor %}
+                  {% endif %}
+                </dd>
+              {% endfor %}
+            </dl>
+            
+            <div id="schema_objects">
+              {% for schema, val in schemas %}
+                {% for type, def in val.types %}
+                  <dl class="schema-object" id="{{schema}}-{{type}}">
+                    <dt>{{type}}</dt>
+                    <dd>{{def.desc}}</dd>
+
+                    {% for example in def.examples %}
+                      <dd>
+                        <pre><code class="language-{{example.lang}}">{{example.content | dump(2) | safe}}</code></pre>
+                      </dd>
+                    {% endfor %}
+                  </dl>
                 {% endfor %}
-                </dl>
-              </div>
-            </div> 
-          </div>
-          <!-- row -->
-        </div>
-        <!-- container -->
-      </section>
+              {% endfor %}    
+            </div>    
 
-    </main>
-    {% include "footer.html" %}
-    <script>
-      var schemas = JSON.parse('{{schemas | dump | safe}}');
-      router = function(segments){
+          </div>
+        </div> 
+      </div>
+      <!-- row -->
+    </div>
+    <!-- container -->
+  </section>
+
+{% endblock %}
+
+{% block scripts %}
+  <script src="/js/prism.js"></script>
+  <script>
+    var schemas = JSON.parse('{{schemas | dump | safe}}');
+    router = {
+      filter: /\/schemas/,
+      parse: function(segments){
         var schema = schemas[segments[1]];
-        var object = schema ? schema.types.indexOf(segments[2]) > -1 : null;
+        console.log(schema);
+        var object = schema ? schema.types[segments[2]] : null;
         return {
           title: 'Schemas',
           path: '/schemas/' + (object ? segments[1] + '/' + segments[2] : '')
         }
-      };
-    </script>
-    <script src="/js/base.js"></script>
-    <script src="/js/schemas.js"></script>
-  </body>
+      },
+      change: function(e) {
+        var match = location.pathname.match(/\/schemas\/(\w+)\/(\w+)/);
+        var selected = document.querySelector('[selected-schema-object]');
+        if (selected) selected.removeAttribute('selected-schema-object');
+        if (match) {      
+          document.getElementById(match[1] + '-' + match[2]).setAttribute('selected-schema-object', '');
+          document.body.setAttribute('viewing-schema-object', '');
+        }
+        else {
+          document.body.removeAttribute('viewing-schema-object');
+        }
+      }
+    };
+  </script>
+  {{ super() }}
+  <script src="/js/schemas.js"></script>
 
-</html>
+{% endblock %}
