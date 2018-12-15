@@ -271,45 +271,42 @@
   <section id="schemas" class="m-50px-tb"> 
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-12 col-md-9 col-lg-7">
-          <div id="schema_viewer" class="section-title">
-
-            <dl id="schema_list">
-              
-                <dt>Identity Hub</dt>
-                <dd>Objects and formatted data used at the encrypted personal datastore layer.</dd>
-                <dd>
-                  
-                    
-                      <a class="block-link" data-description="userserviceendpoint" href="/schemas/hub/UserServiceEndpoint">UserServiceEndpoint</a>
-                    
-                      <a class="block-link" data-description="hostserviceendpoint" href="/schemas/hub/HostServiceEndpoint">HostServiceEndpoint</a>
-                    
-                  
-                </dd>
-              
-                <dt>Claims</dt>
-                <dd>Claim manifests, claim negotiation, and other claim-related descriptors.</dd>
-                <dd>
-                  
-                    
-                      <a class="block-link" data-description="claimmanifest" href="/schemas/claims/ClaimManifest">ClaimManifest</a>
-                    
-                  
-                </dd>
-              
-            </dl>
+        <div id="schema_viewer">
+          <dl id="schema_list">
             
-            <div id="schema_objects">
-              
+              <dt>Identity Hub</dt>
+              <dd>Objects and formatted data used at the encrypted personal datastore layer.</dd>
+              <dd>
                 
-                  <dl class="schema-object" id="hub-UserServiceEndpoint">
-                    <dt>UserServiceEndpoint</dt>
-                    <dd>DID Document service endpoint descriptor object that specifies the keys and locations for the Hub instances of the user.</dd>
-
-                    
-                      <dd>
-                        <pre><code class="language-json">{
+                  
+                    <a class="block-link" data-description="userserviceendpoint" href="/schemas/hub/UserServiceEndpoint">UserServiceEndpoint</a>
+                  
+                    <a class="block-link" data-description="hostserviceendpoint" href="/schemas/hub/HostServiceEndpoint">HostServiceEndpoint</a>
+                  
+                
+              </dd>
+            
+              <dt>Claims</dt>
+              <dd>Claim manifests, claim negotiation, and other claim-related descriptors.</dd>
+              <dd>
+                
+                  
+                    <a class="block-link" data-description="claimmanifest" href="/schemas/claims/ClaimManifest">ClaimManifest</a>
+                  
+                
+              </dd>
+            
+          </dl>
+          
+          <div id="schema_objects">
+            
+              
+                <dl class="schema-object" id="hub-UserServiceEndpoint">
+                  <dt>UserServiceEndpoint</dt>
+                  <dd>DID Document service endpoint descriptor object that specifies the keys and locations for the Hub instances of the user.</dd>
+                  
+                    <dd>
+                      <pre><code class="language-json">{
   "@context": "https://identity.foundation/schemas",
   "@type": "UserServiceEndpoint",
   "instances": [
@@ -317,17 +314,16 @@
     "did:zaz:789"
   ]
 }</code></pre>
-                      </dd>
-                    
-                  </dl>
-                
-                  <dl class="schema-object" id="hub-HostServiceEndpoint">
-                    <dt>HostServiceEndpoint</dt>
-                    <dd>DID Document service endpoint descriptor object that a Hub host uses with their Host DID to specify the location of their instances, and the keys required to address them.</dd>
-
-                    
-                      <dd>
-                        <pre><code class="language-json">{
+                    </dd>
+                  
+                </dl>
+              
+                <dl class="schema-object" id="hub-HostServiceEndpoint">
+                  <dt>HostServiceEndpoint</dt>
+                  <dd>DID Document service endpoint descriptor object that a Hub host uses with their Host DID to specify the location of their instances, and the keys required to address them.</dd>
+                  
+                    <dd>
+                      <pre><code class="language-json">{
   "@context": "https://identity.foundation/schemas",
   "@type": "HostServiceEndpoint",
   "locations": [
@@ -335,23 +331,137 @@
     "https://bar.com/blah/.identity"
   ]
 }</code></pre>
-                      </dd>
-                    
-                  </dl>
-                
+                    </dd>
+                  
+                </dl>
+              
+            
+              
+                <dl class="schema-object" id="claims-ClaimManifest">
+                  <dt>ClaimManifest</dt>
+                  <dd>A declaration of the data, prerequisite claims, and other details required for the issuer to process a claim issuance request.</dd>
+                  
+                    <dd>
+                      <pre><code class="language-json">{
+  "@context": "https://identity.foundation/schemas/claims",
+  "@type": "ClaimManifest",
+  "provider": "did:foo:123",
+  "name": "AcmeLoanAuthorization",
+  "requiredData": {
+    "routing_number": {
+      "type": "number",
+      "maxlength": 9
+    },
+    "account_number": {
+      "type": "number",
+      "maxlength": 17
+    }
+  },
+  "interfaceStyles": {
+    "logo": {
+      "url": "https://acme.com/logo.png"
+    },
+    "background": {
+      "color": [
+        247,
+        247,
+        247
+      ]
+    },
+    "formLabel": {
+      "color": [
+        180,
+        55,
+        20
+      ]
+    },
+    "formInputBorder": {
+      "color": [
+        200,
+        180,
+        10
+      ]
+    }
+  },
+  "prerequisiteClaims": {
+    "@type": "ClaimValidationSet",
+    "groupRequirements": [
+      {
+        "rule": "pick",
+        "count": 1,
+        "from": [
+          "A"
+        ]
+      },
+      {
+        "rule": "all",
+        "from": [
+          "B"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "@context": "https://identity.foundation/schemas/claims",
+        "@type": "ClaimDescription",
+        "claim": "DrivingLicense",
+        "subset": [
+          "prop1",
+          "prop2.foo.bar"
+        ],
+        "issuers": [
+          "did:foo:gov1",
+          "did:bar:gov2"
+        ],
+        "group": [
+          "A"
+        ]
+      },
+      {
+        "@context": "https://identity.foundation/schemas/claims",
+        "@type": "ClaimDescription",
+        "claim": "Passport",
+        "issuers": [
+          "did:foo:gov1",
+          "did:bar:gov2"
+        ],
+        "group": [
+          "A"
+        ]
+      },
+      {
+        "@context": "https://identity.foundation/schemas/claims",
+        "@type": "ClaimDescription",
+        "claim": "WorkHistory",
+        "issuers": [
+          "did:foo:auditor1",
+          "did:bar:auditor2"
+        ],
+        "group": [
+          "B"
+        ]
+      },
+      {
+        "@context": "https://identity.foundation/schemas/claims",
+        "@type": "ClaimDescription",
+        "claim": "CreditHistory",
+        "issuers": [
+          "did:foo:bank1",
+          "did:bar:bank2"
+        ],
+        "group": [
+          "B"
+        ]
+      }
+    ]
+  }
+}</code></pre>
+                    </dd>
+                  
+                </dl>
               
                 
-                  <dl class="schema-object" id="claims-ClaimManifest">
-                    <dt>ClaimManifest</dt>
-                    <dd></dd>
-
-                    
-                  </dl>
-                
-                  
-            </div>    
-
-          </div>
+          </div>    
         </div> 
       </div>
       <!-- row -->
@@ -405,7 +515,7 @@
     
   <script src="/js/prism.js"></script>
   <script>
-    var schemas = JSON.parse('{"hub":{"title":"Identity Hub","desc":"Objects and formatted data used at the encrypted personal datastore layer.","types":{"UserServiceEndpoint":{"desc":"DID Document service endpoint descriptor object that specifies the keys and locations for the Hub instances of the user.","examples":[{"lang":"json","content":{"@context":"https://identity.foundation/schemas","@type":"UserServiceEndpoint","instances":["did:bar:456","did:zaz:789"]}}]},"HostServiceEndpoint":{"desc":"DID Document service endpoint descriptor object that a Hub host uses with their Host DID to specify the location of their instances, and the keys required to address them.","examples":[{"lang":"json","content":{"@context":"https://identity.foundation/schemas","@type":"HostServiceEndpoint","locations":["https://foo.com/.identity","https://bar.com/blah/.identity"]}}]}}},"claims":{"title":"Claims","desc":"Claim manifests, claim negotiation, and other claim-related descriptors.","types":{"ClaimManifest":{}}}}');
+    var schemas = JSON.parse('{"hub":{"title":"Identity Hub","desc":"Objects and formatted data used at the encrypted personal datastore layer.","types":{"UserServiceEndpoint":{"desc":"DID Document service endpoint descriptor object that specifies the keys and locations for the Hub instances of the user.","examples":[{"lang":"json","content":{"@context":"https://identity.foundation/schemas","@type":"UserServiceEndpoint","instances":["did:bar:456","did:zaz:789"]}}]},"HostServiceEndpoint":{"desc":"DID Document service endpoint descriptor object that a Hub host uses with their Host DID to specify the location of their instances, and the keys required to address them.","examples":[{"lang":"json","content":{"@context":"https://identity.foundation/schemas","@type":"HostServiceEndpoint","locations":["https://foo.com/.identity","https://bar.com/blah/.identity"]}}]}}},"claims":{"title":"Claims","desc":"Claim manifests, claim negotiation, and other claim-related descriptors.","types":{"ClaimManifest":{"desc":"A declaration of the data, prerequisite claims, and other details required for the issuer to process a claim issuance request.","examples":[{"lang":"json","content":{"@context":"https://identity.foundation/schemas/claims","@type":"ClaimManifest","provider":"did:foo:123","name":"AcmeLoanAuthorization","requiredData":{"routing_number":{"type":"number","maxlength":9},"account_number":{"type":"number","maxlength":17}},"interfaceStyles":{"logo":{"url":"https://acme.com/logo.png"},"background":{"color":[247,247,247]},"formLabel":{"color":[180,55,20]},"formInputBorder":{"color":[200,180,10]}},"prerequisiteClaims":{"@type":"ClaimValidationSet","groupRequirements":[{"rule":"pick","count":1,"from":["A"]},{"rule":"all","from":["B"]}],"claims":[{"@context":"https://identity.foundation/schemas/claims","@type":"ClaimDescription","claim":"DrivingLicense","subset":["prop1","prop2.foo.bar"],"issuers":["did:foo:gov1","did:bar:gov2"],"group":["A"]},{"@context":"https://identity.foundation/schemas/claims","@type":"ClaimDescription","claim":"Passport","issuers":["did:foo:gov1","did:bar:gov2"],"group":["A"]},{"@context":"https://identity.foundation/schemas/claims","@type":"ClaimDescription","claim":"WorkHistory","issuers":["did:foo:auditor1","did:bar:auditor2"],"group":["B"]},{"@context":"https://identity.foundation/schemas/claims","@type":"ClaimDescription","claim":"CreditHistory","issuers":["did:foo:bank1","did:bar:bank2"],"group":["B"]}]}}}]}}}}');
     router = {
       filter: /\/schemas/,
       parse: function(segments){

@@ -33,16 +33,17 @@
   flex: 1;
 }
 
-#schemas dt + dd {
+#schema_viewer {
+  position: relative;
+  max-width: 700px;
+}
+
+#schema_viewer dt + dd {
   font-size: 0.8em;
 }
 
 body[searching] #filter_clear {
   opacity: 1;
-}
-
-#schema_viewer {
-  position: relative;
 }
 
 #schema_list {
