@@ -32,12 +32,12 @@ The site was intended to be as easy as possible for folks to extend and contribu
 ```
 #### Modifying Templates/Parials
 
-The site's base file is composed of a handful of partial templates that are shared across all pages. Each pertains to a given part of the base template (i.e. head, nav, footer, etc.), and editing them will change their content across all pages that include them. The partial templates can be found the directory `/templates/partials`.
+The site's base file is composed of a handful of page skeletons and partial templates that are shared across all pages. Each pertains to a given part of the base template (i.e. head, nav, footer, etc.), and editing them will change their content across all pages that include them. The partial templates can be found the directory `/templates`.
 
 #### Building and running the site
 
-1. First things first: make sure you run `npm install` before all else
-2. Run the command `gulp build`. This will parse all the templates and write/refresh all the static output pages. You must do this to see the pages you add or changes you make to existing content.
-3. Run the command `serve --single`. This will start a server that allows you to view the site via a `localhost` port.
+1. Run `npm install`, to setup dependencies.
+2. Run `gulp watch`, which will compile changes every time you save a file and output the completed static pages.
+3. Run `serve`, assuming you've install the npm `serve` package globally (if not, do that). This will start a server that allows you to view the site via a `localhost` port.
 
 
