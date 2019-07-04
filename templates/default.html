@@ -4,12 +4,18 @@
   {% include "head.html" %}
 
   <body>
-    {% include "svg.html" %}
+    <svg style="display: none">
+      {% include "svg.html" %}
+      {% block svg %}{% endblock %}
+    </svg>
     {% include "nav.html" %}
     <main>
       {% block content %}{% endblock %}
     </main>
     {% include "footer.html" %}
+    {% for file in js %}
+      <script src="/js/{{file}}.js"></script>
+    {% endfor %}
     {% block scripts %}
       <script src="/js/base.js"></script>
     {% endblock %}

@@ -35,6 +35,7 @@ Table of contents
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
 
 
+/* COLORS */
 
 /*---------------------------------
 * 01. Loading
@@ -189,6 +190,32 @@ main {
   min-height: 100vh;
 }
 
+ul[styled] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+[datestamp]:before {
+  display: block;
+  content: attr(start-month) " " attr(start-day);
+}
+
+[datestamp][end-day]:before {
+  content: attr(start-month) " " attr(start-day) "-" attr(end-day);
+}
+
+[datestamp][end-month]:before {
+  content: attr(start-month) " " attr(start-day) " - " attr(end-month) " " attr(end-day);
+}
+
+input:not([type])::placeholder,
+input[type="text"]::placeholder,
+input[type="search"]::placeholder {
+  font-style: italic;
+  font-size: 85%;
+}
+
 .section {
   padding: 90px 0;
 }
@@ -233,8 +260,7 @@ main {
 }
 .social-icons li a {
   display: block;
-  width: 30px;
-  height: 30px;
+  padding: 0.5em;
   text-align: center;
   color: #333;
   border-radius: 50%;
@@ -249,7 +275,6 @@ main {
 }
 
 .social-icons li svg {
-  height: 1em;
   vertical-align: middle;
 }
 
