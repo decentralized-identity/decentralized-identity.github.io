@@ -17,8 +17,11 @@ var structure = {
   'index': [
     'index.html'
   ],
+  'events': [
+    'index.html'
+  ],
   'schemas': [
-    'schemas.html'
+    'index.html'
   ],
   'working-groups': [
     'identifiers-names-discovery.html',
