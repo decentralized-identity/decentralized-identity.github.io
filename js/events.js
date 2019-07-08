@@ -60,7 +60,7 @@ getEvents().then(events => {
           <dl class="event-list-center">
             <dt><a href="${event.link}">${event.eventname}</a></dt>
             <dd class="event-location">${event.location}</dd>
-            <dd>${event.description}</dd>
+            <dd>${event.description.replace(/(.+)/mg, '<p>$1</p>')}</dd>
           </dl>
         </li>`;
       }
