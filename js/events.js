@@ -1,7 +1,6 @@
 
 
 function parseEvents(entries){
-  console.log(entries);
   return entries.map(entry => {
     let event = {};
     for (let z in entry) {
@@ -13,9 +12,21 @@ function parseEvents(entries){
 }
 
 async function getEvents(){
-  return fetchJsonp(`https://spreadsheets.google.com/feeds/list/1NYRl2RXMTdZ3iHjFQQhk6hhwUvF0pe_5_QIAE7OwNfA/1/public/values?alt=json`)
-    .then(response => response.json())
-    .then(json => parseEvents(json.feed.entry))
+  var cache = JSON.parse(localStorage.eventCache || '{}');
+  var time = cache.time ? new Date(cache.time) : new Date();
+  if (location.hostname == 'localhost' || time.setHours(time.getHours() + 24) > new Date()) {
+    return fetchJsonp(`https://spreadsheets.google.com/feeds/list/1NYRl2RXMTdZ3iHjFQQhk6hhwUvF0pe_5_QIAE7OwNfA/1/public/values?alt=json`)
+      .then(response => response.json())
+      .then(json => {
+        let events = parseEvents(json.feed.entry);
+        localStorage.eventCache = JSON.stringify({
+          events: events,
+          time: new Date()
+        });
+        return events;
+      });
+  }
+  return cache.events;
 }
 
 getEvents().then(events => {
@@ -60,7 +71,7 @@ getEvents().then(events => {
 
 (function(){
 
-  sheet = document.head.appendChild(document.createElement('style')).sheet;
+  var sheet = document.head.appendChild(document.createElement('style')).sheet;
 
   function deleteRule(){
     if (sheet.cssRules.length) sheet.deleteRule(0);
@@ -68,13 +79,14 @@ getEvents().then(events => {
 
   function updateRule(text){
     deleteRule();
-    sheet.insertRule(`#event_list li:not([data-filter*="${text}"]) { display: none; }`, 0);
+    text = text.trim().toLowerCase();
+    sheet.insertRule(`#event_list li${text.split(/\s+/).map(word => '[data-filter*="'+ word +'"]').join('') } { display: flex !important; }`, 0);
   }
 
   function inputChange(e){
     if (search.value) {
       document.body.setAttribute('searching', '');
-      updateRule(search.value.toLowerCase());
+      updateRule(search.value);
     }
     else {
       document.body.removeAttribute('searching');

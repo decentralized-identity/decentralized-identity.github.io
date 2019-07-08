@@ -49,6 +49,11 @@
 
 #event_list li {
   display: flex;
+  margin: 0 0 3em;
+}
+
+body[searching] #event_list li {
+  display: none;
 }
 
 .event-list-left {
