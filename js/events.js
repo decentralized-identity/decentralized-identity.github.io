@@ -32,13 +32,12 @@ async function getEvents(){
 getEvents().then(events => {
   var html = '';
   var today = new Date();
-  events.sort((a,b) => {
-      return new Date(a.startdate) - new Date(b.startdate);
-    })
+  events
+    .sort((a,b) => new Date(a.startdate) - new Date(b.startdate))
     .forEach(event => {
-      if (today <= new Date(event.enddate)) {
-        let startDate = new Date(event.startdate);
-        let endDate = new Date(event.enddate);
+      let startDate = new Date(event.startdate);
+      let endDate = new Date(event.enddate);
+      if (today <= endDate && (startDate < new Date(today).setDate(today.getDate() + 358))) {
         let startMonth = startDate.toLocaleString('en-us', { month: 'short' });
         let startMonthLong = startDate.toLocaleString('en-us', { month: 'long' });
         let endMonth = endDate.toLocaleString('en-us', { month: 'short' });

@@ -79,8 +79,6 @@ body[searching] #event_list li {
 }
 
 .event-list-center dt {
-  line-height: 1.2em;
-  margin-bottom: 0.25em;
   font-size: 135%;
 }
 
