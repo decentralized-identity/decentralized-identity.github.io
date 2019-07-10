@@ -14,7 +14,7 @@ function parseEvents(entries){
 async function getEvents(){
   var cache = JSON.parse(localStorage.eventCache || '{}');
   var time = cache.time ? new Date(cache.time) : new Date();
-  if (location.hostname == 'localhost' || !cache.time || (new Date() > time.setHours(time.getHours() + 24))) {
+  if (location.hostname === 'localhost' || !cache.time || (new Date() > time.setHours(time.getHours() + 24))) {
     return fetchJsonp(`https://spreadsheets.google.com/feeds/list/1NYRl2RXMTdZ3iHjFQQhk6hhwUvF0pe_5_QIAE7OwNfA/1/public/values?alt=json`)
       .then(response => response.json())
       .then(json => {
