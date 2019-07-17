@@ -7,17 +7,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>DIF - Schemas</title>
+  <title>DIF - Authentication Working Group</title>
 
   <meta name="google-site-verification" content="8yJCkbG9ayv7Vbjgjk525YTGbDVCvUZ_Moviopr6f1M" />
 
   <!-- Plugin CSS -->
   <link href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/plugins/owl-carousel/css/owl.carousel.min.css" rel="stylesheet">
-  
-    <link href="/css/schemas.css" rel="stylesheet" />
-  
-    <link href="/css/prism.css" rel="stylesheet" />
   
 
   <!-- / -->
@@ -347,226 +343,111 @@
   </header>
     <main>
       
-
   <section class="page-title theme-bg">
     <div class="container">
-      <svg><use xlink:href="#blueprint"></use></svg>
-      <h1>Schemas</h1>
+      <svg><use xlink:href="#login_screen"></use></svg>
+      <h1>Authentication</h1>
+      <h3>Working Group</h3>
     </div>
   </section>
 
-  <section id="schema_filters" class="gray-bg">
-    <div class="row justify-content-center p-15px-rl p-30px-tb">
-      <div class="form-group">
-        <div id="filter_search">
-          <input id="filter_search_input" class="form-control" type="text" placeholder="Filter by object type">
-          <a href="/schemas" id="filter_clear"><svg><use xlink:href="#close_x"></use></svg></a>
+  <section class="section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-9">
+          <div class="section-title text-center">
+            <h2 class="font-alt">Scope of Work</h2>
+            <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+            <p>Join this group to contribute to standards and technology that designs and implements authentication protocols that rely upon open standards and cryptographic protocols, including DIDs and DID Documents. This group develops specifications, protocols, and formats for data structures used for authentication.</p>
+            </div>
         </div>
       </div>
     </div>
   </section>
-  
-  <section id="schemas" class="m-50px-tb"> 
+
+  <section class="counter-section gray-bg">
     <div class="container">
-      <div class="row justify-content-center">
-        <div id="schema_viewer">
-          <dl id="schema_list">
-            
-              <dt>Identity Hub</dt>
-              <dd>Objects and formatted data used at the encrypted personal datastore layer.</dd>
-              <dd>
-                
-                  
-                    <a class="block-link" data-description="userserviceendpoint" href="/schemas/hub/UserServiceEndpoint">UserServiceEndpoint</a>
-                  
-                    <a class="block-link" data-description="hostserviceendpoint" href="/schemas/hub/HostServiceEndpoint">HostServiceEndpoint</a>
-                  
-                
-              </dd>
-            
-              <dt>Claims</dt>
-              <dd>Claim manifests, claim negotiation, and other claim-related descriptors.</dd>
-              <dd>
-                
-                  
-                    <a class="block-link" data-description="claimmanifest" href="/schemas/claims/ClaimManifest">ClaimManifest</a>
-                  
-                
-              </dd>
-            
-          </dl>
-          
-          <div id="schema_objects">
-            
+      <div class="counter-row">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="section-title text-center">
+              <h2 class="font-alt">Specs &amp; Projects</h2>
+              <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+              <p>The active work items that are underway in the DIF Authentication Working Group</p>
+            </div>
+          </div> 
+          <div class="col-10 col-md-8 col-lg-6 m-30px-t">
+            <dl>
               
-                <dl class="schema-object" id="hub-UserServiceEndpoint">
-                  <dt>UserServiceEndpoint</dt>
-                  <dd>DID Document service endpoint descriptor object that specifies the keys and locations for the Hub instances of the user.</dd>
+                <dt>DID Authentication Profile for SIOP</dt>
+                <dd>
+                  <p>This specification defines the SIOP DID AuthN flavor to use OpenID Connect (OIDC) together with the strong decentralization, privacy and security guarantees of DID for everyone who wants to have a generic way to integrate SSI wallets into their web applications.</p>
                   
-                    <dd>
-                      <pre><code class="language-json">{
-  "@context": "https://identity.foundation/schemas",
-  "@type": "UserServiceEndpoint",
-  "instances": [
-    "did:bar:456",
-    "did:zaz:789"
-  ]
-}</code></pre>
-                    </dd>
+                    
+                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/papers/blob/master/did-authn/siop/did-authn-siop-profile.md">Explainer</a>
+                    
+                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/credential-manifest">Repo</a>
+                    
                   
-                </dl>
+                </dd>
               
-                <dl class="schema-object" id="hub-HostServiceEndpoint">
-                  <dt>HostServiceEndpoint</dt>
-                  <dd>DID Document service endpoint descriptor object that a Hub host uses with their Host DID to specify the location of their instances, and the keys required to address them.</dd>
+                <dt>DID Comms</dt>
+                <dd>
+                  <p>A shared effort with the HL Aries project to create a standardized means of authenticated general message passing between DID controllers. More information will be added soon.</p>
                   
-                    <dd>
-                      <pre><code class="language-json">{
-  "@context": "https://identity.foundation/schemas",
-  "@type": "HostServiceEndpoint",
-  "locations": [
-    "https://foo.com/.identity",
-    "https://bar.com/blah/.identity"
-  ]
-}</code></pre>
-                    </dd>
+                    
+                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/DIDComm-js">Repo</a>
+                    
                   
-                </dl>
+                </dd>
               
-            
-              
-                <dl class="schema-object" id="claims-ClaimManifest">
-                  <dt>ClaimManifest</dt>
-                  <dd>A declaration of the data, prerequisite claims, and other details required for the issuer to process a claim issuance request.</dd>
-                  
-                    <dd>
-                      <pre><code class="language-json">{
-  "@context": "https://identity.foundation/schemas/claims",
-  "@type": "ClaimManifest",
-  "provider": "did:foo:123",
-  "name": "AcmeLoanAuthorization",
-  "requiredData": {
-    "routing_number": {
-      "type": "number",
-      "maxlength": 9
-    },
-    "account_number": {
-      "type": "number",
-      "maxlength": 17
-    }
-  },
-  "interfaceStyles": {
-    "logo": {
-      "url": "https://acme.com/logo.png"
-    },
-    "background": {
-      "color": [
-        247,
-        247,
-        247
-      ]
-    },
-    "formLabel": {
-      "color": [
-        180,
-        55,
-        20
-      ]
-    },
-    "formInputBorder": {
-      "color": [
-        200,
-        180,
-        10
-      ]
-    }
-  },
-  "prerequisiteClaims": {
-    "@type": "ClaimValidationSet",
-    "groupRequirements": [
-      {
-        "rule": "pick",
-        "count": 1,
-        "from": [
-          "A"
-        ]
-      },
-      {
-        "rule": "all",
-        "from": [
-          "B"
-        ]
-      }
-    ],
-    "claims": [
-      {
-        "@context": "https://identity.foundation/schemas/claims",
-        "@type": "ClaimDescription",
-        "claim": "DrivingLicense",
-        "subset": [
-          "prop1",
-          "prop2.foo.bar"
-        ],
-        "issuers": [
-          "did:foo:gov1",
-          "did:bar:gov2"
-        ],
-        "group": [
-          "A"
-        ]
-      },
-      {
-        "@context": "https://identity.foundation/schemas/claims",
-        "@type": "ClaimDescription",
-        "claim": "Passport",
-        "issuers": [
-          "did:foo:gov1",
-          "did:bar:gov2"
-        ],
-        "group": [
-          "A"
-        ]
-      },
-      {
-        "@context": "https://identity.foundation/schemas/claims",
-        "@type": "ClaimDescription",
-        "claim": "WorkHistory",
-        "issuers": [
-          "did:foo:auditor1",
-          "did:bar:auditor2"
-        ],
-        "group": [
-          "B"
-        ]
-      },
-      {
-        "@context": "https://identity.foundation/schemas/claims",
-        "@type": "ClaimDescription",
-        "claim": "CreditHistory",
-        "issuers": [
-          "did:foo:bank1",
-          "did:bar:bank2"
-        ],
-        "group": [
-          "B"
-        ]
-      }
-    ]
-  }
-}</code></pre>
-                    </dd>
-                  
-                </dl>
-              
-                
-          </div>    
-        </div> 
+            </dl>
+          </div>
+        </div>
+        <!-- row -->
       </div>
-      <!-- row -->
     </div>
     <!-- container -->
   </section>
 
+  <section class="section">
+    <div class="container">
+      <div class="row justify-content-center m-45px-b md-m-20px-b sm-m-15px-b">
+        <div class="col-12 col-md-10 col-lg-7">
+          <div class="section-title text-center">
+            <h2 class="font-alt">Chairs</h2>
+            <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+            <p>The following DIF members lead the work in this group, contact them for more info on the projects, specs, and development happening within.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        
+          <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
+            <div class="our-team">
+              <div class="img">
+                <img src="/images/photos/oliver-terbu.jpg" />
+              </div>
+              <div class="info">
+                <h6>Oliver Terbu</h6>
+                <label>Identity Architect @ ConsenSys</label>
+              </div>
+              <ul class="social-icons">
+                
+                  <li><a class="linkedin" href="https://www.linkedin.com/in/oliver-terbu"><svg><use xlink:href="#linkedin"></use></svg></a></li>
+                
+                
+                  <li><a class="twitter" href="https://twitter.com/OliverTerbu"><svg><use xlink:href="#twitter"></use></svg></a></li>
+                
+              </ul>
+            </div>
+          </div>
+        
+      </div>
+
+    </div>
+  </section>
 
     </main>
     <footer class="footer">
@@ -613,40 +494,8 @@
 </footer>
     
     
-  <script src="/js/prism.js"></script>
-  <script>
-    var schemas = JSON.parse('{"hub":{"title":"Identity Hub","desc":"Objects and formatted data used at the encrypted personal datastore layer.","types":{"UserServiceEndpoint":{"desc":"DID Document service endpoint descriptor object that specifies the keys and locations for the Hub instances of the user.","examples":[{"lang":"json","content":{"@context":"https://identity.foundation/schemas","@type":"UserServiceEndpoint","instances":["did:bar:456","did:zaz:789"]}}]},"HostServiceEndpoint":{"desc":"DID Document service endpoint descriptor object that a Hub host uses with their Host DID to specify the location of their instances, and the keys required to address them.","examples":[{"lang":"json","content":{"@context":"https://identity.foundation/schemas","@type":"HostServiceEndpoint","locations":["https://foo.com/.identity","https://bar.com/blah/.identity"]}}]}}},"claims":{"title":"Claims","desc":"Claim manifests, claim negotiation, and other claim-related descriptors.","types":{"ClaimManifest":{"desc":"A declaration of the data, prerequisite claims, and other details required for the issuer to process a claim issuance request.","examples":[{"lang":"json","content":{"@context":"https://identity.foundation/schemas/claims","@type":"ClaimManifest","provider":"did:foo:123","name":"AcmeLoanAuthorization","requiredData":{"routing_number":{"type":"number","maxlength":9},"account_number":{"type":"number","maxlength":17}},"interfaceStyles":{"logo":{"url":"https://acme.com/logo.png"},"background":{"color":[247,247,247]},"formLabel":{"color":[180,55,20]},"formInputBorder":{"color":[200,180,10]}},"prerequisiteClaims":{"@type":"ClaimValidationSet","groupRequirements":[{"rule":"pick","count":1,"from":["A"]},{"rule":"all","from":["B"]}],"claims":[{"@context":"https://identity.foundation/schemas/claims","@type":"ClaimDescription","claim":"DrivingLicense","subset":["prop1","prop2.foo.bar"],"issuers":["did:foo:gov1","did:bar:gov2"],"group":["A"]},{"@context":"https://identity.foundation/schemas/claims","@type":"ClaimDescription","claim":"Passport","issuers":["did:foo:gov1","did:bar:gov2"],"group":["A"]},{"@context":"https://identity.foundation/schemas/claims","@type":"ClaimDescription","claim":"WorkHistory","issuers":["did:foo:auditor1","did:bar:auditor2"],"group":["B"]},{"@context":"https://identity.foundation/schemas/claims","@type":"ClaimDescription","claim":"CreditHistory","issuers":["did:foo:bank1","did:bar:bank2"],"group":["B"]}]}}}]}}}}');
-    router = {
-      filter: /\/schemas/,
-      parse: function(segments){
-        var schema = schemas[segments[1]];
-        console.log(schema);
-        var object = schema ? schema.types[segments[2]] : null;
-        return {
-          title: 'Schemas',
-          path: '/schemas/' + (object ? segments[1] + '/' + segments[2] : '')
-        }
-      },
-      change: function(e) {
-        var match = location.pathname.match(/\/schemas\/(\w+)\/(\w+)/);
-        var selected = document.querySelector('[selected-schema-object]');
-        if (selected) selected.removeAttribute('selected-schema-object');
-        if (match) {      
-          document.getElementById(match[1] + '-' + match[2]).setAttribute('selected-schema-object', '');
-          document.body.setAttribute('viewing-schema-object', '');
-        }
-        else {
-          document.body.removeAttribute('viewing-schema-object');
-        }
-      }
-    };
-  </script>
-  
       <script src="/js/base.js"></script>
     
-  <script src="/js/schemas.js"></script>
-
-
   </body>
 
 </html>
