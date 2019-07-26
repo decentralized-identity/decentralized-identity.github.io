@@ -296,36 +296,36 @@
         <div class="row justify-content-center">
         		<div class="contact-form col-10 col-lg-8">
                 <form id="inquiry_form" class="contactform" method="post" action="php/process-form.php">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <input id="name" name="entry.76121140" type="text" placeholder="Organization" class="validate form-control" required>
-                          <span class="input-focus-effect"></span>
-                        </div>
-                        </div>
-                        <div class="col-md-6">
-                        <div class="form-group">
-                          <input id="email" type="email" placeholder="Email" name="entry.286710955" class="validate form-control" required>
-                          <span class="input-focus-effect"></span>
-                        </div>
-                        </div>
-                        <div class="form-group">
-                          <div id="membership_press_radios" class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary active">
-                              <input id="membership_radio" type="radio" name="entry.1501664113" value="membership" class="form-control" checked="checked" required /> Membership
-                            </label>
-                            <label class="btn btn-secondary">
-                              <input id="press_radio" type="radio" name="entry.1501664113" value="press" class="form-control" required /> Press
-                            </label>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="send">
-                             <button class="m-btn m-btn-t-dark" type="submit" name="send"> Send</button>
-                          </div>
-                          <span class="output_message"></span>
-                        </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input id="name" name="entry.76121140" type="text" placeholder="Organization" class="validate form-control" required>
+                        <span class="input-focus-effect"></span>
                       </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input id="email" type="email" placeholder="Email" name="entry.286710955" class="validate form-control" required>
+                        <span class="input-focus-effect"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="inquiry_type_radios">Interested in:</label>
+                        <select class="form-control" id="inquiry_type_radios" name="entry.1501664113">
+                          <option value="membership">Membership</option>
+                          <option value="subscribe">News &amp; Updates</option>
+                          <option value="press">Press</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="send">
+                          <button class="m-btn m-btn-t-dark" type="submit" name="send"> Send</button>
+                      </div>
+                      <span class="output_message"></span>
+                    </div>
+                  </div>
                 </form>
         	</div>
         </div>
