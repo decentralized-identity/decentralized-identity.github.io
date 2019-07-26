@@ -211,6 +211,7 @@ ul[styled] {
 
 input:not([type])::placeholder,
 input[type="text"]::placeholder,
+input[type="email"]::placeholder,
 input[type="search"]::placeholder {
   font-style: italic;
   font-size: 85%;
