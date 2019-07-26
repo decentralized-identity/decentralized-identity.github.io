@@ -2696,7 +2696,6 @@ blockquote.blockquote-left .parson { font-weight: 600; }
     margin-bottom: 20px;
 }
 .form-group .form-control {
-    border:none;
     outline: none;
     box-shadow: 0 1px 3px 0px rgba(0,0,0,0.2);
     height: 40px;
@@ -2706,6 +2705,7 @@ blockquote.blockquote-left .parson { font-weight: 600; }
     width: 100%;
     font-size: 14px;
     color: #000;
+    border: 1px solid #e0e0e0;
 }
 
 .form-group textarea.form-control {
@@ -2715,11 +2715,7 @@ blockquote.blockquote-left .parson { font-weight: 600; }
 .form-group select {
     border:none;
     outline: none;
-    -webkit-box-shadow: none !important;
-            box-shadow: none !important;
-    padding-left: 0;
-    padding-right: 0;
-    border-bottom: 1px solid #ddd;
+    padding: 0em 0em 0em 0.6em !important;
     border-radius: 0;
     width: 100%;
 }
