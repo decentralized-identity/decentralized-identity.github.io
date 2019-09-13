@@ -1813,6 +1813,9 @@ input[type="search"]::placeholder {
 }
 .our-team .img img {
   height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 .our-team .info {
   padding-bottom: 15px;
