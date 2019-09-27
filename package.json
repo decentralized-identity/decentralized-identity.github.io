@@ -15,7 +15,8 @@
     "gulp-nunjucks-render": "^2.2.2",
     "gulp-uglify": "^3.0.1",
     "nunjucks": "^3.1.4",
-    "serve": "^10.1.1"
+    "serve": "^10.1.1",
+    "axios": "0.19.0"
   },
   "dependencies": {
     "natives": "^1.1.5"

@@ -1,11 +1,7 @@
-{% set name = "InterOp" %}
-{% set logo = "login_screen" %}
-{% set title = "Inter Operability Project - InterOp" %}
-{% set scope = "The InterOp Project is driving the implementation of properly scoped use-cases (demos or proofs-of-concepts). These implementations are going to raise important theoretical and practical questions around interoperability, implementation or specification. These questions should be addressed by DIF Working Groups or other organizations like Hyperledger or W3C. 
-
-The InterOp Project will not develop specifications, cypher suites or data format libraries but relies on working groups within the DIF and the W3C. 
-
-If a technology is not mature enough for use by other members of the community, the InterOp Project may provide software shims or stubs for demonstration purposes." %}
+{% set name = "Interop Project" %}
+{% set logo = "interop" %}
+{% set title = "Interoperability Project" %}
+{% set scope = "The InterOp Project is driving the implementation of properly scoped use-cases (demos or proofs-of-concepts). These implementations are going to raise important theoretical and practical questions around interoperability, implementation or specification. These questions should be addressed by DIF Working Groups or other organizations like Hyperledger or W3C. The InterOp Project will not develop specifications, cypher suites or data format libraries but relies on working groups within the DIF and the W3C. If a technology is not mature enough for use by other members of the community, the InterOp Project may provide software shims or stubs for demonstration purposes." %}
 {% set projects = {
     "Phase 1": {
       desc: "In the current phase 1, there is a single work item for the InterOp Project to demonstrate credential issuance, presentation and exchange using the technology developed by community members. We are building a command line and web application demos to demonstrate interoperability.",
@@ -17,15 +13,15 @@ If a technology is not mature enough for use by other members of the community, 
         {
           text: "Explainer",
           href: "https://github.com/decentralized-identity/interop-project/blob/master/docs/explainer.md"
-        }
-		{
+        },
+		    {
           text: "Repo",
           href: "https://github.com/decentralized-identity/interop-project"
         }
       ]
     },
     "Phase 2 and later": {
-      desc: "To be developed over the coming monhts",
+      desc: "To be developed over the coming months"
     }
   }
 %}
@@ -37,8 +33,9 @@ If a technology is not mature enough for use by other members of the community, 
       photo: "/images/photos/orie-steele.jpg",
       linkedin: "OR13b",
       twitter: "OR13b"
-    },
+    }
   }
 %}
 
-{% extends "interop.html" %}
+
+{% extends "wg.html" %}

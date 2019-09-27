@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const nunjucksRender = require('gulp-nunjucks-render');
+const axios = require('axios');
 
 var assets = {
   js: [
@@ -31,6 +32,18 @@ var structure = {
   ]
 };
 
+const getRepos = async () => {
+  try {
+    const response = await axios.get('https://api.github.com/users/decentralized-identity/repos');
+    const data = response.data;
+    console.log(data);
+    return data || {};
+  } catch (error) {
+    console.log(error);
+    return {};
+  }
+};
+
 gulp.task('assets', function() {
   return gulp.src(assets.js)
     .pipe(uglify())
@@ -42,6 +55,7 @@ gulp.task('templates', function() {
   return gulp.src('templates/pages/**/*.html')
     .pipe(nunjucksRender({
       path: ['templates', 'templates/partials', 'templates/pages']
+      //data: await getRepos()
     }))
     .pipe(gulp.dest('.'))
 });
