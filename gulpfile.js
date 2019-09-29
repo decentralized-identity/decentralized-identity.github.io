@@ -32,17 +32,38 @@ var structure = {
   ]
 };
 
+var repos = null;
+const repoTopics = {
+  'wg-auth': 1,
+  'wg-cc': 1,
+  'wg-id': 1,
+  'wg-sc': 1
+}
+
 const getRepos = async () => {
+  if (repos) return repos;
   try {
-    const response = await axios.get('https://api.github.com/users/decentralized-identity/repos');
-    const data = response.data;
-    console.log(data);
-    return data || {};
+    // https://api.github.com/search/topics?q='':featured
+    const response = await axios.get('https://api.github.com/users/decentralized-identity/repos?type=public&per_page=100', {
+      headers: { Accept: 'application/vnd.github.mercy-preview+json' }
+    })
+    repos = {};
+    if (response.data) response.data.forEach(repo => {
+      if (repo.topics) repo.topics.forEach(topic => {
+        if (repoTopics[topic]) {
+          let list = repos[topic] || (repos[topic] = []);
+          list.push(repo);
+        }
+      })
+    });
+    return repos;
   } catch (error) {
     console.log(error);
-    return {};
+    return repos = {};
   }
 };
+
+var repoFetch = getRepos();
 
 gulp.task('assets', function() {
   return gulp.src(assets.js)
@@ -51,11 +72,14 @@ gulp.task('assets', function() {
     .pipe(gulp.dest('js'));
 });
 
-gulp.task('templates', function() {
+gulp.task('templates', async function() {
+  //console.log(repos || await getRepos())
   return gulp.src('templates/pages/**/*.html')
     .pipe(nunjucksRender({
-      path: ['templates', 'templates/partials', 'templates/pages']
-      //data: await getRepos()
+      path: ['templates', 'templates/partials', 'templates/pages'],
+      data: {
+        repos: repos || await getRepos()
+      }
     }))
     .pipe(gulp.dest('.'))
 });
@@ -63,3 +87,5 @@ gulp.task('templates', function() {
 gulp.task('build', ['assets', 'templates']);
 
 gulp.task('watch', () => gulp.watch(['templates/**/*', 'js/**/*', '!js/base.js'], ['build']));
+
+repoFetch.then(r => gulp.start('build'));

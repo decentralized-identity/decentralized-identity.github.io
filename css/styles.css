@@ -309,6 +309,12 @@ input[type="search"]::placeholder {
   margin: 0 0.4em 0 0;
 }
 
+.margin-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 /*---------------------------------
 * 03. Section title
 -----------------------------------*/
@@ -353,7 +359,7 @@ input[type="search"]::placeholder {
 
 .section-title .title-border span {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: super;
   height: 5px;
   border-radius: 3px;
   background: #3B566E;
@@ -369,6 +375,18 @@ input[type="search"]::placeholder {
 .section-title .title-border span.sm {
   width: 12px;
   opacity: 0.5
+}
+
+.section-title h3 + .title-border span {
+  height: 4px
+}
+
+.section-title h4 + .title-border span {
+  height: 3px
+}
+
+.section-title h5 + .title-border span {
+  height: 3px
 }
 
 @media (max-width: 767px){

@@ -26,7 +26,7 @@
   <section class="counter-section gray-bg">
     <div class="container">
       <div class="counter-row">
-        <div class="row justify-content-center">
+        <div class="column justify-content-center">
           <div class="col-12">
             <div class="section-title text-center">
               <h2 class="font-alt">Specs &amp; Projects</h2>
@@ -34,7 +34,7 @@
               <p>The active work items that are underway in the DIF {{name}} Working Group</p>
             </div>
           </div> 
-          <div class="col-10 col-md-8 col-lg-6 m-30px-t">
+          <div class="col-10 col-md-8 col-lg-6 m-30px-t margin-center">
             <dl>
               {% for key, val in projects %}
                 <dt>{{key}}</dt>
@@ -49,6 +49,20 @@
               {% endfor %}
             </dl>
           </div>
+
+          {% if repos[repoTag] %}
+          <div class="col-10 col-md-8 col-lg-6 m-30px-t margin-center">
+            <div class="section-title text-center">
+              <h5 style="text-align: center; margin: 2em 0 0;">All Repositories</h5>
+              <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+            </div>
+            {% for repo in repos[repoTag] %}
+              <a class="icon-link" href="{{repo.url}}" style="display: block;"><strong>{{repo.name}}</strong>
+                <div style="font-size: 85%; color: #777;">{{repo.description}}</div>
+              </a>
+            {% endfor %}
+          </div>
+          {% endif %}
         </div>
         <!-- row -->
       </div>
@@ -94,4 +108,5 @@
 
     </div>
   </section>
+  
 {% endblock %}
