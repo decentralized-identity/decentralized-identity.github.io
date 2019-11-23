@@ -294,7 +294,9 @@ input[type="search"]::placeholder {
   background-size: cover;
 }
 
-.icon-link[href$=".md"]:before, .icon-link[href*="hackmd.io"]:before {
+.icon-link[href$=".md"]:before,
+.icon-link[href*="hackmd.io"]:before,
+.icon-link[href*="identity.foundation/specs"]:before {
   background: url(/icons/file.svg);
   background-size: cover;
   margin: 0 0.25em 0 0;

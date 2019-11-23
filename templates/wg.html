@@ -57,7 +57,7 @@
               <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
             </div>
             {% for repo in repos[repoTag] %}
-              <a class="icon-link" href="{{repo.html_url}}" style="display: block;"><strong>{{repo.name}}</strong>
+              <a class="icon-link" href="{{repo.html_url}}" style="display: block; margin-bottom: 1em;"><strong>{{repo.name}}</strong>
                 <div style="font-size: 85%; color: #777;">{{repo.description}}</div>
               </a>
             {% endfor %}
