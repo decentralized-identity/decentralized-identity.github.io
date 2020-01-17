@@ -84,8 +84,8 @@ gulp.task('templates', async function() {
     .pipe(gulp.dest('.'))
 });
 
-gulp.task('build', ['assets', 'templates']);
+gulp.task('build', gulp.parallel('assets', 'templates'));
 
 gulp.task('watch', () => gulp.watch(['templates/**/*', 'js/**/*', '!js/base.js'], ['build']));
 
-repoFetch.then(r => gulp.start('build'));
+repoFetch.then(r => gulp.parallel('build')());

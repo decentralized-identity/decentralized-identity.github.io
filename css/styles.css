@@ -178,7 +178,8 @@ svg {
   fill: currentColor;
 }
 
-dl dt {
+dl dt,
+svg[color="dark-blue"] {
   color: var(--dark-blue);
 }
 
@@ -215,6 +216,10 @@ input[type="email"]::placeholder,
 input[type="search"]::placeholder {
   font-style: italic;
   font-size: 85%;
+}
+
+h5 {
+  color: var(--dark-blue);
 }
 
 .section {
@@ -337,7 +342,7 @@ input[type="search"]::placeholder {
 .section-title h2 {
   font-weight: 500;
   font-size: 30px;
-  color: #3B566E;
+  color: var(--dark-blue);
   letter-spacing: 1px;
   line-height: 38px;
   margin-bottom: 5px;
@@ -711,7 +716,7 @@ input[type="search"]::placeholder {
 
 @media (max-width: 767px) {
   .store-btn {
-    padding: 20px;\
+    padding: 20px;
   }
   .store-btn i {
     position: relative;
@@ -1253,6 +1258,50 @@ input[type="search"]::placeholder {
     top: auto;
     z-index: 2;
   }
+}
+
+/*-----------------------------------------
+*  Mailing List
+-----------------------------------------*/
+
+#mailing_list {
+  padding: 1.1em 0 1.6em;
+}
+
+#mailing_list h5 {
+  margin-bottom: 0.5em;
+}
+
+#mailing_list h5 svg {
+  width: 2em;
+  height: 2em;
+  vertical-align: middle;
+}
+
+#mailing_list h5 span {
+  vertical-align: middle;
+}
+
+#mailing_list form {
+  display: flex;
+  align-items: center;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+#mailing_list .form-group {
+  flex: 1;
+  width: auto;
+  margin-bottom: 0;
+}
+
+#mailing_list button {
+  padding: 0 10px;
+  height: 38px;
+  line-height: 38px;
+  vertical-align: middle;
+  margin-left: 5px;
+  font-size: 70%;
 }
 
 /*-----------------------------------------

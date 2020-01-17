@@ -1,0 +1,36 @@
+{% set name = "DID Communication" %}
+{% set logo = "login_screen" %}
+{% set title = "DID Communication Working Group" %}
+{% set scope = "Join this group to contribute to standards and technology that designs and implements authentication protocols that rely upon open standards and cryptographic protocols, including DIDs and DID Documents. This group develops specifications, protocols, and formats for data structures used for authentication." %}
+{% set repoTag = "wg-comm" %}
+{% set projects = {
+    "DIDComm JS Lib": {
+      desc: "A shared effort with the HL Aries project to create a standardized means of authenticated general message passing between DID controllers. More information will be added soon.",
+      links: [
+        {
+          text: "Repo",
+          href: "https://github.com/decentralized-identity/DIDComm-js"
+        }
+      ]
+    }
+  }
+%}
+
+{%
+  set chairs = {
+    "Sam Curren": {
+      title: "Engineering/Standards @ Sovrin",
+      photo: "/images/photos/sam-curren.jpg",
+      linkedin: "samcurren",
+      twitter: "telegramsam"
+    },
+    "Oliver Terbu": {
+      title: "Identity Architect @ ConsenSys",
+      photo: "/images/photos/oliver-terbu.jpg",
+      linkedin: "oliver-terbu",
+      twitter: "OliverTerbu"
+    }
+  }
+%}
+
+{% extends "wg.html" %}
