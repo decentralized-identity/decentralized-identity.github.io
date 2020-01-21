@@ -39,10 +39,10 @@
     try {
       e.preventDefault();
       var request = new XMLHttpRequest();
-      request.open('POST', 'https://docs.google.com/forms/d/e/1OUK9mCjQhTMJi3tIZpDYlt33z8caIpjnboVvu5eH7Eg/formResponse');
+      request.open('POST', 'https://docs.google.com/forms/d/e/1ne4T2ojHCxkqPuHq6hCUNLlOoTAPZwBqhK6GwJ5zywY/formResponse');
       request.send(new FormData(this));
-      this.innerHTML = '<div class="inquiry-submitted">Thank you for your interest! You also subscribed for the DIF Monthly newsletter. <div>';
-      ga('send', 'event', 'Inquiry', 'submit', 'Membership/press form submission');
+      this.innerHTML = '<div class="inquiry-submitted">Thank you for signing up for our newsletter!<div>';
+      ga('send', 'event', 'Inquiry', 'submit', 'Newsletter');
     }
     catch (e) {
       console.warn('Form submission error:', e);
