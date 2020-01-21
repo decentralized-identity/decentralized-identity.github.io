@@ -39,7 +39,7 @@
     try {
       e.preventDefault();
       var request = new XMLHttpRequest();
-      request.open('POST', 'https://docs.google.com/forms/d/e/1ne4T2ojHCxkqPuHq6hCUNLlOoTAPZwBqhK6GwJ5zywY/formResponse');
+      request.open('POST', 'https://docs.google.com/forms/d/1ne4T2ojHCxkqPuHq6hCUNLlOoTAPZwBqhK6GwJ5zywY/formResponse');
       request.send(new FormData(this));
       this.innerHTML = '<div class="inquiry-submitted">Thank you for signing up for our newsletter!<div>';
       ga('send', 'event', 'Inquiry', 'submit', 'Newsletter');
