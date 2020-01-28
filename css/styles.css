@@ -229,12 +229,12 @@ h5 {
 @media (max-width: 991px){
  .section {
     padding: 70px 0;
-  } 
+  }
 }
 @media (max-width: 767px){
  .section {
     padding: 60px 0;
-  } 
+  }
 }
 
 .row {
@@ -577,7 +577,7 @@ h5 {
   -webkit-transition: ease all 0.3s;
      -moz-transition: ease all 0.3s;
        -o-transition: ease all 0.3s;
-          transition: ease all 0.3s; 
+          transition: ease all 0.3s;
 }
 .m-btn-link:hover:after {
   transform: translate3d(100%, 0, 0) translate3d(1px, 0, 0);
@@ -819,14 +819,14 @@ h5 {
      -moz-transition: ease all 0.2s;
      -o-transition: ease all 0.2s;
       transition: ease all 0.2s;
-  
+
 }
 .header-nav .navbar-nav .nav-link:hover:after {
   width: 45%;
   opacity: 0.5;
 }
 .header-nav .navbar-nav .nav-link.active:after {
-  opacity: 1; 
+  opacity: 1;
   width: 75%;
 }
 
@@ -979,7 +979,7 @@ h5 {
     text-align: right;
     z-index: 1;
   }
-  
+
   .header-nav .navbar-nav > li .sub-menu {
     margin: 0;
     padding: 0;
@@ -1150,7 +1150,7 @@ h5 {
   .home-banner .app-btn-set {
     text-align: left;
   }
-  
+
   .home-banner .home-right {
     position: absolute;
     top: 2em;
@@ -1371,7 +1371,7 @@ h5 {
   background: #F9FAFF;
   box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  padding: 30px 28px; 
+  padding: 30px 28px;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -1581,7 +1581,7 @@ h5 {
   margin-bottom: 25px;
 }
 .feature-box-03 p {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   max-width: 100%;
 }
 
@@ -1666,7 +1666,7 @@ h5 {
 }
 
 .feature-box-04 .fb4-list-type {
-  list-style: none; 
+  list-style: none;
 }
 .feature-box-04 .fb4-list-type li:not(:last-child) {
   margin-bottom: 10px;
@@ -1926,7 +1926,7 @@ h5 {
     margin: 0 0 10px;
 }
 
-.faq-row .faq-title { 
+.faq-row .faq-title {
   padding: 15px 20px 15px 55px;
   margin: 0;
   font-size: 15px;
@@ -1980,7 +1980,7 @@ h5 {
 .owl-dots .owl-dot.active {
   background: #3b566e !important;
 }
-.owl-nav .owl-prev, 
+.owl-nav .owl-prev,
 .owl-nav .owl-next {
   width: 45px;
   height: 45px;
@@ -1995,7 +1995,7 @@ h5 {
   box-shadow: 0px 1px 27px -3px rgba(0, 0, 0, 0.2);
   background: #111;
 }
-.owl-nav .owl-prev:hover, 
+.owl-nav .owl-prev:hover,
 .owl-nav .owl-next:hover {
   background: #000;
 }
@@ -2026,7 +2026,7 @@ h5 {
 .portfolio-col .portfolio-info span {
   font-size: 14px;
   color: #666;
-  font-weight: 600; 
+  font-weight: 600;
 }
 
 /*Portfolio Hover 01*/
@@ -2104,13 +2104,13 @@ h5 {
   font-size: 22px;
 }
 
-@media (max-width: 767px){ 
+@media (max-width: 767px){
   .skill-left h3{
-    margin: 0 0 20px;  
+    margin: 0 0 20px;
     font-size: 22px;
     line-height: 34px;
   }
-  
+
 }
 
 
@@ -2146,8 +2146,8 @@ h5 {
 .progress-lt .progress-bar {
   width: 0%;
   -webkit-transition: width 1.2s ease;
-     -moz-transition: width 1.2s ease;  
-       -o-transition: width 1.2s ease;  
+     -moz-transition: width 1.2s ease;
+       -o-transition: width 1.2s ease;
           transition: width 1.2s ease;
 }
 
@@ -2214,7 +2214,7 @@ h5 {
 }
 .price-table .pt-body li.pt-light {
   color: #999;
-} 
+}
 .price-table .pt-footer {
   text-align: center;
   padding-bottom: 40px;
@@ -2466,7 +2466,7 @@ h5 {
   padding: 20px;
 }
 .blog-item .blog-content .post-meta {
-  
+
   position: absolute;
   top: 20px;
   left: 0;
@@ -2639,25 +2639,25 @@ h5 {
 
 .pagination { margin:0px; }
 .pagination li a { font-size: 15px; font-weight: 500; margin: 0 5px; color: #626262; border-radius: 3px; }
-.pagination > li:first-child > a, 
+.pagination > li:first-child > a,
 .pagination > li:first-child >span { border-radius: 3px; }
-.pagination > li:last-child > a, 
+.pagination > li:last-child > a,
 .pagination > li:last-child >span { border-radius: 3px; }
 
-.pagination > .active > a, 
+.pagination > .active > a,
 .pagination > .active > a:hover { color: #626262; }
-.pagination > li > a, 
+.pagination > li > a,
 .pagination > li > span {   background: #f6f7f8; border:0px; text-align: center; }
 
-.pagination li a:focus, 
-.pagination li a:hover, 
-.pagination li span:focus, 
+.pagination li a:focus,
+.pagination li a:hover,
+.pagination li span:focus,
 .pagination li span:hover,
-.pagination > .active > a, 
-.pagination > .active > a:focus, 
-.pagination > .active > a:hover, 
-.pagination > .active > span, 
-.pagination > .active > span:focus, 
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
 .pagination > .active > span:hover { color: #ffffff; box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1); background: #111; }
 .page-item.active .page-link { background: #111; }
 
