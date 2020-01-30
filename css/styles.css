@@ -301,7 +301,8 @@ h5 {
 
 .icon-link[href$=".md"]:before,
 .icon-link[href*="hackmd.io"]:before,
-.icon-link[href*="identity.foundation/specs"]:before {
+.icon-link[href*="identity.foundation/specs"]:before,
+.icon-link[href*="drive.google.com"]:before {
   background: url(/icons/file.svg);
   background-size: cover;
   margin: 0 0.25em 0 0;
