@@ -1,0 +1,43 @@
+{% set name = "Sidetree" %}
+{% set logo = "network" %}
+{% set title = "Sidetree Working Group" %}
+{% set scope = "Develop and maintain the official Sidetree protocol specification." %}
+{% set repoTag = "wg-sidetree" %}
+{% set projects = {
+    "Sidetree": {
+      desc: "TO BE REPLACED",
+      links: [
+        {
+          text: "System Diagram",
+          href: "https://raw.githubusercontent.com/decentralized-identity/hubs/master/diagrams/full-system.png"
+        },
+        {
+          text: "Explainer",
+          href: "https://github.com/decentralized-identity/hubs/blob/master/explainer.md"
+        },
+        {
+          text: "Repo",
+          href: "https://github.com/decentralized-identity/hub-node-core"
+        }
+      ]
+    }
+  }
+%}
+
+{% set chairs = {
+  "Daniel Buchner": {
+      title: "Decentralized Identity @ Microsoft",
+      photo: "/images/photos/daniel-buchner.jpg",
+      linkedin: "dbuchner",
+      twitter: "csuwildcat"
+    },
+    "Orie Steele ": {
+      title: "Chief Technical Officer @ Transmute",
+      photo: "/images/photos/orie-steele.jpg",
+      linkedin: "OR13b",
+      twitter: "OR13b"
+    }
+  }
+%}
+
+{% extends "wg.html" %}
