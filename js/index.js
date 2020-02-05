@@ -27,7 +27,7 @@
       var request = new XMLHttpRequest();
       request.open('POST', 'https://docs.google.com/forms/d/e/1FAIpQLSe0ZVMdZGGpuSjf7chsXEnh9nISy7eTFDYwEJ41sT4R2KN15Q/formResponse');
       request.send(new FormData(this));
-      this.innerHTML = '<div class="inquiry-submitted">Thank you for your interest! You also subscribed for the DIF Monthly newsletter. <div>';
+      this.innerHTML = '<div class="inquiry-submitted">Thank you for your interest! You also subscribed for the DIF Monthly newsletter. Look out for an email from: membership@identity.foundation; also in your spam filter. <div>';
       ga('send', 'event', 'Inquiry', 'submit', 'Membership/press form submission');
     }
     catch (e) {
