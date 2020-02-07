@@ -5,7 +5,11 @@
     <div class="container">
       <svg><use xlink:href="#{{logo}}"></use></svg>
       <h1>{{name}}</h1>
-      <h3>Working Group</h3>
+      {% if subtitle %}
+        <h3>{{subtitle}}</h3>
+      {% else %}
+        <h3>Working Group</h3>
+      {% endif %}
     </div>
   </section>
 
