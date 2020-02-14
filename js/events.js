@@ -54,7 +54,7 @@ getEvents().then(events => {
         html += `<li data-filter="${searchStrings}">
           <div class="event-list-left">
             <a href="${event.link}" datestamp start-month="${startMonth}" start-day="${startDate.getDate()}" ${endMonth == startMonth ? '' : 'end-month="' + endMonth + '"'} end-day="${endDate.getDate()}">
-              <img src="${ event.primaryimage ? 'https://drive.google.com/thumbnail?id=' + event.primaryimage.split('=')[1] : '' }"/>  
+              <img src="${ event.primaryimage ? 'https://drive.google.com/thumbnail?id=' + event.primaryimage.split('=')[1] : '' }"/>
             </a>
           </div>
           <dl class="event-list-center">
