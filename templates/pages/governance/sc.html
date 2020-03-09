@@ -1,7 +1,17 @@
 {% set name = "Governance" %}
 {% set logo = "login_screen" %}
 {% set title = "Steering Committee" %}
-{% set scope = "The Steering Committee is the body that is responsible for governing the Project." %}
+{% set scope = "Enable a world where decentralized identity solutions allow entities to gain control over their identities and allow trusted interactions.
+" %}
+{% set Mission1 = "Provide a neutral and inclusive place for the decentralized identity community to collaborate.
+" %}
+{% set Mission2 = "DIF cultivates ideas & emerging specifications by enabling industry-wide discussions, experimentation (testing of hypothesis) and demonstration of interoperability.
+" %}
+{% set Mission3 = "DIF encourages a contribution led approach based on open source code contributions to developing an interoperable identity stack composed which can be used and adopted without restrictions.
+" %}
+{% set Mission4 = "DIF collaborates closely with standardization bodies to ensure more matured concepts or specifications can be formalized standards in the most suitable organizations.
+" %}
+
 {% set projects = {
     "DIF Charter": {
       desc: "This “Project Charter” establishes the terms under which this Project operates ",
@@ -18,6 +28,19 @@
         {
           text: "Repo",
           href: "https://github.com/decentralized-identity/DIDComm-js"
+        }
+      ]
+    }
+  }
+%}
+
+{% set meetings = {
+    "DIF SC meetings and Decesions": {
+      desc: "DIF Steering Committee rolling meeting agenda, minutes and decesions",
+      links: [
+        {
+          text: "Notes",
+          href: "https://drive.google.com/open?id=14hmrYFOUvRElwGFcxGhhy2YZ75jtmLrR"
         }
       ]
     }
@@ -67,5 +90,7 @@
     }
   }
 %}
+
+
 
 {% extends "governance.html" %}
