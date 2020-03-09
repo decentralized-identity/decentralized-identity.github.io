@@ -1,0 +1,71 @@
+{% set name = "Governance" %}
+{% set logo = "login_screen" %}
+{% set title = "Steering Committee" %}
+{% set scope = "The Steering Committee is the body that is responsible for governing the Project." %}
+{% set projects = {
+    "DIF Charter": {
+      desc: "This “Project Charter” establishes the terms under which this Project operates ",
+      links: [
+        {
+          text: "Charter",
+          href: "https://drive.google.com/open?id=14hmrYFOUvRElwGFcxGhhy2YZ75jtmLrR"
+        }
+      ]
+    },
+    "other docs": {
+      desc: "Description for other documents",
+      links: [
+        {
+          text: "Repo",
+          href: "https://github.com/decentralized-identity/DIDComm-js"
+        }
+      ]
+    }
+  }
+%}
+
+{%
+  set chairs = {
+    "Kim H. Duffy": {
+      title: "Digital Credentials @ MIT",
+      linkedin: "kimdhamilton",
+      twitter: "kimdhamilton"
+    },
+    "Karyl Fowler": {
+      title: "CEO @ Transmute",
+      linkedin: "karylfowler",
+      twitter: "TheKaryl"
+    },
+    "Kendra Bittner": {
+      title: "Sr Director @ Workday",
+      linkedin: "kendrabittner",
+      twitter: "kdkendratweet"
+    },
+    "Markus sabadello": {
+      title: "Founder @ DanubeTech",
+      linkedin: "markus-sabadello-353a0821",
+      twitter: "peacekeeper"
+    },
+    "Dan Gisolfi": {
+      title: "CTO Decentralized Identity @ IBM",
+      linkedin: "vinomaster"
+    },
+    "Sam Curren": {
+      title: "Technology Guy @ Sovrin",
+      linkedin: "samcurren",
+      twitter: "TelegramSam"
+    },
+    "Daniel Buchner": {
+      title: "Decentralized Identity @ Microsoft",
+      linkedin: "csuwildcat",
+      twitter: "OliverTerbu"
+    },
+    "Rouven Heck": {
+      title: "Head of Identity @ Consensys",
+      linkedin: "rouvenheck",
+      twitter: "rh7"
+    }
+  }
+%}
+
+{% extends "governance.html" %}
