@@ -1,0 +1,56 @@
+{% set name = "Secure Data Storage" %}
+{% set logo = "box" %}
+{% set title = "Secure Data Storage Working Group" %}
+{% set scope = "Create one or more specifications to establish a foundational layer for secure data storage (including personal data), specifically data
+models for storage and transport, syntax, data at rest protection, CRUD API, access control, synchronization, and at least a minimum viable HTTP-based interface compatible with W3C DIDs/VCs. documents will be used as a use case, requirements, and technical input for the collaborative effort. " %}
+{% set charters = {
+    "SDS WG documentation": {
+      links: [
+        {
+          text: "SDS WG Charter [DRAFT]",
+          href: "https://docs.google.com/document/d/1lYEWdDOm1iyCN9q_AkHE3bQ_SDjhwHDYWp73a73F4M8/edit?usp=sharing"
+        }
+      ]
+    }
+  }
+%}
+{% set repoTag = "wg-sds" %}
+{% set projects = {
+    "Secure Data Storage Use Cases and Requirements v0.9": {
+      desc: "[INFORMATIVE]"
+    },
+    "Secure Data Storage v0.9 - Data Model, Representations, and HTTP API": {
+      desc: "[NORMATIVE]"
+    },
+    "Secure Data Storage Test Suite ": {
+      desc: "[INFORMATIVE]"
+    },
+    "At least one DIF-approved Secure Data Storage v0.9 Implementation ": {
+      desc: "[INFORMATIVE]"
+    }
+  }
+%}
+
+{% set chairs = {
+  "TBD": {
+      title: "x @ x ",
+      photo: "/images/photos/daniel-buchner.jpg",
+      linkedin: "",
+      twitter: ""
+    },
+    "TBD-1": {
+        title: "x @ x ",
+        photo: "/images/photos/daniel-buchner.jpg",
+        linkedin: "",
+        twitter: ""
+    },
+    "TBD-2": {
+        title: "x @ x ",
+        photo: "/images/photos/daniel-buchner.jpg",
+        linkedin: "",
+        twitter: ""
+    }
+  }
+%}
+
+{% extends "wg.html" %}
