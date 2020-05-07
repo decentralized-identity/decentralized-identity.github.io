@@ -38,7 +38,7 @@ const repoTopics = {
   'wg-cc': 1,
   'wg-id': 1,
   'wg-sc': 1,
-  'wg-sds': 1
+  'wg-sds': 1 
 }
 
 const getRepos = async () => {
