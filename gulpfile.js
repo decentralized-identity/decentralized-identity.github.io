@@ -25,10 +25,13 @@ var structure = {
     'index.html'
   ],
   'working-groups': [
-    'identifiers-names-discovery.html',
+    'identifiers-discovery.html',
     'storage-compute.html',
     'claims-credentials.html',
-    'authentication.html'
+    'authentication.html',
+    'did-comm.html',
+    'sidetree.html',
+    'secure-data-storage.html'
   ]
 };
 
