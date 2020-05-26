@@ -294,6 +294,10 @@ h5 {
   vertical-align: sub;
 }
 
+.icon-link[data-type="app"]:before {
+  background: url(/icons/browser.svg) no-repeat center center;
+}
+
 .icon-link[href*="github.com"]:before {
   background: url(/icons/github.svg);
   background-size: cover;
@@ -303,7 +307,8 @@ h5 {
 .icon-link[href*="hackmd.io"]:before,
 .icon-link[href*="identity.foundation/specs"]:before,
 .icon-link[href*="drive.google.com"]:before,
-.icon-link[href*="bit.ly"]:before  {
+.icon-link[href*="bit.ly"]:before,
+.icon-link[data-type="doc"]:before {
   background: url(/icons/file.svg);
   background-size: cover;
   margin: 0 0.25em 0 0;
