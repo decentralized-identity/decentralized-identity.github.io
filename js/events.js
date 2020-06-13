@@ -52,20 +52,20 @@ getEvents().then(events => {
           ].map(s => String(s).toLowerCase()).join(' ');
 
         html += `<li data-filter="${searchStrings}">
-          <div class="event-list-left">
+          <div class="item-list-left">
             <a href="${event.link}" datestamp start-month="${startMonth}" start-day="${startDate.getDate()}" ${endMonth == startMonth ? '' : 'end-month="' + endMonth + '"'} end-day="${endDate.getDate()}">
               <img src="${ event.primaryimage ? 'https://drive.google.com/thumbnail?id=' + event.primaryimage.split('=')[1] : '' }"/>
             </a>
           </div>
-          <dl class="event-list-center">
+          <dl class="item-list-center">
             <dt><a href="${event.link}">${event.eventname}</a></dt>
-            <dd class="event-location">${event.location}</dd>
+            <dd class="item-location">${event.location}</dd>
             <dd>${event.description.replace(/(.+)/mg, '<p>$1</p>')}</dd>
           </dl>
         </li>`;
       }
     });
-    event_list.innerHTML = html;
+    item_list.innerHTML = html;
 });
 
 (function(){
@@ -79,7 +79,7 @@ getEvents().then(events => {
   function updateRule(text){
     deleteRule();
     text = text.trim().toLowerCase();
-    sheet.insertRule(`#event_list li${text.split(/\s+/).map(word => '[data-filter*="'+ word +'"]').join('') } { display: flex !important; }`, 0);
+    sheet.insertRule(`#item_list li${text.split(/\s+/).map(word => '[data-filter*="'+ word +'"]').join('') } { display: flex !important; }`, 0);
   }
 
   function inputChange(e){

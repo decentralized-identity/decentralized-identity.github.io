@@ -1,0 +1,13 @@
+
+.item-list-center dd {
+  font-size: 85%;
+}
+
+.item-list-left img {
+  width: 10vw;
+  max-width: 125px;
+}
+
+#item_list li {
+  flex-wrap: nowrap;
+}
