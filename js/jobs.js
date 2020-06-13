@@ -43,7 +43,7 @@ getEntries().then(job => {
       html += `<li data-filter="${searchStrings}">
         <div class="item-list-left">
           <a href="${job.link}">
-            <img src="${ job.primaryimage ? 'https://drive.google.com/thumbnail?id=' + job.primaryimage.split('=')[1] : '/icons/offer.svg' }"/>
+            <img ${ job.primaryimage ? 'src="https://drive.google.com/thumbnail?id=' + job.primaryimage.split('=')[1] + '"' : 'src="/icons/offer.svg" default-image' }"/>
           </a>
         </div>
         <dl class="item-list-center">

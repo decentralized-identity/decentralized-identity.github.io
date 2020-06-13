@@ -8,6 +8,10 @@
   max-width: 125px;
 }
 
+.item-list-left img[default-image] {
+  padding: 0.2em 0;
+}
+
 #item_list li {
   flex-wrap: nowrap;
 }
