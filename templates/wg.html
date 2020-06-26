@@ -61,7 +61,7 @@
                   <p>{{val.desc}}</p>
                   {% if val.links %}
                     {% for link in val.links %}
-                      <a class="block-link icon-link" href="{{link.href}}">{{link.text}}</a>
+                      <a class="block-link icon-link" href="{{link.href}}" data-type="{{ link.type if link.type else '' }}">{{link.text}}</a>
                     {% endfor %}
                   {% endif %}
                 </dd>
