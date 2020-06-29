@@ -1,0 +1,45 @@
+{% set name = "Join" %}
+{% set logo = "login_screen" %}
+{% set title = "Join" %}
+{% set scope = "Test scope 1" %}
+{% set scope2 = "Test scope 2" %}
+{% set scope3 = "Test scope 3" %}
+{% set repoTag = "" %}
+
+{% set projects = {
+    "DIF Project Charter - Associate membership": {
+      desc: "Fill out the form and complete the DocuSign agreement",
+      links: [
+        {
+          text: "Charter ",
+          href: "1"
+        }
+      ]
+    }
+  }
+%}
+{% set projects2 = {
+  "DIF Project Charter - Comtributor": {
+    desc: "Fill out the form and complete the DocuSign agreement",
+    links: [
+      {
+        text: "Charter ",
+        href: "1"
+      }
+    ]
+  }
+}
+%}
+
+{%
+  set chairs = {
+    "x": {
+      title: "x @ x ",
+      photo: "",
+      linkedin: "x",
+      twitter: "x"
+    }
+  }
+%}
+
+{% extends "join.html" %}
