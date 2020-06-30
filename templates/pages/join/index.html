@@ -1,45 +1,92 @@
 {% set name = "Join" %}
 {% set logo = "login_screen" %}
 {% set title = "Join" %}
-{% set scope = "Test scope 1" %}
-{% set scope2 = "Test scope 2" %}
-{% set scope3 = "Test scope 3" %}
 {% set repoTag = "" %}
 
-{% set projects = {
-    "DIF Project Charter - Associate membership": {
-      desc: "Fill out the form and complete the DocuSign agreement",
-      links: [
-        {
-          text: "Charter ",
-          href: "1"
-        }
-      ]
-    }
-  }
-%}
-{% set projects2 = {
-  "DIF Project Charter - Comtributor": {
-    desc: "Fill out the form and complete the DocuSign agreement",
-    links: [
-      {
-        text: "Charter ",
-        href: "1"
-      }
-    ]
-  }
-}
-%}
+{% extends "default.html" %}
 
-{%
-  set chairs = {
-    "x": {
-      title: "x @ x ",
-      photo: "",
-      linkedin: "x",
-      twitter: "x"
-    }
-  }
-%}
+<!-- {% block svg %}
 
-{% extends "join.html" %}
+{% endblock %} -->
+
+{% block content %}
+<section class="page-title theme-bg">
+  <div class="container">
+    <svg><use xlink:href="#{{logo}}"></use></svg>
+    <h1>{{name}}</h1>
+    {% if subtitle %}
+      <h3>{{subtitle}}</h3>
+    {% else %}
+      <h3>Decentralized Identity Foundation</h3>
+    {% endif %}
+  </div>
+</section>
+
+<section class="counter-section">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-12">
+        <div class="section-title text-center">
+          <h2 class="font-alt">Why joining DIF</h2>
+          <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+          <p>It's a great organization</p>
+          </div>
+      </div>              
+          </div>
+      </div>
+</section>
+
+<section class="counter-section gray-bg">
+  <div class="container">
+    <div class="row justify-content-md-center">
+
+        <div class="col-6">
+          <div class="section-title text-center">
+            <h2 class="font-alt">Associate member</h2>
+            <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+            <p>Read the charter below and fill out the form and complete the DocuSign agreement</p>
+            <nav>
+              <a href="#">TEST 1</a>
+              <a href="#">TEST 2</a>
+            </nav>
+            <ul>
+              <li>Voting: Yes</li>
+              <li>Chairing: Yes</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="section-title text-center">
+            <h2 class="font-alt">Contributor</h2>
+            <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+            <p>Read the charter below and fill out the form and complete the DocuSign agreement</p>
+            <nav>
+              <a href="#">TEST 3</a>
+              <a href="#">TEST 4</a>
+            </nav>
+            <ul>
+              <li>Voting: No</li>
+              <li>Chairing: No</li>
+            </ul>
+          </div>
+        </div>
+      <!-- row -->
+    </div>
+  </div>
+  <!-- container -->
+</section>
+
+<section class="counter-section">
+  <div class="container">
+    <div class="row justify-content-center m-45px-b md-m-20px-b sm-m-15px-b">
+      <div class="col-12 col-md-10 col-lg-7">
+        <div class="section-title text-center">
+          <h2 class="font-alt">Feedback Agreement</h2>
+          <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+          <p>Text here</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
