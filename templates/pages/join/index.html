@@ -1,45 +1,284 @@
 {% set name = "Join" %}
-{% set logo = "login_screen" %}
+{% set logo = "algorithm" %}
 {% set title = "Join" %}
-{% set scope = "Test scope 1" %}
-{% set scope2 = "Test scope 2" %}
-{% set scope3 = "Test scope 3" %}
 {% set repoTag = "" %}
 
-{% set projects = {
-    "DIF Project Charter - Associate membership": {
-      desc: "Fill out the form and complete the DocuSign agreement",
-      links: [
-        {
-          text: "Charter ",
-          href: "1"
-        }
-      ]
-    }
-  }
-%}
-{% set projects2 = {
-  "DIF Project Charter - Comtributor": {
-    desc: "Fill out the form and complete the DocuSign agreement",
-    links: [
-      {
-        text: "Charter ",
-        href: "1"
-      }
-    ]
-  }
-}
-%}
+{% extends "default.html" %}
 
-{%
-  set chairs = {
-    "x": {
-      title: "x @ x ",
-      photo: "",
-      linkedin: "x",
-      twitter: "x"
-    }
-  }
-%}
+<!-- {% block svg %}
 
-{% extends "join.html" %}
+{% endblock %} -->
+
+{% block content %}
+<section class="page-title theme-bg">
+  <div class="container">
+    <svg><use xlink:href="#{{logo}}"></use></svg>
+    <h1>{{name}}</h1>
+    {% if subtitle %}
+      <h3>{{subtitle}}</h3>
+    {% else %}
+      <h3>Decentralized Identity Foundation</h3>
+    {% endif %}
+  </div>
+</section>
+
+<section class="counter-section">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-12">
+        <div class="section-title text-center">
+          <h2 class="font-alt">Why  DIF</h2>
+          <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+          <p>DIF members are developing industry standards and open source technical components with a shared goal towards interoperability.</p>
+          <br>
+          <br>
+          <p><b>Organizations</b> can join as Members or Contributors. See the differences <a href="#company">here</a></p>
+          <p><b>Individuals</b> with no direct employment can join using the Feedback Agreement. Learn more <a href="#individual">here</a></p>
+          </div>
+      </div>              
+          </div>
+      </div>
+</section>
+
+<section id="company" class="counter-section gray-bg">
+  <div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-12">
+          <div class="section-title text-right">
+            <!-- table start-->
+            <table style="width:100%">
+              <tr style="height: 45px;"/>
+            </tr>
+              <tr>
+                <th></th>
+                <th><h2 class="font-alt">Associate member</h2><div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div> </th>
+                <th><h2 class="font-alt">Contributor</h2><div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div> </th>
+              </tr>
+              <tr>
+                <td class="bg-light"><h5>Pricing</h5></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Price</td>
+                <td>Tiered</td>
+                <td>Free</td>
+              </tr>
+
+              <tr style="height: 15px;"/>
+            </tr>
+
+              <tr>
+                <td class="bg-light"><h5>Governance</h5></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Eligible for Steering Committee Election</td>
+                <td>Yes</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Eligible for a WG Chair Election</td>
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+
+              <tr style="height: 15px;"/>
+            </tr>
+
+              <tr>
+                <td class="bg-light"><h5>Contribution</h5></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>May contribute to specifications (technical requirements, review comments)</td>
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>May initiate and support a work item</td>
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>May make technical contributions to specifications</td>
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+
+              <tr style="height: 15px;"/>
+            </tr>
+
+              <tr>
+                <td class="bg-light"><h5>Voting</h5></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Participate in consensus</td>
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Participate in Supermajority vote</td>
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+
+              <tr style="height: 15px;"/>
+            </tr>
+
+              <tr>
+                <td class="bg-light"><h5>Meeting</h5></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Attend Working Group meetings</td>
+                <td>Yes*</td>
+                <td>Yes*</td>
+              </tr>
+              <tr>
+                <td>Attend Open Group meetings</td>
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Attend special in person events / seminars</td>
+                <td>Yes</td>
+                <td>No</td>
+              </tr>
+
+              <tr style="height: 15px;"/>
+            </tr>
+
+              <tr>
+                <td class="bg-light"><h5>Access to services</h5></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Use Instant messaging</td>
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Contribute on WG mailing lists</td>
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Join working group VoIP calls</td>
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>PR and commit on GitHub</td>
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+
+              <tr style="height: 15px;"/>
+              </tr>
+
+              <tr>
+                <td class="bg-light"><h2>Membership Benefits</h2></td>
+                <td></td>
+                <td></td>
+             </tr>
+            <tr>
+              <td>Logo on <a href="https://identity.foundation/#members">Website</a></td>
+              <td>Yes</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Company news in <a href="https://github.com/decentralized-identity/newsletterarchives">Newsletter</a></td>
+              <td>Yes</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Post on <a href="https://identity.foundation/jobs/">Jobboard</a></td>
+              <td>Yes</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Attend Industry vertical meetings</td>
+              <td>Yes</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Present on <a href="https://www.youtube.com/channel/UCicZIzvOXOyij0A6jlA7nxQ/featured">Webinars</a></td>
+              <td>Yes</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>DIF member meetings</td>
+              <td>Yes</td>
+              <td>Limited/No</td>
+            </tr>
+
+            <tr style="height: 45px;"/>
+            </tr>
+
+            <tr>
+              <td  class="bg-light"><h5>Join DIF as</h5> </td>
+              <td><a class="btn btn-dark" href="https://bit.ly/dif-associate-member" role="button">Member</a></td>
+              <td><a class="btn btn-light" href="https://bit.ly/DIF-contributor" role="button">Contributor</a></td>
+            </tr>
+
+            <tr>
+              <td>Fill out the form and complete the personalized DocuSign</td>
+              <td></td>
+              <td></td>
+            </tr>
+            </table>
+            <!-- table ends-->
+            <p></p>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="section-title text-center">
+            <nav>
+              <p></p>
+              <p></p>
+              <p>Here you can preview the <a href="https://bit.ly/DIF_project_charter">DIF Membership Charter</a></p>
+              <p></p>
+              <p></p>
+              <p>* to join a Working Group, the WG's charter must be signed.</p>
+            </nav>
+
+          </div>
+        </div>
+
+    </div>
+  </div>
+  <!-- container -->
+</section>
+
+<section id="individual" class="counter-section">
+  <div class="container">
+    <div class="row justify-content-center m-45px-b md-m-20px-b sm-m-15px-b">
+      <div class="col-12 col-md-10 col-lg-7">
+        <div class="section-title text-center">
+          <h2 class="font-alt">Individual</h2>
+          <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+          <p>The <a href="https://drive.google.com/file/d/1-zhniQraTI3osa29IAH34bKxOjiepwUm/view?usp=sharing">Feedback Agreement</a> is designed for the Decentralized Identity Foundation to invite individual contributors to DIF Working Groups, free of charge. The contributions are provided on an individual basis, not as a representative of an organization or company.</p>
+          <br>
+          <br>
+          <br>
+          <p>To join, fill out the form and complete the personalized DocuSign.</p>
+          <a class="btn btn-secondary" href="https://bit.ly/DIF-feedback-agreement" role="button">Feedback Agreement</a>
+          <br>
+          <br>
+          <br>
+          <p><b>If you are employed on a full time basis you are ineligible to sign the Feedback Agreement. Please contact your company to join DIF.</b></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
