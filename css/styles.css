@@ -314,6 +314,12 @@ h5 {
   margin: 0 0.25em 0 0;
 }
 
+.icon-link[href*="groups.io"]:before {
+  background: url(/icons/mail.svg);
+  background-size: cover;
+  margin: 0 0.25em 0 0;
+}
+
 .icon-link[href$=".png"]:before,
 .icon-link[href$=".gif"]:before,
 .icon-link[href$=".jpg"]:before,
