@@ -1,0 +1,45 @@
+{% set name = "Stuff" %}
+{% set logo = "login_screen" %}
+{% set title = "Steering Committee" %}
+{% set scope = "This is a playground for Juan" %}
+{% set charters = {
+  "Stuff on paper": {
+    links: [
+      {
+        text: "Name of file ",
+        href: "https://9gag.com/"
+      },
+      {
+        text: "Name of file 2",
+        href: "https://9gag.com/"
+      }
+    ]
+  }
+}
+%}
+{% set projects = {
+    "DIF Charter": {
+      desc: "Stuff can come here ",
+      links: [
+        {
+          text: "Yolo page",
+            href: "https://9gag.com/"
+        }
+      ]
+    },
+    "DIF Participation Matrix": {
+      desc: "The list of benefits of DIF membership and other participation formats offered by the foundation",
+      links: [
+        {
+          text: "Participation Matrix",
+          href: "https://bit.ly/DIF_participation_matrix_2"
+        }
+      ]
+    }
+  }
+%}
+
+
+
+
+{% extends "wg.html" %}
