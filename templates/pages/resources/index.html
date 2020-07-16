@@ -1,45 +1,73 @@
-{% set name = "Stuff" %}
-{% set logo = "login_screen" %}
-{% set title = "Steering Committee" %}
-{% set scope = "This is a playground for Juan" %}
+{% set name = "Claims and Credentials" %}
+{% set logo = "validate_user" %}
+{% set title = "Claims and Credentials Working Group" %}
+{% set scope = "Join this group to contribute to the standards and technology that create, exchange, and verify claims and credentials in a decentralized identity ecosystem. For example, a cryptographically verifiable credential that proves an individual has a college degree or is of a certain age. Our members focus on specs that are vendor agnostic and based on industry standards." %}
+{% set repoTag = "wg-cc" %}
 {% set charters = {
-  "Stuff on paper": {
+  "CLaims and Credentials WG documentation": {
     links: [
       {
-        text: "Name of file ",
-        href: "https://9gag.com/"
+        text: "C&C WG Charter",
+        href: "https://drive.google.com/open?id=1ogM1-uSKqpH-rw0kO04h0ONOWOisfTIP"
       },
       {
-        text: "Name of file 2",
-        href: "https://9gag.com/"
+        text: "Mailing list",
+        href: "https://dif.groups.io/g/cc-wg"
       }
     ]
   }
 }
 %}
 {% set projects = {
-    "DIF Charter": {
-      desc: "Stuff can come here ",
+    "Credential Manifest": {
+      desc: "The DID Credential Manifest is a format that aims to normalize the process of credential acquisition, wherein the issuer is able to describe the requirements the subject or participant in the credential generation process must meet for the issuer to generate the desired credential.",
       links: [
         {
-          text: "Yolo page",
-            href: "https://9gag.com/"
+          text: "Explainer",
+          href: "https://github.com/decentralized-identity/credential-manifest/blob/master/explainer.md"
+        },
+        {
+          text: "Repo",
+          href: "https://github.com/decentralized-identity/credential-manifest"
         }
       ]
     },
-    "DIF Participation Matrix": {
-      desc: "The list of benefits of DIF membership and other participation formats offered by the foundation",
+    "VC JSON Schemas": {
+      desc: "The VC JSON Schema specification aims to provide a standardized mechanism to use JSON Schemas as the data backing for Verifiable Credentials. Though the repository lives in the W3C-CCG, this working group contains key contributors and has a vested interest in contributing to the development of the specification.",
       links: [
         {
-          text: "Participation Matrix",
-          href: "https://bit.ly/DIF_participation_matrix_2"
+          text: "Specification",
+          href: "https://w3c-ccg.github.io/vc-json-schemas/"
+        },
+        {
+          text: "Repo",
+          href: "https://github.com/w3c-ccg/vc-json-schemas"
         }
       ]
     }
   }
 %}
 
+{% set chairs = {
+  "Martin Riedel": {
+    title: "Product Manager @ Identity.com",
+    photo: "/images/photos/martin-riedel.jpg",
+    linkedin: "rado0x54",
+    twitter: "rado0x54"
+  },
+  "Wayne Chang": {
+    title: "Head of Product, Alpine, Consensys",
+    photo: "/images/photos/wayne_chang_.jpg",
+    linkedin: "waynebuilds",
+    twitter: "wycdd"
+  },
+	"Jonathan Reynolds": {
+      title: "Principal Software Engineer, Workday",
+      photo: "/images/photos/jonathan_reynolds.jpg",
+      linkedin: "jr3yn0lds",
+      twitter: ""
+    }
+  }
+%}
 
-
-
-{% extends "wg_editor.html" %}
+{% extends "wg.html" %}
