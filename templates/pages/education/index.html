@@ -1,10 +1,12 @@
 {% set name = "Educational Resources" %}
-{% set logo = "sketching" %}
+{% set logo = "validate_user" %}
+
 {% set title = "Educational Resources" %}
 {% set scope = "Here you will find a regularly-updated and curated list of educational resources." %}
 {% set repoTag = "wg-cc" %}
 {% set charters = {
-"Recent additions to the DIF <a href=https://www.youtube.com/channel/UCicZIzvOXOyij0A6jlA7nxQ/>YouTube channel</a>": {
+  "Recent additions to the DIF YouTube channel": {
+
     links: [
       {
         text: "DID Auth WG report-outs and demos from F2F, June 2020",
@@ -15,16 +17,18 @@
 }
 %}
 {% set projects = {
-  "Recent additions to the DIF <a href=https://www.youtube.com/channel/UCicZIzvOXOyij0A6jlA7nxQ/>YouTube channel</a>": {
-    links: [
-      {
-        text: "DID Auth WG report-outs and demos from F2F, June 2020",
-        href: "https://www.youtube.com/watch?v=P28adp1zARg"
-      }
-    ]
-  },
-  "Recent PDFs and publications": {
-      //desc: "The VC JSON Schema specification aims to provide a standardized mechanism to use JSON Schemas as the data backing for Verifiable Credentials. Though the repository lives in the W3C-CCG, this working group contains key contributors and has a vested interest in contributing to the development of the specification.",
+    "Recent additions to the DIF YouTube channel": {
+      desc: "subtitle blocker",
+      links: [
+        {
+          text: "DID Auth WG report-outs and demos from F2F, June 2020",
+          href: "https://www.youtube.com/watch?v=P28adp1zARg"
+        }
+      ]
+    },
+    "Recent PDFs and publications": {
+      desc: "subtitle text",
+
       links: [
         {
           text: "Glossary Report, May 2020",
@@ -35,10 +39,9 @@
           href: "https://docs.google.com/presentation/d/1sSx1-MNrE3xTlu7qCNs_luZdm25haYLbp7fD_sP6hAE/edit#slide=id.g8b4c4db7cf_0_0"
         }
       ]
-    }
-
-  "Other non-commercial educational links": {
-      //desc: "The VC JSON Schema specification aims to provide a standardized mechanism to use JSON Schemas as the data backing for Verifiable Credentials. Though the repository lives in the W3C-CCG, this working group contains key contributors and has a vested interest in contributing to the development of the specification.",
+    },
+    "Other non-commercial educational links": {
+      desc: "The VC JSON Schema specification aims to provide a standardized mechanism to use JSON Schemas as the data backing for Verifiable Credentials. Though the repository lives in the W3C-CCG, this working group contains key contributors and has a vested interest in contributing to the development of the specification.",
       links: [
         {
           text: "Listing of educational materials on DIF's medium page",
@@ -53,6 +56,7 @@
 
 }
 %}
+
 
 {% set chairs = {
   "Kaliya Young": {
