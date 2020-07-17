@@ -1,5 +1,5 @@
 {% set name = "Educational Resources" %}
-{% set logo = "validate_user" %}
+{% set logo = "sketching" %}
 {% set title = "DIF Educational Resources" %}
 {% set scope = "Here you will find a regularly-updated and curated list of educational resources." %}
 {% set repoTag = "wg-cc" %}
@@ -36,22 +36,38 @@
         }
       ]
     }
-  }
+
+  "Other non-commercial educational links": {
+      //desc: "The VC JSON Schema specification aims to provide a standardized mechanism to use JSON Schemas as the data backing for Verifiable Credentials. Though the repository lives in the W3C-CCG, this working group contains key contributors and has a vested interest in contributing to the development of the specification.",
+      links: [
+        {
+          text: "Listing of educational materials on DIF's medium page",
+          href: "https://docs.google.com/presentation/d/1_b-cFs_qibcCw4XroqQg6FS06ZOdE8Al-WxornrtvgQ/edit#slide=id.g752184a474_0_4"
+        },
+        {
+          text: "Educational Resources at Decentralized-ID",
+          href: "https://decentralized-id.com/literature/"
+        }
+      ]
+    }
+
+}
 %}
 
 {% set chairs = {
-  "Juan Caballero": {
-    title: "Education @ DIF",
-    photo: "/images/photos/juan-caballero.jpg",
-    linkedin: "juan-caballero",
-    twitter: "by_caballero"
-  },
   "Kaliya Young": {
     title: "Education @ DIF",
     photo: "/images/photos/kaliya-young.jpg",
-    linkedin: "waynebuilds",
-    twitter: "wycdd"
+    linkedin: "kaliya",
+    twitter: "identitywoman"
+  },
+  "Juan Caballero": {
+    title: "Communications @ DIF",
+    photo: "/images/photos/juan-caballero.jpg",
+    linkedin: "juan-caballero",
+    twitter: "by_caballero"
   }
+}
 %}
 
 {% extends "wg.html" %}
