@@ -1,0 +1,64 @@
+{% set name = "Educational Resources" %}
+{% set logo = "sketching" %}
+
+{% set title = "Educational Resources" %}
+{% set scope = "Here you will find a regularly-updated and curated list of educational resources." %}
+{% // set repoTag = "wg-cc" %}
+{% set charters = {
+}
+%}
+{% set projects = {
+    "Recent additions to the DIF YouTube channel": {
+      desc: "Our channel can be found <a href=https://www.youtube.com/channel/UCicZIzvOXOyij0A6jlA7nxQ>here</a>.",
+      links: [
+        {
+          text: "DID Auth WG report-outs and demos from F2F, June 2020",
+          href: "https://www.youtube.com/watch?v=P28adp1zARg"
+        }
+      ]
+    },
+    "Recent Publications": {
+      desc: "All publications are in PDF format unless otherwise specified. See also the "education" section on DIF's <a href=https://medium.com/decentralized-identity/education/>Medium site</a>.",
+
+      links: [
+        {
+          text: "Glossary Report, May 2020",
+          href: "/assets/glossary-group-report--may-2020.pdf"
+        },
+        {
+          text: "Overview of Public-Domain Educational Materials, April 2020 (_courtesy of TransMute and Spherity_)",
+          href: "/assets/knowledge-base--april-2020.pdf"
+        }
+      ]
+    },
+    "Other non-commercial educational links hosted elsewhere": {
+      desc: "DIF provides these for educational purposes only, and few cases were DIF personnel involved in the editing or publication of these materials.",
+      links: [
+        {
+          text: "Educational Resources at Decentralized-ID",
+          href: "https://decentralized-id.com/literature/"
+        }
+      ]
+    }
+
+}
+%}
+
+
+{% set chairs = {
+  "Kaliya Young": {
+    title: "Education @ DIF",
+    photo: "/images/photos/kaliya-young.jpg",
+    linkedin: "kaliya",
+    twitter: "identitywoman"
+  },
+  "Juan Caballero": {
+    title: "Communications @ DIF",
+    photo: "/images/photos/juan-caballero.jpg",
+    linkedin: "juan-caballero",
+    twitter: "by_caballero"
+  }
+}
+%}
+
+{% extends "wg.html" %}
