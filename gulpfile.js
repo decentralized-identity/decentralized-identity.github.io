@@ -21,6 +21,9 @@ var structure = {
   'events': [
     'index.html'
   ],
+  'education': [
+    'index.html'
+  ],
   'schemas': [
     'index.html'
   ],
