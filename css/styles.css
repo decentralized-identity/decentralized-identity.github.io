@@ -308,6 +308,7 @@ h5 {
 .icon-link[href*="identity.foundation/specs"]:before,
 .icon-link[href*="drive.google.com"]:before,
 .icon-link[href*="bit.ly"]:before,
+.icon-link[href*="notion.so"]:before,
 .icon-link[data-type="doc"]:before {
   background: url(/icons/file.svg);
   background-size: cover;
