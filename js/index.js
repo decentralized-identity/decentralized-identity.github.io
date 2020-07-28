@@ -21,20 +21,6 @@
     console.log('Cannot load Medium feed', e);
   });
 
-  document.getElementById('inquiry_form').addEventListener('submit', function(e) {
-    try {
-      e.preventDefault();
-      var request = new XMLHttpRequest();
-      request.open('POST', 'https://docs.google.com/forms/d/e/1FAIpQLSe0ZVMdZGGpuSjf7chsXEnh9nISy7eTFDYwEJ41sT4R2KN15Q/formResponse');
-      request.send(new FormData(this));
-      this.innerHTML = '<div class="inquiry-submitted">Thank you for your interest! Look out for an email from membership@identity.foundation;<br> In additon, you are now subscirbed to our monthly newsletter.<div>';
-      ga('send', 'event', 'Inquiry', 'submit', 'Membership/press form submission');
-    }
-    catch (e) {
-      console.warn('Form submission error:', e);
-    }
-  });
-
   document.getElementById('newsletter_form').addEventListener('submit', function(e) {
     try {
       e.preventDefault();
