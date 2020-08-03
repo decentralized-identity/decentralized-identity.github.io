@@ -1,52 +1,62 @@
 {% set name = "Educational Resources" %}
-{% set logo = "validate_user" %}
+{% set logo = "sketching" %}
 
 {% set title = "Educational Resources" %}
 {% set scope = "Here you will find a regularly-updated and curated list of educational resources." %}
-{% set repoTag = "wg-cc" %}
-{% set charters = {
-  "Recent additions to the DIF YouTube channel": {
 
-    links: [
-      {
-        text: "DID Auth WG report-outs and demos from F2F, June 2020",
-        href: "https://www.youtube.com/watch?v=P28adp1zARg"
-      }
-    ]
-  }
-}
-%}
 {% set projects = {
     "Recent additions to the DIF YouTube channel": {
-      desc: "subtitle blocker",
+      desc: "",
       links: [
+        {
+          text: "DIF YouTube",
+          href: "https://www.youtube.com/channel/UCicZIzvOXOyij0A6jlA7nxQ"
+        },
         {
           text: "DID Auth WG report-outs and demos from F2F, June 2020",
           href: "https://www.youtube.com/watch?v=P28adp1zARg"
+        },
+        {
+          text: "Code of Conduct Update from F2F, June 2020",
+          href: "https://www.youtube.com/watch?v=oZwKBMjzeV8"
         }
       ]
     },
-    "Recent PDFs and publications": {
-      desc: "subtitle text",
+    "Recent Education posts on our Medium Blog": {
+      desc: "For a more complete index, see the education section on DIF's blog.",
+
+      links: [
+        {
+          text: "DIF Blog",
+          href: "https://medium.com/decentralized-identity"
+        },
+        {
+          text: "Where to Begin with OIDC and SIOP",
+          href: "https://medium.com/decentralized-identity/where-to-begin-with-oidc-and-siop-7dd186c89796?source=friends_link&sk=b14b99cda2da18350a5b0b4ba197bd56"
+        },
+        {
+          text: "Finding the Bell Curve of Meaning (methodological from the first Glossary Report)",
+          href: "https://medium.com/decentralized-identity/finding-the-bell-curve-of-meaning-61a1d22b7bdd?source=friends_link&sk=56a25248438bff6218d86a86c240cd82"
+        }
+      ]
+    },
+    "Recent Publications": {
+      desc: "All publications are in PDF format unless otherwise specified.",
 
       links: [
         {
           text: "Glossary Report, May 2020",
-          href: "https://docs.google.com/presentation/d/1_b-cFs_qibcCw4XroqQg6FS06ZOdE8Al-WxornrtvgQ/edit#slide=id.g752184a474_0_4"
+          href: "/assets/glossary-group-report--may-2020.pdf"
         },
         {
-          text: "Overview of Public-Domain Educational Materials, April 2020 (<i>courtesy of TransMute and Spherity</i>)",
-          href: "https://docs.google.com/presentation/d/1sSx1-MNrE3xTlu7qCNs_luZdm25haYLbp7fD_sP6hAE/edit#slide=id.g8b4c4db7cf_0_0"
+          text: "Overview of Public-Domain Educational Materials, April 2020 (_courtesy of TransMute and Spherity_)",
+          href: "/assets/knowledge-base--april-2020.pdf"
         }
       ]
     },
-    "Other non-commercial educational links": {
-      desc: "The VC JSON Schema specification aims to provide a standardized mechanism to use JSON Schemas as the data backing for Verifiable Credentials. Though the repository lives in the W3C-CCG, this working group contains key contributors and has a vested interest in contributing to the development of the specification.",
+    "Other non-commercial educational links hosted elsewhere": {
+      desc: "DIF provides these for educational purposes only, and few cases were DIF personnel involved in the editing or publication of these materials.",
       links: [
-        {
-          text: "Listing of educational materials on DIF's medium page",
-          href: "https://docs.google.com/presentation/d/1_b-cFs_qibcCw4XroqQg6FS06ZOdE8Al-WxornrtvgQ/edit#slide=id.g752184a474_0_4"
-        },
         {
           text: "Educational Resources at Decentralized-ID",
           href: "https://decentralized-id.com/literature/"
