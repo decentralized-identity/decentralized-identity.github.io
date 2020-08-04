@@ -1,24 +1,48 @@
 {% set name = "Educational Resources" %}
-{% set logo = "sketching" %}
+{% set logo = "sketching" %} 
 
 {% set title = "Educational Resources" %}
 {% set scope = "Here you will find a regularly-updated and curated list of educational resources." %}
-{% // set repoTag = "wg-cc" %}
-{% set charters = {
-}
-%}
+
 {% set projects = {
     "Recent additions to the DIF YouTube channel": {
-      desc: "Our channel can be found <a href=https://www.youtube.com/channel/UCicZIzvOXOyij0A6jlA7nxQ>here</a>.",
+      desc: "",
+
       links: [
+        {
+          text: "DIF YouTube",
+          href: "https://www.youtube.com/channel/UCicZIzvOXOyij0A6jlA7nxQ"
+        },
         {
           text: "DID Auth WG report-outs and demos from F2F, June 2020",
           href: "https://www.youtube.com/watch?v=P28adp1zARg"
+        },
+        {
+          text: "Code of Conduct Update from F2F, June 2020",
+          href: "https://www.youtube.com/watch?v=oZwKBMjzeV8"
+        }
+      ]
+    },
+    "Recent Education posts on our Medium Blog": {
+      desc: "For a more complete index, see the education section on DIF's blog.",
+
+      links: [
+        {
+          text: "DIF Blog",
+          href: "https://medium.com/decentralized-identity"
+        },
+        {
+          text: "Where to Begin with OIDC and SIOP",
+          href: "https://medium.com/decentralized-identity/where-to-begin-with-oidc-and-siop-7dd186c89796?source=friends_link&sk=b14b99cda2da18350a5b0b4ba197bd56"
+        },
+        {
+          text: "Finding the Bell Curve of Meaning (methodological from the first Glossary Report)",
+          href: "https://medium.com/decentralized-identity/finding-the-bell-curve-of-meaning-61a1d22b7bdd?source=friends_link&sk=56a25248438bff6218d86a86c240cd82"
         }
       ]
     },
     "Recent Publications": {
-      desc: "All publications are in PDF format unless otherwise specified. See also the "education" section on DIF's <a href=https://medium.com/decentralized-identity/education/>Medium site</a>.",
+      desc: "All publications are in PDF format unless otherwise specified.",
 
       links: [
         {
@@ -35,6 +59,7 @@
       desc: "DIF provides these for educational purposes only, and few cases were DIF personnel involved in the editing or publication of these materials.",
       links: [
         {
+
           text: "Educational Resources at Decentralized-ID",
           href: "https://decentralized-id.com/literature/"
         }
