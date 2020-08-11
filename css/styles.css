@@ -306,7 +306,9 @@ h5 {
 .icon-link[href*="youtube.com"]:before {
   background: url(/icons/youtube.svg);
   background-size: cover;
-  argin: 0 0.25em 0 0;
+  margin: 0 0.2em 0 0;
+  width: 22px;
+  height: 15px;
 }
 
 .icon-link[href$=".md"]:before,
