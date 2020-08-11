@@ -303,12 +303,19 @@ h5 {
   background-size: cover;
 }
 
+.icon-link[href*="youtube.com"]:before {
+  background: url(/icons/youtube.svg);
+  background-size: cover;
+  argin: 0 0.25em 0 0;
+}
+
 .icon-link[href$=".md"]:before,
 .icon-link[href*="hackmd.io"]:before,
 .icon-link[href*="identity.foundation/specs"]:before,
 .icon-link[href*="drive.google.com"]:before,
 .icon-link[href*="bit.ly"]:before,
 .icon-link[href*="notion.so"]:before,
+.icon-link[href*=".pdf"]:before,
 .icon-link[data-type="doc"]:before {
   background: url(/icons/file.svg);
   background-size: cover;
