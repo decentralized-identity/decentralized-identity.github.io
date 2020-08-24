@@ -7,28 +7,32 @@ Defining points of protocol-defined touchpoints for maximum interchangeability o
 Community collaboration and project management on interoperability goal to seek the greatest interoperability in the greater good, not to pick winners. 
 Provide feedback, input documents, members, and guidance to working groups producing  standards, specifications, 
 reference implementations and demonstrations hosted by community organizations including but not limited to IETF, W3C, W3C CCG, Hyperledger, Trust over IP." %}
+{% set charters = {
+  "DIDcomm WG documentation": {
+    links: [
+      {
+        text: "Interop Charter",
+        href: "https://docs.google.com/document/d/1a01GQVtZB7tDVcm9avS8zuYPHQzEEDtTOEh4Bqu-8Bs/edit"
+      },
+      {
+        text: "Wiki Page",
+        href: "https://www.notion.so/dif/Interoperability-WG-a42995c37e2a4511a10aea96cdbccc38"
+      },
+      {
+        text: "Mailing list",
+        href: "https://dif.groups.io/g/interop-wg/"
+      }
+    ]
+  }
+}
+%}
+{% set repoTag = "interop-wg" %}
 {% set projects = { 
-    "WIKI page": {
+    "GitHub": {
       links: [
         {
-          text: "WIKI Page in Notion",
-          href: "https://www.notion.so/dif/Interoperability-WG-a42995c37e2a4511a10aea96cdbccc38"
-        }
-      ]
-    },  
-    "Charter": {
-      links: [
-        {
-          text: "WG Charter ",
-          href: "https://docs.google.com/document/d/1a01GQVtZB7tDVcm9avS8zuYPHQzEEDtTOEh4Bqu-8Bs/edit"
-        }
-      ]
-    },
-    "Mailing List": {
-      links: [
-        {
-          text: "Sign up here",
-          href: "https://dif.groups.io/g/interop-wg/"
+          text: "Interoperability repo",
+          href: "https://github.com/decentralized-identity/interoperability"
         }
       ]
     }
