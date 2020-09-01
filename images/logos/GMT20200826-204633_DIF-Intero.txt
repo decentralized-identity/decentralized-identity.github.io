@@ -1,0 +1,67 @@
+00:16:13	Tim Cappalli:	#AbolishTimezones
+00:17:33	Kaliya Identity Woman:	https://hackmd.io/K5BWQ_rvSTKJ-BxeWINYfw
+00:28:57	Kaliya Identity Woman:	https://wiki.hyperledger.org/display/II/Agenda
+00:33:13	Orie Steele (Transmute):	Is this on the DIF calendar / can we get it on there?
+00:33:31	Sam Curren (TelegramSam):	Gotta bring your own popcorn though. :)
+00:35:00	Markus Sabadello:	Love the detailed event information about Event Location, Food Menu, Lodging..
+00:35:07	Stephen Curran:	https://wiki.hyperledger.org/pages/viewpage.action?pageId=36734079
+00:35:23	Stephen Curran:	https://bit.ly/indyinterop20
+00:37:34	Stephen Curran:	Sam's meetup on KERI:https://ssimeetup.org/key-event-receipt-infrastructure-keri-secure-identifier-overlay-internet-sam-smith-webinar-58/
+00:41:28	Nader Helmy:	Sorry my internet cut out, but I wanted to call attention to this parallel organization doing work in the DID space. They’re having an informational session on Sept 9 which you can sign up for here
+00:41:31	Nader Helmy:	https://events.eventzilla.net/e/introducing-the-global-association-for-digital-identity-gadi-2138794044
+00:42:21	Kaliya Identity Woman:	Ramesh just reached out to me - interesting.
+00:43:20	Pam Dingle:	https://whimsical.com/VVRMbTi9bPsCqagmRVNGvm
+00:46:32	Nader Helmy:	I don’t see Secure Data Storage (SDS) work on here
+00:47:15	Orie Steele (Transmute):	Imo that feeling comes from DIDComm being an ever expanding set of things :)
+00:47:39	Sam Curren (TelegramSam):	Or your understanding ever expanding on an existing vision. :)
+00:48:34	Orie Steele (Transmute):	Where is the authorization server ?
+00:48:40	Pam Dingle:	Thanks Nader - added storage!
+00:51:58	Orie Steele (Transmute):	https://datatracker.ietf.org/doc/charter-ietf-gnap/
+00:52:02	Marty Reed:	where does the data standard that resides in the payload sit? ex. Comprehensive Learner Record, Interoperable Learner Record, Open Badges, 
+00:52:03	Orie Steele (Transmute):	GNAP!
+00:52:26	Markus Sabadello:	A few years ago, another group created a layer diagram for a new and free Internet: https://youbroketheinternet.org/map. In that diagram, most of the technologies address multiple layers of the stack.
+00:52:33	Markus Sabadello:	https://youbroketheinternet.org/map
+00:53:53	Orie Steele (Transmute):	QR/NFC => URL
+00:54:08	Orie Steele (Transmute):	They are the same thing most of the time…
+00:54:53	Tim Cappalli:	What's encoded in our QR code is a deep link
+00:55:06	Tim Cappalli:	it's the same string
+00:55:07	Orie Steele (Transmute):	A URL...
+00:55:25	Orie Steele (Transmute):	Or URI
+00:56:13	Orie Steele (Transmute):	Card is the Microsoft term for things that go in a wallet.
+00:56:45	Orie Steele (Transmute):	We use the same term in universal wallet, to avoid creating more terminology
+00:57:00	Tim Cappalli:	what is the generic term for an item in a wallet?
+00:57:07	Orie Steele (Transmute):	Wallet content.
+00:57:10	Tim Cappalli:	lol
+00:57:13	Tim Cappalli:	or Card
+00:57:14	Tim Cappalli:	:)
+00:57:24	Orie Steele (Transmute):	I support you never stored a condom in your wallet ; )
+00:57:29	Orie Steele (Transmute):	Suppose *
+00:57:34	Tim Cappalli:	JFC
+00:59:03	Orie Steele (Transmute):	I also store cash, family photos and sometimes physical keys in my wallet :)
+00:59:23	Tim Cappalli:	What is "cash"?
+00:59:37	Orie Steele (Transmute):	Proof you are not a boomer.
+00:59:49	Marty Reed:	https://www.imsglobal.org/activity/comprehensive-learner-record
+01:00:05	Marty Reed:	https://openbadges.org/
+01:01:22	Orie Steele (Transmute):	Are OIDC “id_tokens” credentials?
+01:01:26	Marty Reed:	https://www.uschamberfoundation.org/t3-innovation-network/ilr-pilot-program
+01:01:46	Nader Helmy:	ZKPs are not a credential format
+01:02:06	Marty Reed:	https://standards.ieee.org/project/1484_2.html
+01:02:50	Orie Steele (Transmute):	https://www.w3.org/TR/vc-data-model/#dfn-verifiable-presentations
+01:03:00	Nader Helmy:	I like Envelopes
+01:03:03	Nader Helmy:	That feels generic
+01:03:19	Orie Steele (Transmute):	If only someone had written a spec, with terms
+01:03:23	Orie Steele (Transmute):	We could use
+01:04:53	Nader Helmy:	Fuzzy Encryption Vault
+01:04:58	Nader Helmy:	Horcrux
+01:05:02	Nader Helmy:	Seedquest
+01:05:51	Orie Steele (Transmute):	https://wiki.trezor.io/Cryptocurrency_standards#BIP39_-_Mnemonic_code_for_generating_deterministic_keys
+01:06:40	Adrian Gropper:	Ceramic
+01:06:51	Orie Steele (Transmute):	MongoDB, Amazone QLDB
+01:06:58	Orie Steele (Transmute):	Cosmos DB
+01:07:05	Orie Steele (Transmute):	MySQL
+01:08:24	Orie Steele (Transmute):	Ceramic is everything!
+01:08:32	Nader Helmy:	Yeah Ceramic is super ambitious
+01:08:53	Orie Steele (Transmute):	Ceramic and DIDComm should merge, and go super nova!
+01:10:36	Orie Steele (Transmute):	Universal Wallet should also be in the schema bucket.
+01:11:27	Nader Helmy:	I think to Marcus’s point earlier in the chat, that certain items/protocols span across more than one layer
+01:11:38	Orie Steele (Transmute):	IPFS is storage
