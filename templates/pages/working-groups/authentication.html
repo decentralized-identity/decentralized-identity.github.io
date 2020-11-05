@@ -65,4 +65,15 @@
   }
 %}
 
-{% extends "wg.html" %}
+{%
+  set liaison = {
+    "Kristina Yasuda": {
+      title: "OIDC liaison / Microsoft",
+      photo: "/images/photos/kristina_yasuda.jpg",
+      linkedin: "kristina-yasuda-6263b5a2",
+      twitter: "kristinayasuda"
+    }
+  }
+%}
+
+{% extends "wg_liaison.html" %}
