@@ -1,0 +1,58 @@
+{% set name = "KERI" %}
+{% set logo = "user_graph" %}
+{% set title = "KERI Working Group" %}
+{% set scope = "Members of the Working Group are primarily working to specify and prototype a Key Event Receipt Infrastructure." %}
+{% set repoTag = "wg-keri" %}
+{% set charters = {
+  "Identifiers and Discovery WG documentation": {
+    links: [
+      {
+        text: "KERI WG Charter",
+        href: "https://github.com/decentralized-identity/org/blob/master/Org%20documents/WG%20documents/DIF_KERI_WG_charter_v1.pdf"
+      },
+      {
+        text: "Mailing list",
+        href: "https://lists.identity.foundation/g/keri"
+      },
+      {
+        text: "Meeting page",
+        href: "https://github.com/decentralized-identity/keri/blob/master/agenda.md"
+      },
+      {
+        text: "Slack channel",
+        href: "https://difdn.slack.com/archives/C0146LH5XQD"
+      }
+    ]
+  }
+}
+%}
+
+{% set projects = {
+    "KERI - Key Event Receipt Infrastructure": {
+      desc: "Spec and implementation of an identifier and key rotation technology, where your primary root of trust is entropy, not any particular ledger.",
+      links: [
+        {
+          text: "Main Repo",
+          href: "https://github.com/decentralized-identity/keri"
+        }
+      ]
+    }
+  }
+%}
+
+{% set chairs = {
+  "Charles Cunningham": {
+      title: "Freelance engineer ",
+      photo: "/images/photos/charles_cunningham.jpg",
+      linkedin: "charles-cunningham-710085139",
+      twitter: "-"
+    },
+    "Samuel Smith": {
+      title: "Founder @ ProSapien",
+      photo: "/images/photos/samuel-smith.jpg",
+      linkedin: "samuel-m-smith-phd-4652751"
+    }
+  }
+%}
+
+{% extends "wg.html" %}
