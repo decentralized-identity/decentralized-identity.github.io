@@ -1,14 +1,17 @@
 
 
 function parseEntries(entries){
-  return entries.map(entry => {
+  return entries.reduce((jobs, entry) => {
     let job = {};
     for (let z in entry) {
       let match = z.match(/gsx\$(.+)/);
       if (match) job[match[1]] = entry[z].$t;
     }
-    return job;
-  })
+    if ((new Date().getTime() - new Date(job.timestamp).getTime()) < (1000 * 86400 * 30)) {
+      jobs.push(job);
+    } 
+    return jobs;
+  }, [])
 }
 
 async function getEntries(){
