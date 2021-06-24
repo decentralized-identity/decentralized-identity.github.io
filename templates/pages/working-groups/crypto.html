@@ -1,0 +1,53 @@
+{% set name = "Crypto" %}
+{% set logo = "crypto" %}
+{% set title = "Applied CryptoWorking Group" %}
+{% set scope = "The Cryptography Working Group will explore cryptographic protocols and -primitives related to Decentralized Identity, including, but not limited to, specific and actual cryptographic topics, such as BBS+ signatures and revocation strategies, as well as signature suites and encryption.
+The working group will define focus topics, create cryptographic protocols, and choose the underlying cryptographic primitives for them." %}
+{% set repoTag = "wg-crypto" %}
+{% set charters = {
+  "Crypto WG documentation": {
+    links: [
+      {
+        text: "Crpyto WG Charter",
+        href: "https://github.com/decentralized-identity/org/blob/master/Org%20documents/WG%20documents/DIF_Applied_Crypto_WG_v1.pdf"
+      },
+      {
+        text: "Mailing list",
+        href: "https://lists.identity.foundation/g/crypto-wg"
+      }
+    ]
+  }
+}
+%}
+
+{% set projects = {
+    "BBS+ 2.0": {
+      desc: " Lorep Ipsum",
+      links: [
+        {
+          text: "BBS+ as reference",
+          href: "www.github.com"
+        }
+      ]
+    }
+  }
+%}
+
+{%
+  set chairs = {
+    "Brent Zundel": {
+      title: "Crypto @ Evernym",
+      photo: "/images/photos/brent-zundel.jpg",
+      linkedin: "bzundel"
+    },
+    "Kyle Den Hartog": {
+      title: "Developer @ Mattr",
+      photo: "/images/photos/kyle-den-hartog.jpg",
+      linkedin: "kyledenhartog",
+      twitter: "MattrGlobal"
+    }
+  }
+%}
+
+
+{% extends "wg.html" %}

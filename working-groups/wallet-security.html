@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>DIF - Identifiers &amp; Discovery Working Group</title>
+  <title>DIF - Wallet Security Working Group</title>
 
   <meta name="google-site-verification" content="8yJCkbG9ayv7Vbjgjk525YTGbDVCvUZ_Moviopr6f1M" />
 
@@ -683,8 +683,8 @@
       
   <section class="page-title theme-bg">
     <div class="container">
-      <svg viewBox="0 0 50 50"><use xlink:href="#user_graph"></use></svg>
-      <h1>Identifiers &amp; Discovery</h1>
+      <svg viewBox="0 0 50 50"><use xlink:href="#wallet"></use></svg>
+      <h1>Wallet Security</h1>
       
         <h3>Working Group</h3>
       
@@ -698,24 +698,21 @@
           <div class="section-title text-center">
             <h2 class="font-alt">Scope of Work</h2>
             <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
-            <p>Members of the Working Group are engaged in development of protocols and systems that enable creation, resolution, and discovery of decentralized identifiers and names across underlying decentralized systems, like blockchains and distributed ledgers.</p>
+            <p>Define a common terminology for understanding the security requirements applicable to wallet architectures and wallet-to-wallet and wallet-to-issuer/verifier protocols. Classify, specify and describe security architectures common to wallets( risks, motivation, etc..)
+Produce guidelines for how to classify and specify the security capabilities of verifiable-credential wallets such as key management, credential storage, device-binding, credential exchange, backup, recovery, and portability of wallets.</p>
             </div>
             </div>
               <div class="col-10 col-md-8 col-lg-6 m-30px-t margin-center">
                 <dl>
                   
-                    <dt>Identifiers and Discovery WG documentation</dt>
+                    <dt>Wallet Security WG documentation</dt>
                     <dd>
                       <p></p>
                       
                         
-                          <a class="block-link icon-link" href="https://github.com/decentralized-identity/org/blob/master/Org%20documents/WG%20documents/DIF_ID_WG_charter_v1.pdf">I&amp;D WG Charter</a>
+                          <a class="block-link icon-link" href="hhttps://github.com/decentralized-identity/org/blob/master/Org%20documents/WG%20documents/DIF_Wallet_Security_WG_Charter_20210616.pdf">Wallet Security WG Charter</a>
                         
-                          <a class="block-link icon-link" href="https://lists.identity.foundation/g/id-wg">Mailing list</a>
-                        
-                          <a class="block-link icon-link" href="https://github.com/decentralized-identity/identifiers-discovery/blob/main/agenda.md">Meeting page</a>
-                        
-                          <a class="block-link icon-link" href="https://difdn.slack.com/messages/C4WED8JSH">Slack channel</a>
+                          <a class="block-link icon-link" href="https://lists.identity.foundation/g/wallet-security">Mailing list</a>
                         
                       
                     </dd>
@@ -734,256 +731,15 @@
             <div class="section-title text-center">
               <h2 class="font-alt">Specs &amp; Projects</h2>
               <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
-              <p>The active work items that are underway in the DIF Identifiers &amp; Discovery Working Group </p>
+              <p>The active work items that are underway in the DIF Wallet Security Working Group </p>
             </div>
           </div>
           <div class="col-6 col-md-8 col-lg-6 m-30px-t margin-center">
             <dl>
               
-                <dt>Universal Resolver</dt>
-                <dd>
-                  <p>Spec and implementation of a driver-based framework that enables resolution of DIDs.</p>
-                  
-                    
-                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/universal-resolver" data-type="">Main Repo</a>
-                    
-                      <a class="block-link icon-link" href="https://uniresolver.io/" data-type="app">Public Instance</a>
-                    
-                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/universal-resolver/blob/master/docs/driver-development.md" data-type="">Driver Development</a>
-                    
-                  
-                </dd>
-              
-                <dt>Universal Registrar</dt>
-                <dd>
-                  <p>Spec and implementation of a driver-based framework that enables creation/updates/deactivation of DIDs.</p>
-                  
-                    
-                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/universal-registrar" data-type="">Main Repo</a>
-                    
-                      <a class="block-link icon-link" href="https://uniregistrar.io/" data-type="app">Public Instance</a>
-                    
-                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/universal-registrar/blob/master/docs/driver-development.md" data-type="">Driver Development</a>
-                    
-                  
-                </dd>
-              
-                <dt>.well-known DID configuration</dt>
-                <dd>
-                  <p>Spec, docs, and implementations for discovering DIDs from .well-known HTTP(S) URIs.</p>
-                  
-                    
-                      <a class="block-link icon-link" href="https://identity.foundation/specs/did-configuration/" data-type="">Spec</a>
-                    
-                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/.well-known/" data-type="">Main Repo</a>
-                    
-                      <a class="block-link icon-link" href="https://identity.foundation/.well-known/resources/did-configuration/demo/build/index.html" data-type="app">Demo Web App</a>
-                    
-                  
-                </dd>
-              
-                <dt>Peer DID Method Specification</dt>
-                <dd>
-                  <p>A rich DID method that has no blockchain dependencies. The verifiable data registry is a synchronization protocol between peers.</p>
-                  
-                    
-                      <a class="block-link icon-link" href="https://identity.foundation/peer-did-method-spec/" data-type="doc">Spec</a>
-                    
-                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/peer-did-method-spec" data-type="">Main Repo</a>
-                    
-                  
-                </dd>
-              
-                <dt>DID Spec Extensions</dt>
-                <dd>
-                  <p> Extension parameters, properties, and values for the DID spec registries.</p>
-                  
-                    
-                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/did-spec-extensions" data-type="">Main Repo</a>
-                    
-                  
-                </dd>
-              
             </dl>
           </div>
 
-          
-          <div class="col-10 col-md-8 col-lg-6 m-30px-t margin-center">
-            <div class="section-title text-center">
-              <h5 style="text-align: center; margin: 2em 0 0;">All Repositories</h5>
-              <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span>
-              </div>
-            </div>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/.well-known" style="display: block; margin-bottom: 1em;"><strong>.well-known</strong>
-                <div style="font-size: 85%; color: #777;">Specs and documentation for all DID-related /.well-known resources</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/activestorage-horcrux" style="display: block; margin-bottom: 1em;"><strong>activestorage-horcrux</strong>
-                <div style="font-size: 85%; color: #777;"></div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/context" style="display: block; margin-bottom: 1em;"><strong>context</strong>
-                <div style="font-size: 85%; color: #777;">DIF Security Contexts &amp; Schemas for Linked Data</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/did-common-dotnet" style="display: block; margin-bottom: 1em;"><strong>did-common-dotnet</strong>
-                <div style="font-size: 85%; color: #777;"></div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/did-common-java" style="display: block; margin-bottom: 1em;"><strong>did-common-java</strong>
-                <div style="font-size: 85%; color: #777;">Shared DID Java library.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/did-jwt" style="display: block; margin-bottom: 1em;"><strong>did-jwt</strong>
-                <div style="font-size: 85%; color: #777;">Create and verify DID verifiable JWT&#39;s in Javascript</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/did-jwt-vc" style="display: block; margin-bottom: 1em;"><strong>did-jwt-vc</strong>
-                <div style="font-size: 85%; color: #777;">Create and verify W3C Verifiable Credentials and Presentations in JWT format</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/did-key.rs" style="display: block; margin-bottom: 1em;"><strong>did-key.rs</strong>
-                <div style="font-size: 85%; color: #777;">Rust implementation of the did:key method </div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/did-registration" style="display: block; margin-bottom: 1em;"><strong>did-registration</strong>
-                <div style="font-size: 85%; color: #777;">A specification for DID create/update/deactivate operations.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/did-resolver" style="display: block; margin-bottom: 1em;"><strong>did-resolver</strong>
-                <div style="font-size: 85%; color: #777;">Universal did-resolver for javascript environments</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/did-spec-extensions" style="display: block; margin-bottom: 1em;"><strong>did-spec-extensions</strong>
-                <div style="font-size: 85%; color: #777;">Extension parameters, properties, and values for the DID spec registries.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/ethr-did-resolver" style="display: block; margin-bottom: 1em;"><strong>ethr-did-resolver</strong>
-                <div style="font-size: 85%; color: #777;">DID resolver for Ethereum Addresses with support for key management</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/fuzzy-encryption" style="display: block; margin-bottom: 1em;"><strong>fuzzy-encryption</strong>
-                <div style="font-size: 85%; color: #777;">A variant of a Fuzzy Vault cryptographic scheme designed for encrypting data with better human recovery features.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/horcrux" style="display: block; margin-bottom: 1em;"><strong>horcrux</strong>
-                <div style="font-size: 85%; color: #777;">Horcrux Protocol</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/identifiers-discovery" style="display: block; margin-bottom: 1em;"><strong>identifiers-discovery</strong>
-                <div style="font-size: 85%; color: #777;">Identifiers &amp; Discovery WG operating repo</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/jsonld-common-java" style="display: block; margin-bottom: 1em;"><strong>jsonld-common-java</strong>
-                <div style="font-size: 85%; color: #777;">Shared JSON-LD Java library.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/jsonld-document-loader" style="display: block; margin-bottom: 1em;"><strong>jsonld-document-loader</strong>
-                <div style="font-size: 85%; color: #777;"></div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/peer-did-method-spec" style="display: block; margin-bottom: 1em;"><strong>peer-did-method-spec</strong>
-                <div style="font-size: 85%; color: #777;">A rich DID method that has no blockchain dependencies. The verifiable data registry is a synchronization protocol between peers.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/secret-recovery-methods" style="display: block; margin-bottom: 1em;"><strong>secret-recovery-methods</strong>
-                <div style="font-size: 85%; color: #777;">Collection of resources related to secret/key recovery</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/uni-registrar-driver-did-btcr" style="display: block; margin-bottom: 1em;"><strong>uni-registrar-driver-did-btcr</strong>
-                <div style="font-size: 85%; color: #777;">A Universal Registrar driver for did:btcr identifiers.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/uni-registrar-driver-did-ion" style="display: block; margin-bottom: 1em;"><strong>uni-registrar-driver-did-ion</strong>
-                <div style="font-size: 85%; color: #777;">A Universal Registrar driver for did:ion identifiers.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/uni-registrar-driver-did-key" style="display: block; margin-bottom: 1em;"><strong>uni-registrar-driver-did-key</strong>
-                <div style="font-size: 85%; color: #777;">A Universal Registrar driver for did:key identifiers.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/uni-registrar-driver-did-sov" style="display: block; margin-bottom: 1em;"><strong>uni-registrar-driver-did-sov</strong>
-                <div style="font-size: 85%; color: #777;">A Universal Registrar driver for did:sov identifiers.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/uni-registrar-driver-did-v1" style="display: block; margin-bottom: 1em;"><strong>uni-registrar-driver-did-v1</strong>
-                <div style="font-size: 85%; color: #777;">A Universal Registrar driver for did:v1 identifiers.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/uni-registrar-driver-did-web" style="display: block; margin-bottom: 1em;"><strong>uni-registrar-driver-did-web</strong>
-                <div style="font-size: 85%; color: #777;">A Universal Registrar driver for did:web identifiers.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/uni-resolver-driver-did-btcr" style="display: block; margin-bottom: 1em;"><strong>uni-resolver-driver-did-btcr</strong>
-                <div style="font-size: 85%; color: #777;">A Universal Resolver driver for did:btcr identifiers.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/uni-resolver-driver-did-ccp" style="display: block; margin-bottom: 1em;"><strong>uni-resolver-driver-did-ccp</strong>
-                <div style="font-size: 85%; color: #777;">A Universal Resolver driver for Baidu did:ccp identifiers.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/uni-resolver-driver-did-dom" style="display: block; margin-bottom: 1em;"><strong>uni-resolver-driver-did-dom</strong>
-                <div style="font-size: 85%; color: #777;">A Universal Resolver driver for did:dom identifiers.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/uni-resolver-driver-did-erc725" style="display: block; margin-bottom: 1em;"><strong>uni-resolver-driver-did-erc725</strong>
-                <div style="font-size: 85%; color: #777;">A Universal Resolver driver for did:erc725 identifiers.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/uni-resolver-driver-did-ion" style="display: block; margin-bottom: 1em;"><strong>uni-resolver-driver-did-ion</strong>
-                <div style="font-size: 85%; color: #777;">Universal Resolver Driver for Identity Overlay Network (ION) DIDs</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/uni-resolver-driver-did-key" style="display: block; margin-bottom: 1em;"><strong>uni-resolver-driver-did-key</strong>
-                <div style="font-size: 85%; color: #777;">A Universal Resolver driver for did:key identifiers.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/uni-resolver-driver-did-sov" style="display: block; margin-bottom: 1em;"><strong>uni-resolver-driver-did-sov</strong>
-                <div style="font-size: 85%; color: #777;">A Universal Resolver driver for did:sov identifiers.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/uni-resolver-driver-did-stack" style="display: block; margin-bottom: 1em;"><strong>uni-resolver-driver-did-stack</strong>
-                <div style="font-size: 85%; color: #777;">A Universal Resolver driver for did:stack identifiers.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/uni-resolver-driver-did-work" style="display: block; margin-bottom: 1em;"><strong>uni-resolver-driver-did-work</strong>
-                <div style="font-size: 85%; color: #777;">A Universal Resolver driver for did:work identifiers.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/uni-resolver-driver-dns" style="display: block; margin-bottom: 1em;"><strong>uni-resolver-driver-dns</strong>
-                <div style="font-size: 85%; color: #777;">A Universal Resolver driver for domain names.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/universal-registrar" style="display: block; margin-bottom: 1em;"><strong>universal-registrar</strong>
-                <div style="font-size: 85%; color: #777;">Universal Registrar implementation and drivers.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/universal-registrar-frontend" style="display: block; margin-bottom: 1em;"><strong>universal-registrar-frontend</strong>
-                <div style="font-size: 85%; color: #777;">Frontend web UI for Universal Registrar.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/universal-resolver" style="display: block; margin-bottom: 1em;"><strong>universal-resolver</strong>
-                <div style="font-size: 85%; color: #777;">Universal Resolver implementation and drivers.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/universal-resolver-frontend" style="display: block; margin-bottom: 1em;"><strong>universal-resolver-frontend</strong>
-                <div style="font-size: 85%; color: #777;">Frontend web UI for Universal Resolver.</div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/universal-resolver-java" style="display: block; margin-bottom: 1em;"><strong>universal-resolver-java</strong>
-                <div style="font-size: 85%; color: #777;"></div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/universal-resolver-python" style="display: block; margin-bottom: 1em;"><strong>universal-resolver-python</strong>
-                <div style="font-size: 85%; color: #777;"></div>
-              </a>
-            
-              <a class="icon-link" href="https://github.com/decentralized-identity/web-did-resolver" style="display: block; margin-bottom: 1em;"><strong>web-did-resolver</strong>
-                <div style="font-size: 85%; color: #777;">DID resolver for HTTPS domains</div>
-              </a>
-            
-          </div>
           
         </div>
         <!-- row -->
@@ -1009,18 +765,18 @@
           <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
             <div class="our-team">
               <div class="img">
-                <img src="/images/photos/markus-sabadello.jpg" />
+                <img src="/images/photos/kristina_yasuda.jpg" />
               </div>
               <div class="info">
-                <h6>Markus Sabadello</h6>
-                <label>Founder @ Danube Tech</label>
+                <h6>Kristina Yosunda</h6>
+                <label>Standards @ Microsoft</label>
               </div>
               <ul class="social-icons">
                 
-                  <li><a class="linkedin" href="https://www.linkedin.com/in/markus-sabadello-353a0821"><svg><use xlink:href="#linkedin"></use></svg></a></li>
+                  <li><a class="linkedin" href="https://www.linkedin.com/in/kristina-yasuda-6263b5a2"><svg><use xlink:href="#linkedin"></use></svg></a></li>
                 
                 
-                  <li><a class="twitter" href="https://twitter.com/peacekeeper"><svg><use xlink:href="#twitter"></use></svg></a></li>
+                  <li><a class="twitter" href="https://twitter.com/kristinayasuda"><svg><use xlink:href="#twitter"></use></svg></a></li>
                 
               </ul>
             </div>
@@ -1029,15 +785,53 @@
           <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
             <div class="our-team">
               <div class="img">
-                <img src="/images/photos/alen-horvat.jpg" />
+                <img src="/images/photos/paul-bastian.jpg" />
               </div>
               <div class="info">
-                <h6>Alen Horvat</h6>
-                <label>SSI Architect @ AceBlock</label>
+                <h6>Paul Basitan</h6>
+                <label>Senior Developer @ BDR</label>
               </div>
               <ul class="social-icons">
                 
-                  <li><a class="linkedin" href="https://www.linkedin.com/in/alen-horvat-0418b551"><svg><use xlink:href="#linkedin"></use></svg></a></li>
+                  <li><a class="linkedin" href="https://www.linkedin.com/in/paul-bastian-1970b1195"><svg><use xlink:href="#linkedin"></use></svg></a></li>
+                
+                
+              </ul>
+            </div>
+          </div>
+        
+          <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
+            <div class="our-team">
+              <div class="img">
+                <img src="/images/photos/bernard-joly.jpg" />
+              </div>
+              <div class="info">
+                <h6>Bernard Joly</h6>
+                <label>Senior Technologist @ OneSpan</label>
+              </div>
+              <ul class="social-icons">
+                
+                  <li><a class="linkedin" href="https://www.linkedin.com/in/bernard-joly-79b1687"><svg><use xlink:href="#linkedin"></use></svg></a></li>
+                
+                
+                  <li><a class="twitter" href="https://twitter.com/bernard_joly"><svg><use xlink:href="#twitter"></use></svg></a></li>
+                
+              </ul>
+            </div>
+          </div>
+        
+          <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
+            <div class="our-team">
+              <div class="img">
+                <img src="/images/photos/oliver-lauer.jpg" />
+              </div>
+              <div class="info">
+                <h6>Oliver Lauer</h6>
+                <label>Digital Identity @ DSGV</label>
+              </div>
+              <ul class="social-icons">
+                
+                  <li><a class="linkedin" href="https://www.linkedin.com/in/oliverlauer"><svg><use xlink:href="#linkedin"></use></svg></a></li>
                 
                 
               </ul>
