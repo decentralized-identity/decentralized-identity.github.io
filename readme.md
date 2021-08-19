@@ -30,9 +30,17 @@ The site was intended to be as easy as possible for folks to extend and contribu
   // PAGE-SPECIFIC SCRIPTS HERE
 {% endblock %}
 ```
-#### Modifying Templates/Parials
+#### Modifying Templates/Partials
 
 The site's base file is composed of a handful of page skeletons and partial templates that are shared across all pages. Each pertains to a given part of the base template (i.e. head, nav, footer, etc.), and editing them will change their content across all pages that include them. The partial templates can be found the directory `/templates`.
+
+#### Including repos in Working Group pages
+
+In order to include a list of active repos in your Working Group pages (see the "All Repositories" section here for an example: [DID Comms WG](https://identity.foundation/working-groups/did-comm.html)), you need to add tags (e.g. `wg-<wg_name_here>`) in GitHub for all the repos you want included in the list. After that, ensure the tag you used is included in Gulp file list of tags the renderer uses to pull in content from: [Gulp file tag list](https://github.com/decentralized-identity/decentralized-identity.github.io/blob/master/gulpfile.js#L48).
+
+#### Rendered Files
+
+Site content is rendered to the `/docs` directory, which is served via GH Pages.
 
 #### Building and running the site
 
