@@ -44,7 +44,8 @@ const repoTopics = {
   'wg-cc': 1,
   'wg-id': 1,
   'wg-sc': 1,
-  'wg-sds': 1
+  'wg-sds': 1,
+  'wg-didcomm': 1
 }
 
 async function iterateRepos(fn, page = 1) {
@@ -77,7 +78,6 @@ async function compileRepos() {
     })
     return compiledRepos;
   } catch (error) {
-    console.log(error);
     return compiledRepos;
   }
 };
@@ -98,8 +98,11 @@ gulp.task('templates', async function() {
       data: {
         repos: compiledRepos || await compileRepos()
       }
+    }).on('error', function(e){
+      console.log(`Error in ${e.fileName}: ${e.message.toString()}`);
     }))
     .pipe(gulp.dest('.'))
+    
 });
 
 gulp.task('build', gulp.parallel('assets', 'templates'));
