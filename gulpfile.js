@@ -101,7 +101,7 @@ gulp.task('templates', async function() {
     }).on('error', function(e){
       console.log(`Error in ${e.fileName}: ${e.message.toString()}`);
     }))
-    .pipe(gulp.dest('.'))
+    .pipe(gulp.dest('./docs'))
     
 });
 
