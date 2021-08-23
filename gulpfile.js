@@ -4,13 +4,14 @@ const uglify = require('gulp-uglify');
 const nunjucksRender = require('gulp-nunjucks-render');
 const axios = require('axios');
 
+
 var assets = {
   js: [
-    'js/jquery-3.2.1.min.js',
-    'js/jquery-migrate-3.0.0.min.js',
-    'plugins/bootstrap/js/popper.min.js',
-    'plugins/bootstrap/js/bootstrap.min.js',
-    'js/custom.js'
+    'docs/js/jquery-3.2.1.min.js',
+    'docs/js/jquery-migrate-3.0.0.min.js',
+    'docs/plugins/bootstrap/js/popper.min.js',
+    'docs/plugins/bootstrap/js/bootstrap.min.js',
+    'docs/js/custom.js'
   ]
 };
 
@@ -44,8 +45,11 @@ const repoTopics = {
   'wg-cc': 1,
   'wg-id': 1,
   'wg-sc': 1,
-  'wg-sds': 1,
-  'wg-didcomm': 1
+  'wg-didcomm': 1,
+  'wg-crypto': 1,
+  'wg-keri': 1,
+  'wg-sidetree': 1,
+  'wg-ws': 1
 }
 
 async function iterateRepos(fn, page = 1) {
