@@ -92,7 +92,7 @@ gulp.task('assets', function() {
   return gulp.src(assets.js)
     .pipe(uglify())
     .pipe(concat('base.js'))
-    .pipe(gulp.dest('js'));
+    .pipe(gulp.dest('docs/js'));
 });
 
 gulp.task('templates', async function() {
