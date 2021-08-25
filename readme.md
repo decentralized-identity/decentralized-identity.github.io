@@ -46,6 +46,7 @@ Site content is rendered to the `/docs` directory, which is served via GH Pages.
 
 1. Run `npm install`, to setup dependencies.
 2. Run `gulp watch`, which will compile changes every time you save a file and output the completed static pages.
-3. Run `serve`, assuming you've install the npm `serve` package globally (if not, do that). This will start a server that allows you to view the site via a `localhost` port.
+3. If you don't already have the NPM `serve` package installed, install it globally with `npm -g install serve`.
+4. CD into the `/docs` directory (`cd docs`) and run the `serve` command. This will start a local server that allows you to view the site via a `localhost` port.
 
 
