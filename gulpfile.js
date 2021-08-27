@@ -109,8 +109,10 @@ gulp.task('templates', async function() {
     
 });
 
-gulp.task('build', gulp.parallel('assets', 'templates'));
+gulp.task('repoCompilation', (done) => {
+  repoCompilation.then(z => done())
+});
+
+gulp.task('build', gulp.series('repoCompilation', gulp.parallel('assets', 'templates')));
 
 gulp.task('watch', () => gulp.watch(['templates/**/*', 'docs/js/**/*', '!docs/js/base.js'], gulp.parallel('build')));
-
-repoCompilation.then(r => gulp.parallel('build')());
