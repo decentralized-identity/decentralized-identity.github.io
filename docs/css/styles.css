@@ -159,7 +159,6 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #6F8BA4;
-  font-smoothing: antialiased;
   font-weight: 400;
 }
 
@@ -300,6 +299,21 @@ h5 {
 
 .icon-link[href*="github.com"]:before {
   background: url(/icons/github.svg);
+  background-size: cover;
+}
+
+.icon-link[href*="lists.identity.foundation"]:before {
+  background: url(/icons/mail.svg);
+  background-size: cover;
+}
+
+.icon-link[href*="slack.com"]:before {
+  background: url(/icons/slack.svg);
+  background-size: cover;
+}
+
+.icon-link[href*="calendar.google.com"]:before {
+  background: url(/icons/calendar.svg);
   background-size: cover;
 }
 
@@ -581,10 +595,6 @@ h5 {
   width: 100%;
   height: 100%;
   background: #ff4850;
-  -webkit-transform: translate3d(-100%, 0, 0) translate3d(-1px, 0, 0);
-  -moz-transform: translate3d(-100%, 0, 0) translate3d(-1px, 0, 0);
-  -ms-transform: translate3d(-100%, 0, 0) translate3d(-1px, 0, 0);
-  -o-transform: translate3d(-100%, 0, 0) translate3d(-1px, 0, 0);
   -webkit-transition: transform 0.7s cubic-bezier(0.7, 0, 0.3, 1);
   transition: transform 0.7s cubic-bezier(0.7, 0, 0.3, 1);
   content: "";
