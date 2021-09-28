@@ -222,7 +222,7 @@ h5 {
 }
 
 .section {
-  padding: 90px 0;
+  padding: 40px 0;
 }
 
 @media (max-width: 991px){
@@ -1081,7 +1081,7 @@ h5 {
 
 .home-banner .container .row {
   position: relative;
-  min-height: 65vh;
+  min-height: 50vh;
 }
 
 .home-banner .particles-js-canvas-el {
@@ -1100,7 +1100,7 @@ h5 {
   font-size: 42px;
   font-weight: 400;
   color: #fff;
-  margin:0 0 25px;
+  margin:25px 0 25px;
   letter-spacing: 1.4px;
 }
 .home-banner p {
@@ -1121,12 +1121,16 @@ h5 {
 
 .home-banner .m-btn {
   min-width: 140px;
-  margin: 3em 0 2em;
+  margin: 4em 0 0em;
   text-align: center;
 }
 
 .home-banner .home-right {
   padding-bottom: 3em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
 }
 
 #membership_press_radios .btn {
