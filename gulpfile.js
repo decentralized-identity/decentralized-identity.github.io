@@ -96,17 +96,17 @@ gulp.task('assets', function() {
 });
 
 gulp.task('templates', async function() {
-  return gulp.src('templates/pages/**/*.html')
+  return gulp.src('templates/pages/**/*.html.njk')
     .pipe(nunjucksRender({
       path: ['templates', 'templates/partials', 'templates/pages'],
       data: {
         repos: compiledRepos || await compileRepos()
       }
-    }).on('error', function(e){
-      console.log(`Error in ${e.fileName}: ${e.message.toString()}`);
+    }).on('error', (e) => {
+      console.log(`Error in ${e.fileName ? e.fileName : '(filename not available)'}: ${e.message.toString()}`);
     }))
     .pipe(gulp.dest('./docs'))
-    
+
 });
 
 gulp.task('repoCompilation', (done) => {
