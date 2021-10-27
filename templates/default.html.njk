@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  {% include "head.html" %}
+  {% include "head.html.njk" %}
 
   <body>
     <svg style="display: none">
-      {% include "svg.html" %}
+      {% include "svg.html.njk" %}
       {% block svg %}{% endblock %}
     </svg>
-    {% include "nav.html" %}
+
+    {% include "nav.html.njk" %}
+
     <main>
       {% block content %}{% endblock %}
     </main>
-    {% include "footer.html" %}
+
+    {% include "footer.html.njk" %}
+
     {% for file in js %}
-      <script src="/js/{{file}}.js"></script>
+      <script src="/js/{{ file }}.js"></script>
     {% endfor %}
+
     {% block scripts %}
       <script src="/js/base.js"></script>
     {% endblock %}

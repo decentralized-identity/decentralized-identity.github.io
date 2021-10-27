@@ -1,40 +1,46 @@
-{% extends "default.html" %}
+{% extends "default.html.njk" %}
 
 {% block content %}
   <section class="page-title theme-bg">
     <div class="container">
       <svg><use xlink:href="#{{logo}}"></use></svg>
       <h1>{{name}}</h1>
-      <h3>Decentralized Identity Foundation</h3>
+      {% if subtitle %}
+        <h3>{{subtitle}}</h3>
+      {% else %}
+        <h3>Working Group</h3>
+      {% endif %}
+      {% if shortform %}
+      <h4>short: {{shortform}}</h4>
+      {% endif %}
     </div>
   </section>
 
   <section class="counter-section">
     <div class="container">
-      <div class="row justify-content-center  md-m-20px-b sm-m-15px-b">
+      <div class="row justify-content-center m-45px-b md-m-20px-b sm-m-15px-b">
         <div class="col-12 col-md-10 col-lg-10">
           <div class="section-title text-center">
-            <h2 class="font-alt">Vision</h2>
+            <h2 class="font-alt">Scope of Work</h2>
             <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
-            <h3 align="left">{{scope}}</h3>
+            <p>{{scope}}</p>
             </div>
             </div>
-            </div>
-        </div>
-  </section>
-  <section class="counter-section">
-    <div class="container">
-      <div class="row justify-content-center  md-m-20px-b sm-m-15px-b">
-        <div class="col-12 col-md-10 col-lg-10">
-          <div class="section-title text-center">
-            <h2 class="font-alt">Mission</h2>
-            <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
-            <h6 align="left">{{Mission1}}</h6><br>
-            <h6 align="left">{{Mission2}}</h6><br>
-            <h6 align="left">{{Mission3}}</h6><br>
-            <h6 align="left">{{Mission4}}</h6><br>
-            </div>
-            </div>
+              <div class="col-10 col-md-8 col-lg-6 m-30px-t margin-center">
+                <dl>
+                  {% for key, val in charters %}
+                    <dt>{{key}}</dt>
+                    <dd>
+                      <p>{{val.desc}}</p>
+                      {% if val.links %}
+                        {% for link in val.links %}
+                          <a class="block-link icon-link" href="{{link.href}}">{{link.text}}</a>
+                        {% endfor %}
+                      {% endif %}
+                    </dd>
+                  {% endfor %}
+                </dl>
+              </div>
             </div>
         </div>
   </section>
@@ -45,9 +51,9 @@
         <div class="column justify-content-center">
           <div class="col-12">
             <div class="section-title text-center">
-              <h2 class="font-alt">Governing Documents</h2>
+              <h2 class="font-alt">Specs &amp; Projects</h2>
               <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
-              <p>The documents that are currently accepted by the foundation</p>
+              <p>The active work items that are underway in the DIF {{name}} Working Group </p>
             </div>
           </div>
           <div class="col-10 col-md-8 col-lg-6 m-30px-t margin-center">
@@ -65,6 +71,21 @@
               {% endfor %}
             </dl>
           </div>
+
+          {% if repos[repoTag] %}
+          <div class="col-10 col-md-8 col-lg-6 m-30px-t margin-center">
+            <div class="section-title text-center">
+              <h5 style="text-align: center; margin: 2em 0 0;">All Repositories</h5>
+              <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span>
+              </div>
+            </div>
+            {% for repo in repos[repoTag] %}
+              <a class="icon-link" href="{{repo.html_url}}" style="display: block; margin-bottom: 1em;"><strong>{{repo.name}}</strong>
+                <div style="font-size: 85%; color: #777;">{{repo.description}}</div>
+              </a>
+            {% endfor %}
+          </div>
+          {% endif %}
         </div>
         <!-- row -->
       </div>
@@ -77,9 +98,9 @@
       <div class="row justify-content-center m-45px-b md-m-20px-b sm-m-15px-b">
         <div class="col-12 col-md-10 col-lg-7">
           <div class="section-title text-center">
-            <h2 class="font-alt">Steering Committee members</h2>
+            <h2 class="font-alt">Chairs</h2>
             <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
-            <p>The following DIF members are the elected representatives of DIF's Steering Committee</p>
+            <p>The following DIF members lead the work in this group, contact them for more info on the projects, specs, and development happening within.</p>
           </div>
         </div>
       </div>
@@ -88,7 +109,10 @@
         {% for key, val in chairs %}
           <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
             <div class="our-team">
-              <div class="info m-30px-tb">
+              <div class="img">
+                <img src="{{val.photo}}" />
+              </div>
+              <div class="info">
                 <h6>{{key}}</h6>
                 <label>{{val.title}}</label>
               </div>
@@ -103,22 +127,6 @@
             </div>
           </div>
         {% endfor %}
-      </div>
-
-      <div class="col-10 col-md-8 col-lg-6 m-30px-t margin-center">
-        <dl>
-          {% for key, val in meetings %}
-            <dt>{{key}}</dt>
-            <dd>
-              <p>{{val.desc}}</p>
-              {% if val.links %}
-                {% for link in val.links %}
-                  <a class="block-link icon-link" href="{{link.href}}">{{link.text}}</a>
-                {% endfor %}
-              {% endif %}
-            </dd>
-          {% endfor %}
-        </dl>
       </div>
 
     </div>
@@ -129,18 +137,21 @@
       <div class="row justify-content-center m-45px-b md-m-20px-b sm-m-15px-b">
         <div class="col-12 col-md-10 col-lg-7">
           <div class="section-title text-center">
-            <h2 class="font-alt">DIF team</h2>
+            <h2 class="font-alt">Editors</h2>
             <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
-            <p>The OG team making sure DIF is run properly</p>
+            <p>The following DIF members lead the work and manage GitHub RPs</p>
           </div>
         </div>
       </div>
 
       <div class="row justify-content-center">
-        {% for key, val in team %}
+        {% for key, val in editors %}
           <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
             <div class="our-team">
-              <div class="info m-30px-tb">
+              <div class="img">
+                <img src="{{val.photo}}" />
+              </div>
+              <div class="info">
                 <h6>{{key}}</h6>
                 <label>{{val.title}}</label>
               </div>
@@ -155,9 +166,9 @@
             </div>
           </div>
         {% endfor %}
-        </div>
+      </div>
+
     </div>
   </section>
 
- 
 {% endblock %}
