@@ -98,7 +98,13 @@ gulp.task('assets', function() {
     .pipe(gulp.dest('docs/js'));
 });
 
-gulp.task('templates', async function() {
+gulp.task('assetsCopy', () => {
+  return gulp.src('assets/**')
+    .pipe(gulp.dest('docs/assets'));
+});
+
+
+gulp.task('templates', async () => {
   return gulp.src(['templates/pages/**/*.html.njk', 'templates/pages/**/*.html'])
     .pipe(nunjucksRender({
       path: ['templates', 'templates/partials', 'templates/pages'],
@@ -113,11 +119,11 @@ gulp.task('templates', async function() {
 
       transform(file, enc, callback) {
         if (file instanceof File) {
-          if (existsSync(file.path) === false ) {
-            console.log(`:: Writing new file: ${file.path}`);
-          }
           if (file.path.endsWith('.html.html')) {
             file.path = file.path.slice(0, -5)
+          }
+          if (existsSync(file.path) === false ) {
+            console.log(`:: Writing new file: ${file.path}`);
           }
           callback(null, file)
         } else {
@@ -134,6 +140,6 @@ gulp.task('repoCompilation', (done) => {
   repoCompilation.then(z => done())
 });
 
-gulp.task('build', gulp.series('repoCompilation', gulp.parallel('assets', 'templates')));
+gulp.task('build', gulp.series('repoCompilation', gulp.parallel('assets', 'assetsCopy', 'templates')));
 
 gulp.task('watch', () => gulp.watch(['templates/**/*', 'docs/js/**/*', '!docs/js/base.js'], gulp.parallel('build')));
