@@ -8,7 +8,7 @@
   <link href="/plugins/owl-carousel/css/owl.carousel.min.css" rel="stylesheet"/>
   {% for file in css %}
     <link href="/css/{{ file }}.css" rel="stylesheet"/>
-  {% endfor %}
+  {% else %}<!-- no css were found to include -->{% endfor %}
   <!-- Theme Style -->
   <link href="/css/styles.css" rel="stylesheet"/>
   <link href="/css/color/default.css" rel="stylesheet" id="color_theme"/> <!-- Favicon -->
