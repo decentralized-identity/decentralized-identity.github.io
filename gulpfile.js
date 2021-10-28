@@ -4,6 +4,9 @@ const uglify = require('gulp-uglify');
 const nunjucksRender = require('gulp-nunjucks-render');
 const axios = require('axios');
 
+const { Transform } = require('stream');
+const File = require('vinyl');
+const { existsSync } = require('fs');
 
 var assets = {
   js: [
@@ -96,7 +99,7 @@ gulp.task('assets', function() {
 });
 
 gulp.task('templates', async function() {
-  return gulp.src('templates/pages/**/*.html.njk')
+  return gulp.src(['templates/pages/**/*.html.njk', 'templates/pages/**/*.html'])
     .pipe(nunjucksRender({
       path: ['templates', 'templates/partials', 'templates/pages'],
       data: {
@@ -104,6 +107,22 @@ gulp.task('templates', async function() {
       }
     }).on('error', (e) => {
       console.log(`Error in ${e.fileName ? e.fileName : '(filename not available)'}: ${e.message.toString()}`);
+    }))
+    .pipe(new Transform({
+      objectMode: true,
+
+      transform(file, enc, callback) {
+        if (file instanceof File) {
+          console.log(file.path, existsSync(file.path));
+          if (file.path.endsWith('.html.html')) {
+            file.path = file.path.slice(0, -5)
+          }
+          callback(null, file)
+        } else {
+          console.log(file);
+          callback(new Error('Error, unexpected type received in pipe'), null)
+        }
+      }
     }))
     .pipe(gulp.dest('./docs'))
 
