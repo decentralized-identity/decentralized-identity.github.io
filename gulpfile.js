@@ -122,9 +122,6 @@ gulp.task('templates', async () => {
           if (file.path.endsWith('.html.html')) {
             file.path = file.path.slice(0, -5)
           }
-          if (existsSync(file.path) === false ) {
-            console.log(`:: Writing new file: ${file.path}`);
-          }
           callback(null, file)
         } else {
           console.log(file);
