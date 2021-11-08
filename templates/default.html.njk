@@ -4,13 +4,7 @@
   {% include "head.html.njk" %}
 
   <body>
-    <svg style="display: none">
-      {% include "svg.html.njk" %}
-      {% block svg %}{% endblock %}
-    </svg>
-
     {% include "nav.html.njk" %}
-
     <main>
       {% block content %}{% endblock %}
     </main>
