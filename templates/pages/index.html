@@ -1,5 +1,5 @@
 
-{% extends "default.html" %}
+{% extends "default.html.njk" %}
 
 {% block content %}
 
@@ -28,7 +28,7 @@
       <div class="row justify-content-center">
         <div class="col-12 col-md-10 col-lg-7">
           <div class="section-title text-center">
-            <h5><svg color="dark-blue"><use xlink:href="#newsletter"></use></svg> <span>DIF Monthly Newsletter</span></h5>
+            <h5><svg color="dark-blue"><use xlink:href="images/icons.svg#newsletter"></use></svg> <span>DIF Monthly Newsletter</span></h5>
             <form id="newsletter_form" class="validate" method="post">
               <div class="form-group">
                 <input type="email" value="" name="entry.1674911602" class="form-control" placeholder="Email address" class="validate form-control" required="">
@@ -57,7 +57,7 @@
         <div class="row">
           <div class="col-12 col-md-4 ">
             <div class="feature-box-01  sm-m-15px-t">
-              <svg><use xlink:href="#sketching"></use></svg>
+              <svg><use xlink:href="images/icons.svg#sketching"></use></svg>
               <div class="feature-content">
                 <h5 class="font-alt">Technical Specifications</h5>
                 <p>Groups in DIF develop specifications and emerging standards for protocols, components, and data formats that implementers can execute against.</p>
@@ -66,7 +66,7 @@
           </div> <!-- col -->
           <div class="col-12 col-md-4">
             <div class="feature-box-01 sm-m-0px-t">
-              <svg><use xlink:href="#command_line"></use></svg>
+              <svg><use xlink:href="images/icons.svg#command_line"></use></svg>
               <div class="feature-content">
                 <h5 class="font-alt">Reference Implementations</h5>
                 <p>Beyond specifications, DIF members develop open source reference implementations of the technical components and protocols they create.</p>
@@ -76,7 +76,7 @@
 
           <div class="col-12 col-md-4">
             <div class="feature-box-01">
-              <svg><use xlink:href="#biz_discussion"></use></svg>
+              <svg><use xlink:href="images/icons.svg#biz_discussion"></use></svg>
               <div class="feature-content">
                 <h5 class="font-alt">Industry Coordination</h5>
                 <p>As the leading industry organization in the Decentralized Identity space, DIF seeks to align industry participants to advance their common interests.</p>
@@ -116,7 +116,7 @@
         <div class="row">
           <div class="col-12 col-md-4 ">
             <div class="feature-box-01  sm-m-15px-t">
-              <svg><use xlink:href="#user_graph"></use></svg>
+              <svg><use xlink:href="images/icons.svg#user_graph"></use></svg>
               <div class="feature-content">
                 <h5 class="font-alt">Identifiers & Discovery </h5>
                 <p>A key piece of the decentralized identity equation is how people, organizations, and devices can be identified and located without centralized systems of identifiers (e.g. email addresses). DIF members are actively working on protocols and implementations that enable creation, resolution, and discovery of decentralized identifiers and names across decentralized systems, like blockchains and distributed ledgers.</p>
@@ -127,7 +127,7 @@
           </div> <!-- col -->
           <div class="col-12 col-md-4">
             <div class="feature-box-01 sm-m-0px-t">
-              <svg><use xlink:href="#login_screen"></use></svg>
+              <svg><use xlink:href="images/icons.svg#login_screen"></use></svg>
               <div class="feature-content">
                 <h5 class="font-alt">DID Authentication</h5>
                 <p>Design, recommend and implement authentication and authorization protocols that rely
@@ -141,7 +141,7 @@
 
           <div class="col-12 col-md-4">
             <div class="feature-box-01">
-              <svg><use xlink:href="#validate_user"></use></svg>
+              <svg><use xlink:href="images/icons.svg#validate_user"></use></svg>
               <div class="feature-content">
                 <h5 class="font-alt">Claims & Credentials</h5>
                 <p>The ability to verify the claims and assertions of identities is key in establishing trust among entities on a decentralized system that lacks a centralized hierarchy. DIF has recently begun work on defining the specs, protocols, and tools it can provide to the ecosystem to help ecosystem participants and their customers easily integrate DID-signed claims into their apps and services.</p>
@@ -155,7 +155,7 @@
         <div class="row">
           <div class="col-12 col-md-4 ">
             <div class="feature-box-01  sm-m-15px-t">
-              <svg><use xlink:href="#communicate_user"></use></svg>
+              <svg><use xlink:href="images/icons.svg#communicate_user"></use></svg>
               <div class="feature-content">
                 <h5 class="font-alt">DID Communication </h5>
                 <p>  Produce one or more high-quality specs that embody a method (“DIDComm”) for secure, private and (where
@@ -168,7 +168,7 @@
           </div> <!-- col -->
           <div class="col-12 col-md-4">
             <div class="feature-box-01 sm-m-0px-t">
-              <svg><use xlink:href="#sidetree"></use></svg>
+              <svg><use xlink:href="images/icons.svg#sidetree"></use></svg>
               <div class="feature-content">
                 <h5 class="font-alt">Sidetree</h5>
                 <p>The development and maintenance of the formal Sidetree specification, 
@@ -182,7 +182,7 @@
 
           <div class="col-12 col-md-4">
             <div class="feature-box-01">
-              <svg><use xlink:href="#box"></use></svg>
+              <svg><use xlink:href="images/icons.svg#box"></use></svg>
               <div class="feature-content">
                 <h5 class="font-alt">Secure Data Storage</h5>
                 <p>Create one or more specifications to establish a foundational layer for secure data storage (including personal data), specifically
@@ -197,7 +197,7 @@
         <div class="row">
           <div class="col-12 col-md-4 ">
             <div class="feature-box-01  sm-m-15px-t">
-              <svg><use xlink:href="#key"></use></svg>
+              <svg><use xlink:href="images/icons.svg#key"></use></svg>
               <div class="feature-content">
                 <h5 class="font-alt">KERI</h5>
                 <p>Members of the Working Group are primarily working to specify and prototype a Key Event Receipt Infrastructure. Data models, event models, protocols, and functional components
@@ -210,7 +210,7 @@
           </div> <!-- col -->
           <div class="col-12 col-md-4">
             <div class="feature-box-01 sm-m-0px-t">
-              <svg><use xlink:href="#wallet"></use></svg>
+              <svg><use xlink:href="images/icons.svg#wallet"></use></svg>
               <div class="feature-content">
                 <h5 class="font-alt">Wallet Security</h5>
                 <p>Define a common terminology for understanding the security requirements applicable to wallet architectures and wallet-to-wallet and wallet-to-issuer/verifier protocols. Classify, specify and describe security architectures common to wallets( risks, motivation, etc..)
@@ -222,7 +222,7 @@
 
           <div class="col-12 col-md-4">
             <div class="feature-box-01">
-              <svg><use xlink:href="#crypto"></use></svg>
+              <svg><use xlink:href="images/icons.svg#crypto"></use></svg>
               <div class="feature-content">
                 <p>The Applied Crypto Working Group will explore cryptographic protocols and primitives related to Decentralized Identities. Including, but not limited to, specific and actual cryptographic topics, such as BBS+ signatures,  revocation strategies, as well as signature suites and encryption.
                   The working group will define focus topics, create cryptographic protocols, and choose the underlying cryptographic primitives for them.</p>

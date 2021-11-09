@@ -3,16 +3,12 @@
 {% set title = "Join" %}
 {% set repoTag = "" %}
 
-{% extends "default.html" %}
-
-<!-- {% block svg %}
-
-{% endblock %} -->
+{% extends "default.html.njk" %}
 
 {% block content %}
 <section class="page-title theme-bg">
   <div class="container">
-    <svg><use xlink:href="#{{logo}}"></use></svg>
+    <svg><use xlink:href="/images/icons.svg#{{logo}}"></use></svg>
     <h1>{{name}}</h1>
     {% if subtitle %}
       <h3>{{subtitle}}</h3>
@@ -208,7 +204,7 @@
               <td>No</td>
             </tr>
             <tr>
-              <td>Post on <a href="https://identity.foundation/jobs/">Jobboard</a></td>
+              <td>Post on <a href="/jobs/">Jobboard</a></td>
               <td>Yes</td>
               <td>No</td>
             </tr>

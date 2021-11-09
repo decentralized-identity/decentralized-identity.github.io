@@ -1,14 +1,17 @@
-{% extends "default.html" %}
+{% extends "default.html.njk" %}
 
 {% block content %}
   <section class="page-title theme-bg">
     <div class="container">
-      <svg><use xlink:href="#{{logo}}"></use></svg>
+      <svg><use xlink:href="/images/icons.svg#{{logo}}"></use></svg>
       <h1>{{name}}</h1>
       {% if subtitle %}
         <h3>{{subtitle}}</h3>
       {% else %}
-        <h3>Open Group</h3>
+        <h3>Working Group</h3>
+      {% endif %}
+      {% if shortform %}
+      <h4>short: {{shortform}}</h4>
       {% endif %}
     </div>
   </section>
@@ -48,9 +51,9 @@
         <div class="column justify-content-center">
           <div class="col-12">
             <div class="section-title text-center">
-              <h2 class="font-alt">Projects</h2>
+              <h2 class="font-alt">Specs &amp; Projects</h2>
               <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
-              <p>The active work items that are underway in the DIF {{name}} Open Group </p>
+              <p>The active work items that are underway in the DIF {{name}} Working Group </p>
             </div>
           </div>
           <div class="col-10 col-md-8 col-lg-6 m-30px-t margin-center">
@@ -115,10 +118,49 @@
               </div>
               <ul class="social-icons">
                 {% if val.linkedin %}
-                  <li><a class="linkedin" href="https://www.linkedin.com/in/{{val.linkedin}}"><svg><use xlink:href="#linkedin"></use></svg></a></li>
+                  <li><a class="linkedin" href="https://www.linkedin.com/in/{{val.linkedin}}"><svg><use xlink:href="images/icons.svg#linkedin"></use></svg></a></li>
                 {% endif %}
                 {% if val.twitter %}
-                  <li><a class="twitter" href="https://twitter.com/{{val.twitter}}"><svg><use xlink:href="#twitter"></use></svg></a></li>
+                  <li><a class="twitter" href="https://twitter.com/{{val.twitter}}"><svg><use xlink:href="images/icons.svg#twitter"></use></svg></a></li>
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </section>
+
+  <section class="counter-section">
+    <div class="container">
+      <div class="row justify-content-center m-45px-b md-m-20px-b sm-m-15px-b">
+        <div class="col-12 col-md-10 col-lg-7">
+          <div class="section-title text-center">
+            <h2 class="font-alt">Editors</h2>
+            <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+            <p>The following DIF members lead the work and manage GitHub RPs</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        {% for key, val in editors %}
+          <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
+            <div class="our-team">
+              <div class="img">
+                <img src="{{val.photo}}" />
+              </div>
+              <div class="info">
+                <h6>{{key}}</h6>
+                <label>{{val.title}}</label>
+              </div>
+              <ul class="social-icons">
+                {% if val.linkedin %}
+                  <li><a class="linkedin" href="https://www.linkedin.com/in/{{val.linkedin}}"><svg><use xlink:href="images/icons.svg#linkedin"></use></svg></a></li>
+                {% endif %}
+                {% if val.twitter %}
+                  <li><a class="twitter" href="https://twitter.com/{{val.twitter}}"><svg><use xlink:href="images/icons.svg#twitter"></use></svg></a></li>
                 {% endif %}
               </ul>
             </div>

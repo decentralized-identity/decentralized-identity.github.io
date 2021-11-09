@@ -1,31 +1,22 @@
 {% set css = ['directory', 'jobs'] %}
 {% set js = ['jsonp', 'jobs'] %}
 
-{% extends "default.html" %}
-
-{% block svg %}
-<symbol id="briefcase" viewBox="0 0 512 512">
-  <path d="m153.555 207.4h19.871c4.394 0 8.391 1.814 11.282 4.705s4.705 6.889 4.705 11.281v35.547c8.277 1.275 16.753 2.381 25.172 3.373 9.299 1.078 18.454 1.957 27.156 2.693v-9.779c0-6.15 2.495-11.707 6.521-15.732 4.054-4.025 9.609-6.52 15.731-6.52h71.236c6.123 0 11.679 2.494 15.704 6.52 4.025 4.025 6.52 9.582 6.52 15.732v9.809c34.272-2.863 75.714-8.25 105.194-17.943 9.752-3.176 34.356-11.963 34.356-24.691v-83.735c0-.85-.935-1.332-1.7-1.332-130.48 0-260.932 0-391.385 0-.765 0-1.7.482-1.7 1.332v34.385h5.386c6.774 0 12.954 2.777 17.433 7.229 2.75 2.777 4.877 6.18 6.096 9.977 6.35.283 12.104 2.977 16.328 7.229 2.777 2.749 4.875 6.151 6.094 9.92zm55.984-85.068v-20.295c0-8.902 3.63-16.951 9.469-22.791 4.365-4.365 10.007-7.512 16.271-8.816 1.162-3.996 3.317-7.568 6.208-10.459 4.423-4.422 10.545-7.172 17.292-7.172h81.667c6.746 0 12.869 2.75 17.291 7.172 2.863 2.891 5.046 6.463 6.208 10.459 6.265 1.305 11.877 4.451 16.242 8.816 5.869 5.84 9.497 13.889 9.497 22.791v20.295h105.62c4.507 0 8.645 1.787 11.679 4.705 3.09 2.977 5.018 7.088 5.018 11.623v83.734c0 10.971-6.917 19.9-18.426 27.156v139.465c0 4.535-1.842 8.647-4.818 11.623-3.005 2.977-7.115 4.846-11.65 4.846h-287.694v37.73c0 4.393-1.814 8.391-4.705 11.281-2.892 2.891-6.889 4.705-11.282 4.705h-157.439c-4.394 0-8.39-1.815-11.281-4.705-2.92-2.89-4.706-6.888-4.706-11.28v-92.92c0-4.139 3.373-7.512 7.512-7.512s7.483 3.373 7.483 7.512v92.92c0 .51.454.963.992.963h157.438c.51 0 .992-.453.992-.963v-45.242-174.586c0-.51-.482-.963-.992-.963h-19.871c-1.219 3.77-3.316 7.172-6.094 9.922-4.451 4.479-10.631 7.256-17.434 7.256h-70.639c-6.803 0-12.982-2.777-17.462-7.256-2.75-2.75-4.848-6.152-6.066-9.922h-19.872c-.538 0-.992.453-.992.963v92.92c0 4.139-3.345 7.512-7.483 7.512s-7.512-3.374-7.512-7.512v-92.92c0-4.393 1.786-8.391 4.706-11.281 2.892-2.891 6.888-4.705 11.281-4.705h19.871c1.219-3.77 3.316-7.172 6.066-9.922 4.253-4.252 10.007-6.945 16.356-7.229 1.22-3.797 3.345-7.199 6.095-9.977 4.479-4.451 10.658-7.229 17.434-7.229h5.386v-34.384c0-4.535 1.927-8.646 5.045-11.623 3.005-2.918 7.172-4.705 11.679-4.705zm26.307-36.48c-2.353.877-4.479 2.238-6.236 3.996-3.118 3.117-5.074 7.455-5.074 12.189v20.295h150.124v-20.295c0-4.734-1.928-9.072-5.074-12.189-1.729-1.758-3.854-3.119-6.236-3.996-1.219 3.287-3.175 6.264-5.612 8.701-4.422 4.451-10.545 7.201-17.291 7.201h-81.667c-6.747 0-12.869-2.75-17.292-7.201-2.468-2.438-4.395-5.414-5.642-8.701zm104.599-18.059h-81.667c-2.608 0-4.961 1.078-6.69 2.807-1.729 1.701-2.777 4.082-2.777 6.662 0 2.523.992 4.904 2.777 6.689 1.729 1.729 4.082 2.807 6.69 2.807h81.667c2.607 0 4.961-1.078 6.689-2.807 1.701-1.729 2.778-4.082 2.778-6.689 0-2.58-1.077-4.961-2.778-6.662-1.728-1.729-4.081-2.807-6.689-2.807zm-98.704 212.23c-9.184-.736-18.935-1.701-28.857-2.834-7.71-.908-15.59-1.928-23.471-3.119v116.391h287.692c.793 0 1.474-.65 1.474-1.445v-131.84c-3.572 1.475-7.342 2.863-11.311 4.168-31.125 10.205-74.438 15.816-109.815 18.736v15.648c0 6.123-2.494 11.707-6.52 15.732-4.025 4.023-9.581 6.52-15.704 6.52h-18.624c-4.139 0-7.512-3.346-7.512-7.512 0-4.139 3.373-7.484 7.512-7.484h18.624c1.984 0 3.798-.822 5.103-2.125 1.304-1.334 2.126-3.147 2.126-5.131v-40.508c0-1.984-.822-3.799-2.126-5.131-1.305-1.305-3.118-2.125-5.103-2.125h-71.236c-1.983 0-3.798.82-5.102 2.125-1.332 1.332-2.154 3.146-2.154 5.131v40.508c0 1.984.822 3.797 2.154 5.131 1.304 1.303 3.118 2.125 5.102 2.125h18.624c4.139 0 7.512 3.346 7.512 7.484 0 4.166-3.373 7.512-7.512 7.512h-18.624c-6.122 0-11.678-2.496-15.731-6.52-4.025-4.025-6.521-9.609-6.521-15.732zm-201.772 87.506c-4.139 0-7.512-3.346-7.512-7.484 0-4.166 3.373-7.512 7.512-7.512h109.476c4.139 0 7.513 3.346 7.513 7.512 0 4.139-3.374 7.484-7.513 7.484zm22.99 54.313c-4.139 0-7.512-3.346-7.512-7.484 0-4.139 3.373-7.512 7.512-7.512h63.496c4.14 0 7.513 3.373 7.513 7.512s-3.373 7.484-7.513 7.484zm-22.99-27.157c-4.139 0-7.512-3.346-7.512-7.484 0-4.139 3.373-7.512 7.512-7.512h109.476c4.139 0 7.513 3.373 7.513 7.512s-3.374 7.484-7.513 7.484zm42.775-72c.992 3.996-1.445 8.078-5.471 9.07-2.721.68-5.527 1.049-8.334 1.049-10.176 0-19.389-4.449-25.994-11.65-6.463-7.029-10.488-16.695-10.488-27.326 0-10.629 4.025-20.268 10.488-27.297 6.605-7.201 15.818-11.65 25.994-11.65 2.807 0 5.613.34 8.334 1.049 4.025.992 6.463 5.045 5.471 9.07-1.021 3.996-5.073 6.463-9.099 5.443-1.531-.369-3.146-.568-4.706-.568-5.839 0-11.111 2.58-14.995 6.775-3.997 4.365-6.491 10.432-6.491 17.178s2.494 12.842 6.491 17.178c3.884 4.195 9.156 6.805 14.995 6.805 5.075-.001 11.822-3.034 13.805 4.874zm13.012-55.531c-1.475-3.855.481-8.164 4.309-9.637 3.854-1.475 8.163.453 9.638 4.309l16.384 42.66 16.386-42.66c1.474-3.855 5.782-5.783 9.638-4.309 3.855 1.473 5.782 5.781 4.309 9.637l-23.357 60.803c-.737 1.928-2.239 3.516-4.309 4.309-3.856 1.475-8.164-.453-9.638-4.309zm-31.125-61.937h-5.244c-2.664 0-5.073 1.105-6.831 2.863s-2.863 4.168-2.863 6.832 1.105 5.074 2.863 6.832 4.167 2.863 6.831 2.863h70.641c2.665 0 5.074-1.105 6.832-2.863 1.757-1.758 2.862-4.168 2.862-6.832s-1.105-5.074-2.862-6.832c-1.758-1.758-4.167-2.863-6.832-2.863h-5.245c-4.139 0-7.512-3.344-7.512-7.482 0-2.664-1.077-5.074-2.835-6.832-1.757-1.785-4.195-2.863-6.831-2.863h-25.795c-2.637 0-5.074 1.078-6.832 2.863-1.758 1.758-2.835 4.168-2.835 6.832 0 4.138-3.373 7.482-7.512 7.482z"/>
-</symbol>
-<symbol id="offer" viewBox="0 0 512 512">
-  <path d="m304.985 289.001h-96.044c-4.143 0-7.5 3.357-7.5 7.5s3.357 7.5 7.5 7.5h96.044c4.143 0 7.5-3.357 7.5-7.5s-3.357-7.5-7.5-7.5z"/><path d="m207.21 238.397v-21.267h13.567c4.143 0 7.5-3.357 7.5-7.5s-3.357-7.5-7.5-7.5h-13.567v-12.697h15.386c4.143 0 7.5-3.357 7.5-7.5s-3.357-7.5-7.5-7.5h-22.886c-4.143 0-7.5 3.357-7.5 7.5v56.464c0 4.143 3.357 7.5 7.5 7.5s7.5-3.357 7.5-7.5z"/><path d="m280.885 189.434c4.143 0 7.5-3.357 7.5-7.5s-3.357-7.5-7.5-7.5h-22.886c-4.143 0-7.5 3.357-7.5 7.5v56.464c0 4.143 3.357 7.5 7.5 7.5s7.5-3.357 7.5-7.5v-21.267h13.567c4.143 0 7.5-3.357 7.5-7.5s-3.357-7.5-7.5-7.5h-13.567v-12.697z"/><path d="m335.839 188.95c4.143 0 7.5-3.357 7.5-7.5s-3.357-7.5-7.5-7.5h-23.749c-4.143 0-7.5 3.357-7.5 7.5v56.361c0 4.143 3.357 7.5 7.5 7.5h23.749c4.143 0 7.5-3.357 7.5-7.5s-3.357-7.5-7.5-7.5h-16.249v-13.181h14.498c4.143 0 7.5-3.357 7.5-7.5s-3.357-7.5-7.5-7.5h-14.498v-13.18z"/><path d="m411.602 195.973c0-12.286-10.371-22.282-23.119-22.282h-15.115c-.003 0-.006 0-.009 0s-.006 0-.009 0c-4.143 0-7.5 3.357-7.5 7.5v56.881c0 4.143 3.357 7.5 7.5 7.5s7.5-3.357 7.5-7.5v-15.069l17.623 20.024c1.482 1.685 3.553 2.545 5.633 2.545 1.76 0 3.527-.616 4.952-1.87 3.109-2.736 3.411-7.476.675-10.585l-14.056-15.97c9.235-2.923 15.925-11.308 15.925-21.174zm-23.12 7.283c-1.774 0-4.729.012-7.553.025-.014-2.748-.032-11.709-.04-14.591h7.593c4.401 0 8.119 3.335 8.119 7.282.001 3.949-3.717 7.284-8.119 7.284z"/><path d="m136.339 174.225c-19.817 0-35.94 16.123-35.94 35.94s16.123 35.94 35.94 35.94c19.818 0 35.941-16.123 35.941-35.94s-16.123-35.94-35.941-35.94zm0 56.88c-11.547 0-20.94-9.394-20.94-20.94s9.394-20.94 20.94-20.94 20.941 9.394 20.941 20.94-9.394 20.94-20.941 20.94z"/><path d="m490.044 235.865-35.943-36.346v-163.815c0-19.687-16.017-35.704-35.705-35.704h-322.871c-19.687 0-35.705 16.017-35.705 35.704v161.096l-38.147 39.36c-.151.156-.29.32-.425.485-2.211 2.361-3.467 5.476-3.467 8.85v230.12c0 20.063 16.322 36.385 36.386 36.385h403.666c20.063 0 36.386-16.322 36.386-36.385v-230.226c0-3.711-1.526-7.108-4.175-9.524zm-20.013 1.095-15.93 9.272v-25.381zm-410.211 10.391-17.968-10.458 17.968-18.539zm419.399 228.264c0 11.792-9.594 21.385-21.386 21.385h-403.666c-11.792 0-21.386-9.593-21.386-21.385v-226.647l214.691 124.96c.003.002.007.004.011.006l165.039 96.06c1.187.69 2.484 1.019 3.766 1.019 2.583 0 5.096-1.335 6.489-3.729 2.083-3.579.87-8.171-2.71-10.255l-149.157-86.816 132.1-76.887c3.58-2.084 4.793-6.676 2.71-10.255-2.085-3.58-6.677-4.793-10.255-2.71l-138.482 80.604c-.606.351-1.355.352-1.962 0l-14.561-8.475c-.002-.001-.005-.003-.008-.004l-165.632-96.405v-220.377c0-11.416 9.288-20.704 20.705-20.704h322.871c11.416 0 20.704 9.288 20.704 20.704v219.259l-17.112 9.96c-3.58 2.083-4.793 6.675-2.71 10.254 2.085 3.581 6.676 4.792 10.255 2.71l20.626-12.005c.028-.015.055-.033.083-.048l28.977-16.866z"/><path d="m213.399 150.487h87.128c8.979 0 16.283-7.305 16.283-16.283v-56.902c0-8.979-7.305-16.283-16.283-16.283h-18.639v-8.007c0-9.726-7.912-17.638-17.638-17.638h-14.575c-9.726 0-17.638 7.912-17.638 17.638v8.007h-18.639c-8.979 0-16.283 7.305-16.283 16.283v56.902c.001 8.979 7.306 16.283 16.284 16.283zm33.639-97.475c0-1.454 1.184-2.638 2.638-2.638h14.575c1.454 0 2.638 1.184 2.638 2.638v8.007h-19.851zm-34.922 24.29c0-.708.575-1.283 1.283-1.283h87.128c.708 0 1.283.575 1.283 1.283v56.902c0 .708-.575 1.283-1.283 1.283h-87.128c-.708 0-1.283-.575-1.283-1.283z"/>
-</symbol>
-{% endblock %}
+{% extends "default.html.njk" %}
 
 {% block content %}
   <section class="page-title theme-bg">
     <div class="container">
-      <svg><use xlink:href="#briefcase"></use></svg>
+      <svg><use xlink:href="images/icons.svg#briefcase"></use></svg>
       <h1>Job Opportunities</h1>
     </div>
-  </section> 
+  </section>
 
   <section id="item_filter" class="gray-bg">
     <div class="row justify-content-center p-15px-rl p-20px-tb">
       <div class="form-group">
         <div id="filter_search" class="filter-search">
           <input id="filter_search_input" class="form-control" type="text" placeholder="Search jobs by name, date, and location">
-          <a href="/jobs" id="filter_clear"><svg><use xlink:href="#close_x"></use></svg></a>
+          <a href="/jobs" id="filter_clear"><svg><use xlink:href="images/icons.svg#close_x"></use></svg></a>
         </div>
       </div>
     </div>
@@ -35,7 +26,173 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-9">
-          <ul id="item_list" styled></ul>
+          <ul id="item_list" styled>
+            <li data-filter="${searchStrings}">
+              <div class="item-list-left">
+                <a href="https://jolocom.io/hiring-sdk-developer/" target="_blank">
+                  <img src="/images/job-logos/jolocom.jpeg"/>
+                </a>
+              </div>
+              <dl class="item-list-center">
+                <dt><a href="https://jolocom.io/hiring-sdk-developer/" target="_blank">SDK Developer (Javascript, Typescript, NodeJS) • mid/senior level  •  m/f/d</a></dt>
+                <dd class="item-location"><strong>Location:</strong> Berlin</dd>
+                <dd>Jolocom is looking for an experienced full-time Software Developer with strong programming skills, backed by a passion for SDK development, to build truly cutting-edge technology.</dd>
+              </dl>
+            </li>
+            <!--
+            <li data-filter="${searchStrings}">
+              <div class="item-list-left">
+                <a href="https://www.diwala.io/hiring/ux-designer" target="_blank">
+                  <img src="/images/job-logos/diwala.png"/>
+                </a>
+              </div>
+              <dl class="item-list-center">
+                <dt><a href="https://www.diwala.io/hiring/ux-designer" target="_blank">UX Designer</a></dt>
+                <dd class="item-location"><strong>Location:</strong> We work remotely from all over the world. Half of the team works in the East African time zone (UTC+03:00), but as long as you can deliver the work and comprehend some of the challenges we are solving, it does not matter where your location is. </dd>
+                <dd>We are looking for a UX Designer with a technical flair. Someone with deep knowledge of inclusive interaction design, and with great understanding of how data can be showcased. We need you who are communicative and hands on in product development, with a laser focus on users and scalability.</dd>
+              </dl>
+            </li>
+            -->
+            <li data-filter="${searchStrings}">
+              <div class="item-list-left">
+                <a href="https://jolocom.io/berater-innen/" target="_blank">
+                  <img src="/images/job-logos/jolocom.jpeg"/>
+                </a>
+              </div>
+              <dl class="item-list-center">
+                <dt><a href="https://jolocom.io/berater-innen/" target="_blank">Consultant junior/senior (german speaking)</a></dt>
+                <dd class="item-location"><strong>Location:</strong> Berlin </dd>
+                <dd>Unser Beratungsfokus liegt auf Self-Sovereign Identity (SSI) und digitalen Identitäten, aber auch CBDC (Central Bank Digital Currency), digital assets,
+                  crypto custody und weitere Themen im Blockchain/DLT Umfeld zählen zu unserem Portfolio
+
+                  Bei Jolocom sind wir auf einer Mission, um Menschen,
+                  Organisationen und Maschinen die Kontrolle
+                  über ihre eigenen Daten zurückzugeben,
+                  mittels dezentraler Technologien zur Identitätsverwaltung.
+
+                  Interessierst Du Dich für digitale Identitäten, wie man Datenschutz sichern kann, offene Plattformen und dezentralen Technologien? Du arbeitest gerne mit Menschen? 
+
+                  Dann melde Dich bei uns. Wir suchen Berater:innen, die mit uns unsere Kunden bei einzigartigen Projekten, der Erkundung neuer Themen und der Erarbeitung neuer Konzepte begleiten. Du bekommst die Chance, Themen auf globaler Ebene im W3C, der DIF und anderen Gremien mitzugestalten. Du triffst auf ein junges Team und hast die Möglichkeit, sehr schnell Verantwortung zu übernehmen und dadurch beruflich und persönlich zu wachsen. 
+
+                  All dies geschieht im Herzen Berlins, wobei wir auch das Arbeiten aus der Ferne ermöglichen.
+
+                  Wenn Du schon ein Lächeln im Gesicht hast, ist es möglicherweise an der Zeit, bei Jolocom Deiner Leidenschaft nachzugehen.</dd>
+              </dl>
+            </li>
+            <li data-filter="${searchStrings}">
+              <div class="item-list-left">
+                <a href="https://jolocom.io/community-manager/" target="_blank">
+                  <img src="/images/job-logos/jolocom.jpeg"/>
+                </a>
+              </div>
+              <dl class="item-list-center">
+                <dt><a href="https://jolocom.io/community-manager/" target="_blank">Community Manager (german speaking)</a></dt>
+                <dd class="item-location"><strong>Location:</strong> Berlin </dd>
+                <dd>Bei Jolocom sind wir auf einer Mission, um Menschen, Organisationen und Maschinen die Kontrolle über ihre eigenen Daten zurückzugeben, mittels dezentraler Technologien zur Identitätsverwaltung.
+
+                  Dabei setzen wir auf die Schwarmintelligenz und Kreativität der internationalen Gemeinschaft und unterstützen diese Community mit quelloffenen Lösungen (Open Source Solutions) einerseits und öffentlicher Aufmerksamkeit, Veranstaltungen & Meet-Ups, sowie Diskurs-Beiträgen andererseits.
+
+                  Interessierst Du Dich für Netzpolitik, dezentrale Technologien und Datenschutz?
+                  Baust Du gerne Gemeinschaften mit auf oder hältst sie am laufen?
+                  Du kommunizierst gerne mit verschiedensten Stakeholdern? Und Du könntest Dir sogar vorstellen, eine Marke auszubauen?
+
+                  Dann melde Dich bei uns. Wir suchen eine/n Community Manager & Comms Person, die mit uns die internationale SSI-Community unterstützt und weiter aufbaut, die Themen SSI und die Marke Jolocom aktiv online vorstellt, erklärt und besetzt, und nach der Pandemie auch Freude an der Organisation von offline Meet-Ups oder der Teilnahme an Konferenzen hat. Du bekommst die Chance, Dich in Zukunftsthemen einzuarbeiten, eine Marke mit aufzubauen und den Online-Diskurs mitzubestimmen. Du triffst dabei auf ein junges Team und hast die Möglichkeit, sehr schnell Verantwortung zu übernehmen und dadurch beruflich und persönlich zu wachsen.
+
+                  All dies geschieht im Herzen Berlins, wobei wir auch das Arbeiten aus der Ferne ermöglichen.
+
+                  Wenn Du schon ein Lächeln im Gesicht hast, ist es möglicherweise an der Zeit, bei Jolocom Deiner Leidenschaft nachzugehen.</dd>
+              </dl>
+            </li>
+            <!--
+            <li data-filter="${searchStrings}">
+              <div class="item-list-left">
+                <a href="https://apply.workable.com/transmute/j/86885214F1/" target="_blank">
+                  <img src="/images/job-logos/transmute.png"/>
+                </a>
+              </div>
+              <dl class="item-list-center">
+                <dt><a href="https://apply.workable.com/transmute/j/86885214F1/" target="_blank">Full Stack Engineer</a></dt>
+                <dd class="item-location"><strong>Location:</strong> Remote - Austin, Texas </dd>
+                <dd>The Transmute team is looking to add a Senior Full Stack Engineer with specific expertise in Progressive Web Applications and RESTful API design and implementation. We are excited to build a decentralized team, and blockchain experience is not required; we provide training and expertise. If you’re an experienced, full-stack software engineer who shares our obsession with decentralization, cryptography and blockchain, then we want to hear from you!</dd>
+              </dl>
+            </li>
+            -->
+            <!--
+            <li data-filter="${searchStrings}">
+              <div class="item-list-left">
+                <a href="https://apply.workable.com/transmute/j/6B7E00CD90/" target="_blank">
+                  <img src="/images/job-logos/transmute.png"/>
+                </a>
+              </div>
+              <dl class="item-list-center">
+                <dt><a href="https://apply.workable.com/transmute/j/6B7E00CD90/" target="_blank">Product Designer</a></dt>
+                <dd class="item-location"><strong>Location:</strong> Austin, Texas - Remote </dd>
+                <dd>Transmute is looking for a part-time (with future opportunity to transition to full time) Product Designer to deepen usability and design new feature interfaces for our Verifiable Data Platform.</dd>
+              </dl>
+            </li>
+            -->
+            <li data-filter="${searchStrings}">
+              <div class="item-list-left">
+                <a href="https://apply.workable.com/io-global/j/9EC8573D94/" target="_blank">
+                  <img src="/images/job-logos/transmute.png"/>
+                </a>
+              </div>
+              <dl class="item-list-center">
+                <dt><a href="https://apply.workable.com/io-global/j/9EC8573D94/" target="_blank">Software Engineer - Decentralized Identity Foundation (DIF) Project Lead</a></dt>
+                <dd class="item-location"><strong>Location:</strong> Remote - Flexible </dd>
+                <dd>IO Group, creator of the Cardano blockchain platform, is developing Prism, a digital identity and verifiable credentials product, as part of the Atala enterprise suite. We are building a platform with a solid technical foundation that can be tailored to the needs of many business domains. The team is currently delivering its product to the Georgian and Ethiopian governments. In this context, you will join a fast-paced environment where challenges lie in handling growing product and commercial requests.
+
+                  We are redefining and standardizing the concept of digital identity, leveraging the capabilities of Cardano and many other technologies. To further our goals and address the business demand for Prism, we need to expand and structure our technical team.
+
+                  In Atala we own the solution end-to-end, designing and implementing protocols, services, and applications, as well as infrastructure and deployment plans. The core team is seven engineers. You will contribute to the design, development and standardization of a strong, robust and scalable architecture for the Atala backend.
+
+                  For this purpose, we need an experienced engineer who can lead, design and coordinate our standardization strategy with the Decentralized Identity Foundation and the World Wide Web Consortium to position IO Global and Atala as leaders in digital identity and help benefit millions of people.</dd>
+              </dl>
+            </li>
+            <!--
+            <li data-filter="${searchStrings}">
+              <div class="item-list-left">
+                <a href="http://bit.ly/comms_role_dif" target="_blank">
+                  <img src="/images/job-logos/dif.png"/>
+                </a>
+              </div>
+              <dl class="item-list-center">
+                <dt><a href="http://bit.ly/comms_role_dif" target="_blank">Communications Director/manager</a></dt>
+                <dd class="item-location"><strong>Location:</strong> remote </dd>
+                <dd>Responsible for managing and coordinating DIF’s communications channels and overall messaging strategy. Delivers a coherent understanding of the foundation’s work and goals externally to all kinds of stakeholders and publics. Leads development of educational materials to enable current and prospective members to appreciate and implement materials produced by DIF.
+
+                  The role includes the management of posts and materials from members, and may include identifying, contracting, and overseeing external contractors for design, spec editing, or event purposes. Title and salary may reflect seniority/onboarding, i.e., a candidate who needs extra time to onboard to both this kind of role and DIF as a community/problem space may need to be hired as “Manager” and be promoted to Director later.
+                  </dd>
+              </dl>
+            </li>
+            -->
+            <!--
+            <li data-filter="${searchStrings}">
+              <div class="item-list-left">
+                <a href="https://careers.velocitycareerlabs.com/requisition.html?id=1895" target="_blank">
+                  <img src="/images/job-logos/velocity.png"/>
+                </a>
+              </div>
+              <dl class="item-list-center">
+                <dt><a href="https://careers.velocitycareerlabs.com/requisition.html?id=1895" target="_blank">Head of R&D</a></dt>
+                <dd class="item-location"><strong>Location:</strong> remote </dd>
+                <dd>Velocity Career Labs is an enterprise blockchain startup, founded in 2019 to reinvent how career credentials are shared across the global labor market. Our work done on behalf of the Velocity Network Foundation, a consortium of the largest global tech vendors in the HR and Education space looking to build a future where individuals are empowered to take total control over their career identity. We are offering a unique opportunity to take a managerial role in the R&D team. The Head of R&D will be responsible for growing and nurturing the R&D team, delivery of new product features & maintenance of the existing systems</dd>
+              </dl>
+            </li>
+            -->
+            <li data-filter="${searchStrings}">
+              <div class="item-list-left">
+                <a href="https://apply.workable.com/io-global/j/9EC8573D94/" target="_blank">
+                  <img src="/images/job-logos/iohk.png"/>
+                </a>
+              </div>
+              <dl class="item-list-center">
+                <dt><a href="https://apply.workable.com/io-global/j/9EC8573D94/" target="_blank">Software Engineer - Decentralized Identity Foundation (DIF) Project Lead</a></dt>
+                <dd class="item-location"><strong>Location:</strong> remote </dd>
+                <dd>We need an experienced engineer who can lead, design and coordinate our standardization strategy with the Decentralized Identity Foundation and the World Wide Web Consortium to position IO Global and Atala as leaders in digital identity and help benefit millions of people</dd>
+              </dl>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

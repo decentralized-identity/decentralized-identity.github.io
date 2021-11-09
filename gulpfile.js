@@ -4,6 +4,9 @@ const uglify = require('gulp-uglify');
 const nunjucksRender = require('gulp-nunjucks-render');
 const axios = require('axios');
 
+const { Transform } = require('stream');
+const File = require('vinyl');
+const { existsSync } = require('fs');
 
 var assets = {
   js: [
@@ -95,24 +98,45 @@ gulp.task('assets', function() {
     .pipe(gulp.dest('docs/js'));
 });
 
-gulp.task('templates', async function() {
-  return gulp.src('templates/pages/**/*.html')
+gulp.task('assetsCopy', () => {
+  return gulp.src('assets/**')
+    .pipe(gulp.dest('docs/assets'));
+});
+
+
+gulp.task('templates', async () => {
+  return gulp.src(['templates/pages/**/*.html.njk', 'templates/pages/**/*.html'])
     .pipe(nunjucksRender({
       path: ['templates', 'templates/partials', 'templates/pages'],
       data: {
         repos: compiledRepos || await compileRepos()
       }
-    }).on('error', function(e){
-      console.log(`Error in ${e.fileName}: ${e.message.toString()}`);
+    }).on('error', (e) => {
+      console.log(`Error in ${e.fileName ? e.fileName : '(filename not available)'}: ${e.message.toString()}`);
+    }))
+    .pipe(new Transform({
+      objectMode: true,
+
+      transform(file, enc, callback) {
+        if (file instanceof File) {
+          if (file.path.endsWith('.html.html')) {
+            file.path = file.path.slice(0, -5)
+          }
+          callback(null, file)
+        } else {
+          console.log(file);
+          callback(new Error('Error, unexpected type received in pipe'), null)
+        }
+      }
     }))
     .pipe(gulp.dest('./docs'))
-    
+
 });
 
 gulp.task('repoCompilation', (done) => {
   repoCompilation.then(z => done())
 });
 
-gulp.task('build', gulp.series('repoCompilation', gulp.parallel('assets', 'templates')));
+gulp.task('build', gulp.series('repoCompilation', gulp.parallel('assets', 'assetsCopy', 'templates')));
 
 gulp.task('watch', () => gulp.watch(['templates/**/*', 'docs/js/**/*', '!docs/js/base.js'], gulp.parallel('build')));
