@@ -46,9 +46,20 @@ minimum viable HTTP-based interface compatible with W3C DIDs/VCs." %}
 %}
 {% set repoTag = "wg-sds" %}
 {% set projects = {
-    "Secure Data Storage Use Cases and Requirements v0.9": {
-      desc: "[INFORMATIVE]"
-    },
+  "Decentralized Web Node (DWN)": {
+    desc: "Formerly known as the Identity Hub, this initiative is to develop a data storage and message relay mechanism that entities can use to locate public or private permissioned data related to a given Decentralized Identifier (DID).
+    ",
+      links: [
+        {
+          text: "Specification",
+          href: "https://identity.foundation/decentralized-web-node/spec"
+        },
+        {
+          text: "Repo",
+          href: "https://github.com/decentralized-identity/decentralized-web-node"
+        }
+      ]
+    }, 
     "Secure Data Storage v0.9 - Data Model, Representations, and HTTP API": {
       desc: "[NORMATIVE]"
     },
@@ -69,7 +80,7 @@ minimum viable HTTP-based interface compatible with W3C DIDs/VCs." %}
       twitter: "IdentityWoman"
     },
     "Tobias Looker": {
-        title: "OSS @ Mattr ",
+        title: "CTO @ Mattr ",
         photo: "/images/photos/tobias-looker.jpg",
         linkedin: "tplooker",
         twitter: "tplooker"
