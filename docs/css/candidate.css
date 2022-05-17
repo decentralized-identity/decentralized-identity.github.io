@@ -4,10 +4,6 @@
     margin: 0px;
   }
    
-  body {
-    background-color: #212121;
-  }
-   
   .candidate-container {
     position: absolute;
     top: 50%;
