@@ -88,6 +88,11 @@
         {% for key, val in chairs %}
           <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
             <div class="our-team">
+              {% if val.photo %}
+                <div class="img">
+                  <img src="{{ val.photo }}"/>
+                </div>
+              {% endif %}
               <div class="info m-30px-tb">
                 <h6>{{key}}</h6>
                 <label>{{val.title}}</label>
@@ -131,7 +136,7 @@
           <div class="section-title text-center">
             <h2 class="font-alt">DIF team</h2>
             <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
-            <p>The OG team making sure DIF is run properly</p>
+            <p>The team helping the DIF community</p>
           </div>
         </div>
       </div>
@@ -140,6 +145,11 @@
         {% for key, val in team %}
           <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
             <div class="our-team">
+              {% if val.photo %}
+              <div class="img">
+                <img src="{{ val.photo }}"/>
+              </div>
+              {% endif %}
               <div class="info m-30px-tb">
                 <h6>{{key}}</h6>
                 <label>{{val.title}}</label>
