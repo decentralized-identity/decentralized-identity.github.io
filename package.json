@@ -2,7 +2,7 @@
   "name": "dif-website",
   "description": "The website for the Decentralized Identity Foundation",
   "version": "0.0.1",
-  "homepage": "http://identity.foundation",
+  "homepage": "https://identity.foundation",
   "license": "Apache 2",
   "repository": {
     "type": "git",
