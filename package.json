@@ -17,7 +17,7 @@
     "gulp-uglify": "^3.0.1",
     "nunjucks": "^3.2.2",
     "prettier": "2.4.1",
-    "serve": "^12"
+    "serve": "^14"
   },
   "dependencies": {
     "gulp-watch": "^5.0.1",
