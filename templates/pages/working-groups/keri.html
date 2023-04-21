@@ -1,75 +1,18 @@
 {% set name = "KERI" %}
 {% set logo = "key" %}
-{% set title = "KERI Working Group" %}
-{% set shortform = "KERI" %}
-{% set scope = "Members of the Working Group are primarily working to specify and prototype a Key Event Receipt Infrastructure." %}
+
+{% set scope = "The KERI Working Group is no longer active under DIF. Ongoing KERI work has moved to this Web of Trust GitHub repository: https://github.com/WebOfTrust/keri. Please click there if you are interested in KERI." %}
 {% set repoTag = "wg-keri" %}
 {% set charters = {
-  "Identifiers and Discovery WG documentation": {
+"": {
       links: [
-      {
-        text: "WG Charter",
-        href: "https://github.com/decentralized-identity/org/blob/master/Org%20documents/WG%20documents/DIF_KERI_WG_charter_v1.pdf"
-      },
-      {
-        text: "Agenda/GitHub",
-        href: "https://github.com/decentralized-identity/keri/blob/master/agenda.md"
-      },
-      {
-        text: "Mailing list",
-        href: "https://lists.identity.foundation/g/keri"
-      },
-      {
-        text: "Slack channel (members only)",
-        href: "https://difdn.slack.com/archives/C0146LH5XQD"
-      },
-      {
-        text: "Calendar entry",
-        href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=YjFha2s1OTVidWJ2bWVuN20zaW1zdHBhZTlfMjAyMTA5MDdUMTQwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
-      },
-      {
-        text: "WG participants",
-        href: "https://docs.google.com/spreadsheets/d/12hFa574v5PRrKfzIKMgDTjxuU6lvtBhrmLspfKkN4oE/edit#gid=1599016394"
-      },
-      {
-        text: "WG GitHub Repos",
-        href: "https://github.com/decentralized-identity?q=wg-keri&type=&language=&sort="
-      },
-      {
-        text: "WG Meeting Recordings",
-        href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit#gid=1343983492"
-      }
-    ]
+      ]
   }
 }
 %}
 
-{% set projects = {
-    "KERI - Key Event Receipt Infrastructure": {
-      desc: "Spec and implementation of an identifier and key rotation technology, where your primary root of trust is entropy, not any particular ledger.",
-      links: [
-        {
-          text: "Main Repo",
-          href: "https://github.com/decentralized-identity/keri"
-        }
-      ]
-    }
-  }
-%}
-
 {% set chairs = {
-  "Charles Cunningham": {
-      title: "Freelance engineer ",
-      photo: "/images/photos/charles_cunningham.jpg",
-      linkedin: "charles-cunningham-710085139",
-      twitter: "-"
-    },
-    "Samuel Smith": {
-      title: "Founder @ ProSapien",
-      photo: "/images/photos/samuel-smith.jpg",
-      linkedin: "samuel-m-smith-phd-4652751"
     }
-  }
 %}
 
 {% extends "wg.html.njk" %}
