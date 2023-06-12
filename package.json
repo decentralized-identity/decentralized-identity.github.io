@@ -15,7 +15,7 @@
     "gulp-connect": "^5.6.1",
     "gulp-nunjucks-render": "^2.2.3",
     "gulp-uglify": "^3.0.1",
-    "nunjucks": "^3.2.2",
+    "nunjucks": "^3.2.4",
     "prettier": "2.4.1",
     "serve": "^12"
   },
