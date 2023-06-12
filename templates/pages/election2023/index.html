@@ -1,0 +1,98 @@
+{% set name = "Steering Committee Election 2023" %}
+{% set logo = "algorithm" %}
+{% set title = "Election 2023" %}
+{% set repoTag = "" %}
+
+{% extends "default.html.njk" %}
+
+<!-- {% block svg %}
+
+{% endblock %} -->
+
+{% block content %}
+<section class="page-title theme-bg">
+  <div class="container">
+    <svg><use xlink:href="/images/icons.svg#{{logo}}"></use></svg>
+    <h1>{{name}}</h1>
+    {% if subtitle %}
+      <h3>{{subtitle}}</h3>
+    {% else %}
+      <h3>Decentralized Identity Foundation</h3>
+      <br>
+      <!-- <h3><i>Voting is now closed</i></h3>
+      <h3><i>New SC Members will be announced shortly</i></h3> -->
+    {% endif %}
+  </div>
+</section>
+
+<section class="counter-section">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-12">
+        <div class="section-title text-center">
+          <h2 class="font-alt">About the election</h2>
+          <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+            <p>DIF was established to represent our fast changing community and to create a safe space for the co-development of next-generation code and specifications. From the original handful of members 6 years ago, the foundation has grown to become an organization with over 300 member companies, representing thousands of PRs and a strong commitment to decentralizing identity software.
+            </p>
+            <p>Since its inception, DIF has been primarily governed by a Steering Committee. The Steering Committee is an elected group of member representatives whom lead DIF, set strategy, assure the high quality of ratified work items, react to the community’s needs, among other decisions.
+            Elections occur each year to ensure not only a democratic process to lead and administer DIF, but to continually provide a diverse and inclusive mix of commitee members, representative of the fabric of DIF's community.
+            </p>
+            <br>
+            <br>
+            <h2 class="font-alt">Timelines</h2>
+            <br>
+            <p> Approximate timelines for the Election process, these may be subject to change and will be updated here as the process progresses</p>
+            <p> GMT is the reference timezone for Election dates and deadlines</p>
+            <img src="/images/election-2023-timeline.png" alt="Election Indicative Timeline 2023" width="500" height="360">
+            <br>
+            <br>
+           <!-- <h4><i>Election Candidate profiles are <a href="/election2023/candidates.html" >here</a></i></h4> -->
+            <br>
+            <h2 class="font-alt">Nomination process</h2>
+            <br>
+            <p>The nomination process for the election is as follows :</p> 
+            <br>
+            <div class="section-title text-left">
+              <lu>
+                  <li>All members are eligible for a seat on the Steering Committee (SC) - a comprehensive list of the mix of SC representatives is as follows :</li>
+                  <li>The Steering Committee is comprised of 11 positions, 10 SC Members and one role for the Technical Steering Committee lead</li>
+                  <li>At least 2 SC positions for each of the following associate member organizations, > 1000 employees, 10 - 1000 employees, 1 - 10 employees</li>
+                  <li>The Steering Committee may have the remaining positions filled by individual contributors</li>
+                  <li>Members may only nominate one member and only submit a nomination once (you may change this choice in the nomination window)</li>
+                  <li>The Nominee should have some degree of organizational or coodinational skill</li>
+                  <li>The Individual should be nominated for their personal qualifications and commitment, not solely for their company or organizational affiliation</li>
+              </lu>
+            </div>
+            <br>
+            <br>
+            <h2 class="font-alt">Voting process</h2>
+        </div>
+        <div class="section-title text-left">
+          <br>
+          <p>
+            The election process adheres to the following governing rules for voting :
+          </p>
+          </p>
+          <lu>
+            <li>Only Associate members can vote, and each member organization votes as a whole on one ballot. </li>
+            <li>One ballot can contain up to 5 names. (one name per available seat at the Steering Committee).</li>
+            <li>Submission of ballots is made via a <!-- <a href="https://forms.gle/election2022-URI"> --> google form. </a></li>
+            <li>These will be audited confidentially and not published in any way (not even as tallies). </li>
+            <li>If one member organization accidentally votes more than once, DIF staff will reply to the emails to clarify the issue, so please use a monitored/normal email address in the organization's domain rather than personal accounts or "alts." </li>
+            <li>All ballots are assumed to be collective/company-wide decisions even if multiple are received.</li>
+            <li>The voting is open between the 3rd and the 10th of June. The deadline for the last vote is 23:59 GMT on the 10th of June.</li>
+          </lu>
+          </div>
+          <div class="section-title text-center">
+            <br>
+            <br>
+            <p><b>If you have any questions, queries or would like to know more, please email us at nominations@identity.foundation</b></p>
+            <br>
+            <br>
+          </div>
+      </div>              
+    </div>
+  </div>
+
+
+{% endblock %}
