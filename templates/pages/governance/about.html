@@ -1,0 +1,188 @@
+{% set name = "About" %}
+{% set logo = "login_screen" %}
+{% set title = "Steering Committee" %}
+{% set scope = "Enable a world where decentralized identity solutions allow entities to gain control over their identities and allow trusted interactions." %}
+{% set Mission1 = "The Decentralized Identity Foundation (DIF) exists to advance the interests of the decentralized identity community, including performing research and development to advance “pre-competitive” technical foundations towards established interoperable, global standards." %}
+
+
+{% set projects = {
+    "DIF Charter": {
+      desc: "This “Project Charter” establishes the terms under which this Project operates ",
+      links: [
+        {
+          text: "Charter",
+            href: "https://bit.ly/DIF_project_charter3"
+        }
+      ]
+    },
+    "DIF Operating Addendum": {
+      desc: "This document governs DIF's governing bodies",
+      links: [
+        {
+          text: "Operating Addendum",
+            href: "https://github.com/decentralized-identity/org/blob/c06c17bd2df58633eb74d9d5237281c79d9b676e/Org%20documents/Membership%20agreements/DIF%20Governance%20-%20Operating%20Addendum%20-%2020210304.pdf"
+        },
+        {
+          text: "Steering Committee election process",
+            href: "https://github.com/decentralized-identity/org/blob/c06c17bd2df58633eb74d9d5237281c79d9b676e/Org%20documents/Membership%20agreements/DIF%20Steering%20Committee%20Election%20Process_20210304%20-%20approved.pdf"
+        }
+      ]
+    },
+    "DIF Participation Matrix": {
+      desc: "The list of benefits of DIF membership and other participation formats offered by the foundation",
+      links: [
+        {
+          text: "Participation Matrix",
+          href: "https://bit.ly/DIF_participationmatrix_5"
+        }
+      ]
+    },
+    "DIF Subsidiary assesment process": {
+      desc: "As recognition of this variety of legal and liability structures, DIF Steering Committee considers
+      the following when a subsidiary of a large corporation applies for DIF membership.",
+      links: [
+        {
+          text: "Subsidiary assesment",
+          href: "https://github.com/decentralized-identity/decentralized-identity.github.io/blob/master/assets/Subsidiary%20rule%20for%20DIF%20Associate%20membership-%2020210401.pdf"
+        }
+      ]
+    },
+    "DIF Code of Conduct": {
+      desc: "Creating an open, healthy and productive culture where members and the community can build and grow together. This is a living document, feel free to comment.",
+      links: [
+        {
+          text: "Code of Conduct",
+          href: "https://bit.ly/DIF_code_of_conduct"
+        },
+        {
+          text: "GitHub - Code of Conduct",
+          href: "https://github.com/decentralized-identity/org/blob/master/code-of-conduct.md"
+        }
+      ]
+    },
+    "DIF Grants": {
+      desc: "A series of opportunities for companies to develop open-source services for the community.",
+      links: [
+        {
+          text: "Grants Operating Addendum",
+          href: "https://github.com/decentralized-identity/decentralized-identity.github.io/blob/master/assets/DIF%20Grants%20Operating%20Addendum_20210402.pdf"
+        }
+      ]
+    },
+    "DIF Brand Guidelines": {
+      desc: "Guidelines and logos to represent DIF in the public",
+      links: [
+        {
+          text: "Brand Guidelines",
+          href: "https://bit.ly/3mnfwoW"
+        }
+      ]
+    },
+    "Steering Committee  minutes": {
+      desc: "A public document for the minutes and decisions made by the Steering Committee.",
+      links: [
+        {
+          text: "SC minutes",
+          href: "https://bit.ly/SC_meeting_minutes"
+        }
+      ]
+    }
+  }
+%}
+
+{% set chairs = {
+    "Daniel Buchner": {
+      title: "Head of Decentralized Identity @ Block",
+      photo: "/images/photos/daniel-buchner.jpg",
+      linkedin: "dbuchner",
+      twitter: "csuwildcat"
+    },
+    "Sam Curren": {
+      title: "Technology Guy @ Indicio ",
+      photo: "/images/photos/sam-curren.jpg",
+      linkedin: "samcurren",
+      twitter: "TelegramSam"
+    },
+    "Karyl Fowler": {
+      title: "CEO @ Transmute",
+      photo: "/images/photos/karyl-fowler.jpg",
+      linkedin: "karylfowler",
+      twitter: "TheKaryl"
+    },
+    "Rouven Heck": {
+      title: "Head of Identity @ Consensys",
+      photo: "/images/photos/rouven-heck.jpg",
+      linkedin: "rouvenheck",
+      twitter: "rh7"
+    },
+    "Catherine Nabbala Seppuuya": {
+      title: "Business Development @ FINEMA",
+      photo: "/images/photos/catherine-nabbala.png",
+      linkedin: "catherine-nabbala",
+      twitter: "CatherineNabba1"
+    },
+    "Markus Sabadello": {
+      title: "Founder @ DanubeTech",
+      photo: "/images/photos/markus-sabadello.jpg",
+      linkedin: "markus-sabadello-353a0821",
+      twitter: "peacekeeper"
+    },
+    "Brent Zundel": {
+      title: "Cryptography and Standards @ Avast",
+      photo: "/images/photos/brent-zundel.jpg",
+      linkedin: "bzundel",
+      twitter: "brent_zundel"
+    },
+    "Steven McCown": {
+      title: "Chief Architect @ Anonyome",
+      photo: "/images/photos/steve-mccown.jpeg",
+      linkedin: "mccown"
+    },
+    "Yodahe Zemichael": {
+      title: "Lead @ Ethiopian Digital ID",
+      photo: "/images/photos/yodahe-zemichael.jpg",
+      linkedin: "yodahezemichael"
+    },
+    "Ankur Banerjee": {
+      title: "CTO/co-founder @ CHEQD",
+      photo: "/images/photos/ankur-banerjee.jpg",
+      linkedin: "banerjeeankur"
+    },
+    "Andor Kesselman": {
+      title: "Co-Founder and CTO @ Benri",
+      photo: "/images/photos/andor-kesselman.jpg",
+      linkedin: "andorsk"
+    }
+  }
+%}
+
+<h2 class="font-alt"><a href="https://www.linkedin.com/in/catherine-nabbala/"> Catherine Nabbala Seppuuya</a></h2>
+<h5 class="font-alt"><a href="https://finema.co/">Finema</a></h5>
+
+{% set team = {
+    "Kim Hamilton-Duffy": {
+      title: "Executive Director @ DIF",
+      photo: "/images/photos/Kim-Hamilton.jpeg",
+      linkedin: "kimdhamilton"
+    },
+    "Limari Navarrete": {
+      title: "Senior Director of Community Engagement @ DIF",
+      photo: "/images/photos/limari_navarrete.jpg",
+      linkedin: "limarina"
+    },
+    "Damian Glover": {
+      title: "Senior Director of Communication @ DIF",
+      photo: "/images/photos/damian-glover.jpg",
+      linkedin: "damian-glover-7062113"
+    },
+    "Pratap Mridha": {
+      title: "IT/System Administrator @ DIF",
+      photo: "/images/photos/pratap.jpeg",
+      linkedin: "pratapmridha"
+    }
+  }
+%}
+
+
+
+{% extends "governance.html.njk" %}
