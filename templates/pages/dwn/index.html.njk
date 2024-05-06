@@ -1,0 +1,122 @@
+{% set name = "Decentralized Web Node" %}
+{% set logo = "box" %}
+{% set subtitle = "Take control of your data with Decentralized Web Nodes" %}
+{% set repoTag = "" %}
+
+{% extends "default.html.njk" %}
+<!-- {% block svg %}
+
+{% endblock %} -->
+
+{% block content %}
+  <section class="page-title theme-bg">
+    <div class="container">
+      <svg>
+        <use xlink:href="/images/icons.svg#{{ logo }}"></use>
+      </svg>
+      <h1>{{ name }}</h1>
+      {% if subtitle %}
+        <h3>{{ subtitle }}</h3>
+      {% else %}
+        <h3>Decentralized Identity Foundation</h3>
+      {% endif %}
+    </div>
+  </section>
+  <section class="counter-section">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-12">
+          <div class="section-title text-center">
+            <p>
+              Powered by Google Cloud, and operated by the Decentralized Identity Foundation, our hosted Decentralized Web Node (DWN) service makes it simple to get started with next-generation web infrastructure.
+            </p>
+            <div class="title-border">
+              <span class="lg"></span>
+              <span class="md"></span>
+              <span class="sm"></span>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="counter-section gray-bg">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-12">
+          <div class="section-title text-center">
+            <h2 class="font-alt">About Hosted DWNs</h2>
+            <p>
+              <h4 class="font-alt">What is a Decentralized Web Node?</h4>
+            </p>
+            <p>A decentralized web node is a secure storage and a communication hub that you can use to manage your personal, public, and application data. DWNs enable completely new application architectures, in which your data is yours by design.</p>
+            <p>TODO: More examples ?</p>
+            <p>The Hosted DWN service, hosted by Google Cloud and operated by DIF, is designed to enable easy integration of DWNs for non-production use, encouraging exploration and development.</p>
+            <div class="title-border">
+              <span class="lg"></span>
+              <span class="md"></span>
+              <span class="sm"></span>
+            </div>
+            <br>
+                       <h2 class="font-alt">Governance and Compliance</h2>
+            <p>
+              <h4 class="font-alt">Data Governance</h4>
+              
+            </p>
+            <p>
+            <b>Our Commitment to Data Integrity and Privacy</b>
+            </p>
+            <p>We are committed to the highest standards of data governance and privacy. As operators, we ensure transparency in data management, adherence to privacy best practices, and immediate compliance with DMCA takedown requests.<br>TODO: supply contact information</p>
+<p>
+              <h4 class="font-alt">Operational Governance
+</h4>
+     <p>
+     <b>Excellence in Operations for Non-Production Use</b>
+     </p>         
+     <p>The hosted DWN service is available for testing and development purposes, not intended for production environments. We provide a stable, reliable platform for innovation and experimentation.</p>
+            </p>
+             <div class="title-border">
+              <span class="lg"></span>
+              <span class="md"></span>
+              <span class="sm"></span>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="counter-section">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-12">
+          <div class="section-title text-center">
+            <h2 class="font-alt">Security Overview</h2>
+            <p>
+              <b>Building a Foundation of Trust</b>
+            </p>
+            <p>Security and privacy are the cornerstones of our hosted DWN service. DWNs are encrypted by design, and only you can determine the access settings on your data. While fully committed to upholding privacy, this platform is designed for non-production use, focusing on development and testing phases.</p>
+            <div class="title-border">
+              <span class="lg"></span>
+              <span class="md"></span>
+              <span class="sm"></span>
+            </div>
+                        <h2 class="font-alt">Training and Support</h2>
+                        <p><b>Learn more</b>
+                        <br>
+                        TODO: link to dev docs and other materials
+</p>
+                        
+
+            <br>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+{% block scripts %}
+  {{ super() }}
+  <script src="/js/education.js"></script>
+{% endblock %}
