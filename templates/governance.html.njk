@@ -155,9 +155,11 @@
                 <label>{{val.title}}</label>
               </div>
               {% if val.bio %}
-              <div class="info m-30px-tb">
-                <label>{{val.bio}}</label>
-              </div>
+                {% for entry in val.bio %}
+                  <div class="info m-10px-tb">
+                    <label>{{entry}}</label>
+                  </div>
+                {% endfor %}
               {% endif %}
               <ul class="social-icons">
                 {% if val.linkedin %}
