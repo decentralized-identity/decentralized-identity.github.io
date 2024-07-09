@@ -150,7 +150,7 @@
                 <img src="{{ val.photo }}"/>
               </div>
               {% endif %}
-              <div class="info m-30px-tb">
+              <div class="info m-10px-tb">
                 <h6>{{key}}</h6>
                 <label>{{val.title}}</label>
               </div>
@@ -197,15 +197,16 @@
                 <img src="{{ val.photo }}"/>
               </div>
               {% endif %}
-              <div class="info m-30px-tb">
+              <div class="info m-10px-tb">
                 <h6>{{key}}</h6>
                 <label>{{val.title}}</label>
               </div>
               {% if val.bio %}
-              <div class="info m-30px-tb">
-                <h6>{{key}}</h6>
-                <label>{{val.title}}</label>
-              </div>
+                {% for entry in val.bio %}
+                  <div class="info m-10px-tb">
+                    <label>{{entry}}</label>
+                  </div>
+                {% endfor %}
               {% endif %}
               <ul class="social-icons">
                 {% if val.linkedin %}
