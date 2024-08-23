@@ -70,6 +70,5 @@ Site content is rendered to the `/docs` directory, which is served via GH Pages.
    output the completed static pages.
 4. If you don't already have the NPM `serve` package installed, install it
    globally with `npm -g install serve`.
-5. CD into the `/docs` directory (`cd docs`) and run the `npx serve` command.
-   This will start a local server that allows you to view the site via a
-   `localhost` port.
+5. Run `npx serve docs` command. This will start a local server that allows you
+   to view the site via a `localhost` port.
