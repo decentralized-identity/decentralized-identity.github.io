@@ -1,3 +1,35 @@
 {
-  "id": "did:web:identity.foundation"
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/v2",
+    "https://w3id.org/security/suites/secp256k1recovery-2020/v2",
+    "https://w3id.org/security/suites/ed25519-2018/v1"
+  ],
+  "id": "did:web:identity.foundation",
+  "verificationMethod": [
+    {
+      "id": "did:web:identity.foundation#04d63533b05fd69cd05843d41d5cf35ef1461f08ec8f80ea33bc5750751ca2b6a5fa5c1b7ec78d10cb785cac20bdf91a681ac0a7f47cccdf010b4b2a20f9db1e78",
+      "type": "EcdsaSecp256k1VerificationKey2019",
+      "controller": "did:web:identity.foundation",
+      "publicKeyHex": "04d63533b05fd69cd05843d41d5cf35ef1461f08ec8f80ea33bc5750751ca2b6a5fa5c1b7ec78d10cb785cac20bdf91a681ac0a7f47cccdf010b4b2a20f9db1e78"
+    },
+    {
+      "id": "did:web:identity.foundation#6e6b416461e001f17961bbb0df763ed46cd9dcb64a2f37ade0f85579520de5f9",
+      "type": "Ed25519VerificationKey2018",
+      "controller": "did:web:identity.foundation",
+      "publicKeyBase58": "8S2hqHB2PjNSdDgsULTEqjXx2n3zF32fjGabbDJocGyv"
+    }
+  ],
+  "authentication": [
+    "did:web:identity.foundation#04d63533b05fd69cd05843d41d5cf35ef1461f08ec8f80ea33bc5750751ca2b6a5fa5c1b7ec78d10cb785cac20bdf91a681ac0a7f47cccdf010b4b2a20f9db1e78",
+    "did:web:identity.foundation#6e6b416461e001f17961bbb0df763ed46cd9dcb64a2f37ade0f85579520de5f9"
+  ],
+  "assertionMethod": [
+    "did:web:identity.foundation#04d63533b05fd69cd05843d41d5cf35ef1461f08ec8f80ea33bc5750751ca2b6a5fa5c1b7ec78d10cb785cac20bdf91a681ac0a7f47cccdf010b4b2a20f9db1e78",
+    "did:web:identity.foundation#6e6b416461e001f17961bbb0df763ed46cd9dcb64a2f37ade0f85579520de5f9"
+  ],
+  "keyAgreement": [
+    "did:web:identity.foundation#6e6b416461e001f17961bbb0df763ed46cd9dcb64a2f37ade0f85579520de5f9"
+  ],
+  "service": []
 }
