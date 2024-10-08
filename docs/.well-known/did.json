@@ -28,8 +28,5 @@
     "did:web:identity.foundation#04d63533b05fd69cd05843d41d5cf35ef1461f08ec8f80ea33bc5750751ca2b6a5fa5c1b7ec78d10cb785cac20bdf91a681ac0a7f47cccdf010b4b2a20f9db1e78",
     "did:web:identity.foundation#6e6b416461e001f17961bbb0df763ed46cd9dcb64a2f37ade0f85579520de5f9"
   ],
-  "keyAgreement": [
-    "did:web:identity.foundation#6e6b416461e001f17961bbb0df763ed46cd9dcb64a2f37ade0f85579520de5f9"
-  ],
   "service": []
 }
