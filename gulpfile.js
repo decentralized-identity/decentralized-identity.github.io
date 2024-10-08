@@ -104,10 +104,6 @@ gulp.task("assetsCopy", () => {
   return gulp.src("assets/**").pipe(gulp.dest("docs/assets"));
 });
 
-gulp.task("copyJson", function () {
-  return gulp.src("did.json").pipe(gulp.dest("docs/.well-known"));
-});
-
 gulp.task("templates", async () => {
   return gulp
     .src(["templates/pages/**/*.html.njk", "templates/pages/**/*.html"])
@@ -156,7 +152,7 @@ gulp.task(
   "build",
   gulp.series(
     "repoCompilation",
-    gulp.parallel("assets", "assetsCopy", "templates", "copyJson")
+    gulp.parallel("assets", "assetsCopy", "templates")
   )
 );
 
