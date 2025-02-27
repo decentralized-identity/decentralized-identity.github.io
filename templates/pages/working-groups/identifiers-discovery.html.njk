@@ -1,0 +1,25 @@
+{% set group = working_groups.identifiers_discovery %}
+
+{% extends "default.html.njk" %}
+
+{% block content %}
+<section class="page-title theme-bg">
+  <div class="container">
+    <svg><use xlink:href="/images/icons.svg#{{ group.logo }}"></use></svg>
+    <h1>{{ group.name }}</h1>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>{{ group.title }}</h2>
+        {% if group.shortform %}
+        <p>Also known as: {{ group.shortform }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %} 

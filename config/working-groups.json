@@ -1,0 +1,133 @@
+{
+  "working_groups": {
+    "identifiers_discovery": {
+      "name": "Identifiers & Discovery",
+      "logo": "id",
+      "title": "Identifiers & Discovery Working Group",
+      "shortform": "ID WG",
+      "status": "active",
+      "scope": "The ID WG is focused on developing the foundational elements of decentralized identifiers (DIDs) and how they can be discovered and resolved across different systems.",
+      "chairs": {
+        "Daniel Buchner": {
+          "title": "Head of Decentralized Identity @ Block",
+          "photo": "/images/photos/daniel-buchner.jpg",
+          "linkedin": "dbuchner",
+          "twitter": "csuwildcat"
+        }
+      },
+      "projects": {
+        "DID Core": {
+          "desc": "Contributing to the W3C DID Core specification",
+          "links": [
+            {
+              "text": "DID Core Spec",
+              "href": "https://www.w3.org/TR/did-core/"
+            },
+            {
+              "text": "GitHub Repository",
+              "href": "https://github.com/w3c/did-core"
+            }
+          ]
+        }
+      }
+    },
+    "claims_credentials": {
+      "name": "Claims & Credentials",
+      "logo": "cc",
+      "title": "Claims & Credentials Working Group",
+      "shortform": "C&C WG",
+      "status": "active",
+      "scope": "The C&C WG focuses on the development of standards and technologies for verifiable credentials and claims in decentralized identity systems."
+    },
+    "storage_compute": {
+      "name": "Storage & Compute",
+      "logo": "sc",
+      "title": "Storage & Compute Working Group",
+      "shortform": "SC WG",
+      "status": "active",
+      "scope": "The SC WG works on standards and protocols for secure data storage and computation in decentralized identity systems."
+    },
+    "authentication": {
+      "name": "Authentication",
+      "logo": "auth",
+      "title": "Authentication Working Group",
+      "shortform": "Auth WG",
+      "status": "active",
+      "scope": "The Auth WG develops protocols and standards for authentication using decentralized identifiers and verifiable credentials."
+    },
+    "did_comm": {
+      "name": "DID Communication",
+      "logo": "didcomm",
+      "title": "DID Communication Working Group",
+      "shortform": "DIDComm WG",
+      "status": "active",
+      "scope": "The DIDComm WG focuses on developing protocols for secure communication between DID-identified entities."
+    },
+    "sidetree": {
+      "name": "Sidetree",
+      "logo": "sidetree",
+      "title": "Sidetree Protocol Working Group",
+      "shortform": "Sidetree WG",
+      "status": "active",
+      "scope": "The Sidetree WG develops and maintains the Sidetree protocol for scalable DID operations."
+    },
+    "secure_data_storage": {
+      "name": "Secure Data Storage",
+      "logo": "sds",
+      "title": "Secure Data Storage Working Group",
+      "shortform": "SDS WG",
+      "status": "active",
+      "scope": "The SDS WG develops specifications and protocols for secure, privacy-preserving data storage in decentralized systems."
+    },
+    "interop": {
+      "name": "Interoperability",
+      "logo": "interop",
+      "title": "Interoperability Working Group",
+      "shortform": "Interop WG",
+      "status": "archived",
+      "scope": "Community collaboration and project management on Interoperability. Develop and publish definitions of success with respect to business interoperability, at the highest level.",
+      "chairs": {
+        "Bonnie Yau": {
+          "title": "VP Technology and Innovation @ Digital Identity Lab Canada",
+          "photo": "/images/photos/bonnie-yau.jpg",
+          "linkedin": "bonnieyau"
+        },
+        "Elena Dumitrascu": {
+          "title": "Co-Founder @ Credivera",
+          "photo": "/images/photos/elena-dumitrascu.jpg",
+          "linkedin": "elenadumitrascu",
+          "twitter": "techwithelena"
+        }
+      },
+      "charters": {
+        "Interoperability documentation": {
+          "links": [
+            {
+              "text": "Interop Charter",
+              "href": "https://drive.google.com/file/d/1c705ZaqefLdIr-7hvCopDRN_62eiwqo-/view?usp=sharing"
+            },
+            {
+              "text": "GitHub Repository",
+              "href": "https://github.com/decentralized-identity/interoperability"
+            }
+          ]
+        }
+      }
+    },
+    "glossary": {
+      "name": "Glossary",
+      "logo": "login_screen",
+      "title": "Glossary Project",
+      "status": "archived",
+      "scope": "The goal of this project is to facilitate the emergence of contextualized vocabulary that is widely accepted across the decentralized identity community/industry.",
+      "chairs": {
+        "Kaliya Young": {
+          "title": "Identity Woman",
+          "photo": "/images/photos/kaliya-young.jpg",
+          "linkedin": "kaliya",
+          "twitter": "IdentityWoman"
+        }
+      }
+    }
+  }
+} 

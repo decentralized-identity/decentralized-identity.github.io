@@ -3,10 +3,15 @@ const concat = require("gulp-concat");
 const uglify = require("gulp-uglify");
 const nunjucksRender = require("gulp-nunjucks-render");
 const axios = require("axios");
+const fs = require('fs');
+const rimraf = require('rimraf');
 
 const { Transform } = require("stream");
 const File = require("vinyl");
 const { existsSync } = require("fs");
+
+// Load working groups config
+const workingGroups = JSON.parse(fs.readFileSync('./config/working-groups.json', 'utf8'));
 
 var assets = {
   js: [
@@ -92,12 +97,20 @@ async function compileRepos() {
 
 const repoCompilation = compileRepos();
 
-gulp.task("assets", function () {
+// Update clean task to use rimraf
+gulp.task("clean", (cb) => {
+  rimraf(
+    "docs/!(CNAME|favicon.ico|favicon.png|.well-known)",
+    { glob: true },
+    cb
+  );
+});
+
+// Copy assets
+gulp.task("assets", () => {
   return gulp
-    .src(assets.js)
-    .pipe(uglify())
-    .pipe(concat("base.js"))
-    .pipe(gulp.dest("docs/js"));
+    .src(["assets/**/*"])
+    .pipe(gulp.dest("./docs"));
 });
 
 gulp.task("assetsCopy", () => {
@@ -112,6 +125,8 @@ gulp.task("templates", async () => {
         path: ["templates", "templates/partials", "templates/pages"],
         data: {
           repos: compiledRepos || (await compileRepos()),
+          now: () => new Date(),
+          working_groups: workingGroups.working_groups
         },
       }).on("error", (e) => {
         console.log(
@@ -148,13 +163,9 @@ gulp.task("repoCompilation", (done) => {
   repoCompilation.then((z) => done());
 });
 
-gulp.task(
-  "build",
-  gulp.series(
-    "repoCompilation",
-    gulp.parallel("assets", "assetsCopy", "templates")
-  )
-);
+// Update build tasks
+gulp.task("build", gulp.series("clean", "assets", "templates"));
+gulp.task("default", gulp.series("build"));
 
 gulp.task("watch", () =>
   gulp.watch(
