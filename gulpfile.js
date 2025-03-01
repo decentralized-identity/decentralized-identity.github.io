@@ -6,6 +6,10 @@ const axios = require("axios");
 const fs = require('fs');
 const rimraf = require('rimraf');
 
+const { promisify } = require('util');
+
+const rimrafAsync = promisify(rimraf);
+
 const { Transform } = require("stream");
 const File = require("vinyl");
 const { existsSync } = require("fs");
