@@ -9,7 +9,7 @@
     "url": "git://github.com/decentralized-identity/decentralized-identity.github.io.git"
   },
   "devDependencies": {
-    "axios": "0.24",
+    "axios": "1.6",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.6.1",
