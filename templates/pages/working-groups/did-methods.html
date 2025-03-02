@@ -1,60 +1,11 @@
-{% set name = "DID Methods" %}
-{% set logo = "blueprint" %}
-{% set title = "DID Methods Working Group" %}
-{% set scope = "Members of this Working Group are creating specifications to standardize an initial set of commonly used DID methods and develop strategies for
-collaborative, scalable, self-help standardization of DID methods more broadly.
-" %}
-{% set shortform = "DID Methods WG" %}
+{% extends "wg_base.html.njk" %}
+{% set config = workingGroups["did-methods"] %}
+{% set name = config.name %}
+{% set logo = config.logo %}
+{% set title = config.title %}
+{% set scope = config.scope %}
+{% set shortform = config.shortform %}
+{% set charters = config.charters %}
+{% set projects = config.projects %}
+{% set chairs = config.chairs %}
 {% set repoTag = "wg-dm" %}
-{% set charters = {
-  "DID Methods WG documentation": {
-    links: [
-      {
-        text: "WG Charter",
-        href: "https://github.com/decentralized-identity/org/blob/main/Org%20documents/WG%20documents/DIF_DID_Methods_WG_Charter_v1.pdf"
-      },
-      {
-        text: "Mailing list",
-        href: "https://lists.identity.foundation/g/did-methods-wg"
-      },
-      {
-        text: "Calendar entry",
-        href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=dTRpa3JmNThiZGczc2FzZHQ0bnFsdGRjcGxfMjAyNTAxMTVUMTcwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
-      },
-      {
-        text: "WG participants",
-        href: "https://github.com/decentralized-identity?q=wg-dm&type=&language=&sort="
-      },
-      {
-        text: "WG Meeting Recordings",
-        href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit?gid=242845701#gid=242845701"
-      }
-    ]
-  }
-}
-%}
-{% set repoTag = "wg-dm" %}
-{%
-  set chairs = {
-    "Matt McKinney": {
-    title: "Growth @ ArcBlock",
-    photo: "/images/photos/matt-mckinney.jpeg",
-    linkedin: "mtmckinney",
-    twitter: "RobRoyHobbs"
-    },
-    "Jonathan Rayback": {
-    title: "Owner @ Future Forge Innovation",
-    photo: "/images/photos/jonathan-rayback.jpg",
-    linkedin: "jonathan-rayback"
-    },
-    "Markus Sabadello": {
-    title: "Founder @ Danube Tech",
-    photo: "/images/photos/markus-sabadello.jpg",
-    linkedin: "markus-sabadello-353a0821",
-    twitter: "peacekeeper"
-    }
-  }
-%}
-
-
-{% extends "wg_liaison.html.njk" %}

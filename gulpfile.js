@@ -8,6 +8,8 @@ const { Transform } = require("stream");
 const File = require("vinyl");
 const { existsSync } = require("fs");
 
+const workingGroups = require('./config/working-groups');
+
 var assets = {
   js: [
     "docs/js/jquery-3.2.1.min.js",
@@ -116,9 +118,10 @@ gulp.task("templates", async () => {
     .src(["templates/pages/**/*.html.njk", "templates/pages/**/*.html"])
     .pipe(
       nunjucksRender({
-        path: ["templates", "templates/partials", "templates/pages"],
+        path: ["templates", "templates/partials", "templates/layouts", "templates/pages"],
         data: {
           repos: compiledRepos || (await compileRepos()),
+          workingGroups
         },
       }).on("error", (e) => {
         console.log(

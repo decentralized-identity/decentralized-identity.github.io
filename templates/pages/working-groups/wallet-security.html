@@ -1,49 +1,11 @@
-{% set name = "Wallet Security" %}
-{% set logo = "wallet" %}
-{% set title = "Wallet Security Working Group" %}
-{% set shortform = "WS WG" %}
-{% set scope = "Define a common terminology for understanding the security requirements applicable to wallet architectures and wallet-to-wallet and wallet-to-issuer/verifier protocols. Classify, specify and describe security architectures common to wallets( risks, motivation, etc..)
-Produce guidelines for how to classify and specify the security capabilities of verifiable-credential wallets such as key management, credential storage, device-binding, credential exchange, backup, recovery, and portability of wallets." %}
-{% set charters = {
-    "Wallet Security WG documentation": {
-        links: [
-        {
-          text: "WG Charter",
-          href: "https://github.com/decentralized-identity/org/blob/master/Org%20documents/WG%20documents/DIF_Wallet_Security_WG_Charter_20210616.pdf"
-        },
-        {
-          text: "Agenda/GitHub",
-          href: "https://github.com/decentralized-identity/wallet-security/blob/main/agenda.md"
-        },
-        {
-          text: "Mailing list",
-          href: "https://lists.identity.foundation/g/wallet-security"
-        },
-        {
-          text: "Slack channel (members only)",
-          href: "https://difdn.slack.com/archives/C021M5U74F6"
-        },
-        {
-          text: "WG GitHub Repos",
-          href: "https://github.com/decentralized-identity?q=wg-ws&type=&language=&sort="
-        },
-        {
-          text: "WG Meeting Recordings",
-          href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit?gid=194851117#gid=194851117"
-        }
-      ]
-    }
-  }
-%}
+{% extends "wg_base.html.njk" %}
+{% set config = workingGroups["wallet-security"] %}
+{% set name = config.name %}
+{% set logo = config.logo %}
+{% set title = config.title %}
+{% set scope = config.scope %}
+{% set shortform = config.shortform %}
+{% set charters = config.charters %}
+{% set projects = config.projects %}
+{% set chairs = config.chairs %}
 {% set repoTag = "wg-ws" %}
-
-{% set chairs = {
-    "Paul Grehan": {
-      title: "Founder @ YellowDotPink",
-      photo: "/images/photos/paul-grehan.jpg",
-      linkedin: "paul-grehan"
-    }
-  }
-%}
-
-{% extends "wg.html.njk" %}

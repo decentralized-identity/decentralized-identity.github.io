@@ -1,0 +1,40 @@
+{% extends "default.html.njk" %}
+
+{% block content %}
+  {# Header section #}
+  <section class="page-title theme-bg">
+    <div class="container">
+      <svg viewBox="0 0 50 50">
+        <use xlink:href="/images/icons.svg#{{ logo }}"></use>
+      </svg>
+      <h1>{{ name }}</h1>
+      {% if subtitle %}
+        <h3>{{ subtitle }}</h3>
+      {% else %}
+        <h3>{% if type %}{{ type }}{% else %}Working Group{% endif %}</h3>
+      {% endif %}
+      {% if shortform %}
+        <h4>aka: {{ shortform }}</h4>
+      {% endif %}
+    </div>
+  </section>
+
+  {# Scope section #}
+  {% include "partials/wg/scope.html.njk" %}
+
+  {# Projects section #}
+  {% include "partials/wg/projects.html.njk" %}
+
+  {# Chairs section #}
+  {% include "partials/wg/chairs.html.njk" %}
+
+  {# Optional liaison section #}
+  {% if liaison %}
+    {% include "partials/wg/liaison.html.njk" %}
+  {% endif %}
+
+  {# Optional editors section #}
+  {% if editors %}
+    {% include "partials/wg/editors.html.njk" %}
+  {% endif %}
+{% endblock %} 

@@ -1,81 +1,11 @@
-{% set name = "Applied Crypto" %}
-{% set logo = "crypto" %}
-{% set title = "Applied Crypto Working Group" %}
-{% set shortform = "Crypto" %}
-{% set scope = "The Cryptography Working Group will explore cryptographic protocols and -primitives related to Decentralized Identity, including, but not limited to, specific and actual cryptographic topics, such as BBS+ signatures and revocation strategies, as well as signature suites and encryption.
-The working group will define focus topics, create cryptographic protocols, and choose the underlying cryptographic primitives for them." %}
+{% extends "wg_base.html.njk" %}
+{% set config = workingGroups.crypto %}
+{% set name = config.name %}
+{% set logo = config.logo %}
+{% set title = config.title %}
+{% set scope = config.scope %}
+{% set shortform = config.shortform %}
+{% set charters = config.charters %}
+{% set projects = config.projects %}
+{% set chairs = config.chairs %}
 {% set repoTag = "wg-crypto" %}
-{% set charters = {
-"Crypto WG documentation": {
-    links: [
-        {
-          text: "WG Charter",
-          href: "https://github.com/decentralized-identity/org/blob/master/Org%20documents/WG%20documents/DIF_Applied_Crypto_WG_v1.pdf"
-        },
-        {
-          text: "Agenda/GitHub",
-          href: "https://github.com/decentralized-identity/crypto-wg/blob/main/agenda.md"
-        },
-        {
-          text: "Mailing list",
-          href: "https://lists.identity.foundation/g/crypto-wg"
-        },
-        {
-          text: "Slack channel (members only)",
-          href: "https://difdn.slack.com/archives/C021JUSRXC0"
-        },
-        {
-          text: "Calendar entry",
-          href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=bGlsYWw4aDJwODljZGYyNGhkYnV2dW85bTNfMjAyNTAxMjBUMTkwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
-        },
-        {
-          text: "WG GitHub Repos",
-          href: "https://github.com/decentralized-identity?q=+wg-crypto&type=&language=&sort="
-        },
-        {
-          text: "WG Meeting Recordings",
-          href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit?gid=339046779#gid=339046779"
-        }
-      ]
-    }
-  }
-%}
-
-{% set projects = {
-    "BBS+ 2.0": {
-      desc: " Lorep Ipsum",
-      links: [
-        {
-          text: "BBS+ as reference",
-          href: "www.github.com"
-        }
-      ]
-    }
-  }
-%}
-
-{%
-  set chairs = {
-    "Brent Zundel": {
-      title: "Crypto @ Evernym",
-      photo: "/images/photos/brent-zundel.jpg",
-      linkedin: "bzundel"
-    },
-    "Tobias Looker": {
-      title: "OSS @ Mattr ",
-      photo: "/images/photos/tobias-looker.jpg",
-      linkedin: "tplooker",
-      twitter: "tplooker"
-    }
-    ,
-    "Srinath Setty": {
-      title: "Research @ Microsoft",
-      photo: "/images/photos/srinath-setty.jpg",
-      linkedin: "srinathtv",
-      twitter: "srinathtv"
-    }
-  }
-%}
-
-
-{% extends "wg.html.njk" %}
