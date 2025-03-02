@@ -101,7 +101,14 @@ gulp.task("assets", function () {
 });
 
 gulp.task("assetsCopy", () => {
-  return gulp.src("assets/**").pipe(gulp.dest("docs/assets"));
+  return gulp.src([
+    "assets/**/*",
+    "assets/favicon.ico",
+    "assets/favicon.png",
+    "static/docs/**/*",
+    ".well-known/**/*",
+    "CNAME"
+  ]).pipe(gulp.dest("docs"));
 });
 
 gulp.task("templates", async () => {
