@@ -195,28 +195,102 @@
       
   <section class="page-title theme-bg">
     <div class="container">
-      <svg><use xlink:href="/images/icons.svg#event"></use></svg>
-      <h1>Events &amp; Activities</h1>
-    </div>
-  </section>
-
-  <section id="event_filter" class="gray-bg">
-    <div class="row justify-content-center p-15px-rl p-20px-tb">
-      <div class="form-group">
-        <div id="filter_search" class="filter-search">
-          <input id="filter_search_input" class="form-control" type="text" placeholder="Search events by name, date, and location">
-          <a href="/events" id="filter_clear"><svg><use xlink:href="/images/icons.svg#close_x"></use></svg></a>
-        </div>
-      </div>
+      <h1>Working Groups</h1>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-12 col-lg-9">
-          <ul id="event_list" styled></ul>
-        </div>
+        
+          <div class="col-md-6 col-lg-4 m-15px-tb">
+            <a href="/working-groups/authentication.html" class="feature-box">
+              <svg><use xlink:href="/images/icons.svg#login_screen"></use></svg>
+              <h5>Authentication</h5>
+              <p>Since December 2020, this work is hosted by the Open Identity Foundation. This group to contribute to standards and technology that designs and implements authentication protocols that rely upon open standards and cryptographic protocols, including DIDs and DID Documents. This group develops specifications, protocols, and formats for data structures used for authentication.</p>
+            </a>
+          </div>
+        
+          <div class="col-md-6 col-lg-4 m-15px-tb">
+            <a href="/working-groups/claims-credentials.html" class="feature-box">
+              <svg><use xlink:href="/images/icons.svg#validate_user"></use></svg>
+              <h5>Claims and Credentials</h5>
+              <p>Join this group to contribute to the standards and technology that create, exchange, and verify claims and credentials in a decentralized identity ecosystem. For example, a cryptographically verifiable credential that proves an individual has a college degree or is of a certain age. Our members focus on specs that are vendor agnostic and based on industry standards.</p>
+            </a>
+          </div>
+        
+          <div class="col-md-6 col-lg-4 m-15px-tb">
+            <a href="/working-groups/did-methods.html" class="feature-box">
+              <svg><use xlink:href="/images/icons.svg#blueprint"></use></svg>
+              <h5>DID Methods</h5>
+              <p>Members of this Working Group are creating specifications to standardize an initial set of commonly used DID methods and develop strategies for collaborative, scalable, self-help standardization of DID methods more broadly.</p>
+            </a>
+          </div>
+        
+          <div class="col-md-6 col-lg-4 m-15px-tb">
+            <a href="/working-groups/did-comm.html" class="feature-box">
+              <svg><use xlink:href="/images/icons.svg#communicate_user"></use></svg>
+              <h5>DIDComm</h5>
+              <p>Join this group to contribute to specs that embody a method for secure, private and authenticated message-based communication, where trust is rooted in DIDs and used over a wide variety of transports.</p>
+            </a>
+          </div>
+        
+          <div class="col-md-6 col-lg-4 m-15px-tb">
+            <a href="/working-groups/identifiers-discovery.html" class="feature-box">
+              <svg><use xlink:href="/images/icons.svg#user_graph"></use></svg>
+              <h5>Identifiers &amp; Discovery</h5>
+              <p>Members of the Working Group are engaged in development of protocols and systems that enable creation, resolution, and discovery of decentralized identifiers and names across underlying decentralized systems, like blockchains and distributed ledgers.</p>
+            </a>
+          </div>
+        
+          <div class="col-md-6 col-lg-4 m-15px-tb">
+            <a href="/working-groups/secure-data-storage.html" class="feature-box">
+              <svg><use xlink:href="/images/icons.svg#box"></use></svg>
+              <h5>Secure Data Storage</h5>
+              <p>Create one or more specifications to establish a foundational layer for secure data storage (including personal data), specifically data models for storage and transport, syntax, data at rest protection, CRUD API, access control, synchronization, and at least a minimum viable HTTP-based interface compatible with W3C DIDs/VCs.</p>
+            </a>
+          </div>
+        
+          <div class="col-md-6 col-lg-4 m-15px-tb">
+            <a href="/working-groups/sidetree.html" class="feature-box">
+              <svg><use xlink:href="/images/icons.svg#sidetree"></use></svg>
+              <h5>Sidetree</h5>
+              <p>The development and maintenance of the formal Sidetree specification, and a hub of coordination for Sidetree-based DID Method node operators. This group also generates libraries, tooling, and documentation to aid Sidetree-based DID Method node operators.</p>
+            </a>
+          </div>
+        
+          <div class="col-md-6 col-lg-4 m-15px-tb">
+            <a href="/working-groups/wallet-security.html" class="feature-box">
+              <svg><use xlink:href="/images/icons.svg#wallet"></use></svg>
+              <h5>Wallet Security</h5>
+              <p>Define a common terminology for understanding the security requirements applicable to wallet architectures and wallet-to-wallet and wallet-to-issuer/verifier protocols. Classify, specify and describe security architectures common to wallets( risks, motivation, etc..) Produce guidelines for how to classify and specify the security capabilities of verifiable-credential wallets such as key management, credential storage, device-binding, credential exchange, backup, recovery, and portability of wallets.</p>
+            </a>
+          </div>
+        
+          <div class="col-md-6 col-lg-4 m-15px-tb">
+            <a href="/working-groups/crypto.html" class="feature-box">
+              <svg><use xlink:href="/images/icons.svg#crypto"></use></svg>
+              <h5>Applied Crypto</h5>
+              <p>The Cryptography Working Group will explore cryptographic protocols and -primitives related to Decentralized Identity, including, but not limited to, specific and actual cryptographic topics, such as BBS+ signatures and revocation strategies, as well as signature suites and encryption. The working group will define focus topics, create cryptographic protocols, and choose the underlying cryptographic primitives for them.</p>
+            </a>
+          </div>
+        
+          <div class="col-md-6 col-lg-4 m-15px-tb">
+            <a href="/working-groups/storage-compute.html" class="feature-box">
+              <svg><use xlink:href="/images/icons.svg#network"></use></svg>
+              <h5>Storage and Compute</h5>
+              <p>Secure, encrypted, privacy-preserving storage and computation of data is a critical component of decentralized identity systems. As with identifiers and names must be self-sovereign to the owning entity, a user&#39;s identity data must remain private, only accessible to the entities they allow. DIF members are actively developing specs and reference implementations for provider-agnostic, run-anywhere solutions that provides these features.</p>
+            </a>
+          </div>
+        
+          <div class="col-md-6 col-lg-4 m-15px-tb">
+            <a href="/working-groups/keri.html" class="feature-box">
+              <svg><use xlink:href="/images/icons.svg#key"></use></svg>
+              <h5>KERI</h5>
+              <p></p>
+            </a>
+          </div>
+        
       </div>
     </div>
   </section>
@@ -298,7 +372,6 @@
   </section>
 </footer>
 
-
     
       <script src="/js/jsonp.js"></script>
     
@@ -308,6 +381,7 @@
     
       <script src="/js/base.js"></script>
     
+
   </body>
 
 </html>

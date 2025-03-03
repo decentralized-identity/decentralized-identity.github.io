@@ -1,103 +1,12 @@
-{% set name = "Sidetree" %}
-{% set logo = "sidetree" %}
-{% set title = "Sidetree Development & Operating Group" %}
-{% set subtitle = "Development & Operating Group" %}
-{% set shortform = "Sidetree" %}
-{% set scope = "The development and maintenance of the formal Sidetree specification, 
-and a hub of coordination for Sidetree-based DID Method node operators. 
-This group also generates libraries, tooling, and documentation to 
-aid Sidetree-based DID Method node operators." %}
-{% set charters = {
-    "Sidetree Development & Operating Group documentation": {
-        links: [
-        {
-          text: "WG Charter",
-          href: "https://github.com/decentralized-identity/org/blob/master/Org%20documents/WG%20documents/DIF_Sidetree_WG_charter_v1.pdf"
-        },
-        {
-          text: "Agenda/GitHub",
-          href: "https://github.com/decentralized-identity/sidetree/blob/master/agenda.md"
-        },
-        {
-          text: "Mailing list",
-          href: "https://lists.identity.foundation/g/sidetree-wg"
-        },
-        {
-          text: "Slack channel (members only)",
-          href: "https://difdn.slack.com/archives/CTACA7EDU"
-        },
-        {
-          text: "WG GitHub Repos",
-          href: "https://github.com/decentralized-identity?q=+wg-sidetree&type=&language=&sort="
-        },
-        {
-          text: "WG Meeting Recordings",
-          href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit?gid=960946251#gid=960946251"
-        }
-      ]
-    }
-  }
-%}
-{% set repoTag = "wg-sidetree" %}
-{% set projects = {
-  "Sidetree Protocol": {
-    desc: "Spec, docs, and implementations for the chain/ledger-agnostic DID scaling protocol.",
-    links: [
-      {
-        text: "Main Repo",
-        href: "https://github.com/decentralized-identity/sidetree-core"
-      },
-      {
-        text: "Specification",
-        type: "doc",
-        href: "https://identity.foundation/sidetree/spec/"
-      }
-    ]
-   },
-   "ION": {
-    desc: "An implementation of the Sidetree protocol atop the Bitcoin blockchain.",
-    links: [
-      {
-        text: "Main Repo",
-        href: "https://github.com/decentralized-identity/ion"
-      },
-      {
-        text: "Install Guide",
-        href: "https://github.com/decentralized-identity/ion/blob/master/install-guide.md"
-      }
-    ]
-   },
-   "Element": {
-    desc: "An implementation of the Sidetree protocol using the Ethereum blockchain.",
-    links: [
-      {
-        text: "Main Repo",
-        href: "https://github.com/decentralized-identity/element"
-      },
-      {
-        text: "Demo Wallet & Explorer",
-        type: "app",
-        href: "https://element-did.com/"
-      }
-    ]
-   }
-  }
-%}
-
-{% set chairs = {
-  "Daniel Buchner": {
-      title: "Head of Decentralized Identity @ Block",
-      photo: "/images/photos/daniel-buchner.jpg",
-      linkedin: "dbuchner",
-      twitter: "csuwildcat"
-    },
-    "Troy Ronda ": {
-      title: "Chief Scientist @ Securekey",
-      photo: "/images/photos/troy-ronda.jpg",
-      linkedin: "troyronda",
-      twitter: "troyronda"
-    }
-  }
-%}
-
-{% extends "wg.html.njk" %}
+{% extends "wg_base.html.njk" %}
+{% set config = workingGroups.sidetree %}
+{% set name = config.name %}
+{% set logo = config.logo %}
+{% set title = config.title %}
+{% set subtitle = config.subtitle %}
+{% set scope = config.scope %}
+{% set shortform = config.shortform %}
+{% set charters = config.charters %}
+{% set projects = config.projects %}
+{% set chairs = config.chairs %}
+{% set repoTag = config.repoTag %}

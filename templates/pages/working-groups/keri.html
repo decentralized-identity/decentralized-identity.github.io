@@ -1,4 +1,14 @@
-{% extends "wg.html.njk" %}
+{% extends "wg_base.html.njk" %}
+{% set config = workingGroups.keri %}
+{% set name = config.name %}
+{% set logo = config.logo %}
+{% set title = config.title %}
+{% set scope = config.scope %}
+{% set shortform = config.shortform %}
+{% set charters = config.charters %}
+{% set projects = config.projects %}
+{% set chairs = config.chairs %}
+{% set repoTag = config.repoTag %}
 {% block content %}
 <section class="page-title theme-bg">
   <div class="container">

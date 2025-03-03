@@ -7,6 +7,7 @@ const axios = require("axios");
 const { Transform } = require("stream");
 const File = require("vinyl");
 const { existsSync } = require("fs");
+const workingGroups = require('./config/working-groups');
 
 var assets = {
   js: [
@@ -38,6 +39,7 @@ var compiledRepos = null;
 const repoTopics = {
   "wg-auth": 1,
   "wg-cc": 1,
+  "wg-dm": 1,
   "wg-id": 1,
   "wg-sc": 1,
   "wg-didcomm": 1,
@@ -45,6 +47,7 @@ const repoTopics = {
   "wg-keri": 1,
   "wg-sidetree": 1,
   "wg-ws": 1,
+  "wg-sds": 1,
 };
 
 async function iterateRepos(fn, page = 1) {
@@ -119,6 +122,7 @@ gulp.task("templates", async () => {
         path: ["templates", "templates/partials", "templates/pages"],
         data: {
           repos: compiledRepos || (await compileRepos()),
+          workingGroups: workingGroups,
         },
       }).on("error", (e) => {
         console.log(

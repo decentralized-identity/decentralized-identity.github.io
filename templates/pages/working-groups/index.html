@@ -7,28 +7,22 @@
 {% block content %}
   <section class="page-title theme-bg">
     <div class="container">
-      <svg><use xlink:href="/images/icons.svg#event"></use></svg>
-      <h1>Events &amp; Activities</h1>
-    </div>
-  </section>
-
-  <section id="event_filter" class="gray-bg">
-    <div class="row justify-content-center p-15px-rl p-20px-tb">
-      <div class="form-group">
-        <div id="filter_search" class="filter-search">
-          <input id="filter_search_input" class="form-control" type="text" placeholder="Search events by name, date, and location">
-          <a href="/events" id="filter_clear"><svg><use xlink:href="/images/icons.svg#close_x"></use></svg></a>
-        </div>
-      </div>
+      <h1>Working Groups</h1>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-12 col-lg-9">
-          <ul id="event_list" styled></ul>
-        </div>
+        {% for key, wg in workingGroups %}
+          <div class="col-md-6 col-lg-4 m-15px-tb">
+            <a href="/working-groups/{{key}}.html" class="feature-box">
+              <svg><use xlink:href="/images/icons.svg#{{wg.logo}}"></use></svg>
+              <h5>{{wg.name}}</h5>
+              <p>{{wg.scope}}</p>
+            </a>
+          </div>
+        {% endfor %}
       </div>
     </div>
   </section>
