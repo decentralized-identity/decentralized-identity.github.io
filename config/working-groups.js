@@ -5,6 +5,7 @@ module.exports = {
     title: "Authentication Working Group",
     shortform: "DID Auth WG",
     type: "Working Group",
+    repotag: "wg-auth",
     scope: "Since December 2020, this work is hosted by the Open Identity Foundation. This group to contribute to standards and technology that designs and implements authentication protocols that rely upon open standards and cryptographic protocols, including DIDs and DID Documents. This group develops specifications, protocols, and formats for data structures used for authentication.",
     charters: {
       "DIDAuth WG documentation": {
@@ -90,6 +91,7 @@ module.exports = {
     logo: "validate_user",
     title: "Claims and Credentials Working Group",
     shortform: "CC WG",
+    repotag: "wg-cc",
     scope: "Join this group to contribute to the standards and technology that create, exchange, and verify claims and credentials in a decentralized identity ecosystem. For example, a cryptographically verifiable credential that proves an individual has a college degree or is of a certain age. Our members focus on specs that are vendor agnostic and based on industry standards.",
     charters: {
       "Claims and Credentials WG documentation": {
@@ -192,6 +194,7 @@ module.exports = {
     logo: "blueprint",
     title: "DID Methods Working Group",
     shortform: "DID Methods WG",
+    repotag: "wg-dm",
     scope: "Members of this Working Group are creating specifications to standardize an initial set of commonly used DID methods and develop strategies for collaborative, scalable, self-help standardization of DID methods more broadly.",
     charters: {
       "DID Methods WG documentation": {
@@ -239,11 +242,12 @@ module.exports = {
       }
     }
   },
-  "did-comm": {
+  "didcomm": {
     name: "DIDComm",
     logo: "communicate_user",
     title: "DIDComm Working Group",
     shortform: "DIDcomm",
+    repotag: "wg-didcomm",
     scope: "Join this group to contribute to specs that embody a method for secure, private and authenticated message-based communication, where trust is rooted in DIDs and used over a wide variety of transports.",
     charters: {
       "DIDcomm WG documentation": {
@@ -302,6 +306,7 @@ module.exports = {
     logo: "user_graph",
     title: "Identifiers and Discovery Working Group",
     shortform: "ID WG",
+    repotag: "wg-id",
     scope: "Members of the Working Group are engaged in development of protocols and systems that enable creation, resolution, and discovery of decentralized identifiers and names across underlying decentralized systems, like blockchains and distributed ledgers.",
     charters: {
       "Identifiers and Discovery WG documentation": {
@@ -546,6 +551,7 @@ module.exports = {
     title: "Sidetree Development & Operating Group",
     subtitle: "Development & Operating Group",
     shortform: "Sidetree",
+    repotag: "wg-sidetree",
     scope: "The development and maintenance of the formal Sidetree specification, and a hub of coordination for Sidetree-based DID Method node operators. This group also generates libraries, tooling, and documentation to aid Sidetree-based DID Method node operators.",
     charters: {
       "Sidetree Development & Operating Group documentation": {
@@ -636,6 +642,7 @@ module.exports = {
     logo: "wallet",
     title: "Wallet Security Working Group",
     shortform: "WS WG",
+    repotag: "wg-ws",
     scope: "Define a common terminology for understanding the security requirements applicable to wallet architectures and wallet-to-wallet and wallet-to-issuer/verifier protocols. Classify, specify and describe security architectures common to wallets( risks, motivation, etc..) Produce guidelines for how to classify and specify the security capabilities of verifiable-credential wallets such as key management, credential storage, device-binding, credential exchange, backup, recovery, and portability of wallets.",
     charters: {
       "Wallet Security WG documentation": {
@@ -680,6 +687,7 @@ module.exports = {
     logo: "crypto",
     title: "Applied Crypto Working Group",
     shortform: "Crypto",
+    repotag: "wg-crypto",
     scope: "The Cryptography Working Group will explore cryptographic protocols and -primitives related to Decentralized Identity, including, but not limited to, specific and actual cryptographic topics, such as BBS+ signatures and revocation strategies, as well as signature suites and encryption. The working group will define focus topics, create cryptographic protocols, and choose the underlying cryptographic primitives for them.",
     charters: {
       "Crypto WG documentation": {
@@ -755,6 +763,7 @@ module.exports = {
     name: "Storage and Compute",
     logo: "network",
     title: "[retired] Storage and Compute Working Group",
+    repotag: "wg-sc",
     scope: "Secure, encrypted, privacy-preserving storage and computation of data is a critical component of decentralized identity systems. As with identifiers and names must be self-sovereign to the owning entity, a user's identity data must remain private, only accessible to the entities they allow. DIF members are actively developing specs and reference implementations for provider-agnostic, run-anywhere solutions that provides these features.",
     charters: {
       "Storage and Compute WG documentation": {
@@ -811,6 +820,7 @@ module.exports = {
   "keri": {
     name: "KERI",
     logo: "key",
+    repotag: "wg-keri",
     title: "KERI Working Group (Archived)",
     charters: {
       "KERI WG documentation": {

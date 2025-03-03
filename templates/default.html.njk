@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  {% include "head.html.njk" %}
+  {% include "partials/head.html.njk" %}
 
   <body>
-    {% include "nav.html.njk" %}
     <main>
       {% block content %}{% endblock %}
     </main>
 
-    {% include "footer.html.njk" %}
-
+    {% include "partials/footer.html.njk" %}
     {% for file in js %}
       <script src="/js/{{ file }}.js"></script>
     {% endfor %}
@@ -18,6 +16,7 @@
     {% block scripts %}
       <script src="/js/base.js"></script>
     {% endblock %}
+
   </body>
 
 </html>
