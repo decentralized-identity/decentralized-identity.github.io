@@ -1,0 +1,27 @@
+<section class="counter-section">
+  <div class="container">
+    <div class="row justify-content-center m-45px-b md-m-20px-b sm-m-15px-b">
+      <div class="col-12 col-md-10 col-lg-7">
+        <div class="section-title text-center">
+          <h2 class="font-alt">All Repositories</h2>
+          <div class="title-border">
+            <span class="lg"></span><span class="md"></span><span class="sm"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      {% for repo in repos %}
+        <div class="col-12 m-15px-tb">
+          <div class="feature-box">
+            <a href="https://github.com/decentralized-identity/{{ repo.name }}">
+              <svg><use xlink:href="/images/icons.svg#github"></use></svg>
+              <h5>{{ repo.name }}</h5>
+              <p>{{ repo.description }}</p>
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section> 

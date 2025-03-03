@@ -227,15 +227,19 @@
       <dd>
         
           
-            <a class="block-link icon-link" href="https://github.com/decentralized-identity/org/blob/master/Org%20documents/WG%20documents/DIF_Crypto_WG_charter_v1.pdf">WG Charter</a>
+            <a class="block-link icon-link" href="https://github.com/decentralized-identity/org/blob/master/Org%20documents/WG%20documents/DIF_Applied_Crypto_WG_v1.pdf">WG Charter</a>
+          
+            <a class="block-link icon-link" href="https://github.com/decentralized-identity/crypto-wg/blob/main/agenda.md">Agenda/GitHub</a>
           
             <a class="block-link icon-link" href="https://lists.identity.foundation/g/crypto-wg">Mailing list</a>
           
-            <a class="block-link icon-link" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=dTRpa3JmNThiZGczc2FzZHQ0bnFsdGRjcGxfMjAyNTAxMTVUMTcwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&amp;tmsrc=decentralized.identity%40gmail.com&amp;scp=ALL">Calendar entry</a>
+            <a class="block-link icon-link" href="https://difdn.slack.com/archives/C021JUSRXC0">Slack channel (members only)</a>
           
-            <a class="block-link icon-link" href="https://github.com/decentralized-identity?q=wg-crypto&amp;type=&amp;language=&amp;sort=">WG participants</a>
+            <a class="block-link icon-link" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=bGlsYWw4aDJwODljZGYyNGhkYnV2dW85bTNfMjAyNTAxMjBUMTkwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&amp;tmsrc=decentralized.identity%40gmail.com&amp;scp=ALL">Calendar entry</a>
           
-            <a class="block-link icon-link" href="https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit?gid=242845701#gid=242845701">WG Meeting Recordings</a>
+            <a class="block-link icon-link" href="https://github.com/decentralized-identity?q=+wg-crypto&amp;type=&amp;language=&amp;sort=">WG GitHub Repos</a>
+          
+            <a class="block-link icon-link" href="https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit?gid=339046779#gid=339046779">WG Meeting Recordings</a>
           
         
       </dd>
@@ -261,17 +265,28 @@
           </div>
         </div>
         <div class="col-6 col-md-8 col-lg-6 m-30px-t margin-center">
+          <style>
+            ul.links {
+              list-style-type: none;
+              padding-left: 0;
+            }
+            ul.links li {
+              margin-bottom: 5px;
+            }
+          </style>
           <dl>
             
-              <dt>Crypto Projects</dt>
+              <dt>BBS+ 2.0</dt>
               <dd>
-                <p>Description of Crypto projects</p>
+                <p>BBS+ signatures are a pairing-based cryptographic signature scheme that supports multi-message signing and selective disclosure proofs.</p>
                 
-                  
-                    <a class="block-link icon-link" href="https://example.com/crypto-project-1">Crypto Project 1</a>
-                  
-                    <a class="block-link icon-link" href="https://example.com/crypto-project-2">Crypto Project 2</a>
-                  
+                  <ul class="links">
+                    
+                      <a class="block-link icon-link" href="https://identity.foundation/bbs-signature/" data-type="doc">BBS+ Specification</a>
+                    
+                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/bbs-signature" data-type="">GitHub Repository</a>
+                    
+                  </ul>
                 
               </dd>
             
@@ -281,6 +296,86 @@
     </div>
   </div>
 </section> 
+
+  
+  
+    <!-- Fetch and display repositories -->
+    <script>
+      // Wait for the DOM to be fully loaded
+      document.addEventListener('DOMContentLoaded', function() {
+        // Wait a bit to ensure all elements are rendered
+        setTimeout(function() {
+          fetch('https://api.github.com/orgs/decentralized-identity/repos')
+            .then(response => response.json())
+            .then(data => {
+              const repos = data.filter(repo => 
+                repo.name.includes('wg-crypto') || 
+                (repo.topics && repo.topics.includes('wg-crypto'))
+              );
+              
+              if (repos.length > 0) {
+                // Create the repositories section
+                const repoSection = document.createElement('section');
+                repoSection.className = 'counter-section';
+                repoSection.innerHTML = `
+                  <div class="container">
+                    <div class="row justify-content-center m-45px-b md-m-20px-b sm-m-15px-b">
+                      <div class="col-12 col-md-10 col-lg-7">
+                        <div class="section-title text-center">
+                          <h2 class="font-alt">All Repositories</h2>
+                          <div class="title-border">
+                            <span class="lg"></span><span class="md"></span><span class="sm"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row justify-content-center">
+                      <div class="col-10 col-md-8 col-lg-6 m-30px-t margin-center">
+                        <dl id="repo-list"></dl>
+                      </div>
+                    </div>
+                  </div>
+                `;
+                
+                // Find the projects section by its heading text
+                const projectsSection = Array.from(document.querySelectorAll('.section-title h2'))
+                  .find(h2 => h2.textContent.includes('Specs & Projects'))
+                  ?.closest('.counter-section');
+                
+                // Insert after the projects section if found, otherwise append to body
+                if (projectsSection) {
+                  projectsSection.parentNode.insertBefore(repoSection, projectsSection.nextSibling);
+                } else {
+                  document.body.appendChild(repoSection);
+                }
+                
+                // Add repositories to the list
+                const repoList = document.getElementById('repo-list');
+                repos.forEach(repo => {
+                  const dt = document.createElement('dt');
+                  const dd = document.createElement('dd');
+                  
+                  dt.innerHTML = `
+                    <a href="${repo.html_url}">
+                      <svg style="fill: #000;"><use xlink:href="/images/icons.svg#github"></use></svg>
+                      ${repo.name}
+                    </a>
+                  `;
+                  
+                  dd.innerHTML = `
+                    <p>${repo.description || ''}</p>
+                  `;
+                  
+                  repoList.appendChild(dt);
+                  repoList.appendChild(dd);
+                });
+              }
+            })
+            .catch(error => console.error('Error fetching repositories:', error));
+        }, 500); // Small delay to ensure DOM is fully rendered
+      });
+    </script>
+  
 
   
   <section class="counter-section">
@@ -301,23 +396,73 @@
         <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
           <div class="our-team">
             <div class="img">
-              <img src="/images/photos/crypto-chair.jpg"/>
+              <img src="/images/photos/brent-zundel.jpg"/>
             </div>
             <div class="info">
-              <h6>Crypto Chair</h6>
-              <label>Crypto Chair Title</label>
+              <h6>Brent Zundel</h6>
+              <label>Crypto @ Evernym</label>
             </div>
             <ul class="social-icons">
               
                 <li>
-                  <a class="linkedin" href="https://www.linkedin.com/in/crypto-chair-linkedin">
+                  <a class="linkedin" href="https://www.linkedin.com/in/bzundel">
+                    <svg><use xlink:href="/images/icons.svg#linkedin"></use></svg>
+                  </a>
+                </li>
+              
+              
+            </ul>
+          </div>
+        </div>
+      
+        <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
+          <div class="our-team">
+            <div class="img">
+              <img src="/images/photos/tobias-looker.jpg"/>
+            </div>
+            <div class="info">
+              <h6>Tobias Looker</h6>
+              <label>OSS @ Mattr </label>
+            </div>
+            <ul class="social-icons">
+              
+                <li>
+                  <a class="linkedin" href="https://www.linkedin.com/in/tplooker">
                     <svg><use xlink:href="/images/icons.svg#linkedin"></use></svg>
                   </a>
                 </li>
               
               
                 <li>
-                  <a class="twitter" href="https://twitter.com/crypto-chair-twitter">
+                  <a class="twitter" href="https://twitter.com/tplooker">
+                    <svg><use xlink:href="/images/icons.svg#twitter"></use></svg>
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      
+        <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
+          <div class="our-team">
+            <div class="img">
+              <img src="/images/photos/srinath-setty.jpg"/>
+            </div>
+            <div class="info">
+              <h6>Srinath Setty</h6>
+              <label>Research @ Microsoft</label>
+            </div>
+            <ul class="social-icons">
+              
+                <li>
+                  <a class="linkedin" href="https://www.linkedin.com/in/srinathtv">
+                    <svg><use xlink:href="/images/icons.svg#linkedin"></use></svg>
+                  </a>
+                </li>
+              
+              
+                <li>
+                  <a class="twitter" href="https://twitter.com/srinathtv">
                     <svg><use xlink:href="/images/icons.svg#twitter"></use></svg>
                   </a>
                 </li>

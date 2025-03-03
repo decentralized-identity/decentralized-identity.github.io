@@ -263,7 +263,132 @@
           </div>
         </div>
         <div class="col-6 col-md-8 col-lg-6 m-30px-t margin-center">
+          <style>
+            ul.links {
+              list-style-type: none;
+              padding-left: 0;
+            }
+            ul.links li {
+              margin-bottom: 5px;
+            }
+          </style>
           <dl>
+            
+              <dt>Universal Resolver</dt>
+              <dd>
+                <p>Specification and implementation of a driver-based framework that enables resolution of DIDs.</p>
+                
+                  <ul class="links">
+                    
+                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/universal-resolver" data-type="">Main Repo</a>
+                    
+                      <a class="block-link icon-link" href="https://uniresolver.io/" data-type="app">Public Instance</a>
+                    
+                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/universal-resolver/blob/master/docs/driver-development.md" data-type="">Driver Development</a>
+                    
+                  </ul>
+                
+              </dd>
+            
+              <dt>Universal Registrar</dt>
+              <dd>
+                <p>Specification and implementation of a driver-based framework that enables creation/updates/deactivation of DIDs.</p>
+                
+                  <ul class="links">
+                    
+                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/universal-registrar" data-type="">Main Repo</a>
+                    
+                      <a class="block-link icon-link" href="https://uniregistrar.io/" data-type="app">Public Instance</a>
+                    
+                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/universal-registrar/blob/master/docs/driver-development.md" data-type="">Driver Development</a>
+                    
+                  </ul>
+                
+              </dd>
+            
+              <dt>.well-known DID configuration</dt>
+              <dd>
+                <p>Specification, docs, and implementations for discovering DIDs from .well-known HTTP(S) URIs.</p>
+                
+                  <ul class="links">
+                    
+                      <a class="block-link icon-link" href="https://identity.foundation/specs/did-configuration/" data-type="doc">Specification</a>
+                    
+                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/.well-known/" data-type="">Main Repo</a>
+                    
+                      <a class="block-link icon-link" href="https://identity.foundation/.well-known/resources/did-configuration/demo/build/index.html" data-type="app">Demo Web App</a>
+                    
+                  </ul>
+                
+              </dd>
+            
+              <dt>Peer DID Method Specification</dt>
+              <dd>
+                <p>A rich DID method that has no blockchain dependencies. The verifiable data registry is a synchronization protocol between peers.</p>
+                
+                  <ul class="links">
+                    
+                      <a class="block-link icon-link" href="https://identity.foundation/peer-did-method-spec/" data-type="doc">Specification</a>
+                    
+                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/peer-did-method-spec" data-type="">Main Repo</a>
+                    
+                  </ul>
+                
+              </dd>
+            
+              <dt>DID Specification Extensions</dt>
+              <dd>
+                <p> Extension parameters, properties, and values for the DID spec registries.</p>
+                
+                  <ul class="links">
+                    
+                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/did-spec-extensions" data-type="">Main Repo</a>
+                    
+                  </ul>
+                
+              </dd>
+            
+              <dt>did:webvh</dt>
+              <dd>
+                <p>did:webvh DID Method.</p>
+                
+                  <ul class="links">
+                    
+                      <a class="block-link icon-link" href="https://identity.foundation/didwebvh/" data-type="doc">Specification</a>
+                    
+                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/didwebvh" data-type="">Main Repo</a>
+                    
+                  </ul>
+                
+              </dd>
+            
+              <dt>Linked Verifiable Presentation</dt>
+              <dd>
+                <p>Specification for linking Verifiable Presentations in DID documents.</p>
+                
+                  <ul class="links">
+                    
+                      <a class="block-link icon-link" href="https://identity.foundation/linked-vp" data-type="doc">Specification</a>
+                    
+                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/linked-vp" data-type="">Main Repo</a>
+                    
+                  </ul>
+                
+              </dd>
+            
+              <dt>DID Traits</dt>
+              <dd>
+                <p>Specification for representing DID method traits in a structured, machine-readable format.</p>
+                
+                  <ul class="links">
+                    
+                      <a class="block-link icon-link" href="https://identity.foundation/did-traits" data-type="doc">Specification</a>
+                    
+                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/did-traits" data-type="">Main Repo</a>
+                    
+                  </ul>
+                
+              </dd>
             
           </dl>
         </div>
@@ -271,6 +396,86 @@
     </div>
   </div>
 </section> 
+
+  
+  
+    <!-- Fetch and display repositories -->
+    <script>
+      // Wait for the DOM to be fully loaded
+      document.addEventListener('DOMContentLoaded', function() {
+        // Wait a bit to ensure all elements are rendered
+        setTimeout(function() {
+          fetch('https://api.github.com/orgs/decentralized-identity/repos')
+            .then(response => response.json())
+            .then(data => {
+              const repos = data.filter(repo => 
+                repo.name.includes('wg-id') || 
+                (repo.topics && repo.topics.includes('wg-id'))
+              );
+              
+              if (repos.length > 0) {
+                // Create the repositories section
+                const repoSection = document.createElement('section');
+                repoSection.className = 'counter-section';
+                repoSection.innerHTML = `
+                  <div class="container">
+                    <div class="row justify-content-center m-45px-b md-m-20px-b sm-m-15px-b">
+                      <div class="col-12 col-md-10 col-lg-7">
+                        <div class="section-title text-center">
+                          <h2 class="font-alt">All Repositories</h2>
+                          <div class="title-border">
+                            <span class="lg"></span><span class="md"></span><span class="sm"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row justify-content-center">
+                      <div class="col-10 col-md-8 col-lg-6 m-30px-t margin-center">
+                        <dl id="repo-list"></dl>
+                      </div>
+                    </div>
+                  </div>
+                `;
+                
+                // Find the projects section by its heading text
+                const projectsSection = Array.from(document.querySelectorAll('.section-title h2'))
+                  .find(h2 => h2.textContent.includes('Specs & Projects'))
+                  ?.closest('.counter-section');
+                
+                // Insert after the projects section if found, otherwise append to body
+                if (projectsSection) {
+                  projectsSection.parentNode.insertBefore(repoSection, projectsSection.nextSibling);
+                } else {
+                  document.body.appendChild(repoSection);
+                }
+                
+                // Add repositories to the list
+                const repoList = document.getElementById('repo-list');
+                repos.forEach(repo => {
+                  const dt = document.createElement('dt');
+                  const dd = document.createElement('dd');
+                  
+                  dt.innerHTML = `
+                    <a href="${repo.html_url}">
+                      <svg style="fill: #000;"><use xlink:href="/images/icons.svg#github"></use></svg>
+                      ${repo.name}
+                    </a>
+                  `;
+                  
+                  dd.innerHTML = `
+                    <p>${repo.description || ''}</p>
+                  `;
+                  
+                  repoList.appendChild(dt);
+                  repoList.appendChild(dd);
+                });
+              }
+            })
+            .catch(error => console.error('Error fetching repositories:', error));
+        }, 500); // Small delay to ensure DOM is fully rendered
+      });
+    </script>
+  
 
   
   <section class="counter-section">

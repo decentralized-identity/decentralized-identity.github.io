@@ -197,7 +197,7 @@
       <svg viewBox="0 0 50 50">
         <use xlink:href="/images/icons.svg#communicate_user"></use>
       </svg>
-      <h1>DIDComm Working Group</h1>
+      <h1>DIDComm</h1>
       
         <h3>Working Group</h3>
       
@@ -263,10 +263,19 @@
             <div class="title-border">
               <span class="lg"></span><span class="md"></span><span class="sm"></span>
             </div>
-            <p>The active work items that are underway in the DIF DIDComm Working Group Working Group</p>
+            <p>The active work items that are underway in the DIF DIDComm Working Group</p>
           </div>
         </div>
         <div class="col-6 col-md-8 col-lg-6 m-30px-t margin-center">
+          <style>
+            ul.links {
+              list-style-type: none;
+              padding-left: 0;
+            }
+            ul.links li {
+              margin-bottom: 5px;
+            }
+          </style>
           <dl>
             
           </dl>
@@ -275,6 +284,86 @@
     </div>
   </div>
 </section> 
+
+  
+  
+    <!-- Fetch and display repositories -->
+    <script>
+      // Wait for the DOM to be fully loaded
+      document.addEventListener('DOMContentLoaded', function() {
+        // Wait a bit to ensure all elements are rendered
+        setTimeout(function() {
+          fetch('https://api.github.com/orgs/decentralized-identity/repos')
+            .then(response => response.json())
+            .then(data => {
+              const repos = data.filter(repo => 
+                repo.name.includes('wg-didcomm') || 
+                (repo.topics && repo.topics.includes('wg-didcomm'))
+              );
+              
+              if (repos.length > 0) {
+                // Create the repositories section
+                const repoSection = document.createElement('section');
+                repoSection.className = 'counter-section';
+                repoSection.innerHTML = `
+                  <div class="container">
+                    <div class="row justify-content-center m-45px-b md-m-20px-b sm-m-15px-b">
+                      <div class="col-12 col-md-10 col-lg-7">
+                        <div class="section-title text-center">
+                          <h2 class="font-alt">All Repositories</h2>
+                          <div class="title-border">
+                            <span class="lg"></span><span class="md"></span><span class="sm"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row justify-content-center">
+                      <div class="col-10 col-md-8 col-lg-6 m-30px-t margin-center">
+                        <dl id="repo-list"></dl>
+                      </div>
+                    </div>
+                  </div>
+                `;
+                
+                // Find the projects section by its heading text
+                const projectsSection = Array.from(document.querySelectorAll('.section-title h2'))
+                  .find(h2 => h2.textContent.includes('Specs & Projects'))
+                  ?.closest('.counter-section');
+                
+                // Insert after the projects section if found, otherwise append to body
+                if (projectsSection) {
+                  projectsSection.parentNode.insertBefore(repoSection, projectsSection.nextSibling);
+                } else {
+                  document.body.appendChild(repoSection);
+                }
+                
+                // Add repositories to the list
+                const repoList = document.getElementById('repo-list');
+                repos.forEach(repo => {
+                  const dt = document.createElement('dt');
+                  const dd = document.createElement('dd');
+                  
+                  dt.innerHTML = `
+                    <a href="${repo.html_url}">
+                      <svg style="fill: #000;"><use xlink:href="/images/icons.svg#github"></use></svg>
+                      ${repo.name}
+                    </a>
+                  `;
+                  
+                  dd.innerHTML = `
+                    <p>${repo.description || ''}</p>
+                  `;
+                  
+                  repoList.appendChild(dt);
+                  repoList.appendChild(dd);
+                });
+              }
+            })
+            .catch(error => console.error('Error fetching repositories:', error));
+        }, 500); // Small delay to ensure DOM is fully rendered
+      });
+    </script>
+  
 
   
   <section class="counter-section">

@@ -12,15 +12,26 @@
           </div>
         </div>
         <div class="col-6 col-md-8 col-lg-6 m-30px-t margin-center">
+          <style>
+            ul.links {
+              list-style-type: none;
+              padding-left: 0;
+            }
+            ul.links li {
+              margin-bottom: 5px;
+            }
+          </style>
           <dl>
             {% for key, val in projects %}
               <dt>{{ key }}</dt>
               <dd>
                 <p>{{ val.desc }}</p>
                 {% if val.links %}
-                  {% for link in val.links %}
-                    <a class="block-link icon-link" href="{{ link.href }}">{{ link.text }}</a>
-                  {% endfor %}
+                  <ul class="links">
+                    {% for link in val.links %}
+                      <a class="block-link icon-link" href="{{ link.href }}" data-type="{{ link.type if link.type else '' }}">{{ link.text }}</a>
+                    {% endfor %}
+                  </ul>
                 {% endif %}
               </dd>
             {% endfor %}

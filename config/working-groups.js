@@ -135,6 +135,7 @@ module.exports = {
         links: [
           {
             text: "Specification",
+            type: "doc",
             href: "https://identity.foundation/waci-didcomm"
           },
           {
@@ -148,6 +149,7 @@ module.exports = {
         links: [
           {
             text: "Specification",
+            type: "doc",
             href: "https://identity.foundation/credential-manifest"
           },
           {
@@ -161,6 +163,7 @@ module.exports = {
         links: [
           {
             text: "Specification",
+            type: "doc",
             href: "https://w3c-ccg.github.io/vc-json-schemas/"
           },
           {
@@ -237,7 +240,7 @@ module.exports = {
     }
   },
   "did-comm": {
-    name: "DIDComm Working Group",
+    name: "DIDComm",
     logo: "communicate_user",
     title: "DIDComm Working Group",
     shortform: "DIDcomm",
@@ -331,7 +334,126 @@ module.exports = {
       }
     },
     projects: {
-      // Add projects from identifiers-discovery.html
+      "Universal Resolver": {
+        desc: "Specification and implementation of a driver-based framework that enables resolution of DIDs.",
+        links: [
+          {
+            text: "Main Repo",
+            href: "https://github.com/decentralized-identity/universal-resolver"
+          },
+          {
+            text: "Public Instance",
+            type: "app",
+            href: "https://uniresolver.io/"
+          },
+          {
+            text: "Driver Development",
+            href: "https://github.com/decentralized-identity/universal-resolver/blob/master/docs/driver-development.md"
+          }
+        ]
+      },
+      "Universal Registrar": {
+        desc: "Specification and implementation of a driver-based framework that enables creation/updates/deactivation of DIDs.",
+        links: [
+          {
+            text: "Main Repo",
+            href: "https://github.com/decentralized-identity/universal-registrar"
+          },
+          {
+            text: "Public Instance",
+            type: "app",
+            href: "https://uniregistrar.io/"
+          },
+          {
+            text: "Driver Development",
+            href: "https://github.com/decentralized-identity/universal-registrar/blob/master/docs/driver-development.md"
+          }
+        ]
+      },
+      ".well-known DID configuration": {
+        desc: "Specification, docs, and implementations for discovering DIDs from .well-known HTTP(S) URIs.",
+        links: [
+          {
+            text: "Specification",
+            type: "doc",
+            href: "https://identity.foundation/specs/did-configuration/"
+          },
+          {
+            text: "Main Repo",
+            href: "https://github.com/decentralized-identity/.well-known/"
+          },
+          {
+            text: "Demo Web App",
+            type: "app",
+            href: "https://identity.foundation/.well-known/resources/did-configuration/demo/build/index.html"
+          }
+        ]
+      },
+      "Peer DID Method Specification": {
+        desc: "A rich DID method that has no blockchain dependencies. The verifiable data registry is a synchronization protocol between peers.",
+        links: [
+          {
+            text: "Specification",
+            type: "doc",
+            href: "https://identity.foundation/peer-did-method-spec/"
+          },
+          {
+            text: "Main Repo",
+            href: "https://github.com/decentralized-identity/peer-did-method-spec"
+          }
+        ]
+      },
+      "DID Specification Extensions": {
+        desc: " Extension parameters, properties, and values for the DID spec registries.",
+        links: [
+          {
+            text: "Main Repo",
+            href: "https://github.com/decentralized-identity/did-spec-extensions"
+          }
+        ]
+      },
+      "did:webvh": {
+        desc: "did:webvh DID Method.",
+        links: [
+          {
+            text: "Specification",
+            type: "doc",
+            href: "https://identity.foundation/didwebvh/"
+          },
+          {
+            text: "Main Repo",
+            href: "https://github.com/decentralized-identity/didwebvh"
+          }
+        ]
+      },
+      "Linked Verifiable Presentation": {
+        desc: "Specification for linking Verifiable Presentations in DID documents.",
+        links: [
+          {
+            text: "Specification",
+            type: "doc",
+            href: "https://identity.foundation/linked-vp"
+          },
+          {
+            text: "Main Repo",
+            href: "https://github.com/decentralized-identity/linked-vp"
+          }
+        ]
+      },
+      "DID Traits": {
+        desc: "Specification for representing DID method traits in a structured, machine-readable format.",
+        links: [
+          {
+            text: "Specification",
+            type: "doc",
+            href: "https://identity.foundation/did-traits"
+          },
+          {
+            text: "Main Repo",
+            href: "https://github.com/decentralized-identity/did-traits"
+          }
+        ]
+      }
     },
     chairs: {
       "Markus Sabadello": {
@@ -386,6 +508,7 @@ module.exports = {
         links: [
           {
             text: "Specification",
+            type: "doc",
             href: "https://identity.foundation/decentralized-web-node/spec/"
           },
           {
@@ -399,6 +522,7 @@ module.exports = {
         links: [
           {
             text: "Specification",
+            type: "doc",
             href: "https://identity.foundation/edv-spec/"
           },
           {
@@ -451,7 +575,7 @@ module.exports = {
     },
     projects: {
       "Sidetree Protocol": {
-        desc: "Spec, docs, and implementations for the chain/ledger-agnostic DID scaling protocol.",
+        desc: "Specification, docs, and implementations for the chain/ledger-agnostic DID scaling protocol.",
         links: [
           {
             text: "Main Repo",
@@ -562,48 +686,68 @@ module.exports = {
         links: [
           {
             text: "WG Charter",
-            href: "https://github.com/decentralized-identity/org/blob/master/Org%20documents/WG%20documents/DIF_Crypto_WG_charter_v1.pdf"
+            href: "https://github.com/decentralized-identity/org/blob/master/Org%20documents/WG%20documents/DIF_Applied_Crypto_WG_v1.pdf"
+          },
+          {
+            text: "Agenda/GitHub",
+            href: "https://github.com/decentralized-identity/crypto-wg/blob/main/agenda.md"
           },
           {
             text: "Mailing list",
             href: "https://lists.identity.foundation/g/crypto-wg"
           },
           {
-            text: "Calendar entry",
-            href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=dTRpa3JmNThiZGczc2FzZHQ0bnFsdGRjcGxfMjAyNTAxMTVUMTcwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
+            text: "Slack channel (members only)",
+            href: "https://difdn.slack.com/archives/C021JUSRXC0"
           },
           {
-            text: "WG participants",
-            href: "https://github.com/decentralized-identity?q=wg-crypto&type=&language=&sort="
+            text: "Calendar entry",
+            href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=bGlsYWw4aDJwODljZGYyNGhkYnV2dW85bTNfMjAyNTAxMjBUMTkwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
+          },
+          {
+            text: "WG GitHub Repos",
+            href: "https://github.com/decentralized-identity?q=+wg-crypto&type=&language=&sort="
           },
           {
             text: "WG Meeting Recordings",
-            href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit?gid=242845701#gid=242845701"
+            href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit?gid=339046779#gid=339046779"
           }
         ]
       }
     },
     projects: {
-      "Crypto Projects": {
-        desc: "Description of Crypto projects",
+      "BBS+ 2.0": {
+        desc: "BBS+ signatures are a pairing-based cryptographic signature scheme that supports multi-message signing and selective disclosure proofs.",
         links: [
           {
-            text: "Crypto Project 1",
-            href: "https://example.com/crypto-project-1"
+            text: "BBS+ Specification",
+            type: "doc",
+            href: "https://identity.foundation/bbs-signature/"
           },
           {
-            text: "Crypto Project 2",
-            href: "https://example.com/crypto-project-2"
+            text: "GitHub Repository",
+            href: "https://github.com/decentralized-identity/bbs-signature"
           }
         ]
       }
     },
     chairs: {
-      "Crypto Chair": {
-        title: "Crypto Chair Title",
-        photo: "/images/photos/crypto-chair.jpg",
-        linkedin: "crypto-chair-linkedin",
-        twitter: "crypto-chair-twitter"
+      "Brent Zundel": {
+        title: "Crypto @ Evernym",
+        photo: "/images/photos/brent-zundel.jpg",
+        linkedin: "bzundel"
+      },
+      "Tobias Looker": {
+        title: "OSS @ Mattr ",
+        photo: "/images/photos/tobias-looker.jpg",
+        linkedin: "tplooker",
+        twitter: "tplooker"
+      },
+      "Srinath Setty": {
+        title: "Research @ Microsoft",
+        photo: "/images/photos/srinath-setty.jpg",
+        linkedin: "srinathtv",
+        twitter: "srinathtv"
       }
     }
   },
@@ -636,17 +780,23 @@ module.exports = {
     },
     projects: {
       "Storage and Compute Projects": {
-        desc: "Description of Storage and Compute projects",
-        links: [
-          {
-            text: "Storage and Compute Project 1",
-            href: "https://example.com/storage-compute-project-1"
-          },
-          {
-            text: "Storage and Compute Project 2",
-            href: "https://example.com/storage-compute-project-2"
-          }
-        ]
+        "Identity Hubs": {
+          desc: "Encrypted personal datastore for identity interactions and decentralized apps.",
+          links: [
+            {
+              text: "System Diagram",
+              href: "https://raw.githubusercontent.com/decentralized-identity/hubs/master/diagrams/full-system.png"
+            },
+            {
+              text: "Explainer",
+              href: "https://github.com/decentralized-identity/hubs/blob/master/explainer.md"
+            },
+            {
+              text: "Repo",
+              href: "https://github.com/decentralized-identity/hub-node-core"
+            }
+          ]
+        }
       }
     },
     chairs: {
@@ -689,19 +839,6 @@ module.exports = {
       }
     },
     projects: {
-      "KERI Projects": {
-        desc: "Description of KERI projects",
-        links: [
-          {
-            text: "KERI Project 1",
-            href: "https://example.com/keri-project-1"
-          },
-          {
-            text: "KERI Project 2",
-            href: "https://example.com/keri-project-2"
-          }
-        ]
-      }
     },
     chairs: {
       "KERI Chair": {
