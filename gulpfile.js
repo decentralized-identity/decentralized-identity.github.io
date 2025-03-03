@@ -3,12 +3,10 @@ const concat = require("gulp-concat");
 const uglify = require("gulp-uglify");
 const nunjucksRender = require("gulp-nunjucks-render");
 const axios = require("axios");
-const fetch = require('node-fetch');
 
 const { Transform } = require("stream");
 const File = require("vinyl");
 const { existsSync } = require("fs");
-
 const workingGroups = require('./config/working-groups');
 
 var assets = {
@@ -41,6 +39,7 @@ var compiledRepos = null;
 const repoTopics = {
   "wg-auth": 1,
   "wg-cc": 1,
+  "wg-dm": 1,
   "wg-id": 1,
   "wg-sc": 1,
   "wg-didcomm": 1,
@@ -48,6 +47,7 @@ const repoTopics = {
   "wg-keri": 1,
   "wg-sidetree": 1,
   "wg-ws": 1,
+  "wg-sds": 1,
 };
 
 async function iterateRepos(fn, page = 1) {
@@ -114,41 +114,45 @@ gulp.task("assetsCopy", () => {
   ]).pipe(gulp.dest("docs"));
 });
 
-async function fetchRepositories() {
-  const repos = {};
-  
-  try {
-    const response = await fetch('https://api.github.com/orgs/decentralized-identity/repos?per_page=100');
-    const allRepos = await response.json();
-    
-    // For each working group with a repoTag, filter the repositories
-    for (const [key, group] of Object.entries(workingGroups)) {
-      if (group.repoTag) {
-        repos[key] = allRepos.filter(repo => 
-          repo.name.includes(group.repoTag) || 
-          (repo.topics && repo.topics.includes(group.repoTag))
+gulp.task("templates", async () => {
+  return gulp
+    .src(["templates/pages/**/*.html.njk", "templates/pages/**/*.html"])
+    .pipe(
+      nunjucksRender({
+        path: ["templates", "templates/partials", "templates/pages"],
+        data: {
+          repos: compiledRepos || (await compileRepos()),
+          workingGroups: workingGroups,
+        },
+      }).on("error", (e) => {
+        console.log(
+          `Error in ${
+            e.fileName ? e.fileName : "(filename not available)"
+          }: ${e.message.toString()}`
         );
-      }
-    }
-  } catch (error) {
-    console.error('Error fetching repositories:', error);
-  }
-  
-  return repos;
-}
+      })
+    )
+    .pipe(
+      new Transform({
+        objectMode: true,
 
-gulp.task("templates", async function() {
-  const repositories = await fetchRepositories();
-  
-  return gulp.src('templates/pages/**/*.html')
-    .pipe(nunjucksRender({
-      path: ['templates', 'templates/partials', 'templates/layouts'],
-      data: {
-        workingGroups: workingGroups,
-        repositories: repositories
-      }
-    }))
-    .pipe(gulp.dest('docs'));
+        transform(file, enc, callback) {
+          if (file instanceof File) {
+            if (file.path.endsWith(".html.html")) {
+              file.path = file.path.slice(0, -5);
+            }
+            callback(null, file);
+          } else {
+            console.log(file);
+            callback(
+              new Error("Error, unexpected type received in pipe"),
+              null
+            );
+          }
+        },
+      })
+    )
+    .pipe(gulp.dest("./docs"));
 });
 
 gulp.task("repoCompilation", (done) => {

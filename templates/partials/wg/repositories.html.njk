@@ -1,7 +1,8 @@
-{% if repos[repoTag] %}
+<!-- Debug info: repoTag = {{ repoTag }} -->
+{% if repos and repoTag and repos[repoTag] %}
   <div class="col-10 col-md-8 col-lg-6 m-30px-t margin-center">
     <div class="section-title text-center">
-      <h5 style="text-align: center; margin: 2em 0 0;">All Repositories</h5>
+      <h5 style="text-align: center; margin: 2em 0 0;">All Repositories ({{ repos[repoTag].length }})</h5>
       <div class="title-border">
         <span class="lg"></span>
         <span class="md"></span>
@@ -15,4 +16,6 @@
       </a>
     {% endfor %}
   </div>
+{% else %}
+  <!-- No repositories found for tag: {{ repoTag }} -->
 {% endif %}
