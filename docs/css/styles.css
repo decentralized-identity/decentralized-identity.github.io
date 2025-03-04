@@ -325,6 +325,7 @@ h5 {
   height: 15px;
 }
 
+.icon-link[href*="cawg.io"]:before,
 .icon-link[href*="calendar.google.com"]:before,
 .icon-link[href$=".md"]:before,
 .icon-link[href*="hackmd.io"]:before,

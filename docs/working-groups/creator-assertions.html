@@ -5,7 +5,7 @@
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-  <title>DIF - Authentication Working Group</title>
+  <title>DIF - Creator Assertions Working Group</title>
   <meta name="google-site-verification" content="8yJCkbG9ayv7Vbjgjk525YTGbDVCvUZ_Moviopr6f1M"/> <!-- Plugin CSS -->
   <link href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="/plugins/owl-carousel/css/owl.carousel.min.css" rel="stylesheet"/>
@@ -198,14 +198,14 @@
   <section class="page-title theme-bg">
     <div class="container">
       <svg viewBox="0 0 50 50">
-        <use xlink:href="/images/icons.svg#login_screen"></use>
+        <use xlink:href="/images/icons.svg#signature"></use>
       </svg>
-      <h1>Authentication</h1>
+      <h1>Creator Assertions</h1>
       
         <h3>Working Group</h3>
       
       
-        <h4>aka: DID Auth WG</h4>
+        <h4>aka: CAWG</h4>
       
     </div>
   </section>
@@ -220,27 +220,25 @@
           <div class="title-border">
             <span class="lg"></span><span class="md"></span><span class="sm"></span>
           </div>
-          <p>Since December 2020, this work is hosted by the Open Identity Foundation. This group to contribute to standards and technology that designs and implements authentication protocols that rely upon open standards and cryptographic protocols, including DIDs and DID Documents. This group develops specifications, protocols, and formats for data structures used for authentication.</p>
+          <p>The Creator Assertions Working Group builds upon the work of the Coalition for Content Provenance and Authenticity (C2PA) by defining additional assertions that allow content creators to express individual and organizational intent about their content.</p>
         </div>
       </div>
       <div class="col-10 col-md-8 col-lg-6 m-30px-t margin-center">
   <dl>
     
-      <dt>DIDAuth WG documentation</dt>
+      <dt>Creator Assertions WG documentation</dt>
       <dd>
         
           
-            <a class="block-link icon-link" href="https://github.com/decentralized-identity/org/blob/master/Org%20documents/WG%20documents/DIF_DIDAuth_WG_charter_v1.pdf">WG Charter</a>
+            <a class="block-link icon-link" href="https://cawg.io/">Group Home</a>
           
-            <a class="block-link icon-link" href="https://lists.identity.foundation/g/didauth-wg">Mailing list</a>
+            <a class="block-link icon-link" href="https://github.com/decentralized-identity/org/blob/main/Org%20documents/WG%20documents/DIF_CAWG_WG_charter_v1.pdf">WG Charter</a>
           
-            <a class="block-link icon-link" href="https://difdn.slack.com/archives/C7TFEG9B6">Slack channel (members only)</a>
+            <a class="block-link icon-link" href="https://github.com/decentralized-identity/org/blob/main/Org%20documents/WG%20documents/DIF_CAWG_WG_Operating_Addendum_v1.pdf">WG Operating Addendum</a>
           
-            <a class="block-link icon-link" href="https://github.com/decentralized-identity?q=wg-auth&amp;type=&amp;language=&amp;sort=">WG participants</a>
+            <a class="block-link icon-link" href="https://lists.identity.foundation/g/cawg">Mailing list</a>
           
-            <a class="block-link icon-link" href="https://github.com/decentralized-identity?q=wg-id&amp;type=&amp;language=">WG GitHub Repos</a>
-          
-            <a class="block-link icon-link" href="https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit?gid=2130393558#gid=2130393558">WG Meeting Recordings</a>
+            <a class="block-link icon-link" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=dTRpa3JmNThiZGczc2FzZHQ0bnFsdGRjcGxfMjAyNTAxMTVUMTcwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&amp;tmsrc=decentralized.identity%40gmail.com&amp;scp=ALL">Calendar entry</a>
           
         
       </dd>
@@ -262,7 +260,7 @@
             <div class="title-border">
               <span class="lg"></span><span class="md"></span><span class="sm"></span>
             </div>
-            <p>The active work items that are underway in the DIF Authentication Working Group</p>
+            <p>The active work items that are underway in the DIF Creator Assertions Working Group</p>
           </div>
         </div>
         <div class="col-6 col-md-8 col-lg-6 m-30px-t margin-center">
@@ -277,66 +275,11 @@
           </style>
           <dl>
             
-              <dt>DID Authentication Profile for SIOP</dt>
-              <dd>
-                <p>This specification defines the SIOP DID AuthN flavor to use OpenID Connect (OIDC) together with the strong decentralization, privacy and security guarantees of DID for everyone who wants to have a generic way to integrate SSI wallets into their web applications.</p>
-                
-                  <ul class="links">
-                    
-                      <a class="block-link icon-link" href="https://openid.net/specs/openid-connect-self-issued-v2-1_0.html" data-type="">OIDF - SIOP v2 (draft)</a>
-                    
-                      <a class="block-link icon-link" href="https://openid.bitbucket.io/connect/openid-connect-self-issued-v2-1_0.html" data-type="">OIDF - SIOP v2 (most recent editor&#39;s draft )</a>
-                    
-                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/papers/blob/master/did-authn/siop/did-authn-siop-profile.md" data-type="">Explainer - outdated. New work carried out under OIDF</a>
-                    
-                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/did-siop" data-type="">Repo - outdated. New work carried out under OIDF</a>
-                    
-                  </ul>
-                
-              </dd>
-            
-              <dt>DIDComm JS Lib</dt>
-              <dd>
-                <p>A shared effort with the HL Aries project to create a standardized means of authenticated general message passing between DID controllers. More information will be added soon.</p>
-                
-                  <ul class="links">
-                    
-                      <a class="block-link icon-link" href="https://github.com/decentralized-identity/DIDComm-js" data-type="">Repo</a>
-                    
-                  </ul>
-                
-              </dd>
-            
           </dl>
         </div>
-        <!-- Debug info: repoTag = wg-auth -->
+        <!-- Debug info: repoTag = wg-ca -->
 
-  <div class="col-10 col-md-8 col-lg-6 m-30px-t margin-center">
-    <div class="section-title text-center">
-      <h5 style="text-align: center; margin: 2em 0 0;">All Repositories (3)</h5>
-      <div class="title-border">
-        <span class="lg"></span>
-        <span class="md"></span>
-        <span class="sm"></span>
-      </div>
-    </div>
-    
-      <a class="icon-link" href="https://github.com/decentralized-identity/did-siop" style="display: block; margin-bottom: 1em;">
-        <strong>did-siop</strong>
-        <div style="font-size: 85%; color: #777;"></div>
-      </a>
-    
-      <a class="icon-link" href="https://github.com/decentralized-identity/did-siop-browser-ext" style="display: block; margin-bottom: 1em;">
-        <strong>did-siop-browser-ext</strong>
-        <div style="font-size: 85%; color: #777;">DID based SIOP</div>
-      </a>
-    
-      <a class="icon-link" href="https://github.com/decentralized-identity/DIDComm-js" style="display: block; margin-bottom: 1em;">
-        <strong>DIDComm-js</strong>
-        <div style="font-size: 85%; color: #777;">JS implementation of pack and unpack</div>
-      </a>
-    
-  </div>
+  <!-- No repositories found for tag: wg-ca -->
 
       </div>
     </div>
@@ -362,26 +305,20 @@
         <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
           <div class="our-team">
             <div class="img">
-              <img src="/images/photos/oliver-terbu.jpg"/>
+              <img src="/images/photos/eric-scouten.jpg"/>
             </div>
             <div class="info">
-              <h6>Oliver Terbu</h6>
-              <label>Identity Architect @ Spruce</label>
+              <h6>Eric Scouten</h6>
+              <label>Identity Standards Architect, Content Authenticity Initiative @ Adobe</label>
             </div>
             <ul class="social-icons">
               
                 <li>
-                  <a class="linkedin" href="https://www.linkedin.com/in/oliver-terbu">
+                  <a class="linkedin" href="https://www.linkedin.com/in/ericscouten">
                     <svg><use xlink:href="/images/icons.svg#linkedin"></use></svg>
                   </a>
                 </li>
               
-              
-                <li>
-                  <a class="twitter" href="https://twitter.com/OliverTerbu">
-                    <svg><use xlink:href="/images/icons.svg#twitter"></use></svg>
-                  </a>
-                </li>
               
             </ul>
           </div>
@@ -392,53 +329,6 @@
 </section> 
 
   
-  
-    <section class="counter-section">
-  <div class="container">
-    <div class="row justify-content-center m-45px-b md-m-20px-b sm-m-15px-b">
-      <div class="col-12 col-md-10 col-lg-7">
-        <div class="section-title text-center">
-          <h2 class="font-alt">Liaison</h2>
-          <div class="title-border">
-            <span class="lg"></span><span class="md"></span><span class="sm"></span>
-          </div>
-          <p>The following DIF members connect DIF with other community organisations</p>
-        </div>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      
-        <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
-          <div class="our-team">
-            <div class="img">
-              <img src="/images/photos/kristina_yasuda.jpg"/>
-            </div>
-            <div class="info">
-              <h6>Kristina Yasuda</h6>
-              <label>OIDC liaison / Microsoft</label>
-            </div>
-            <ul class="social-icons">
-              
-                <li>
-                  <a class="linkedin" href="https://www.linkedin.com/in/kristina-yasuda-6263b5a2">
-                    <svg><use xlink:href="/images/icons.svg#linkedin"></use></svg>
-                  </a>
-                </li>
-              
-              
-                <li>
-                  <a class="twitter" href="https://twitter.com/kristinayasuda">
-                    <svg><use xlink:href="/images/icons.svg#twitter"></use></svg>
-                  </a>
-                </li>
-              
-            </ul>
-          </div>
-        </div>
-      
-    </div>
-  </div>
-</section> 
   
 
   
