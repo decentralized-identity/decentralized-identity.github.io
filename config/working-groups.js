@@ -242,6 +242,48 @@ module.exports = {
       }
     }
   },
+  "creator-assertions": {
+    name: "Creator Assertions",
+    logo: "signature",
+    title: "Creator Assertions Working Group",
+    shortform: "CAWG",
+    repoTag: "wg-ca",
+    scope: "The Creator Assertions Working Group builds upon the work of the Coalition for Content Provenance and Authenticity (C2PA) by defining additional assertions that allow content creators to express individual and organizational intent about their content.",
+    charters: {
+      "Creator Assertions WG documentation": {
+        links: [
+          {
+            text: "Group Home",
+            href: "https://cawg.io/"
+          },
+          {
+            text: "WG Charter",
+            href: "https://github.com/decentralized-identity/org/blob/main/Org%20documents/WG%20documents/DIF_CAWG_WG_charter_v1.pdf"
+          },
+          {
+            text: "WG Operating Addendum",
+            href: "https://github.com/decentralized-identity/org/blob/main/Org%20documents/WG%20documents/DIF_CAWG_WG_Operating_Addendum_v1.pdf"
+          },
+          {
+            text: "Mailing list",
+            href: "https://lists.identity.foundation/g/cawg"
+          },
+          {
+            text: "Calendar entry",
+            href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=dTRpa3JmNThiZGczc2FzZHQ0bnFsdGRjcGxfMjAyNTAxMTVUMTcwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
+          }
+        ]
+      }
+    },
+    chairs: {
+      "Eric Scouten": {
+        title: "Identity Standards Architect, Content Authenticity Initiative @ Adobe",
+        photo: "/images/photos/eric-scouten.jpg",
+        linkedin: "ericscouten",
+        bluesky: "https://bsky.app/profile/ericscouten.me"
+      }
+    }
+  },
   "did-comm": {
     name: "DIDComm",
     logo: "communicate_user",
