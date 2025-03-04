@@ -3,11 +3,42 @@ const concat = require("gulp-concat");
 const uglify = require("gulp-uglify");
 const nunjucksRender = require("gulp-nunjucks-render");
 const axios = require("axios");
+const fs = require('fs');
+const path = require('path');
 
 const { Transform } = require("stream");
 const File = require("vinyl");
 const { existsSync } = require("fs");
 const workingGroups = require('./config/working-groups');
+
+// Dynamically generate working group structure and repo topics
+var structure = {
+  index: ["index.html"],
+  events: ["index.html"],
+  education: ["index.html"],
+  schemas: ["index.html"],
+  "working-groups": ["index.html"]
+};
+
+// Helper function to normalize slugs
+function normalizeSlug(id) {
+  // Handle both hyphenated and underscore formats
+  return id.replace(/_/g, '-').replace(/\s+/g, '-').toLowerCase();
+}
+
+// Dynamically add working group pages to structure
+for (const [id, group] of Object.entries(workingGroups)) {
+  const slug = normalizeSlug(id);
+  structure["working-groups"].push(`${slug}.html`);
+}
+
+// Dynamically generate repoTopics from working group repoTags
+var repoTopics = {};
+for (const [id, group] of Object.entries(workingGroups)) {
+  if (group.repoTag) {
+    repoTopics[group.repoTag] = 1;
+  }
+}
 
 var assets = {
   js: [
@@ -19,36 +50,7 @@ var assets = {
   ],
 };
 
-var structure = {
-  index: ["index.html"],
-  events: ["index.html"],
-  education: ["index.html"],
-  schemas: ["index.html"],
-  "working-groups": [
-    "identifiers-discovery.html",
-    "storage-compute.html",
-    "claims-credentials.html",
-    "authentication.html",
-    "did-comm.html",
-    "sidetree.html",
-    "secure-data-storage.html",
-  ],
-};
-
 var compiledRepos = null;
-const repoTopics = {
-  "wg-auth": 1,
-  "wg-cc": 1,
-  "wg-dm": 1,
-  "wg-id": 1,
-  "wg-sc": 1,
-  "wg-didcomm": 1,
-  "wg-crypto": 1,
-  "wg-keri": 1,
-  "wg-sidetree": 1,
-  "wg-ws": 1,
-  "wg-sds": 1,
-};
 
 async function iterateRepos(fn, page = 1) {
   return axios
@@ -159,9 +161,128 @@ gulp.task("repoCompilation", (done) => {
   repoCompilation.then((z) => done());
 });
 
+// Generate working group template files from config
+gulp.task("generate-wg-templates", function(done) {
+  // Load the working groups config
+  const templateDir = './templates/pages/working-groups';
+  
+  // Create the directory if it doesn't exist
+  if (!fs.existsSync(templateDir)) {
+    fs.mkdirSync(templateDir, { recursive: true });
+  }
+  
+  // Generate index file
+  const indexTemplate = `{% extends "default.html.njk" %}
+{% set title = "Working Groups" %}
+{% set css = ['directory'] %}
+
+{% block content %}
+<section class="page-title theme-bg">
+  <div class="container">
+    <h1>Working Groups</h1>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <!-- Active Working Groups -->
+    <div class="row mb-5">
+      <div class="col-md-12">
+        <h2>Active Working Groups</h2>
+        <div class="row">
+        {% for id, group in workingGroups %}
+          {% if group.status != "archived" %}
+          <div class="col-md-6 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <svg class="me-3"><use xlink:href="/images/icons.svg#{{ group.logo }}"></use></svg>
+                  <h3 class="card-title mb-0">{{ group.name }}</h3>
+                </div>
+                {% if group.shortform %}
+                <p class="text-muted">{{ group.shortform }}</p>
+                {% endif %}
+                <p>{{ group.scope | truncate(150) }}</p>
+                <a href="/working-groups/{{ id | replace("_", "-") }}.html" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Archived Working Groups -->
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Completed or Archived Working Groups</h2>
+        <div class="row">
+        {% for id, group in workingGroups %}
+          {% if group.status == "archived" %}
+          <div class="col-md-6 mb-4">
+            <div class="card h-100 bg-light">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <svg class="me-3"><use xlink:href="/images/icons.svg#{{ group.logo }}"></use></svg>
+                  <h3 class="card-title mb-0">{{ group.name }}</h3>
+                </div>
+                {% if group.shortform %}
+                <p class="text-muted">{{ group.shortform }}</p>
+                {% endif %}
+                <p>{{ group.scope | truncate(150) }}</p>
+                <a href="/working-groups/{{ id | replace("_", "-") }}.html" class="btn btn-secondary">View Archive</a>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+`;
+  
+  fs.writeFileSync(path.join(templateDir, `index.html.njk`), indexTemplate);
+  console.log('Generated working groups index page');
+  
+  // Generate a template file for each working group
+  for (const [id, group] of Object.entries(workingGroups)) {
+    const slug = normalizeSlug(id);
+    
+    // Simply set the ID to be used to look up the data
+    const templateContent = `{% extends "wg_base.html.njk" %}
+{% set wg_id = "${id}" %}
+{% set name = workingGroups[wg_id].name %}
+{% set logo = workingGroups[wg_id].logo %}
+{% set title = workingGroups[wg_id].title %}
+{% set scope = workingGroups[wg_id].scope %}
+{% set shortform = workingGroups[wg_id].shortform %}
+{% set charters = workingGroups[wg_id].charters %}
+{% set projects = workingGroups[wg_id].projects %}
+{% set chairs = workingGroups[wg_id].chairs %}
+{% set liaison = workingGroups[wg_id].liaison %}
+{% set editors = workingGroups[wg_id].editors %}
+{% set status = workingGroups[wg_id].status %}
+{% set type = workingGroups[wg_id].type %}
+{% set repoTag = workingGroups[wg_id].repoTag %}
+{% set repoTopics = workingGroups[wg_id].repoTopics %}
+{% set meetings = workingGroups[wg_id].meetings %}
+`;
+    
+    fs.writeFileSync(path.join(templateDir, `${slug}.html.njk`), templateContent);
+    console.log(`Generated template for ${group.name}`);
+  }
+  
+  done();
+});
+
 gulp.task(
   "build",
   gulp.series(
+    "generate-wg-templates",
     "repoCompilation",
     gulp.parallel("assets", "assetsCopy", "templates")
   )
