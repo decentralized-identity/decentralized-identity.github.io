@@ -269,8 +269,12 @@ module.exports = {
             href: "https://lists.identity.foundation/g/cawg"
           },
           {
-            text: "Calendar entry",
-            href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=dTRpa3JmNThiZGczc2FzZHQ0bnFsdGRjcGxfMjAyNTAxMTVUMTcwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
+            text: "Calendar entry - Americas/EU Time Zones",
+            href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=MGdnNGZwMTJlYTM2YnVuYzVxOGc4dWJrYm1fMjAyNTAzMTBUMTUwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
+          },
+          {
+            text: "Calendar entry - APAC Time Zones",
+            href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=NzUxZzRmMjBhajhqY3Nic2dncjMxYW8xNWxfMjAyNTAzMTFUMDEwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
           }
         ]
       }
