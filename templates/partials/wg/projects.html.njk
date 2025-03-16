@@ -1,0 +1,44 @@
+<section class="counter-section gray-bg">
+  <div class="container">
+    <div class="counter-row">
+      <div class="column justify-content-center">
+        <div class="col-12">
+          <div class="section-title text-center">
+            <h2 class="font-alt">Specs &amp; Projects</h2>
+            <div class="title-border">
+              <span class="lg"></span><span class="md"></span><span class="sm"></span>
+            </div>
+            <p>The active work items that are underway in the DIF {{ name }} Working Group</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-8 col-lg-6 m-30px-t margin-center">
+          <style>
+            ul.links {
+              list-style-type: none;
+              padding-left: 0;
+            }
+            ul.links li {
+              margin-bottom: 5px;
+            }
+          </style>
+          <dl>
+            {% for key, val in projects %}
+              <dt>{{ key }}</dt>
+              <dd>
+                <p>{{ val.desc }}</p>
+                {% if val.links %}
+                  <ul class="links">
+                    {% for link in val.links %}
+                      <a class="block-link icon-link" href="{{ link.href }}" data-type="{{ link.type if link.type else '' }}">{{ link.text }}</a>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </dd>
+            {% endfor %}
+          </dl>
+        </div>
+        {% include "partials/wg/repositories.html.njk" %}
+      </div>
+    </div>
+  </div>
+</section> 
