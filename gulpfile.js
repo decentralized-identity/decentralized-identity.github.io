@@ -116,7 +116,40 @@ gulp.task("assetsCopy", () => {
   ]).pipe(gulp.dest("docs"));
 });
 
+// Add this new function to determine if a working group is archived
+function isArchived(group) {
+  // Check for explicit archived flag first
+  if (group.archived === true) return true;
+  return false;
+}
+
+// Add this to your "templates" task to make working group navigation data available
 gulp.task("templates", async () => {
+  // Create working group navigation data structure
+  const activeWGs = [];
+  const archivedWGs = [];
+  
+  // Sort working groups into active and archived
+  for (const [id, group] of Object.entries(workingGroups)) {
+    const slug = normalizeSlug(id);
+    const navItem = {
+      id: id,
+      name: group.name,
+      slug: slug,
+      url: `/working-groups/${slug}.html`
+    };
+    
+    if (isArchived(group)) {
+      archivedWGs.push(navItem);
+    } else {
+      activeWGs.push(navItem);
+    }
+  }
+  
+  // Sort alphabetically by name
+  activeWGs.sort((a, b) => a.name.localeCompare(b.name));
+  archivedWGs.sort((a, b) => a.name.localeCompare(b.name));
+  
   return gulp
     .src(["templates/pages/**/*.html.njk", "templates/pages/**/*.html"])
     .pipe(
@@ -125,6 +158,10 @@ gulp.task("templates", async () => {
         data: {
           repos: compiledRepos || (await compileRepos()),
           workingGroups: workingGroups,
+          navigation: {
+            activeWorkingGroups: activeWGs,
+            archivedWorkingGroups: archivedWGs
+          }
         },
       }).on("error", (e) => {
         console.log(
