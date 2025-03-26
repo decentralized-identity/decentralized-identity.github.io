@@ -24,10 +24,6 @@ module.exports = {
             href: "https://difdn.slack.com/archives/C7TFEG9B6"
           },
           {
-            text: "WG participants",
-            href: "https://github.com/decentralized-identity?q=wg-auth&type=&language=&sort="
-          },
-          {
             text: "WG GitHub Repos",
             href: "https://github.com/decentralized-identity?q=wg-id&type=&language="
           },
@@ -117,10 +113,6 @@ module.exports = {
           {
             text: "Calendar entry",
             href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=NDUzZGpxcHE4ZjhtNDI0azdwMTFpOWVzOGlfMjAyNTAyMTFUMTgwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&tmsrc=decentralized.identity%40gmail.com&scp=ALLL"
-          },
-          {
-            text: "WG participants",
-            href: "https://docs.google.com/spreadsheets/d/12hFa574v5PRrKfzIKMgDTjxuU6lvtBhrmLspfKkN4oE/edit#gid=1727803158"
           },
           {
             text: "WG GitHub Repos",
@@ -213,10 +205,6 @@ module.exports = {
           {
             text: "Calendar entry",
             href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=dTRpa3JmNThiZGczc2FzZHQ0bnFsdGRjcGxfMjAyNTAxMTVUMTcwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
-          },
-          {
-            text: "WG participants",
-            href: "https://github.com/decentralized-identity?q=wg-dm&type=&language=&sort="
           },
           {
             text: "WG Meeting Recordings",
@@ -382,10 +370,6 @@ module.exports = {
           {
             text: "Calendar entry - bi-weekly meeting",
             href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=NWwzYmI3Y2c0aG9qdmt1Z2kxYzRtM2hsbjNfMjAyNTAxMjdUMTkwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
-          },
-          {
-            text: "WG participants",
-            href: "https://docs.google.com/spreadsheets/d/12hFa574v5PRrKfzIKMgDTjxuU6lvtBhrmLspfKkN4oE/edit#gid=0"
           }
         ]
       }
@@ -895,10 +879,6 @@ module.exports = {
           {
             text: "Calendar entry",
             href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=dTRpa3JmNThiZGczc2FzZHQ0bnFsdGRjcGxfMjAyNTAxMTVUMTcwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
-          },
-          {
-            text: "WG participants",
-            href: "https://github.com/decentralized-identity?q=wg-keri&type=&language=&sort="
           },
           {
             text: "WG Meeting Recordings",
