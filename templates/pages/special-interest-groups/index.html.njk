@@ -1,6 +1,12 @@
-{% extends "default.html.njk" %}
+{% extends "group_listing_base.html.njk" %}
 {% set title = "Special Interest Groups" %}
-{% set css = ['directory'] %}
+{% set subtitle = "Industry and regional focused collaboration in decentralized identity" %}
+{% set groupType = "Special Interest Groups" %}
+{% set activeGroups = specialInterestGroups.activeSIGs %}
+{% set archivedGroups = specialInterestGroups.archivedSIGs %}
+{% set overview %}
+<p>Special Interest Groups (SIGs) bring together professionals and organizations focused on specific industries, regions, or use cases in decentralized identity. These groups facilitate knowledge sharing and collaboration within their focused domains.</p>
+{% endset %}
 
 {% block content %}
 <section class="page-title theme-bg">

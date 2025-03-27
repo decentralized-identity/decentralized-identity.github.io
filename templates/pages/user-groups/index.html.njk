@@ -1,6 +1,12 @@
-{% extends "default.html.njk" %}
+{% extends "group_listing_base.html.njk" %}
 {% set title = "User Groups" %}
-{% set css = ['directory'] %}
+{% set subtitle = "Implementation and adoption focused communities" %}
+{% set groupType = "User Groups" %}
+{% set activeGroups = userGroups.activeUserGroups %}
+{% set archivedGroups = userGroups.archivedUserGroups %}
+{% set overview %}
+<p>User Groups focus on implementation experiences and best practices around specific technologies or frameworks. These communities provide forums for developers and implementers to share knowledge and collaborate on practical solutions.</p>
+{% endset %}
 
 {% block content %}
 <section class="page-title theme-bg">

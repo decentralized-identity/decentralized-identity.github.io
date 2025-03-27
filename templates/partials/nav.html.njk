@@ -22,6 +22,13 @@
                   <span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span>
                   <a class="nav-link" href="/work">Work</a>
                   <ul class="sub-menu">
+                    {# Overview/Featured Links #}
+                    <li><a href="/work">Overview</a></li>
+                    <li><a href="/working-groups">Working Groups</a></li>
+                    <li><a href="/special-interest-groups">Special Interest Groups</a></li>
+                    <li><a href="/user-groups">User Groups</a></li>
+                    <li class="dropdown-divider"></li>
+
                     {# Working Groups section #}
                     <li class="dropdown-header">Working Groups</li>
                     {% for wg in navigation.activeWorkingGroups %}
