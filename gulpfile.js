@@ -32,7 +32,11 @@ function normalizeSlug(id) {
 }
 
 // Dynamically add working group pages to structure
-for (const [id, group] of Object.entries(workingGroups)) {
+for (const [id, group] of Object.entries(workingGroups.activeWorkingGroups)) {
+  const slug = normalizeSlug(id);
+  structure["working-groups"].push(`${slug}.html`);
+}
+for (const [id, group] of Object.entries(workingGroups.archivedWorkingGroups)) {
   const slug = normalizeSlug(id);
   structure["working-groups"].push(`${slug}.html`);
 }
@@ -51,7 +55,12 @@ for (const [id, group] of Object.entries(userGroups.activeUserGroups)) {
 
 // Dynamically generate repoTopics from working group repoTags
 var repoTopics = {};
-for (const [id, group] of Object.entries(workingGroups)) {
+for (const [id, group] of Object.entries(workingGroups.activeWorkingGroups)) {
+  if (group.repoTag) {
+    repoTopics[group.repoTag] = 1;
+  }
+}
+for (const [id, group] of Object.entries(workingGroups.archivedWorkingGroups)) {
   if (group.repoTag) {
     repoTopics[group.repoTag] = 1;
   }
@@ -133,35 +142,26 @@ gulp.task("assetsCopy", () => {
   ]).pipe(gulp.dest("docs"));
 });
 
-// Add this new function to determine if a working group is archived
-function isArchived(group) {
-  // Check for explicit archived flag first
-  if (group.archived === true) return true;
-  return false;
-}
-
 // Update templates task to include SIG data
 gulp.task("templates", async () => {
   // Create working group navigation data structure
-  const activeWGs = [];
-  const archivedWGs = [];
+  const activeWGs = Object.entries(workingGroups.activeWorkingGroups).map(([id, group]) => ({
+    id,
+    name: group.name,
+    slug: normalizeSlug(id),
+    url: group.url || `/working-groups/${normalizeSlug(id)}.html`
+  }));
+
+  const archivedWGs = Object.entries(workingGroups.archivedWorkingGroups).map(([id, group]) => ({
+    id,
+    name: group.name,
+    slug: normalizeSlug(id),
+    url: group.url || `/working-groups/${normalizeSlug(id)}.html`
+  }));
   
-  // Sort working groups into active and archived
-  for (const [id, group] of Object.entries(workingGroups)) {
-    const slug = normalizeSlug(id);
-    const navItem = {
-      id: id,
-      name: group.name,
-      slug: slug,
-      url: `/working-groups/${slug}.html`
-    };
-    
-    if (isArchived(group)) {
-      archivedWGs.push(navItem);
-    } else {
-      activeWGs.push(navItem);
-    }
-  }
+  // Sort alphabetically
+  activeWGs.sort((a, b) => a.name.localeCompare(b.name));
+  archivedWGs.sort((a, b) => a.name.localeCompare(b.name));
   
   // Create SIG navigation data structure
   const activeSIGs = [];
@@ -280,18 +280,15 @@ gulp.task("repoCompilation", (done) => {
 
 // Generate working group template files from config
 gulp.task("generate-wg-templates", function(done) {
-  // Load the working groups config
   const templateDir = './templates/pages/working-groups';
   
-  // Create the directory if it doesn't exist
   if (!fs.existsSync(templateDir)) {
     fs.mkdirSync(templateDir, { recursive: true });
   }
-  
-  // Generate index file
-  const indexTemplate = `{% extends "default.html.njk" %}
+
+  // Generate index page for working groups
+  const indexContent = `{% extends "default.html.njk" %}
 {% set title = "Working Groups" %}
-{% set css = ['directory'] %}
 
 {% block content %}
 <section class="page-title theme-bg">
@@ -302,97 +299,91 @@ gulp.task("generate-wg-templates", function(done) {
 
 <section>
   <div class="container">
-    <!-- Active Working Groups -->
-    <div class="row mb-5">
-      <div class="col-md-12">
-        <h2>Active Working Groups</h2>
-        <div class="row">
-        {% for id, group in workingGroups %}
-          {% if group.status != "archived" %}
+    <h2>Active Working Groups</h2>
+    <div class="row">
+      {% for wg in navigation.activeWorkingGroups %}
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h3 class="card-title h4">{{ wg.name }}</h3>
+              <p class="card-text">{{ workingGroups.activeWorkingGroups[wg.id].scope | truncate(150) }}</p>
+              <a href="{{ wg.url }}" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if navigation.archivedWorkingGroups.length > 0 %}
+      <h2 class="mt-5">Completed or Archived Working Groups</h2>
+      <div class="row">
+        {% for wg in navigation.archivedWorkingGroups %}
           <div class="col-md-6 mb-4">
             <div class="card h-100">
               <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <svg class="me-3"><use xlink:href="/images/icons.svg#{{ group.logo }}"></use></svg>
-                  <h3 class="card-title mb-0">{{ group.name }}</h3>
-                </div>
-                {% if group.shortform %}
-                <p class="text-muted">{{ group.shortform }}</p>
-                {% endif %}
-                <p>{{ group.scope | truncate(150) }}</p>
-                <a href="/working-groups/{{ id | replace("_", "-") }}.html" class="btn btn-primary">Learn More</a>
+                <h3 class="card-title h4">{{ wg.name }}</h3>
+                <p class="card-text">{{ workingGroups.archivedWorkingGroups[wg.id].scope | truncate(150) }}</p>
+                <a href="{{ wg.url }}" class="btn btn-primary">Learn More</a>
               </div>
             </div>
           </div>
-          {% endif %}
         {% endfor %}
-        </div>
       </div>
-    </div>
-
-    <!-- Archived Working Groups -->
-    <div class="row">
-      <div class="col-md-12">
-        <h2>Completed or Archived Working Groups</h2>
-        <div class="row">
-        {% for id, group in workingGroups %}
-          {% if group.status == "archived" %}
-          <div class="col-md-6 mb-4">
-            <div class="card h-100 bg-light">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <svg class="me-3"><use xlink:href="/images/icons.svg#{{ group.logo }}"></use></svg>
-                  <h3 class="card-title mb-0">{{ group.name }}</h3>
-                </div>
-                {% if group.shortform %}
-                <p class="text-muted">{{ group.shortform }}</p>
-                {% endif %}
-                <p>{{ group.scope | truncate(150) }}</p>
-                <a href="/working-groups/{{ id | replace("_", "-") }}.html" class="btn btn-secondary">View Archive</a>
-              </div>
-            </div>
-          </div>
-          {% endif %}
-        {% endfor %}
-        </div>
-      </div>
-    </div>
+    {% endif %}
   </div>
 </section>
-{% endblock %}
-`;
-  
-  fs.writeFileSync(path.join(templateDir, `index.html.njk`), indexTemplate);
-  console.log('Generated working groups index page');
-  
-  // Generate a template file for each working group
-  for (const [id, group] of Object.entries(workingGroups)) {
+{% endblock %}`;
+
+  fs.writeFileSync(path.join(templateDir, 'index.html.njk'), indexContent);
+
+  // Generate templates for active working groups
+  for (const [id, group] of Object.entries(workingGroups.activeWorkingGroups)) {
+    if (group.externalUrl) {
+      console.log(`Skipping template generation for external working group: ${group.name}`);
+      continue;
+    }
+
     const slug = normalizeSlug(id);
-    
-    // Simply set the ID to be used to look up the data
-    const templateContent = `{% extends "wg_base.html.njk" %}
+    const mainContent = `{% extends "wg_base.html.njk" %}
 {% set wg_id = "${id}" %}
-{% set name = workingGroups[wg_id].name %}
-{% set logo = workingGroups[wg_id].logo %}
-{% set title = workingGroups[wg_id].title %}
-{% set scope = workingGroups[wg_id].scope %}
-{% set shortform = workingGroups[wg_id].shortform %}
-{% set charters = workingGroups[wg_id].charters %}
-{% set projects = workingGroups[wg_id].projects %}
-{% set chairs = workingGroups[wg_id].chairs %}
-{% set liaison = workingGroups[wg_id].liaison %}
-{% set editors = workingGroups[wg_id].editors %}
-{% set status = workingGroups[wg_id].status %}
-{% set type = workingGroups[wg_id].type %}
-{% set repoTag = workingGroups[wg_id].repoTag %}
-{% set repoTopics = workingGroups[wg_id].repoTopics %}
-{% set meetings = workingGroups[wg_id].meetings %}
-`;
-    
-    fs.writeFileSync(path.join(templateDir, `${slug}.html.njk`), templateContent);
-    console.log(`Generated template for ${group.name}`);
+{% set name = workingGroups.activeWorkingGroups["${id}"].name %}
+{% set logo = workingGroups.activeWorkingGroups["${id}"].logo %}
+{% set title = workingGroups.activeWorkingGroups["${id}"].title %}
+{% set scope = workingGroups.activeWorkingGroups["${id}"].scope %}
+{% set shortform = workingGroups.activeWorkingGroups["${id}"].shortform %}
+{% set charters = workingGroups.activeWorkingGroups["${id}"].charters %}
+{% set projects = workingGroups.activeWorkingGroups["${id}"].projects %}
+{% set chairs = workingGroups.activeWorkingGroups["${id}"].chairs %}
+{% set liaison = workingGroups.activeWorkingGroups["${id}"].liaison %}
+{% set editors = workingGroups.activeWorkingGroups["${id}"].editors %}
+{% set type = workingGroups.activeWorkingGroups["${id}"].type %}`;
+
+    fs.writeFileSync(path.join(templateDir, `${slug}.html.njk`), mainContent);
   }
-  
+
+  // Generate templates for archived working groups
+  for (const [id, group] of Object.entries(workingGroups.archivedWorkingGroups)) {
+    if (group.externalUrl) {
+      console.log(`Skipping template generation for external archived working group: ${group.name}`);
+      continue;
+    }
+
+    const slug = normalizeSlug(id);
+    const mainContent = `{% extends "wg_base.html.njk" %}
+{% set wg_id = "${id}" %}
+{% set name = workingGroups.archivedWorkingGroups["${id}"].name %}
+{% set logo = workingGroups.archivedWorkingGroups["${id}"].logo %}
+{% set title = workingGroups.archivedWorkingGroups["${id}"].title %}
+{% set scope = workingGroups.archivedWorkingGroups["${id}"].scope %}
+{% set shortform = workingGroups.archivedWorkingGroups["${id}"].shortform %}
+{% set charters = workingGroups.archivedWorkingGroups["${id}"].charters %}
+{% set projects = workingGroups.archivedWorkingGroups["${id}"].projects %}
+{% set chairs = workingGroups.archivedWorkingGroups["${id}"].chairs %}
+{% set type = workingGroups.archivedWorkingGroups["${id}"].type %}`;
+
+    fs.writeFileSync(path.join(templateDir, `${slug}.html.njk`), mainContent);
+  }
+
   done();
 });
 
@@ -481,25 +472,6 @@ gulp.task("generate-sig-templates", function(done) {
   done();
 });
 
-// Add Jekyll config generation
-gulp.task("generate-jekyll-config", function(done) {
-  const jekyllConfig = `
-plugins:
-  - jekyll-redirect-from
-
-# Keep files from being cleaned by Jekyll
-keep_files: [js, css, images, assets]
-
-# Handle redirects
-redirect_from:
-  # Add any additional redirects here if needed
-`;
-  
-  fs.writeFileSync('docs/_config.yml', jekyllConfig);
-  console.log('Generated Jekyll config');
-  done();
-});
-
 gulp.task('clean', function(cb) {
   return rimraf('docs/**/*', { preserveRoot: true }).then(() => cb());
 });
@@ -576,6 +548,19 @@ gulp.task("generate-ug-templates", function(done) {
   done();
 });
 
+// Add to your existing gulp tasks
+gulp.task("generate-work-overview", function(done) {
+  const templateDir = './templates/pages/work';
+  
+  if (!fs.existsSync(templateDir)) {
+    fs.mkdirSync(templateDir, { recursive: true });
+  }
+  
+  // The template content is already defined in work/index.html.njk
+  
+  done();
+});
+
 // Then define the build task
 gulp.task(
   "build",
@@ -584,7 +569,7 @@ gulp.task(
     "generate-wg-templates",
     "generate-sig-templates",
     "generate-ug-templates",
-    "generate-jekyll-config",
+    "generate-work-overview",
     "repoCompilation",
     gulp.parallel("assets", "assetsCopy", "templates")
   )
@@ -596,3 +581,46 @@ gulp.task("watch", () =>
     gulp.parallel("build")
   )
 );
+
+// Update the navigation data generation
+function generateNavigationData() {
+  return {
+    activeWorkingGroups: Object.entries(workingGroups.activeWorkingGroups).map(([id, wg]) => ({
+      id,
+      name: wg.name,
+      url: wg.url || `/working-groups/${id}.html`,
+      isExternal: !!wg.externalUrl
+    })),
+    archivedWorkingGroups: Object.entries(workingGroups.archivedWorkingGroups).map(([id, wg]) => ({
+      id,
+      name: wg.name,
+      url: wg.url || `/working-groups/${id}.html`,
+      isExternal: !!wg.externalUrl
+    })),
+    // Keep existing SIG and User Group mappings
+    activeSpecialInterestGroups: Object.entries(specialInterestGroups.activeSIGs).map(([id, sig]) => ({
+      id,
+      name: sig.name,
+      url: sig.url || `/special-interest-groups/${id}.html`,
+      isExternal: !!sig.externalUrl
+    })),
+    archivedSpecialInterestGroups: Object.entries(specialInterestGroups.archivedSIGs).map(([id, sig]) => ({
+      id,
+      name: sig.name,
+      url: sig.url || `/special-interest-groups/${id}.html`,
+      isExternal: !!sig.externalUrl
+    })),
+    activeUserGroups: Object.entries(userGroups.activeUserGroups).map(([id, ug]) => ({
+      id,
+      name: ug.name,
+      url: ug.url || `/user-groups/${id}.html`,
+      isExternal: !!ug.externalUrl
+    })),
+    archivedUserGroups: Object.entries(userGroups.archivedUserGroups).map(([id, ug]) => ({
+      id,
+      name: ug.name,
+      url: ug.url || `/user-groups/${id}.html`,
+      isExternal: !!ug.externalUrl
+    }))
+  };
+}

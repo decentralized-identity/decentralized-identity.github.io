@@ -1,6 +1,5 @@
 {% extends "default.html.njk" %}
 {% set title = "Working Groups" %}
-{% set css = ['directory'] %}
 
 {% block content %}
 <section class="page-title theme-bg">
@@ -11,61 +10,37 @@
 
 <section>
   <div class="container">
-    <!-- Active Working Groups -->
-    <div class="row mb-5">
-      <div class="col-md-12">
-        <h2>Active Working Groups</h2>
-        <div class="row">
-        {% for id, group in workingGroups %}
-          {% if group.status != "archived" %}
+    <h2>Active Working Groups</h2>
+    <div class="row">
+      {% for wg in navigation.activeWorkingGroups %}
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h3 class="card-title h4">{{ wg.name }}</h3>
+              <p class="card-text">{{ workingGroups.activeWorkingGroups[wg.id].scope | truncate(150) }}</p>
+              <a href="{{ wg.url }}" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if navigation.archivedWorkingGroups.length > 0 %}
+      <h2 class="mt-5">Completed or Archived Working Groups</h2>
+      <div class="row">
+        {% for wg in navigation.archivedWorkingGroups %}
           <div class="col-md-6 mb-4">
             <div class="card h-100">
               <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <svg class="me-3"><use xlink:href="/images/icons.svg#{{ group.logo }}"></use></svg>
-                  <h3 class="card-title mb-0">{{ group.name }}</h3>
-                </div>
-                {% if group.shortform %}
-                <p class="text-muted">{{ group.shortform }}</p>
-                {% endif %}
-                <p>{{ group.scope | truncate(150) }}</p>
-                <a href="/working-groups/{{ id | replace("_", "-") }}.html" class="btn btn-primary">Learn More</a>
+                <h3 class="card-title h4">{{ wg.name }}</h3>
+                <p class="card-text">{{ workingGroups.archivedWorkingGroups[wg.id].scope | truncate(150) }}</p>
+                <a href="{{ wg.url }}" class="btn btn-primary">Learn More</a>
               </div>
             </div>
           </div>
-          {% endif %}
         {% endfor %}
-        </div>
       </div>
-    </div>
-
-    <!-- Archived Working Groups -->
-    <div class="row">
-      <div class="col-md-12">
-        <h2>Completed or Archived Working Groups</h2>
-        <div class="row">
-        {% for id, group in workingGroups %}
-          {% if group.status == "archived" %}
-          <div class="col-md-6 mb-4">
-            <div class="card h-100 bg-light">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <svg class="me-3"><use xlink:href="/images/icons.svg#{{ group.logo }}"></use></svg>
-                  <h3 class="card-title mb-0">{{ group.name }}</h3>
-                </div>
-                {% if group.shortform %}
-                <p class="text-muted">{{ group.shortform }}</p>
-                {% endif %}
-                <p>{{ group.scope | truncate(150) }}</p>
-                <a href="/working-groups/{{ id | replace("_", "-") }}.html" class="btn btn-secondary">View Archive</a>
-              </div>
-            </div>
-          </div>
-          {% endif %}
-        {% endfor %}
-        </div>
-      </div>
-    </div>
+    {% endif %}
   </div>
 </section>
 {% endblock %}

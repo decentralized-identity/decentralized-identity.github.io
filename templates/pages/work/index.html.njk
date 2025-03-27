@@ -1,0 +1,110 @@
+{% extends "default.html.njk" %}
+{% set title = "Work at DIF" %}
+{% set css = ['directory'] %}
+
+{% block content %}
+<section class="page-title theme-bg">
+  <div class="container">
+    <h1>Work at DIF</h1>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <!-- Featured/Active Work -->
+    <div class="row mb-5">
+      <div class="col-md-12">
+        <h2>Active Work Areas</h2>
+        
+        <!-- Working Groups Section -->
+        <div class="mb-5">
+          <h3>Working Groups</h3>
+          <p class="lead">Technical standardization and development of decentralized identity solutions.</p>
+          <div class="row">
+            {% for wg in navigation.activeWorkingGroups | slice(0, 4) %}
+              <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h4>{{ wg.name }}</h4>
+                    <p>{{ workingGroups[wg.id].scope | truncate(100) }}</p>
+                    <a href="{{ wg.url }}" class="btn btn-primary">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="text-center mt-3">
+            <a href="/working-groups" class="btn btn-outline-primary">View All Working Groups</a>
+          </div>
+        </div>
+
+        <!-- Special Interest Groups -->
+        <div class="mb-5">
+          <h3>Special Interest Groups</h3>
+          <p class="lead">Industry and regional focused collaboration.</p>
+          <div class="row">
+            {% for sig in navigation.activeSpecialInterestGroups | slice(0, 4) %}
+              <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h4>{{ sig.name }}</h4>
+                    <p>{{ specialInterestGroups.activeSIGs[sig.id].scope | truncate(100) }}</p>
+                    <a href="{{ sig.url }}" class="btn btn-primary" {% if sig.isExternal %}target="_blank" rel="noopener"{% endif %}>
+                      Learn More
+                      {% if sig.isExternal %}
+                        <svg class="ms-1"><use xlink:href="/images/icons.svg#external"></use></svg>
+                      {% endif %}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="text-center mt-3">
+            <a href="/special-interest-groups" class="btn btn-outline-primary">View All Special Interest Groups</a>
+          </div>
+        </div>
+
+        <!-- User Groups -->
+        <div class="mb-5">
+          <h3>User Groups</h3>
+          <p class="lead">Implementation and adoption focused communities.</p>
+          <div class="row">
+            {% for ug in navigation.activeUserGroups %}
+              <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h4>{{ ug.name }}</h4>
+                    <p>{{ userGroups.activeUserGroups[ug.id].scope | truncate(100) }}</p>
+                    <a href="{{ ug.url }}" class="btn btn-primary">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Archived Work -->
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Archived Projects</h2>
+        <p>View our completed work and archived groups.</p>
+        <div class="list-group">
+          {% for wg in navigation.archivedWorkingGroups %}
+            <a href="{{ wg.url }}" class="list-group-item list-group-item-action">
+              {{ wg.name }} <small class="text-muted">Working Group</small>
+            </a>
+          {% endfor %}
+          {% for sig in navigation.archivedSpecialInterestGroups %}
+            <a href="{{ sig.url }}" class="list-group-item list-group-item-action">
+              {{ sig.name }} <small class="text-muted">Special Interest Group</small>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %} 

@@ -20,50 +20,35 @@
               <ul class="navbar-nav">
                 <li>
                   <span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span>
-                  <a class="nav-link" href="/#wgs">Work</a>
+                  <a class="nav-link" href="/working-groups">Working Groups</a>
                   <ul class="sub-menu">
-                    <li> Working groups</li>
+                    {# Active Working Groups #}
                     {% for wg in navigation.activeWorkingGroups %}
                       <li>
-                        <a href="{{ wg.url }}">{{ wg.name }}</a>
-                      </li>
-                    {% endfor %}
-                    <li>User groups</li>
-                    {% for ug in navigation.activeUserGroups %}
-                      <li>
-                        <a href="{{ ug.url }}">{{ ug.name }} User Group</a>
-                      </li>
-                    {% endfor %}
-                    {% if navigation.archivedUserGroups.length > 0 %}
-                      <li>Archived user groups</li>
-                      {% for ug in navigation.archivedUserGroups %}
-                        <li>
-                          <a href="{{ ug.url }}">{{ ug.name }} User Group</a>
-                        </li>
-                      {% endfor %}
-                    {% endif %}
-                    <li>Special interest groups</li>
-                    {% for sig in navigation.activeSpecialInterestGroups %}
-                      <li>
-                        <a href="{{ sig.url }}" {% if sig.isExternal %}target="_blank" rel="noopener"{% endif %}>
-                          {{ sig.name }} SIG
-                          {% if sig.isExternal %}
+                        <a href="{{ wg.url }}" {% if wg.isExternal %}target="_blank" rel="noopener"{% endif %}>
+                          {{ wg.name }}
+                          {% if wg.isExternal %}
                             <svg class="external-link-icon"><use xlink:href="/images/icons.svg#external"></use></svg>
                           {% endif %}
                         </a>
                       </li>
                     {% endfor %}
-                    <li>Completed or archived</li>
-                    {% for wg in navigation.archivedWorkingGroups %}
-                      <li>
-                        <a href="{{ wg.url }}">{{ wg.name }}</a>
-                      </li>
-                    {% endfor %}
-                    {% for sig in navigation.archivedSpecialInterestGroups %}
-                      <li>
-                        <a href="{{ sig.url }}">{{ sig.name }} SIG</a>
-                      </li>
-                    {% endfor %}
+
+                    {# Archived Working Groups #}
+                    {% if navigation.archivedWorkingGroups.length > 0 %}
+                      <li class="dropdown-divider"></li>
+                      <li class="dropdown-header">Archived Working Groups</li>
+                      {% for wg in navigation.archivedWorkingGroups %}
+                        <li>
+                          <a href="{{ wg.url }}" {% if wg.isExternal %}target="_blank" rel="noopener"{% endif %}>
+                            {{ wg.name }}
+                            {% if wg.isExternal %}
+                              <svg class="external-link-icon"><use xlink:href="/images/icons.svg#external"></use></svg>
+                            {% endif %}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    {% endif %}
                   </ul>
                 </li>
                 <!-- <li><span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span> <a class="nav-link" href="javascript:;">Pages</a>

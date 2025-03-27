@@ -1,0 +1,90 @@
+{% extends "default.html.njk" %}
+{% set title = "User Groups" %}
+{% set css = ['directory'] %}
+
+{% block content %}
+<section class="page-title theme-bg">
+  <div class="container">
+    <h1>User Groups</h1>
+    <p class="lead text-white mb-0">Implementation and adoption focused communities</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      {% for ug in navigation.activeUserGroups %}
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                {% if userGroups.activeUserGroups[ug.id].logoImage %}
+                  <img src="{{ userGroups.activeUserGroups[ug.id].logoImage }}" 
+                       class="me-3" 
+                       {% if userGroups.activeUserGroups[ug.id].logoSize %}
+                       style="width: {{ userGroups.activeUserGroups[ug.id].logoSize.width }}px; height: {{ userGroups.activeUserGroups[ug.id].logoSize.height }}px"
+                       {% else %}
+                       style="width: 40px; height: 40px"
+                       {% endif %}
+                       alt="{{ ug.name }} logo">
+                {% elif userGroups.activeUserGroups[ug.id].logo %}
+                  <svg class="me-3" style="width: 40px; height: 40px">
+                    <use xlink:href="/images/icons.svg#{{ userGroups.activeUserGroups[ug.id].logo }}"></use>
+                  </svg>
+                {% endif %}
+                <h3 class="card-title h4 mb-0">{{ ug.name }}</h3>
+              </div>
+
+              {% if userGroups.activeUserGroups[ug.id].shortform %}
+                <p class="text-muted small">{{ userGroups.activeUserGroups[ug.id].shortform }}</p>
+              {% endif %}
+
+              <div class="mb-3">
+                {{ userGroups.activeUserGroups[ug.id].scope | truncate(120) }}
+              </div>
+
+              {% if userGroups.activeUserGroups[ug.id].meeting %}
+                <div class="d-flex align-items-center text-muted small mb-3">
+                  <svg class="me-2" style="width: 16px; height: 16px">
+                    <use xlink:href="/images/icons.svg#calendar"></use>
+                  </svg>
+                  {{ userGroups.activeUserGroups[ug.id].meeting.schedule }}
+                </div>
+              {% endif %}
+
+              <div class="mt-auto">
+                <a href="{{ ug.url }}" 
+                   class="btn btn-primary" 
+                   {% if ug.isExternal %}target="_blank" rel="noopener"{% endif %}>
+                  Learn More
+                  {% if ug.isExternal %}
+                    <svg class="ms-1" style="width: 14px; height: 14px">
+                      <use xlink:href="/images/icons.svg#external"></use>
+                    </svg>
+                  {% endif %}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if navigation.archivedUserGroups.length > 0 %}
+      <div class="row mt-5">
+        <div class="col-12">
+          <h2 class="h3 mb-4">Archived Groups</h2>
+          <div class="list-group">
+            {% for ug in navigation.archivedUserGroups %}
+              <a href="{{ ug.url }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                {{ ug.name }}
+                <span class="badge bg-secondary rounded-pill">Archived</span>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %} 
