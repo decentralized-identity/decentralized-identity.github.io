@@ -42,16 +42,15 @@
                         </li>
                       {% endfor %}
                     {% endif %}
-                    <li>
-                      <a href="https://identity.foundation/didcomm-usergroup/">DIDComm Usergroup</a>
-                    </li>
-                    <li>
-                      <a href="https://identity.foundation/veramo-usergroup/">Veramo Usergroup</a>
-                    </li>
                     <li>Special interest groups</li>
                     {% for sig in navigation.activeSpecialInterestGroups %}
                       <li>
-                        <a href="{{ sig.url }}">{{ sig.name }} SIG</a>
+                        <a href="{{ sig.url }}" {% if sig.isExternal %}target="_blank" rel="noopener"{% endif %}>
+                          {{ sig.name }} SIG
+                          {% if sig.isExternal %}
+                            <svg class="external-link-icon"><use xlink:href="/images/icons.svg#external"></use></svg>
+                          {% endif %}
+                        </a>
                       </li>
                     {% endfor %}
                     <li>Completed or archived</li>
@@ -65,15 +64,6 @@
                         <a href="{{ sig.url }}">{{ sig.name }} SIG</a>
                       </li>
                     {% endfor %}
-                    <li>
-                        <a href="https://www.notion.so/dif/Banking-and-Finance-SIG-b2d528af578d44699aeb742ed47b81d2">Banking and Finance SIG</a>
-                      </li>
-                        <li>
-                        <a href="https://www.notion.so/dif/Healthcare-SIG-842bc686d12e4a508a951afc4d6df47d">Healthcare SIG</a>
-                      </li>
-                      <li>
-                        <a href="https://dif.groups.io/g/id-productmanagers">Product managers </a>
-                      </li>
                   </ul>
                 </li>
                 <!-- <li><span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span> <a class="nav-link" href="javascript:;">Pages</a>

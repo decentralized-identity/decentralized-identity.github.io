@@ -309,11 +309,11 @@ module.exports = {
 
     "iot": {
       name: "IoT",
-      logo: "iot",  // Assuming you have an IoT icon in your icons.svg
+      logo: "iot",
       subtitle: "Special Interest Group",
       shortform: "Internet of Things",
       status: "active",
-      url: "/special-interest-groups/iot",
+      url: "/SIG-IoT",
       scope: "The IoT Special Interest Group focuses on the intersection of decentralized identity and Internet of Things devices, exploring standards, protocols, and implementations that enable secure identity management for IoT devices. The group works on solutions for device authentication, authorization, and credential management in decentralized IoT ecosystems.",
       type: "open",
       meeting: {
@@ -367,11 +367,11 @@ module.exports = {
 
     "glossary": {
       name: "Glossary",
-      logo: "glossary",  // Assuming you have a glossary icon in your icons.svg
+      logo: "glossary",
       subtitle: "Special Interest Group",
       shortform: "DIF Glossary",
       status: "active",
-      url: "/special-interest-groups/glossary",
+      url: "/open-groups/glossary.html",
       scope: "The Glossary Special Interest Group is dedicated to developing and maintaining a comprehensive, standardized vocabulary for the decentralized identity ecosystem. The group works to ensure consistent terminology across DIF specifications, working groups, and the broader identity community.",
       type: "open",
       meeting: {
@@ -427,11 +427,30 @@ module.exports = {
           linkedin: "limarinavarrete"
         }
       }
-    }
+    },
   },
 
   // For any archived/inactive SIGs
   archivedSIGs: {
-    // Structure would be the same as above
+    "banking-and-finance": {
+      name: "Banking and Finance",
+      logo: "finance",
+      subtitle: "Special Interest Group",
+      externalUrl: "https://www.notion.so/dif/Banking-and-Finance-SIG-b2d528af578d44699aeb742ed47b81d2",
+    },
+    "healthcare": {
+      name: "Healthcare",
+      logo: "health",
+      subtitle: "Special Interest Group",
+      externalUrl: "https://www.notion.so/dif/Healthcare-SIG-842bc686d12e4a508a951afc4d6df47d",
+    },
+    "product-managers": {
+      name: "Product Managers",
+      logo: "product-managers",
+      subtitle: "Special Interest Group",
+      shortform: "Product Managers",
+      status: "archived",
+      externalUrl: "https://dif.groups.io/g/id-productmanagers"
+    }
   }
 }; 

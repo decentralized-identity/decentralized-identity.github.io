@@ -173,7 +173,8 @@ gulp.task("templates", async () => {
       id: id,
       name: group.name,
       slug: id,
-      url: group.url || `/special-interest-groups/${normalizeSlug(id)}.html`
+      url: group.externalUrl || group.url || `/special-interest-groups/${normalizeSlug(id)}.html`,
+      isExternal: !!group.externalUrl
     };
     activeSIGs.push(navItem);
   }
@@ -399,13 +400,18 @@ gulp.task("generate-wg-templates", function(done) {
 gulp.task("generate-sig-templates", function(done) {
   const templateDir = './templates/pages/special-interest-groups';
   
-  // Create the directory if it doesn't exist
   if (!fs.existsSync(templateDir)) {
     fs.mkdirSync(templateDir, { recursive: true });
   }
   
   // Generate template for each SIG
   for (const [id, group] of Object.entries(specialInterestGroups.activeSIGs)) {
+    // Skip template generation for external URLs
+    if (group.externalUrl) {
+      console.log(`Skipping template generation for external SIG: ${group.name}`);
+      continue;
+    }
+    
     const slug = normalizeSlug(id);
     
     // Main content template (goes in the new location)
@@ -443,9 +449,30 @@ gulp.task("generate-sig-templates", function(done) {
     
     // If group has a custom URL, write redirect at old location
     if (group.url && group.url !== `/special-interest-groups/${slug}.html`) {
-      const oldPath = path.join('templates/pages', group.url.replace(/^\//, ''), 'index.html.njk');
-      fs.mkdirSync(path.dirname(oldPath), { recursive: true });
-      fs.writeFileSync(oldPath, redirectContent);
+      const relativePath = group.url.replace(/^\//, '');
+      // Prevent overwriting root index
+      if (relativePath === 'index.html' || relativePath === '') {
+        console.warn(`Skipping redirect generation for root path: ${group.url}`);
+        continue;
+      }
+      
+      const oldPath = path.join('templates/pages', relativePath);
+      const dirPath = oldPath.endsWith('.html') ? 
+        path.dirname(oldPath) : 
+        oldPath;
+      
+      const fullPath = path.join(dirPath, 'index.html.njk');
+      
+      // Extra check to prevent overwriting root index
+      if (fullPath === 'templates/pages/index.html.njk') {
+        console.warn('Attempted to overwrite root index.html.njk, skipping...');
+        continue;
+      }
+      
+      fs.mkdirSync(path.dirname(fullPath), { recursive: true });
+      fs.writeFileSync(fullPath, redirectContent);
+      
+      console.log(`Created redirect at ${fullPath}`);
     }
     
     console.log(`Generated template for ${group.name}`);
@@ -521,9 +548,26 @@ gulp.task("generate-ug-templates", function(done) {
     
     // If group has a custom URL, write redirect at old location
     if (group.url && group.url !== `/user-groups/${slug}.html`) {
-      const oldPath = path.join('templates/pages', group.url.replace(/^\//, ''), 'index.html.njk');
-      fs.mkdirSync(path.dirname(oldPath), { recursive: true });
-      fs.writeFileSync(oldPath, redirectContent);
+      const relativePath = group.url.replace(/^\//, '');
+      // Prevent overwriting root index
+      if (relativePath === 'index.html' || relativePath === '') {
+        console.warn(`Skipping redirect generation for root path: ${group.url}`);
+        continue;
+      }
+      
+      const oldPath = path.join('templates/pages', relativePath);
+      const fullPath = oldPath.endsWith('.html') ? 
+        oldPath : 
+        path.join(path.dirname(oldPath), 'index.html.njk');
+      
+      // Extra check to prevent overwriting root index
+      if (fullPath === 'templates/pages/index.html.njk') {
+        console.warn('Attempted to overwrite root index.html.njk, skipping...');
+        continue;
+      }
+      
+      fs.mkdirSync(path.dirname(fullPath), { recursive: true });
+      fs.writeFileSync(fullPath, redirectContent);
     }
     
     console.log(`Generated template for ${group.name} User Group`);
