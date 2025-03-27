@@ -22,7 +22,7 @@
     "prettier": "2.4.1",
     "rimraf": "^5.0.1",
     "serve": "^14",
-    "glob": "^10.3.10",
+    "glob": "^8.1.0",
     "lru-cache": "^10.2.0"
   },
   "dependencies": {
@@ -31,7 +31,7 @@
     "fsevents": "^2.3.3"
   },
   "overrides": {
-    "glob": "^10.3.10",
+    "glob": "^8.1.0",
     "fsevents": "^2.3.3",
     "source-map-resolve": "^0.6.0",
     "resolve-url": "^0.2.1"
