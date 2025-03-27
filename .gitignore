@@ -1,10 +1,8 @@
-docs/assets
-
-
+docs
 
 node_modules
 .idea
-**/.DS_Store
+.DS_Store
 
 .DS_Store
 docs/.DS_Store
