@@ -20,9 +20,10 @@
               <ul class="navbar-nav">
                 <li>
                   <span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span>
-                  <a class="nav-link" href="/working-groups">Working Groups</a>
+                  <a class="nav-link" href="/work">Work</a>
                   <ul class="sub-menu">
-                    {# Active Working Groups #}
+                    {# Working Groups section #}
+                    <li class="dropdown-header">Working Groups</li>
                     {% for wg in navigation.activeWorkingGroups %}
                       <li>
                         <a href="{{ wg.url }}" {% if wg.isExternal %}target="_blank" rel="noopener"{% endif %}>
@@ -34,18 +35,57 @@
                       </li>
                     {% endfor %}
 
-                    {# Archived Working Groups #}
-                    {% if navigation.archivedWorkingGroups.length > 0 %}
+                    {# Special Interest Groups section #}
+                    {% if navigation.activeSpecialInterestGroups.length > 0 %}
                       <li class="dropdown-divider"></li>
-                      <li class="dropdown-header">Archived Working Groups</li>
-                      {% for wg in navigation.archivedWorkingGroups %}
+                      <li class="dropdown-header">Special Interest Groups</li>
+                      {% for sig in navigation.activeSpecialInterestGroups %}
                         <li>
-                          <a href="{{ wg.url }}" {% if wg.isExternal %}target="_blank" rel="noopener"{% endif %}>
-                            {{ wg.name }}
-                            {% if wg.isExternal %}
+                          <a href="{{ sig.url }}" {% if sig.isExternal %}target="_blank" rel="noopener"{% endif %}>
+                            {{ sig.name }}
+                            {% if sig.isExternal %}
                               <svg class="external-link-icon"><use xlink:href="/images/icons.svg#external"></use></svg>
                             {% endif %}
                           </a>
+                        </li>
+                      {% endfor %}
+                    {% endif %}
+
+                    {# User Groups section #}
+                    {% if navigation.activeUserGroups.length > 0 %}
+                      <li class="dropdown-divider"></li>
+                      <li class="dropdown-header">User Groups</li>
+                      {% for ug in navigation.activeUserGroups %}
+                        <li>
+                          <a href="{{ ug.url }}" {% if ug.isExternal %}target="_blank" rel="noopener"{% endif %}>
+                            {{ ug.name }}
+                            {% if ug.isExternal %}
+                              <svg class="external-link-icon"><use xlink:href="/images/icons.svg#external"></use></svg>
+                            {% endif %}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    {% endif %}
+
+                    {# Archived Groups section #}
+                    {% if navigation.archivedWorkingGroups.length > 0 or 
+                       navigation.archivedSpecialInterestGroups.length > 0 or 
+                       navigation.archivedUserGroups.length > 0 %}
+                      <li class="dropdown-divider"></li>
+                      <li class="dropdown-header">Archived Groups</li>
+                      {% for wg in navigation.archivedWorkingGroups %}
+                        <li>
+                          <a href="{{ wg.url }}">{{ wg.name }}</a>
+                        </li>
+                      {% endfor %}
+                      {% for sig in navigation.archivedSpecialInterestGroups %}
+                        <li>
+                          <a href="{{ sig.url }}">{{ sig.name }}</a>
+                        </li>
+                      {% endfor %}
+                      {% for ug in navigation.archivedUserGroups %}
+                        <li>
+                          <a href="{{ ug.url }}">{{ ug.name }}</a>
                         </li>
                       {% endfor %}
                     {% endif %}
