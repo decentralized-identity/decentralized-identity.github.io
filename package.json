@@ -17,6 +17,7 @@
     "gulp-uglify": "^3.0.1",
     "nunjucks": "^3.2.4",
     "prettier": "2.4.1",
+    "rimraf": "^6.0.1",
     "serve": "^14"
   },
   "dependencies": {

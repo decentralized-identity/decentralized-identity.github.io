@@ -5,6 +5,7 @@ const nunjucksRender = require("gulp-nunjucks-render");
 const axios = require("axios");
 const fs = require('fs');
 const path = require('path');
+const { rimraf } = require('rimraf');
 
 const { Transform } = require("stream");
 const File = require("vinyl");
@@ -42,11 +43,11 @@ for (const [id, group] of Object.entries(workingGroups)) {
 
 var assets = {
   js: [
-    "docs/js/jquery-3.2.1.min.js",
-    "docs/js/jquery-migrate-3.0.0.min.js",
-    "docs/plugins/bootstrap/js/popper.min.js",
-    "docs/plugins/bootstrap/js/bootstrap.min.js",
-    "docs/js/custom.js",
+    "assets/js/jquery-3.2.1.min.js",
+    "assets/js/jquery-migrate-3.0.0.min.js",
+    "assets/plugins/bootstrap/js/popper.min.js",
+    "assets/plugins/bootstrap/js/bootstrap.min.js",
+    "assets/js/custom.js",
   ],
 };
 
@@ -316,9 +317,14 @@ gulp.task("generate-wg-templates", function(done) {
   done();
 });
 
+gulp.task('clean', function(cb) {
+  return rimraf('docs/**/*', { preserveRoot: true }).then(() => cb());
+});
+
 gulp.task(
   "build",
   gulp.series(
+    "clean",
     "generate-wg-templates",
     "repoCompilation",
     gulp.parallel("assets", "assetsCopy", "templates")
