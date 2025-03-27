@@ -404,96 +404,12 @@ gulp.task("generate-sig-templates", function(done) {
     fs.mkdirSync(templateDir, { recursive: true });
   }
   
-  // Generate index file
-  const indexTemplate = `{% extends "default.html.njk" %}
-{% set title = "Special Interest Groups" %}
-{% set css = ['directory'] %}
-
-{% block content %}
-<section class="page-title theme-bg">
-  <div class="container">
-    <h1>Special Interest Groups</h1>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <!-- Active SIGs -->
-    <div class="row mb-5">
-      <div class="col-md-12">
-        <h2>Active Special Interest Groups</h2>
-        <div class="row">
-        {% for id, group in specialInterestGroups.activeSIGs %}
-          <div class="col-md-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  {% if group.logoImage %}
-                    <img src="{{ group.logoImage }}" class="me-3" {% if group.logoSize %}width="{{ group.logoSize.width }}" height="{{ group.logoSize.height }}"{% endif %} alt="{{ group.name }} logo">
-                  {% else %}
-                    <svg class="me-3"><use xlink:href="/images/icons.svg#{{ group.logo }}"></use></svg>
-                  {% endif %}
-                  <h3 class="card-title mb-0">{{ group.name }}</h3>
-                </div>
-                {% if group.shortform %}
-                <p class="text-muted">{{ group.shortform }}</p>
-                {% endif %}
-                <p>{{ group.scope | truncate(150) }}</p>
-                <a href="/special-interest-groups/{{ id | replace("_", "-") }}.html" class="btn btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-        </div>
-      </div>
-    </div>
-
-    <!-- Archived SIGs -->
-    {% if specialInterestGroups.archivedSIGs %}
-    <div class="row">
-      <div class="col-md-12">
-        <h2>Archived Special Interest Groups</h2>
-        <div class="row">
-        {% for id, group in specialInterestGroups.archivedSIGs %}
-          <div class="col-md-6 mb-4">
-            <div class="card h-100 bg-light">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  {% if group.logoImage %}
-                    <img src="{{ group.logoImage }}" class="me-3" {% if group.logoSize %}width="{{ group.logoSize.width }}" height="{{ group.logoSize.height }}"{% endif %} alt="{{ group.name }} logo">
-                  {% else %}
-                    <svg class="me-3"><use xlink:href="/images/icons.svg#{{ group.logo }}"></use></svg>
-                  {% endif %}
-                  <h3 class="card-title mb-0">{{ group.name }}</h3>
-                </div>
-                {% if group.shortform %}
-                <p class="text-muted">{{ group.shortform }}</p>
-                {% endif %}
-                <p>{{ group.scope | truncate(150) }}</p>
-                <a href="/special-interest-groups/{{ id | replace("_", "-") }}.html" class="btn btn-secondary">View Archive</a>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-        </div>
-      </div>
-    </div>
-    {% endif %}
-  </div>
-</section>
-{% endblock %}`;
-  
-  fs.writeFileSync(path.join(templateDir, `index.html.njk`), indexTemplate);
-  console.log('Generated special interest groups index page');
-  
   // Generate template for each SIG
   for (const [id, group] of Object.entries(specialInterestGroups.activeSIGs)) {
     const slug = normalizeSlug(id);
-    const templateContent = `---
-layout: redirect
-redirect_to: /special-interest-groups/${slug}.html
----
-{% extends "sig_base.html.njk" %}
+    
+    // Main content template (goes in the new location)
+    const mainContent = `{% extends "sig_base.html.njk" %}
 {% set sig_id = "${id}" %}
 {% set name = specialInterestGroups.activeSIGs[sig_id].name %}
 {% set logo = specialInterestGroups.activeSIGs[sig_id].logo %}
@@ -507,15 +423,29 @@ redirect_to: /special-interest-groups/${slug}.html
 {% set chairs = specialInterestGroups.activeSIGs[sig_id].chairs %}
 {% set type = specialInterestGroups.activeSIGs[sig_id].type %}
 {% set meeting = specialInterestGroups.activeSIGs[sig_id].meeting %}`;
+
+    // Redirect template (goes in the old location)
+    const redirectContent = `<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="0; URL=/special-interest-groups/${slug}.html">
+    <link rel="canonical" href="/special-interest-groups/${slug}.html">
+  </head>
+  <body>
+    <p>Redirecting to <a href="/special-interest-groups/${slug}.html">/special-interest-groups/${slug}.html</a>...</p>
+  </body>
+</html>`;
     
-    // Write template at new location
-    fs.writeFileSync(path.join(templateDir, `${slug}.html.njk`), templateContent);
+    // Write main content at new location
+    fs.writeFileSync(path.join(templateDir, `${slug}.html.njk`), mainContent);
     
-    // If group has a custom URL, write template there too
+    // If group has a custom URL, write redirect at old location
     if (group.url && group.url !== `/special-interest-groups/${slug}.html`) {
       const oldPath = path.join('templates/pages', group.url.replace(/^\//, ''), 'index.html.njk');
       fs.mkdirSync(path.dirname(oldPath), { recursive: true });
-      fs.writeFileSync(oldPath, templateContent);
+      fs.writeFileSync(oldPath, redirectContent);
     }
     
     console.log(`Generated template for ${group.name}`);
@@ -547,7 +477,7 @@ gulp.task('clean', function(cb) {
   return rimraf('docs/**/*', { preserveRoot: true }).then(() => cb());
 });
 
-// Add user group template generation task
+// Update generate-ug-templates task with the same approach
 gulp.task("generate-ug-templates", function(done) {
   const templateDir = './templates/pages/user-groups';
   
@@ -559,11 +489,9 @@ gulp.task("generate-ug-templates", function(done) {
   // Generate template for each user group
   for (const [id, group] of Object.entries(userGroups.activeUserGroups)) {
     const slug = normalizeSlug(id);
-    const templateContent = `---
-layout: redirect
-redirect_to: /user-groups/${slug}.html
----
-{% extends "ug_base.html.njk" %}
+    
+    // Main content template
+    const mainContent = `{% extends "ug_base.html.njk" %}
 {% set ug_id = "${id}" %}
 {% set name = userGroups.activeUserGroups[ug_id].name %}
 {% set logo = userGroups.activeUserGroups[ug_id].logo %}
@@ -573,15 +501,29 @@ redirect_to: /user-groups/${slug}.html
 {% set charters = userGroups.activeUserGroups[ug_id].charters %}
 {% set type = userGroups.activeUserGroups[ug_id].type %}
 {% set meeting = userGroups.activeUserGroups[ug_id].meeting %}`;
+
+    // HTML redirect template
+    const redirectContent = `<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="0; URL=/user-groups/${slug}.html">
+    <link rel="canonical" href="/user-groups/${slug}.html">
+  </head>
+  <body>
+    <p>Redirecting to <a href="/user-groups/${slug}.html">/user-groups/${slug}.html</a>...</p>
+  </body>
+</html>`;
     
-    // Write template at new location
-    fs.writeFileSync(path.join(templateDir, `${slug}.html.njk`), templateContent);
+    // Write main content at new location
+    fs.writeFileSync(path.join(templateDir, `${slug}.html.njk`), mainContent);
     
-    // If group has a custom URL, write template there too
+    // If group has a custom URL, write redirect at old location
     if (group.url && group.url !== `/user-groups/${slug}.html`) {
       const oldPath = path.join('templates/pages', group.url.replace(/^\//, ''), 'index.html.njk');
       fs.mkdirSync(path.dirname(oldPath), { recursive: true });
-      fs.writeFileSync(oldPath, templateContent);
+      fs.writeFileSync(oldPath, redirectContent);
     }
     
     console.log(`Generated template for ${group.name} User Group`);
