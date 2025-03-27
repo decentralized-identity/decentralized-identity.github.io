@@ -321,7 +321,7 @@ gulp.task(
   gulp.series(
     "generate-wg-templates",
     "repoCompilation",
-    gulp.parallel("assets", "assetsCopy", "templates")
+   // gulp.parallel("assets", "assetsCopy", "templates", "build-sigs"),
   )
 );
 
