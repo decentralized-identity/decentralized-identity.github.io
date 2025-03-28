@@ -275,7 +275,6 @@ module.exports = {
         }
       }
     },
-
     "iot": {
       name: "IoT",
       logo: "iot",
@@ -322,7 +321,6 @@ module.exports = {
         }
       }
     },
-
     "glossary": {
       name: "Glossary",
       logo: "glossary",

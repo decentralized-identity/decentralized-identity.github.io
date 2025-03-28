@@ -46,8 +46,20 @@ for (const [id, group] of Object.entries(specialInterestGroups.activeSIGs)) {
   structure["special-interest-groups"].push(`${slug}.html`);
 }
 
+// Add SIG pages to structure
+for (const [id, group] of Object.entries(specialInterestGroups.archivedSIGs)) {
+  const slug = normalizeSlug(id);
+  structure["special-interest-groups"].push(`${slug}.html`);
+}
+
 // Add user group pages to structure
 for (const [id, group] of Object.entries(userGroups.activeUserGroups)) {
+  const slug = normalizeSlug(id);
+  structure["user-groups"].push(`${slug}.html`);
+}
+
+// Add user group pages to structure
+for (const [id, group] of Object.entries(userGroups.archivedUserGroups)) {
   const slug = normalizeSlug(id);
   structure["user-groups"].push(`${slug}.html`);
 }
@@ -60,6 +72,18 @@ for (const [id, group] of Object.entries(workingGroups.activeWorkingGroups)) {
   }
 }
 for (const [id, group] of Object.entries(workingGroups.archivedWorkingGroups)) {
+  if (group.repoTag) {
+    repoTopics[group.repoTag] = 1;
+  }
+}
+
+var repoTopics = {};
+for (const [id, group] of Object.entries(userGroups.activeUserGroups)) {
+  if (group.repoTag) {
+    repoTopics[group.repoTag] = 1;
+  }
+}
+for (const [id, group] of Object.entries(userGroups.archivedUserGroups)) {
   if (group.repoTag) {
     repoTopics[group.repoTag] = 1;
   }
@@ -390,6 +414,21 @@ gulp.task("generate-ug-templates", function(done) {
   
   done();
 });
+
+// Helper function to generate redirect pages
+function generateRedirectPage(fromPath, toPath) {
+  const redirectContent = nunjucksRender.renderString(
+    fs.readFileSync('templates/redirect.html.njk', 'utf8'),
+    { redirect_url: toPath }
+  );
+  
+  const dirPath = path.dirname(fromPath);
+  if (!fs.existsSync(dirPath)) {
+    fs.mkdirSync(dirPath, { recursive: true });
+  }
+  
+  fs.writeFileSync(fromPath, redirectContent);
+}
 
 gulp.task('clean', function(cb) {
   return rimraf('docs/**/*', { preserveRoot: true }).then(() => cb());
