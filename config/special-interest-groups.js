@@ -11,7 +11,7 @@ module.exports = {
       meetingSchedule: [
         {
           key: "",
-          value: "test"
+          value: "Occurs every week on Thursday at 14:00:00 UTC"
         },
       ],
       charters: {
@@ -65,7 +65,7 @@ module.exports = {
       meetingSchedule: [
         {
           key: "",
-          value: "test"
+          value: "Occurs every month on Wednesday at 11:00:00 UTC"
         },
       ],
       discussionChannels: [
@@ -118,7 +118,7 @@ module.exports = {
       meetingSchedule: [
         {
           key: "",
-          value: "test"
+          value: "Occurs every month on fourth Thursday at 07:00:00 UTC"
         },
       ],
       discussionChannels: [
@@ -167,10 +167,6 @@ module.exports = {
         {
           key: "Meeting Link",
           value: "https://meeting.tencent.com/dm/c4cNcDCmssbcst"
-        },
-        {
-          key: "Meeting Time",
-          value: ""
         }
       ],
       discussionChannels: [
@@ -205,12 +201,6 @@ module.exports = {
       url: "/special-interest-groups/japan",
       scope: "This group is focussed on the interests of Japanese professionals with a vested interest in the application of Decentralized Identity technologies. This is an open, public, non-IPR group.",
       type: "sig",
-      meetingSchedule: [
-        {
-          key: "",
-          value: "test"
-        },
-      ],
       discussionChannels: [
         {
           text: "Mailing List",
@@ -247,12 +237,6 @@ module.exports = {
       url: "/special-interest-groups/korea",
       scope: "This group is a group of experts from industry, academia, and institutions located in Korea for the application of decentralized identity technology, focusing on activities such as standard technology consultation, opinion collection, policy direction presentation, and core technology demonstration. It is an open and non-IPR group.",
       type: "sig",
-      meetingSchedule: [
-        {
-          key: "",
-          value: "test"
-        },
-      ],
       discussionChannels: [
         {
           text: "Mailing list",

@@ -23,18 +23,20 @@
         {% endfor %}
       {% endif %}
 
-          {% if meetingSchedule %}
-      {% for schedule in meetingSchedule %}
-    
+      {% if meetingSchedule %}
+        {% for schedule in meetingSchedule %}
+      
         <p class="meeting-time">
           {% if schedule.key %}
-           {{ schedule.key }}: {{ schedule.value }}
+          {{ schedule.key }}: {{ schedule.value }}
           {% else %}
             {{ schedule.value }}
           {% endif %}
-      {% endfor %}
-      </p>
-    {% endif %}
+        </p>
+        {% endfor %}
+      {% else %}
+      <div>Contact the chair for information about meeting times.</div>
+      {% endif %}
       
     </div>
 

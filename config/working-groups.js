@@ -10,9 +10,13 @@ module.exports = {
       scope: "Join this group to contribute to the standards and technology that create, exchange, and verify claims and credentials in a decentralized identity ecosystem. For example, a cryptographically verifiable credential that proves an individual has a college degree or is of a certain age. Our members focus on specs that are vendor agnostic and based on industry standards.",
       meetingSchedule: [
         {
-          key: "",
-          value: "test"
+          key: "Credential Trust Establishment",
+          value: "Occurs every week on Monday at 17:00:00 UTC"
         },
+        {
+          key: "Credential Schemas",
+          value: "Occurs every 2 weeks on Tuesday at 17:00:00 UTC"
+        }
       ],
       discussionChannels: [
         {
@@ -108,7 +112,7 @@ module.exports = {
       meetingSchedule: [
         {
           key: "",
-          value: "test"
+          value: "Occurs every 2 weeks on Wednesday at 16:00:00 UTC"
         },
       ],
       discussionChannels: [
@@ -159,11 +163,11 @@ module.exports = {
       meetingSchedule: [
         {
           key: "Americas/EU Time Zones",
-          value: "test"
+          value: "Occurs every 2 weeks on Monday at 16:00:00 UTC"
         },
         {
           key: "APAC Time Zones",
-          value: "test"
+          value: "Occurs every 2 weeks on Monday at 01:00:00 UTC"
         }
       ],
       discussionChannels: [
@@ -211,7 +215,7 @@ module.exports = {
       meetingSchedule: [
         {
           key: "",
-          value: "test"
+          value: "Occurs every month on first Monday at 19:00:00 UTC"
         },
       ],
       discussionChannels: [
@@ -271,9 +275,17 @@ module.exports = {
       scope: "Members of the Working Group are engaged in development of protocols and systems that enable creation, resolution, and discovery of decentralized identifiers and names across underlying decentralized systems, like blockchains and distributed ledgers.",
       meetingSchedule: [
         {
-          key: "",
-          value: "test"
+          key: "Bi-weekly",
+          value: "Occurs every 2 weeks on Monday at 18:00:00 UTC"
         },
+        {
+          key: "DID Traits",
+          value: "Occurs every 2 weeks on Tuesday at 15:00:00 UTC"
+        },
+        {
+          key: "did:webvh",
+          value: "Occurs every 2 weeks on Thursday at 16:00:00 UTC"
+        }
       ],
       discussionChannels: [
         {
@@ -443,8 +455,12 @@ module.exports = {
       scope: "The Cryptography Working Group will explore cryptographic protocols and -primitives related to Decentralized Identity, including, but not limited to, specific and actual cryptographic topics, such as BBS+ signatures and revocation strategies, as well as signature suites and encryption. The working group will define focus topics, create cryptographic protocols, and choose the underlying cryptographic primitives for them.",
       meetingSchedule: [
         {
-          key: "",
-          value: "test"
+          key: "BBS+ Work Item",
+          value: "Occurs every week on Monday at 18:00:00 UTC"
+        },
+        {
+          key: "Applied Crypto WG",
+          value: "Occurs every 2 weeks on Thursday at 14:00:00 UTC"
         },
       ],
       discussionChannels: [
