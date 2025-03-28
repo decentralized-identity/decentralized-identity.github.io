@@ -1,12 +1,24 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; URL=/user-groups/veramo.html">
-    <link rel="canonical" href="/user-groups/veramo.html">
-  </head>
-  <body>
-    <p>Redirecting to <a href="/user-groups/veramo.html">/user-groups/veramo.html</a>...</p>
-  </body>
-</html>
+{% extends "default.html.njk" %}
+{% from "partials/group-card.html.njk" import groupCard %}
+{% set title = "User Groups" %}
+{% set css = ['directory', 'group-cards'] %}
+
+{% block content %}
+<section class="page-title theme-bg">
+  <div class="container">
+    <h1>User Groups</h1>
+    <p class="lead text-white mb-0">Our User Groups focus on open source, reference implementations, and developer / implementor communities.</p>
+  </div>
+</section>
+
+<section class="group-section">
+  <div class="container">
+    <div class="group-cards-grid">
+      {% for id, group in userGroups.activeUserGroups %}
+        {{ groupCard(group) }}
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endblock %} 

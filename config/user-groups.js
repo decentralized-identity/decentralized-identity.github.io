@@ -19,6 +19,14 @@ module.exports = {
         "DIDComm User Group documentation": {
           links: [
             {
+              text: "Charter",
+              href: "https://github.com/decentralized-identity/didcomm-usergroup/blob/main/charter.md"
+            },
+            {
+              text: "Discord Channel",
+              href: "https://discord.gg/eNN4Wns6Jb"
+            },
+            {
               text: "GitHub Repository",
               href: "https://github.com/decentralized-identity/didcomm-usergroup"
             }
@@ -52,6 +60,14 @@ module.exports = {
       charters: {
         "Veramo User Group documentation": {
           links: [
+            {
+              text: "Charter",
+              href: "https://github.com/decentralized-identity/veramo-usergroup/blob/main/charter.md"
+            },
+            {
+              text: "Discord Channel",
+              href: "https://discord.gg/eNN4Wns6Jb"
+            },
             {
               text: "GitHub Repository",
               href: "https://github.com/decentralized-identity/veramo-usergroup"

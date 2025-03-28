@@ -5,7 +5,6 @@ module.exports = {
       logo: "communicate_user",
       type: "sig",
       shortform: null,
-      repoTag: "sig-ht",
       status: "active",
       url: "/special-interest-groups/hospitality-travel",
       scope: "This group is focused on the interests of Hospitality and Travel industry professionals with a vested interest in the application of Decentralized Identity technologies. This is an open, non-IPR group.",
@@ -59,7 +58,6 @@ module.exports = {
       name: "DIF Africa",
       shortform: null,
       status: "active",
-      repoTag: "sig-africa",
       url: "/special-interest-groups/africa",
       scope: "The DIF Africa Special Interest Group (SIG) is established to promote, advance, and support the development and adoption of decentralized identity technologies and standards within the context of Africa. The SIG operates within the framework of the Decentralized Identity Foundation (DIF), an industry consortium aimed at creating an open ecosystem for decentralized identity. This is an open, non-IPR group.",
       type: "sig",
@@ -73,7 +71,7 @@ module.exports = {
         "Africa SIG Documentation": {
           links: [
             {
-              text: "Discord Channel",
+              text: "Discord Channel: #africa-sig",
               href: "https://discord.gg/wAk4FtRK"
             },
             {
@@ -114,7 +112,6 @@ module.exports = {
       url: "/special-interest-groups/apac",
       scope: "This group is focused on the interests of industry professionals located in the Asia-Pacific region with a vested interest in the applicatin of Decentralized Identity technologies. This is an open, non-IPR group.",
       type: "sig",
-      repoTag: "sig-apac",
       meetingSchedule: [
         {
           key: "",
@@ -130,12 +127,17 @@ module.exports = {
             },
             {
               text: "Mailing List",
-              href: "https://lists.identity.foundation/g/apac-sig"
+              href: "https://lists.identity.foundation/g/dif-apac-asean/"
             },
             {
               text: "GitHub Repository",
               href: "https://github.com/decentralized-identity/SIG-APAC"
+            },
+            {
+              text: "APAC SIG Slide Deck",
+              href: "https://docs.google.com/spreadsheets/d/1wH4-xZI8-vn1tjDbDWmBOjn6ujr1A2EIC_g_HhPDi-c/edit?gid=0#gid=0"
             }
+
           ]
         }
       },
@@ -157,7 +159,6 @@ module.exports = {
       url: "/special-interest-groups/china",
       scope: "This group is focused on the interests of Chinese professionals with a vested interest in the application of Decentralized Identity technologies. This is an open, public, non-IPR group.",
       type: "sig",
-      repoTag: "sig-china",
       meetingSchedule: [
         {
           key: "Meeting Link",
@@ -199,7 +200,6 @@ module.exports = {
       url: "/special-interest-groups/japan",
       scope: "This group is focussed on the interests of Japanese professionals with a vested interest in the application of Decentralized Identity technologies. This is an open, public, non-IPR group.",
       type: "sig",
-      repoTag: "sig-japan",
       meetingSchedule: [
         {
           key: "",
@@ -215,7 +215,7 @@ module.exports = {
             },
             {
               text: "Mailing List",
-              href: "https://lists.identity.foundation/g/japan-sig"
+              href: "https://lists.identity.foundation/g/DIF-Japan-SIG/"
             },
             {
               text: "GitHub Repository",
@@ -240,7 +240,6 @@ module.exports = {
       url: "/special-interest-groups/korea",
       scope: "This group is a group of experts from industry, academia, and institutions located in Korea for the application of decentralized identity technology, focusing on activities such as standard technology consultation, opinion collection, policy direction presentation, and core technology demonstration. It is an open and non-IPR group.",
       type: "sig",
-      repoTag: "sig-korea",
       meetingSchedule: [
         {
           key: "",
@@ -331,7 +330,6 @@ module.exports = {
     "iot": {
       name: "IoT",
       type: "sig",
-      repoTag: "sig-iot",
       externalUrl: "https://www.notion.so/dif/IoT-SIG-00000000000000000000000000000000",
       scope: "The IoT Special Interest Group focuses on the intersection of decentralized identity and Internet of Things devices, exploring standards, protocols, and implementations that enable secure identity management for IoT devices. The group works on solutions for device authentication, authorization, and credential management in decentralized IoT ecosystems.",
       type: "sig",

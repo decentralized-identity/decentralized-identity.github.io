@@ -33,7 +33,9 @@
   {% include "partials/scope.html.njk" %}
 
   {# Projects section #}
-  {% include "partials/projects.html.njk" %}
+  {% if (projects) or (repoTag) %}
+    {% include "partials/projects.html.njk" %}
+  {% endif %}
 
   {# Chairs section #}
   {% include "partials/chairs.html.njk" %}
