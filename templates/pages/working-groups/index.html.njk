@@ -29,7 +29,10 @@
         </div>
         <div class="group-cards-grid">
           {% for id, wg in workingGroups.archivedWorkingGroups %}
-            {{ groupCard(wg) }}
+            <div class="group-card archived">
+              <h3>{{ wg.name }}</h3>
+              <a href="{{ wg.url }}" class="learn-more-btn">Learn More</a>
+            </div>
           {% endfor %}
         </div>
       </div>
