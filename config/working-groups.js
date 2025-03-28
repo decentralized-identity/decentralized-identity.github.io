@@ -167,7 +167,7 @@ module.exports = {
         },
         {
           key: "APAC Time Zones",
-          value: "Occurs every 2 weeks on Monday at 01:00:00 UTC"
+          value: "Occurs every 2 weeks on Tuesday at 01:00:00 UTC"
         }
       ],
       discussionChannels: [
