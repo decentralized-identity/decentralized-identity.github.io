@@ -52,7 +52,7 @@ module.exports = {
         },
         "Gene Quinn": {
           title: "Board Chairman, TravelScrum, Inc.\nPresident, Confluence Partners, LLC",
-          photo: "/images/photos/gene_quinn.jpeg",
+          photo: "/images/photos/gene-quinn.jpeg",
           linkedin: "gquinn1975"
         }
       }
@@ -93,7 +93,7 @@ module.exports = {
       chairs: {
         "Kyoungchul Park": {
           title: "CEO K4-Security.Co.Ltd",
-          photo: "/images/photos/kyoungchul.jpg",
+          photo: "/images/photos/kyoungchul-park.jpg",
           linkedin: "kyoungchul-park-68467a35",
           twitter: "kyoungchul_park"
         }
@@ -136,7 +136,7 @@ module.exports = {
       chairs: {
         "Xie Jiagui": {
           title: "Chief Engineer at Institute for Industrial Internet & IoT of CAICT",
-          photo: "/images/photos/photo.jpg",
+          photo: "/images/photos/xie-jiagui.jpg",
           email: "xiejiagui@caict.ac.cn"
         }
       }
@@ -309,25 +309,6 @@ module.exports = {
             }
           ]
         }
-      },
-      chairs: {
-        "Bonnie Yau": {
-          title: "VP Technology and Innovation @ Digital identity Lab Canada",
-          photo: "/images/photos/bonnie-yau.jpg",
-          linkedin: "bonnieyau"
-        },
-        "Elena Dumitrascu": {
-          title: "Co-Founder @ Credivera",
-          photo: "/images/photos/elena-dumitrascu.jpg",
-          linkedin: "elenadumitrascu",
-          twitter: "techwithelena"
-        },
-        "Brent Shambaugh": {
-          title: "Blinky Project Lead",
-          photo: "/images/photos/brent-shambaugh.jpg",
-          linkedin: "brent-shambaugh-9b91259",
-          twitter: "Brent_Shambaugh"
-        }
       }
     },
 
@@ -379,13 +360,6 @@ module.exports = {
             }
           ]
         }
-      },
-      chairs: {
-        "Michael Shea": {
-          title: "Principal Software Engineer",
-          photo: "/images/photos/michael-shea.jpg",
-          linkedin: "michaelshea"
-        }
       }
     },
 
@@ -436,19 +410,6 @@ module.exports = {
               href: "https://github.com/decentralized-identity/SIG-Glossary/blob/main/mapping.md"
             }
           ]
-        }
-      },
-      chairs: {
-        "Kaliya Young": {
-          title: "Identity Woman",
-          photo: "/images/photos/kaliya-young.jpg",
-          linkedin: "kaliya",
-          twitter: "identitywoman"
-        },
-        "Limari Navarrete": {
-          title: "Managing Director, DIF",
-          photo: "/images/photos/limari-navarrete.jpg",
-          linkedin: "limarinavarrete"
         }
       }
     },

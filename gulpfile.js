@@ -449,6 +449,7 @@ gulp.task("generate-ug-templates", function(done) {
 {% set shortform = userGroups.activeUserGroups[ug_id].shortform %}
 {% set charters = userGroups.activeUserGroups[ug_id].charters %}
 {% set type = userGroups.activeUserGroups[ug_id].type %}
+{% set chairs = userGroups.activeUserGroups[ug_id].chairs %}
 {% set meeting = userGroups.activeUserGroups[ug_id].meeting %}`;
 
     // HTML redirect template

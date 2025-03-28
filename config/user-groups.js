@@ -26,6 +26,13 @@ module.exports = {
             }
           ]
         }
+      },
+      chairs: {
+        "Colton Wolkins": {
+          title: "Senior Backend Software Engineer @ Indicio",
+          photo: "/images/photos/colton-wolkins.jpeg",
+          linkedin: "colton-wolkins"
+        }
       }
     },
 
@@ -54,6 +61,17 @@ module.exports = {
               href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit#gid=1343983492"
             }
           ]
+        }
+      },
+      chairs: {
+        "Mircea Nistor": {
+          photo: "/images/photos/mircea-nistor.png",
+          linkedin: "mirceanis",
+          twitter: "mirceanistor"
+        },
+        "Nick Reynolds": {
+          photo: "/images/photos/nick-reynolds.png",
+          linkedin: "reynoldsnick"
         }
       }
     }
