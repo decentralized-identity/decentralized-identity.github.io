@@ -428,78 +428,6 @@ module.exports = {
       },
       url: "/working-groups/identifiers-discovery.html"
     },
-    "secure-data-storage": {
-      name: "Secure Data Storage",
-      logo: "box",
-      title: "Secure Data Storage Working Group",
-      shortform: "SDS WG",
-      repoTag: "wg-sds",
-      scope: "Create one or more specifications to establish a foundational layer for secure data storage (including personal data), specifically data models for storage and transport, syntax, data at rest protection, CRUD API, access control, synchronization, and at least a minimum viable HTTP-based interface compatible with W3C DIDs/VCs.",
-      charters: {
-        "SDS WG documentation": {
-          links: [
-            {
-              text: "WG Charter",
-              href: "https://github.com/decentralized-identity/org/blob/master/Org%20documents/WG%20documents/DIF_SDS_WG_charter_v1.pdf"
-            },
-            {
-              text: "Operating Addendum",
-              href: "https://github.com/decentralized-identity/org/blob/master/Org%20documents/WG%20documents/DIF_SDS_WG_Operating_Addendum_v1.pdf"
-            },
-            {
-              text: "Agenda/GitHub",
-              href: "https://github.com/decentralized-identity/confidential-storage/blob/master/agenda.md"
-            },
-            {
-              text: "Mailing list",
-              href: "https://lists.identity.foundation/g/sds-wg/"
-            },
-            {
-              text: "WG GitHub Repos",
-              href: "https://github.com/decentralized-identity?q=wg-sds&type=&language=&sort="
-            }
-          ]
-        }
-      },
-      projects: {
-        "Decentralized Web Node": {
-          desc: "A Decentralized Web Node (DWN) is a data storage and message relay mechanism entities can use to locate public or private permissioned data related to a given Decentralized Identifier (DID).",
-          links: [
-            {
-              text: "Specification",
-              type: "doc",
-              href: "https://identity.foundation/decentralized-web-node/spec/"
-            },
-            {
-              text: "Repo",
-              href: "https://github.com/decentralized-identity/decentralized-web-node"
-            }
-          ]
-        },
-        "Encrypted Data Vaults (Archived)": {
-          desc: "This specification describes a privacy-respecting mechanism for storing, indexing, and retrieving encrypted data at a storage provider. It is often useful when an individual or organization wants to protect data in a way that the storage provider cannot view, analyze, aggregate, or resell the data. This approach also ensures that application data is portable and protected from storage provider data breaches.",
-          links: [
-            {
-              text: "Specification",
-              type: "doc",
-              href: "https://identity.foundation/edv-spec/"
-            },
-            {
-              text: "Repo",
-              href: "https://github.com/decentralized-identity/edv-spec/"
-            }
-          ]
-        }
-      },
-      chairs: {
-        "Andor Kesselman": {
-          title: "Co-Founder and CTO @ Benri ",
-          photo: "/images/photos/andor-kesselman.jpg",
-          linkedin: "andorsk"
-        }
-      },
-      url: "/working-groups/secure-data-storage.html"
-    },
     "crypto": {
       name: "Applied Crypto",
       logo: "crypto",
@@ -664,6 +592,78 @@ module.exports = {
         }
       },
       url: "/working-groups/authentication.html"
+    },
+    "secure-data-storage": {
+      name: "Secure Data Storage",
+      logo: "box",
+      title: "Secure Data Storage Working Group",
+      shortform: "SDS WG",
+      repoTag: "wg-sds",
+      scope: "Create one or more specifications to establish a foundational layer for secure data storage (including personal data), specifically data models for storage and transport, syntax, data at rest protection, CRUD API, access control, synchronization, and at least a minimum viable HTTP-based interface compatible with W3C DIDs/VCs.",
+      charters: {
+        "SDS WG documentation": {
+          links: [
+            {
+              text: "WG Charter",
+              href: "https://github.com/decentralized-identity/org/blob/master/Org%20documents/WG%20documents/DIF_SDS_WG_charter_v1.pdf"
+            },
+            {
+              text: "Operating Addendum",
+              href: "https://github.com/decentralized-identity/org/blob/master/Org%20documents/WG%20documents/DIF_SDS_WG_Operating_Addendum_v1.pdf"
+            },
+            {
+              text: "Agenda/GitHub",
+              href: "https://github.com/decentralized-identity/confidential-storage/blob/master/agenda.md"
+            },
+            {
+              text: "Mailing list",
+              href: "https://lists.identity.foundation/g/sds-wg/"
+            },
+            {
+              text: "WG GitHub Repos",
+              href: "https://github.com/decentralized-identity?q=wg-sds&type=&language=&sort="
+            }
+          ]
+        }
+      },
+      projects: {
+        "Decentralized Web Node": {
+          desc: "A Decentralized Web Node (DWN) is a data storage and message relay mechanism entities can use to locate public or private permissioned data related to a given Decentralized Identifier (DID).",
+          links: [
+            {
+              text: "Specification",
+              type: "doc",
+              href: "https://identity.foundation/decentralized-web-node/spec/"
+            },
+            {
+              text: "Repo",
+              href: "https://github.com/decentralized-identity/decentralized-web-node"
+            }
+          ]
+        },
+        "Encrypted Data Vaults (Archived)": {
+          desc: "This specification describes a privacy-respecting mechanism for storing, indexing, and retrieving encrypted data at a storage provider. It is often useful when an individual or organization wants to protect data in a way that the storage provider cannot view, analyze, aggregate, or resell the data. This approach also ensures that application data is portable and protected from storage provider data breaches.",
+          links: [
+            {
+              text: "Specification",
+              type: "doc",
+              href: "https://identity.foundation/edv-spec/"
+            },
+            {
+              text: "Repo",
+              href: "https://github.com/decentralized-identity/edv-spec/"
+            }
+          ]
+        }
+      },
+      chairs: {
+        "Andor Kesselman": {
+          title: "Co-Founder and CTO @ Benri ",
+          photo: "/images/photos/andor-kesselman.jpg",
+          linkedin: "andorsk"
+        }
+      },
+      url: "/working-groups/secure-data-storage.html"
     },
     "sidetree": {
       name: "Sidetree",

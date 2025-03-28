@@ -142,76 +142,6 @@ module.exports = {
       }
     },
 
-    "interop": {
-      name: "Interoperability",
-      logo: "interop",
-      subtitle: "Working Group",
-      shortform: "Interop",
-      status: "active",
-      url: "/interop",
-      scope: "Community collaboration and project management on Interoperability. Develop and publish definitions of success with respect to business interoperability, at the highest level. Defining points of protocol-defined touchpoints for maximum interchangeability of components at every layer; it is assumed that over time, that number will increase, not decrease. Community collaboration and project management on interoperability goal to seek the greatest interoperability in the greater good, not to pick winners. Provide feedback, input documents, members, and guidance to working groups producing standards, specifications, reference implementations and demonstrations hosted by community organizations including but not limited to IETF, W3C, W3C CCG, Hyperledger, Trust over IP.",
-      type: "open",
-      charters: {
-        "Interoperability documentation": {
-          links: [
-            {
-              text: "Interop Charter - This is not an IPR protected group.",
-              href: "https://drive.google.com/file/d/1c705ZaqefLdIr-7hvCopDRN_62eiwqo-/view?usp=sharing"
-            },
-            {
-              text: "Agenda/GitHub",
-              href: "https://github.com/decentralized-identity/interoperability/blob/master/agenda.md"
-            },
-            {
-              text: "Mailing list",
-              href: "https://dif.groups.io/g/interop-wg/"
-            },
-            {
-              text: "Calendar entry - week A",
-              href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=bWc1YWRiaGZlYjZqMDRwb3NvdXM3a2YzcTBfMjAyMTEwMjBUMjEwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
-            },
-            {
-              text: "Calendar entry - week B",
-              href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=b2Nuc2NjdWwzamVjcmJtNzR1M3NubnVucWRfMjAyMTEwMjdUMTMwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
-            },
-            {
-              text: "WG Meeting Recordings",
-              href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit#gid=1343983492"
-            }
-          ]
-        }
-      },
-      projects: {
-        "GitHub": {
-          links: [
-            {
-              text: "Interoperability repo",
-              href: "https://github.com/decentralized-identity/interoperability"
-            }
-          ]
-        }
-      },
-      chairs: {
-        "Bonnie Yau": {
-          title: "VP Technology and Innovation @ Digital identity Lab Canada",
-          photo: "/images/photos/bonnie-yau.jpg",
-          linkedin: "bonnieyau"
-        },
-        "Elena Dumitrascu": {
-          title: "Co-Founder @ Credivera",
-          photo: "/images/photos/elena-dumitrascu.jpg",
-          linkedin: "elenadumitrascu",
-          twitter: "techwithelena"
-        },
-        "Brent Shambaugh": {
-          title: "Blinky Project Lead",
-          photo: "/images/photos/brent-shambaugh.jpg",
-          linkedin: "brent-shambaugh-9b91259",
-          twitter: "Brent_Shambaugh"
-        }
-      }
-    },
-
     "japan": {
       name: "DIF Japan",
       logo: null,
@@ -303,6 +233,100 @@ module.exports = {
           title: "Co-chair",
           photo: "/images/photos/vinay-gupta.jpg",
           linkedin: "vinaygupta"
+        }
+      }
+    },
+
+  },
+
+  // For any archived/inactive SIGs
+  archivedSIGs: {
+    "banking-and-finance": {
+      name: "Banking and Finance",
+      logo: "finance",
+      subtitle: "Special Interest Group",
+      externalUrl: "https://www.notion.so/dif/Banking-and-Finance-SIG-b2d528af578d44699aeb742ed47b81d2",
+    },
+    "healthcare": {
+      name: "Healthcare",
+      logo: "health",
+      subtitle: "Special Interest Group",
+      externalUrl: "https://www.notion.so/dif/Healthcare-SIG-842bc686d12e4a508a951afc4d6df47d",
+    },
+    "product-managers": {
+      name: "Product Managers",
+      logo: "product-managers",
+      subtitle: "Special Interest Group",
+      shortform: "Product Managers",
+      status: "archived",
+      externalUrl: "https://dif.groups.io/g/id-productmanagers"
+    },
+    "interop": {
+      name: "Interoperability",
+      logo: "interop",
+      subtitle: "Working Group",
+      shortform: "Interop",
+      status: "active",
+      url: "/interop",
+      scope: "Community collaboration and project management on Interoperability. Develop and publish definitions of success with respect to business interoperability, at the highest level. Defining points of protocol-defined touchpoints for maximum interchangeability of components at every layer; it is assumed that over time, that number will increase, not decrease. Community collaboration and project management on interoperability goal to seek the greatest interoperability in the greater good, not to pick winners. Provide feedback, input documents, members, and guidance to working groups producing standards, specifications, reference implementations and demonstrations hosted by community organizations including but not limited to IETF, W3C, W3C CCG, Hyperledger, Trust over IP.",
+      type: "open",
+      charters: {
+        "Interoperability documentation": {
+          links: [
+            {
+              text: "Interop Charter - This is not an IPR protected group.",
+              href: "https://drive.google.com/file/d/1c705ZaqefLdIr-7hvCopDRN_62eiwqo-/view?usp=sharing"
+            },
+            {
+              text: "Agenda/GitHub",
+              href: "https://github.com/decentralized-identity/interoperability/blob/master/agenda.md"
+            },
+            {
+              text: "Mailing list",
+              href: "https://dif.groups.io/g/interop-wg/"
+            },
+            {
+              text: "Calendar entry - week A",
+              href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=bWc1YWRiaGZlYjZqMDRwb3NvdXM3a2YzcTBfMjAyMTEwMjBUMjEwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
+            },
+            {
+              text: "Calendar entry - week B",
+              href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=b2Nuc2NjdWwzamVjcmJtNzR1M3NubnVucWRfMjAyMTEwMjdUMTMwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
+            },
+            {
+              text: "WG Meeting Recordings",
+              href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit#gid=1343983492"
+            }
+          ]
+        }
+      },
+      projects: {
+        "GitHub": {
+          links: [
+            {
+              text: "Interoperability repo",
+              href: "https://github.com/decentralized-identity/interoperability"
+            }
+          ]
+        }
+      },
+      chairs: {
+        "Bonnie Yau": {
+          title: "VP Technology and Innovation @ Digital identity Lab Canada",
+          photo: "/images/photos/bonnie-yau.jpg",
+          linkedin: "bonnieyau"
+        },
+        "Elena Dumitrascu": {
+          title: "Co-Founder @ Credivera",
+          photo: "/images/photos/elena-dumitrascu.jpg",
+          linkedin: "elenadumitrascu",
+          twitter: "techwithelena"
+        },
+        "Brent Shambaugh": {
+          title: "Blinky Project Lead",
+          photo: "/images/photos/brent-shambaugh.jpg",
+          linkedin: "brent-shambaugh-9b91259",
+          twitter: "Brent_Shambaugh"
         }
       }
     },
@@ -428,29 +452,5 @@ module.exports = {
         }
       }
     },
-  },
-
-  // For any archived/inactive SIGs
-  archivedSIGs: {
-    "banking-and-finance": {
-      name: "Banking and Finance",
-      logo: "finance",
-      subtitle: "Special Interest Group",
-      externalUrl: "https://www.notion.so/dif/Banking-and-Finance-SIG-b2d528af578d44699aeb742ed47b81d2",
-    },
-    "healthcare": {
-      name: "Healthcare",
-      logo: "health",
-      subtitle: "Special Interest Group",
-      externalUrl: "https://www.notion.so/dif/Healthcare-SIG-842bc686d12e4a508a951afc4d6df47d",
-    },
-    "product-managers": {
-      name: "Product Managers",
-      logo: "product-managers",
-      subtitle: "Special Interest Group",
-      shortform: "Product Managers",
-      status: "archived",
-      externalUrl: "https://dif.groups.io/g/id-productmanagers"
-    }
   }
 }; 

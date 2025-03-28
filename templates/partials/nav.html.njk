@@ -22,15 +22,10 @@
                   <span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span>
                   <a class="nav-link" href="/work">Work</a>
                   <ul class="sub-menu">
-                    {# Overview/Featured Links #}
-                    <li><a href="/work">Overview</a></li>
-                    <li><a href="/working-groups">Working Groups</a></li>
-                    <li><a href="/special-interest-groups">Special Interest Groups</a></li>
-                    <li><a href="/user-groups">User Groups</a></li>
-                    <li class="dropdown-divider"></li>
 
                     {# Working Groups section #}
                     <li class="dropdown-header">Working Groups</li>
+                    <li><a href="/working-groups"> Overview</a></li>
                     {% for wg in navigation.activeWorkingGroups %}
                       <li>
                         <a href="{{ wg.url }}" {% if wg.isExternal %}target="_blank" rel="noopener"{% endif %}>
@@ -46,6 +41,7 @@
                     {% if navigation.activeSpecialInterestGroups.length > 0 %}
                       <li class="dropdown-divider"></li>
                       <li class="dropdown-header">Special Interest Groups</li>
+                      <li><a href="/special-interest-groups"> Overview</a></li>
                       {% for sig in navigation.activeSpecialInterestGroups %}
                         <li>
                           <a href="{{ sig.url }}" {% if sig.isExternal %}target="_blank" rel="noopener"{% endif %}>
@@ -62,6 +58,7 @@
                     {% if navigation.activeUserGroups.length > 0 %}
                       <li class="dropdown-divider"></li>
                       <li class="dropdown-header">User Groups</li>
+                       <li><a href="/user-groups"> Overview</a></li>
                       {% for ug in navigation.activeUserGroups %}
                         <li>
                           <a href="{{ ug.url }}" {% if ug.isExternal %}target="_blank" rel="noopener"{% endif %}>
@@ -74,28 +71,6 @@
                       {% endfor %}
                     {% endif %}
 
-                    {# Archived Groups section #}
-                    {% if navigation.archivedWorkingGroups.length > 0 or 
-                       navigation.archivedSpecialInterestGroups.length > 0 or 
-                       navigation.archivedUserGroups.length > 0 %}
-                      <li class="dropdown-divider"></li>
-                      <li class="dropdown-header">Archived Groups</li>
-                      {% for wg in navigation.archivedWorkingGroups %}
-                        <li>
-                          <a href="{{ wg.url }}">{{ wg.name }}</a>
-                        </li>
-                      {% endfor %}
-                      {% for sig in navigation.archivedSpecialInterestGroups %}
-                        <li>
-                          <a href="{{ sig.url }}">{{ sig.name }}</a>
-                        </li>
-                      {% endfor %}
-                      {% for ug in navigation.archivedUserGroups %}
-                        <li>
-                          <a href="{{ ug.url }}">{{ ug.name }}</a>
-                        </li>
-                      {% endfor %}
-                    {% endif %}
                   </ul>
                 </li>
                 <!-- <li><span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span> <a class="nav-link" href="javascript:;">Pages</a>
@@ -108,7 +83,6 @@
                     </li>
                   </ul>
                 </li> -->
-                <li><a class="nav-link" href="/interop">Interoperability</a></li>
                 <li>
                   <span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span>
                   <a class="nav-link"> Services</a>
