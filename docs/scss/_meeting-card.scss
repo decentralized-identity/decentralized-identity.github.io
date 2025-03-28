@@ -1,0 +1,52 @@
+.meeting-links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.meeting-link-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.meeting-icon {
+  width: 24px;
+  height: 24px;
+  color: #666;
+}
+
+.meeting-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  strong {
+    color: #333;
+    font-size: 1rem;
+  }
+
+  a {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 0.95rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .meeting-link-item {
+    padding: 0.75rem 1.5rem;
+  }
+} 

@@ -294,7 +294,7 @@ gulp.task("generate-wg-templates", function(done) {
     }
 
     const slug = normalizeSlug(id);
-    const mainContent = `{% extends "wg_base.html.njk" %}
+    const mainContent = `{% extends "group_base.html.njk" %}
 {% set wg_id = "${id}" %}
 {% set name = workingGroups.activeWorkingGroups["${id}"].name %}
 {% set logo = workingGroups.activeWorkingGroups["${id}"].logo %}
@@ -319,7 +319,7 @@ gulp.task("generate-wg-templates", function(done) {
     }
 
     const slug = normalizeSlug(id);
-    const mainContent = `{% extends "wg_base.html.njk" %}
+    const mainContent = `{% extends "group_base.html.njk" %}
 {% set wg_id = "${id}" %}
 {% set name = workingGroups.archivedWorkingGroups["${id}"].name %}
 {% set logo = workingGroups.archivedWorkingGroups["${id}"].logo %}
@@ -356,7 +356,7 @@ gulp.task("generate-sig-templates", function(done) {
     const slug = normalizeSlug(id);
     
     // Main content template (goes in the new location)
-    const mainContent = `{% extends "sig_base.html.njk" %}
+    const mainContent = `{% extends "group_base.html.njk" %}
 {% set sig_id = "${id}" %}
 {% set name = specialInterestGroups.activeSIGs[sig_id].name %}
 {% set logo = specialInterestGroups.activeSIGs[sig_id].logo %}
@@ -440,7 +440,7 @@ gulp.task("generate-ug-templates", function(done) {
     const slug = normalizeSlug(id);
     
     // Main content template
-    const mainContent = `{% extends "ug_base.html.njk" %}
+    const mainContent = `{% extends "group_base.html.njk" %}
 {% set ug_id = "${id}" %}
 {% set name = userGroups.activeUserGroups[ug_id].name %}
 {% set logo = userGroups.activeUserGroups[ug_id].logo %}
@@ -499,18 +499,6 @@ gulp.task("generate-ug-templates", function(done) {
   done();
 });
 
-// Add to your existing gulp tasks
-gulp.task("generate-work-overview", function(done) {
-  const templateDir = './templates/pages/work';
-  
-  if (!fs.existsSync(templateDir)) {
-    fs.mkdirSync(templateDir, { recursive: true });
-  }
-  
-  // The template content is already defined in work/index.html.njk
-  
-  done();
-});
 
 // Then define the build task
 gulp.task(
@@ -520,7 +508,6 @@ gulp.task(
     "generate-wg-templates",
     "generate-sig-templates",
     "generate-ug-templates",
-    "generate-work-overview",
     "repoCompilation",
     gulp.parallel("assets", "assetsCopy", "templates")
   )

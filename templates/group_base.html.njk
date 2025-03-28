@@ -20,21 +20,23 @@
   </section>
 
   {# Scope section #}
-  {% include "partials/wg/scope.html.njk" %}
+  {% include "partials/scope.html.njk" %}
 
   {# Projects section #}
-  {% include "partials/wg/projects.html.njk" %}
+  {% include "partials/projects.html.njk" %}
 
   {# Chairs section #}
-  {% include "partials/wg/chairs.html.njk" %}
+  {% include "partials/chairs.html.njk" %}
 
   {# Optional liaison section #}
   {% if liaison %}
-    {% include "partials/wg/liaison.html.njk" %}
+    {% include "partials/liaison.html.njk" %}
   {% endif %}
 
   {# Optional editors section #}
   {% if editors %}
-    {% include "partials/wg/editors.html.njk" %}
+    {% include "partials/editors.html.njk" %}
   {% endif %}
+
+  {% include "partials/meeting-info-card.html.njk" %}
 {% endblock %} 
