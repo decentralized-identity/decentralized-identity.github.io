@@ -3,16 +3,18 @@ module.exports = {
     "didcomm": {
       name: "DIDComm",
       logo: "didcomm",
-      subtitle: "User Group",
       shortform: null,
       status: "active",
       url: "/user-groups/didcomm",
-      scope: "The DIDComm User Group focuses on implementation experiences, challenges, and best practices around DIDComm messaging protocol. This group provides a forum for developers and implementers to share knowledge, discuss practical issues, and collaborate on DIDComm-based solutions.",
-      type: "open",
-      meeting: {
-        schedule: "Monthly meetings",
-        calendar: "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=..."  // Add actual calendar link
-      },
+      scope: "The DIDComm User Group is tasked with serving community needs around DIDComm that fall outside DIDComm spec creation concerns. This is an open, public, non-IPR group",
+      type: "ug",
+      repoTag: "didcomm",
+      meetingSchedule: [
+        {
+          key: "",
+          value: "test"
+        },
+      ],
       charters: {
         "DIDComm User Group documentation": {
           links: [
@@ -35,16 +37,18 @@ module.exports = {
     "veramo": {
       name: "Veramo",
       logo: "veramo",
-      subtitle: "User Group",
       shortform: null,
       status: "active",
+      repoTag: "veramo",
       url: "/user-groups/veramo",
-      scope: "The Veramo User Group is dedicated to supporting developers and organizations implementing Veramo, sharing implementation experiences, best practices, and fostering collaboration among Veramo users.",
-      type: "open",
-      meeting: {
-        schedule: "Monthly meetings",
-        calendar: "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=..."  // Add actual calendar link
-      },
+      scope: "The Veramo User Group is tasked with developing Veramo and serving its community needs. This is an open, non-IPR group.",
+      type: "ug",
+      meetingSchedule: [
+        {
+          key: "",
+          value: "test"
+        },
+      ],
       charters: {
         "Veramo User Group documentation": {
           links: [

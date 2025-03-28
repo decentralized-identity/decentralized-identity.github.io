@@ -1,19 +1,39 @@
 {% set default_calendar = "https://bit.ly/dif-calendar" %}
 {% set default_recordings = "https://identity.foundation/recordings" %}
 
-
 <div class="container">
   <div class="col-10 col-md-8 col-lg-6 m-10px-t margin-center">
-    <dt>Participate</dt>
+    <dt>Get Involved</dt>
+
+
     <div class="meeting-links-container">
       <div class="meeting-link-item">
-          <a class="block-link icon-link" href="{{ calendar_link | default(default_calendar) }}">Subscribe to DIF Calendar</a>                  
-          </a>
+          <a class="block-link icon-link" href="{{ calendar_link | default(default_calendar) }}">Subscribe to DIF Calendar</a>
       </div>
       <div class="meeting-link-item">
-          <a class="block-link icon-link" href="{{ recordings_link | default(default_recordings) }}">Recordings of Recent Meetings</a>                  
+          <a class="block-link icon-link" href="{{ recordings_link | default(default_recordings) }}">Recordings of Recent Meetings</a>
       </div>
     </div>
+
+    {% if type == "wg" %}
+    <p>You must be a DIF member to participate in this groups. <a href="https://identity.foundation/join">Join DIF</a></p>
+    {% endif %}
+
+    {% if meetingSchedule %}
+    <div class="meeting-schedule-container">
+      {% for schedule in meetingSchedule %}
+        <p class="meeting-time">
+          {% if schedule.key %}
+           {{ schedule.key }}: {{ schedule.value }}
+          {% else %}
+            {{ schedule.value }}
+          {% endif %}
+        </p>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+
   </div>
 </div>
 

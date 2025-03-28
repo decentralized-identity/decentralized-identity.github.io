@@ -8,11 +8,21 @@
         <use xlink:href="/images/icons.svg#{{ logo }}"></use>
       </svg>
       <h1>{{ name }}</h1>
-      {% if subtitle %}
-        <h3>{{ subtitle }}</h3>
+
+      <h3>
+      {% if type == "wg" %}
+        Working Group
+      {% elif type == "sig" %}
+        Special Interest Group
       {% else %}
-        <h3>{% if type %}{{ type }}{% else %}Working Group{% endif %}</h3>
+        User Group
       {% endif %}
+      </h3>
+
+      {% if type !== "wg" %}
+      <h4>This is an open, public group</h4>
+      {% endif %}
+      
       {% if shortform %}
         <h4>aka: {{ shortform }}</h4>
       {% endif %}
