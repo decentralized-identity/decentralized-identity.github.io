@@ -25,7 +25,8 @@
     {% endif %}
   {% endif %}
 
-  <a href="{{ group.url }}" class="learn-more-btn" {% if group.isExternal %}target="_blank" rel="noopener"{% endif %}>
+
+  <a href="{{ group.url }}" class="m-btn m-btn-t-dark" {% if group.isExternal %}target="_blank" rel="noopener"{% endif %}>
     Learn More
     {% if group.isExternal %}
       <svg class="external-icon"><use xlink:href="/images/icons.svg#external"></use></svg>

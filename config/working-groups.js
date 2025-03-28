@@ -97,7 +97,8 @@ module.exports = {
           linkedin: "otto-mora",
           twitter: "ottomorac"
         }
-      }
+      },
+      url: "/working-groups/claims-credentials.html"
     },
     "did-methods": {
       name: "DID Methods",
@@ -146,7 +147,8 @@ module.exports = {
           linkedin: "markus-sabadello-353a0821",
           twitter: "peacekeeper"
         }
-      }
+      },
+      url: "/working-groups/did-methods.html"
     },
     "creator-assertions": {
       name: "Creator Assertions",
@@ -192,7 +194,8 @@ module.exports = {
           linkedin: "ericscouten",
           bluesky: "https://bsky.app/profile/ericscouten.me"
         }
-      }
+      },
+      url: "/working-groups/creator-assertions.html"
     },
     "did-comm": {
       name: "DIDComm",
@@ -251,7 +254,8 @@ module.exports = {
           photo: "/images/photos/steve-mccown.jpeg",
           linkedin: "mccown"
         }
-      }
+      },
+      url: "/working-groups/did-comm.html"
     },
     "identifiers-discovery": {
       name: "Identifiers & Discovery",
@@ -421,7 +425,8 @@ module.exports = {
           linkedin: "JCEbersbach",
           twitter: "JCEbersbach"
         }
-      }
+      },
+      url: "/working-groups/identifiers-discovery.html"
     },
     "secure-data-storage": {
       name: "Secure Data Storage",
@@ -492,7 +497,8 @@ module.exports = {
           photo: "/images/photos/andor-kesselman.jpg",
           linkedin: "andorsk"
         }
-      }
+      },
+      url: "/working-groups/secure-data-storage.html"
     },
     "crypto": {
       name: "Applied Crypto",
@@ -569,7 +575,8 @@ module.exports = {
           linkedin: "srinathtv",
           twitter: "srinathtv"
         }
-      }
+      },
+      url: "/working-groups/crypto.html"
     }
   },
 
@@ -655,7 +662,8 @@ module.exports = {
           linkedin: "kristina-yasuda-6263b5a2",
           twitter: "kristinayasuda"
         }
-      }
+      },
+      url: "/working-groups/authentication.html"
     },
     "sidetree": {
       name: "Sidetree",
@@ -747,7 +755,8 @@ module.exports = {
           linkedin: "troyronda",
           twitter: "troyronda"
         }
-      }
+      },
+      url: "/working-groups/sidetree.html"
     },
     "wallet-security": {
       name: "Wallet Security",
@@ -792,7 +801,8 @@ module.exports = {
           photo: "/images/photos/paul-grehan.jpg",
           linkedin: "paul-grehan"
         }
-      }
+      },
+      url: "/working-groups/wallet-security.html"
     },
     "storage-compute": {
       name: "Storage and Compute",
@@ -888,7 +898,8 @@ module.exports = {
           linkedin: "keri-chair-linkedin",
           twitter: "keri-chair-twitter"
         }
-      }
+      },
+      url: "/working-groups/keri.html"
     }
   }
 }; 
