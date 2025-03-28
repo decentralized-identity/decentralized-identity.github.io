@@ -317,6 +317,11 @@ h5 {
   background-size: cover;
 }
 
+.icon-link[href*="recordings"]:before {
+  background: url(/icons/video.svg);
+  background-size: cover;
+}
+
 .icon-link[href*="youtube.com"]:before {
   background: url(/icons/youtube.svg);
   background-size: cover;
