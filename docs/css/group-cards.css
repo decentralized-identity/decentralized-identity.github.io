@@ -1,0 +1,124 @@
+.group-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.group-card {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.group-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.group-card .icon-wrapper {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.group-card .group-icon {
+  width: 100%;
+  height: 100%;
+  color: var(--primary-color);
+}
+
+.group-card h3 {
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+  font-size: 1.5rem;
+}
+
+.group-card .description {
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.group-card .meeting-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.group-card .calendar-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.group-card .learn-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s;
+  margin-top: auto;
+}
+
+.group-card .learn-more-btn:hover {
+  background: var(--primary-dark);
+}
+
+.group-card.compact {
+  padding: 1.5rem;
+}
+
+.group-card.compact .icon-wrapper {
+  width: 60px;
+  height: 60px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.group-card.view-all {
+  background: rgba(var(--primary-rgb), 0.05);
+  border: 2px dashed rgba(var(--primary-rgb), 0.2);
+}
+
+.group-card.view-all:hover {
+  background: rgba(var(--primary-rgb), 0.1);
+  border-style: solid;
+}
+
+.group-card.view-all .group-icon {
+  opacity: 0.5;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+} 

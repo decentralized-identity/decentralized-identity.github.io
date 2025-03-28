@@ -1,94 +1,33 @@
-{% extends "group_listing_base.html.njk" %}
+{% extends "default.html.njk" %}
+{% from "partials/group-card.html.njk" import groupCard %}
 {% set title = "Special Interest Groups" %}
-{% set subtitle = "Industry and regional focused collaboration in decentralized identity" %}
-{% set groupType = "Special Interest Groups" %}
-{% set activeGroups = specialInterestGroups.activeSIGs %}
-{% set archivedGroups = specialInterestGroups.archivedSIGs %}
-{% set overview %}
-<p>Special Interest Groups (SIGs) bring together professionals and organizations focused on specific industries, regions, or use cases in decentralized identity. These groups facilitate knowledge sharing and collaboration within their focused domains.</p>
-{% endset %}
+{% set css = ['directory', 'group-cards'] %}
 
 {% block content %}
 <section class="page-title theme-bg">
   <div class="container">
     <h1>Special Interest Groups</h1>
-    <p class="lead text-white mb-0">Industry and regional focused collaboration in decentralized identity</p>
+    <p class="lead text-white mb-0">Our Special Interest Groups (SIGs) focus on specific industries, regions, and use cases, bringing together experts to drive adoption and innovation in decentralized identity across different domains.</p>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <div class="row">
-      {% for sig in navigation.activeSpecialInterestGroups %}
-        <div class="col-md-6 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-3">
-                {% if specialInterestGroups.activeSIGs[sig.id].logoImage %}
-                  <img src="{{ specialInterestGroups.activeSIGs[sig.id].logoImage }}" 
-                       class="me-3" 
-                       {% if specialInterestGroups.activeSIGs[sig.id].logoSize %}
-                       style="width: {{ specialInterestGroups.activeSIGs[sig.id].logoSize.width }}px; height: {{ specialInterestGroups.activeSIGs[sig.id].logoSize.height }}px"
-                       {% else %}
-                       style="width: 40px; height: 40px"
-                       {% endif %}
-                       alt="{{ sig.name }} logo">
-                {% elif specialInterestGroups.activeSIGs[sig.id].logo %}
-                  <svg class="me-3" style="width: 40px; height: 40px">
-                    <use xlink:href="/images/icons.svg#{{ specialInterestGroups.activeSIGs[sig.id].logo }}"></use>
-                  </svg>
-                {% endif %}
-                <h3 class="card-title h4 mb-0">{{ sig.name }}</h3>
-              </div>
-
-              {% if specialInterestGroups.activeSIGs[sig.id].shortform %}
-                <p class="text-muted small">{{ specialInterestGroups.activeSIGs[sig.id].shortform }}</p>
-              {% endif %}
-
-              <div class="mb-3">
-                {{ specialInterestGroups.activeSIGs[sig.id].scope | truncate(120) }}
-              </div>
-
-              {% if specialInterestGroups.activeSIGs[sig.id].meeting %}
-                <div class="d-flex align-items-center text-muted small mb-3">
-                  <svg class="me-2" style="width: 16px; height: 16px">
-                    <use xlink:href="/images/icons.svg#calendar"></use>
-                  </svg>
-                  {{ specialInterestGroups.activeSIGs[sig.id].meeting.schedule }}
-                </div>
-              {% endif %}
-
-              <div class="mt-auto">
-                <a href="{{ sig.url }}" 
-                   class="btn btn-primary" 
-                   {% if sig.isExternal %}target="_blank" rel="noopener"{% endif %}>
-                  Learn More
-                  {% if sig.isExternal %}
-                    <svg class="ms-1" style="width: 14px; height: 14px">
-                      <use xlink:href="/images/icons.svg#external"></use>
-                    </svg>
-                  {% endif %}
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="group-cards-grid">
+      {% for id, group in specialInterestGroups.activeSIGs %}
+        {{ groupCard(group) }}
       {% endfor %}
     </div>
 
-    {% if navigation.archivedSpecialInterestGroups.length > 0 %}
-      <div class="row mt-5">
-        <div class="col-12">
-          <h2 class="h3 mb-4">Archived Groups</h2>
-          <div class="list-group">
-            {% for sig in navigation.archivedSpecialInterestGroups %}
-              <a href="{{ sig.url }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                {{ sig.name }}
-                <span class="badge bg-secondary rounded-pill">Archived</span>
-              </a>
-            {% endfor %}
-          </div>
-        </div>
+    {% if specialInterestGroups.archivedSIGs | length > 0 %}
+      <div class="section-header">
+        <h2>Archived Special Interest Groups</h2>
+        <p>Previously active special interest groups that have completed their mission or been consolidated.</p>
+      </div>
+      <div class="group-cards-grid">
+        {% for id, group in specialInterestGroups.archivedSIGs %}
+          {{ groupCard(group, "compact") }}
+        {% endfor %}
       </div>
     {% endif %}
   </div>

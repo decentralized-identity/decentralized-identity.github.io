@@ -1,6 +1,7 @@
 {% extends "default.html.njk" %}
+{% from "partials/group-card.html.njk" import groupCard %}
 {% set title = "Work at DIF" %}
-{% set css = ['directory'] %}
+{% set css = ['directory', 'group-cards'] %}
 
 {% block content %}
 <section class="page-title theme-bg">
@@ -12,112 +13,41 @@
 
 <section>
   <div class="container">
-    <div class="row mb-5">
-      <div class="col-12">
-        <div class="card">
-          <div class="card-body">
-            <p>The Decentralized Identity Foundation (DIF) coordinates the development of technical standards and solutions for decentralized identity through various collaborative groups. Each group type serves a specific purpose in our ecosystem:</p>
-          </div>
+    <div class="group-cards-grid">
+      {# Working Groups Card #}
+      <div class="group-card">
+        <div class="icon-wrapper">
+          <svg class="group-icon">
+            <use xlink:href="/images/icons.svg#blueprint"></use>
+          </svg>
         </div>
+        <h3>Working Groups</h3>
+        <p class="description">Technical standardization and development of decentralized identity solutions. Working Groups create specifications, protocols, and reference implementations.</p>
+        <a href="/working-groups" class="learn-more-btn">View Working Groups</a>
       </div>
-    </div>
 
-    {# Working Groups Card #}
-    <div class="row mb-5">
-      <div class="col-12">
-        <div class="card">
-          <div class="card-body">
-            <div class="d-flex align-items-center mb-3">
-              <svg class="me-3" style="width: 40px; height: 40px">
-                <use xlink:href="/images/icons.svg#blueprint"></use>
-              </svg>
-              <h2 class="h3 mb-0">Working Groups</h2>
-            </div>
-            <p>Technical standardization and development of decentralized identity solutions. Working Groups create specifications, protocols, and reference implementations.</p>
-            <div class="mt-3">
-              <a href="/working-groups" class="btn btn-primary">View Working Groups</a>
-              {% if navigation.activeWorkingGroups.length > 0 %}
-                <div class="mt-3">
-                  <h6 class="text-muted">Featured Working Groups:</h6>
-                  <div class="list-group list-group-flush">
-                    {% for wg in navigation.activeWorkingGroups | slice(0, 3) %}
-                      <a href="{{ wg.url }}" class="list-group-item list-group-item-action">{{ wg.name }}</a>
-                    {% endfor %}
-                  </div>
-                </div>
-              {% endif %}
-            </div>
-          </div>
+      {# Special Interest Groups Card #}
+      <div class="group-card">
+        <div class="icon-wrapper">
+          <svg class="group-icon">
+            <use xlink:href="/images/icons.svg#communicate_user"></use>
+          </svg>
         </div>
+        <h3>Special Interest Groups</h3>
+        <p class="description">Industry and regional focused collaboration in decentralized identity. SIGs bring together professionals and organizations around specific domains or regions.</p>
+        <a href="/special-interest-groups" class="learn-more-btn">View Special Interest Groups</a>
       </div>
-    </div>
 
-    {# Special Interest Groups Card #}
-    <div class="row mb-5">
-      <div class="col-12">
-        <div class="card">
-          <div class="card-body">
-            <div class="d-flex align-items-center mb-3">
-              <svg class="me-3" style="width: 40px; height: 40px">
-                <use xlink:href="/images/icons.svg#communicate_user"></use>
-              </svg>
-              <h2 class="h3 mb-0">Special Interest Groups</h2>
-            </div>
-            <p>Industry and regional focused collaboration in decentralized identity. SIGs bring together professionals and organizations around specific domains or regions.</p>
-            <div class="mt-3">
-              <a href="/special-interest-groups" class="btn btn-primary">View Special Interest Groups</a>
-              {% if navigation.activeSpecialInterestGroups.length > 0 %}
-                <div class="mt-3">
-                  <h6 class="text-muted">Featured Special Interest Groups:</h6>
-                  <div class="list-group list-group-flush">
-                    {% for sig in navigation.activeSpecialInterestGroups | slice(0, 3) %}
-                      <a href="{{ sig.url }}" 
-                         class="list-group-item list-group-item-action"
-                         {% if sig.isExternal %}target="_blank" rel="noopener"{% endif %}>
-                        {{ sig.name }}
-                        {% if sig.isExternal %}
-                          <svg class="ms-1" style="width: 14px; height: 14px">
-                            <use xlink:href="/images/icons.svg#external"></use>
-                          </svg>
-                        {% endif %}
-                      </a>
-                    {% endfor %}
-                  </div>
-                </div>
-              {% endif %}
-            </div>
-          </div>
+      {# User Groups Card #}
+      <div class="group-card">
+        <div class="icon-wrapper">
+          <svg class="group-icon">
+            <use xlink:href="/images/icons.svg#users"></use>
+          </svg>
         </div>
-      </div>
-    </div>
-
-    {# User Groups Card #}
-    <div class="row mb-5">
-      <div class="col-12">
-        <div class="card">
-          <div class="card-body">
-            <div class="d-flex align-items-center mb-3">
-              <svg class="me-3" style="width: 40px; height: 40px">
-                <use xlink:href="/images/icons.svg#users"></use>
-              </svg>
-              <h2 class="h3 mb-0">User Groups</h2>
-            </div>
-            <p>Implementation and adoption focused communities. User Groups provide forums for developers and implementers to share knowledge and collaborate on practical solutions.</p>
-            <div class="mt-3">
-              <a href="/user-groups" class="btn btn-primary">View User Groups</a>
-              {% if navigation.activeUserGroups.length > 0 %}
-                <div class="mt-3">
-                  <h6 class="text-muted">Featured User Groups:</h6>
-                  <div class="list-group list-group-flush">
-                    {% for ug in navigation.activeUserGroups | slice(0, 3) %}
-                      <a href="{{ ug.url }}" class="list-group-item list-group-item-action">{{ ug.name }}</a>
-                    {% endfor %}
-                  </div>
-                </div>
-              {% endif %}
-            </div>
-          </div>
-        </div>
+        <h3>User Groups</h3>
+        <p class="description">Implementation and adoption focused communities. User Groups provide forums for developers and implementers to share knowledge and collaborate on practical solutions.</p>
+        <a href="/user-groups" class="learn-more-btn">View User Groups</a>
       </div>
     </div>
   </div>
