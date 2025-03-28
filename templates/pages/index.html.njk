@@ -1,5 +1,8 @@
 
 {% extends "default.html.njk" %}
+{% from "partials/group-card.html.njk" import groupCard %}
+{% set title = "Special Interest Groups" %}
+{% set css = ['directory', 'group-cards'] %}
 
 {% block content %}
 
@@ -91,15 +94,6 @@
       </div> <!-- container -->
     </section>
     <!-- / -->
-
-
-
-
-
-
-
-
-
 
     <!-- About Start -->
     <section id="about" class="section p-50px-b sm-p-0px-b about-section style-section">
@@ -236,7 +230,6 @@
       </div> <!-- container -->
     </section>
     <!-- / -->
-
 
     <!-- Members -->
     <section id="members" class="section member-section gray-bg">

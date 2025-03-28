@@ -286,56 +286,6 @@ gulp.task("generate-wg-templates", function(done) {
     fs.mkdirSync(templateDir, { recursive: true });
   }
 
-  // Generate index page for working groups
-  const indexContent = `{% extends "default.html.njk" %}
-{% set title = "Working Groups" %}
-
-{% block content %}
-<section class="page-title theme-bg">
-  <div class="container">
-    <h1>Working Groups</h1>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h2>Active Working Groups</h2>
-    <div class="row">
-      {% for wg in navigation.activeWorkingGroups %}
-        <div class="col-md-6 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h3 class="card-title h4">{{ wg.name }}</h3>
-              <p class="card-text">{{ workingGroups.activeWorkingGroups[wg.id].scope | truncate(150) }}</p>
-              <a href="{{ wg.url }}" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-
-    {% if navigation.archivedWorkingGroups.length > 0 %}
-      <h2 class="mt-5">Completed or Archived Working Groups</h2>
-      <div class="row">
-        {% for wg in navigation.archivedWorkingGroups %}
-          <div class="col-md-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <h3 class="card-title h4">{{ wg.name }}</h3>
-                <p class="card-text">{{ workingGroups.archivedWorkingGroups[wg.id].scope | truncate(150) }}</p>
-                <a href="{{ wg.url }}" class="btn btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-    {% endif %}
-  </div>
-</section>
-{% endblock %}`;
-
-  fs.writeFileSync(path.join(templateDir, 'index.html.njk'), indexContent);
-
   // Generate templates for active working groups
   for (const [id, group] of Object.entries(workingGroups.activeWorkingGroups)) {
     if (group.externalUrl) {

@@ -1,5 +1,7 @@
 {% extends "default.html.njk" %}
+{% from "partials/group-card.html.njk" import groupCard %}
 {% set title = "Working Groups" %}
+{% set css = ['directory', 'group-cards'] %}
 
 {% block content %}
 <section class="page-title theme-bg">
@@ -8,39 +10,24 @@
   </div>
 </section>
 
-<section>
+<section class="group-section">
   <div class="container">
-    <h2>Active Working Groups</h2>
-    <div class="row">
-      {% for wg in navigation.activeWorkingGroups %}
-        <div class="col-md-6 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h3 class="card-title h4">{{ wg.name }}</h3>
-              <p class="card-text">{{ workingGroups.activeWorkingGroups[wg.id].scope | truncate(150) }}</p>
-              <a href="{{ wg.url }}" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
+    <div class="group-cards-grid">
+      {% for id, group in workingGroups.activeWorkingGroups %}
+        {{ groupCard(group) }}
       {% endfor %}
     </div>
 
-    {% if navigation.archivedWorkingGroups.length > 0 %}
-      <h2 class="mt-5">Completed or Archived Working Groups</h2>
-      <div class="row">
-        {% for wg in navigation.archivedWorkingGroups %}
-          <div class="col-md-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <h3 class="card-title h4">{{ wg.name }}</h3>
-                <p class="card-text">{{ workingGroups.archivedWorkingGroups[wg.id].scope | truncate(150) }}</p>
-                <a href="{{ wg.url }}" class="btn btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
+    {% if workingGroups.archivedWorkingGroups | length > 0 %}
+      <div class="section-header">
+        <h2>Completed or Archived Working Groups</h2>
+      </div>
+      <div class="group-cards-grid">
+        {% for id, group in workingGroups.archivedWorkingGroups %}
+          {{ groupCard(group, "compact") }}
         {% endfor %}
       </div>
     {% endif %}
   </div>
 </section>
-{% endblock %}
+{% endblock %} 
