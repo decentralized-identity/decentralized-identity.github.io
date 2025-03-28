@@ -275,7 +275,7 @@ module.exports = {
       scope: "Members of the Working Group are engaged in development of protocols and systems that enable creation, resolution, and discovery of decentralized identifiers and names across underlying decentralized systems, like blockchains and distributed ledgers.",
       meetingSchedule: [
         {
-          key: "Bi-weekly",
+          key: "Bi-weekly Identifiers & Discovery",
           value: "Occurs every 2 weeks on Monday at 18:00:00 UTC"
         },
         {
