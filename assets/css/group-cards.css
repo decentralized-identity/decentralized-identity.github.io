@@ -13,6 +13,36 @@
   position: relative;
 }
 
+/* Archive section specific styling */
+.archived-section {
+  margin-top: 60px;
+  border-top: 1px solid #eee;
+  padding-top: 40px;
+}
+
+.archived-section .section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.archived-section .section-header h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.archived-section .section-header p {
+  color: #888;
+  font-family: "Open Sans", sans-serif;
+}
+
+.archived-section .group-cards-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Active group card styling */
 .group-card {
   background: #fff;
   border-radius: 5px;
@@ -42,15 +72,19 @@
 
 .group-card h3 {
   font-size: 18px;
+  font-weight: 600;
+  color: #222;
   margin: 15px 0;
-  text-transform: capitalize;
+  font-family: "Poppins", sans-serif;
 }
 
 .group-card .description {
+  color: #666;
   margin-bottom: 20px;
   flex-grow: 1;
   font-size: 15px;
   line-height: 1.7;
+  font-family: "Open Sans", sans-serif;
 }
 
 .group-card .learn-more-btn {
@@ -63,15 +97,46 @@
   transition: all 0.3s ease;
   font-weight: 500;
   margin-top: auto;
-  font-family: "Poppins", sans-serif;  /* Updated to match homepage */
+  font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 1px;
 }
 
-.group-card .learn-more-btn:hover {
-  background: var(--primary-dark-color);
+/* Archived group card styling */
+.group-card.archived {
+  padding: 20px;
+  background: #f8f9fa;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.group-card.archived:hover {
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.group-card.archived h3 {
+  font-size: 16px;
+  margin: 0 0 10px 0;
+  color: #666;
+}
+
+.group-card.archived .learn-more-btn {
+  padding: 8px 20px;
+  font-size: 13px;
+  background: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.group-card.archived .learn-more-btn:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* Hide icon wrapper for archived cards */
+.group-card.archived .icon-wrapper {
+  display: none;
 }
 
 /* For archived/compact cards */
@@ -110,6 +175,10 @@
   .group-cards-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+  
+  .archived-section .group-cards-grid {
+    grid-template-columns: 1fr;
   }
   
   .group-card {

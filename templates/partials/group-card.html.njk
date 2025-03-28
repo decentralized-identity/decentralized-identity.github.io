@@ -1,5 +1,6 @@
 {% macro groupCard(group, style="full") %}
 <div class="group-card {% if style == 'compact' %}compact{% endif %}">
+  {% if style == "full" %}
   <div class="icon-wrapper">
     {% if group.logo %}
       <svg class="group-icon">
@@ -9,6 +10,7 @@
       <img src="{{ group.logoImage }}" alt="{{ group.name }} icon" class="group-icon">
     {% endif %}
   </div>
+   {% endif %}
   
   <h3>{{ group.name }}</h3>
   

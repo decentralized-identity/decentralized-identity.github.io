@@ -19,17 +19,28 @@
       {% endfor %}
     </div>
 
+    {# Archived Special Interest Groups #}
     {% if specialInterestGroups.archivedSIGs | length > 0 %}
-      <div class="section-header">
+      <div class="archived-section">
+        <div class="section-header">
         <h2>Archived Special Interest Groups</h2>
         <p>Previously active special interest groups that have completed their mission or been consolidated.</p>
-      </div>
-      <div class="group-cards-grid">
-        {% for id, group in specialInterestGroups.archivedSIGs %}
-          {{ groupCard(group, "compact") }}
-        {% endfor %}
+        </div>
+        <div class="group-cards-grid">
+          {% for id, wg in specialInterestGroups.archivedSIGs %}
+            <div class="group-card archived">
+              <h3>{{ wg.name }}</h3>
+              {% if wg.externalUrl %}
+                <a href="{{ wg.externalUrl }}" class="learn-more-btn">Learn More</a>
+              {% else %}
+                <a href="{{ wg.url }}" class="learn-more-btn">Learn More</a>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
       </div>
     {% endif %}
+
   </div>
 </section>
 {% endblock %} 
