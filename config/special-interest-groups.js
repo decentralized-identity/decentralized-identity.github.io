@@ -224,16 +224,12 @@ module.exports = {
         }
       },
       chairs: {
-        "Antti Kettunen": {
-          title: "Co-chair",
-          photo: "/images/photos/antti-kettunen.jpg",
-          linkedin: "anttikettunen"
+        "Catherine Nabbala Seppuuya": {
+          title: "Business Development @ Finema",
+          photo: "/images/photos/catherine-nabbala.png",
+          linkedin: "catherine-nabbala",
+          twitter: "CatherineNabbala1"
         },
-        "Vinay Gupta": {
-          title: "Co-chair",
-          photo: "/images/photos/vinay-gupta.jpg",
-          linkedin: "vinaygupta"
-        }
       }
     },
 
