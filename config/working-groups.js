@@ -539,22 +539,6 @@ module.exports = {
           ]
         }
       },
-      chairs: {
-        "Oliver Terbu": {
-          title: "Identity Architect @ Spruce",
-          photo: "/images/photos/oliver-terbu.jpg",
-          linkedin: "oliver-terbu",
-          twitter: "OliverTerbu"
-        }
-      },
-      liaison: {
-        "Kristina Yasuda": {
-          title: "OIDC liaison / Microsoft",
-          photo: "/images/photos/kristina_yasuda.jpg",
-          linkedin: "kristina-yasuda-6263b5a2",
-          twitter: "kristinayasuda"
-        }
-      },
       url: "/working-groups/authentication.html"
     },
     "secure-data-storage": {
@@ -706,20 +690,6 @@ module.exports = {
           ]
         }
       },
-      chairs: {
-        "Daniel Buchner": {
-          title: "Head of Decentralized Identity @ Block",
-          photo: "/images/photos/daniel-buchner.jpg",
-          linkedin: "dbuchner",
-          twitter: "csuwildcat"
-        },
-        "Troy Ronda ": {
-          title: "Chief Scientist @ Securekey",
-          photo: "/images/photos/troy-ronda.jpg",
-          linkedin: "troyronda",
-          twitter: "troyronda"
-        }
-      },
       url: "/working-groups/sidetree.html"
     },
     "wallet-security": {
@@ -749,13 +719,6 @@ module.exports = {
               href: "https://github.com/decentralized-identity?q=wg-ws&type=&language=&sort="
             },
           ]
-        }
-      },
-      chairs: {
-        "Paul Grehan": {
-          title: "Founder @ YellowDotPink",
-          photo: "/images/photos/paul-grehan.jpg",
-          linkedin: "paul-grehan"
         }
       },
       url: "/working-groups/wallet-security.html"
@@ -808,14 +771,6 @@ module.exports = {
             ]
           }
         }
-      },
-      chairs: {
-        "Storage and Compute Chair": {
-          title: "Storage and Compute Chair Title",
-          photo: "/images/photos/storage-compute-chair.jpg",
-          linkedin: "storage-compute-chair-linkedin",
-          twitter: "storage-compute-chair-twitter"
-        }
       }
     },
     "keri": {
@@ -838,14 +793,6 @@ module.exports = {
         }
       },
       projects: {
-      },
-      chairs: {
-        "KERI Chair": {
-          title: "KERI Chair Title",
-          photo: "/images/photos/keri-chair.jpg",
-          linkedin: "keri-chair-linkedin",
-          twitter: "keri-chair-twitter"
-        }
       },
       url: "/working-groups/keri.html"
     }

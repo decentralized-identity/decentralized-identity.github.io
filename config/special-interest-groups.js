@@ -53,45 +53,96 @@ module.exports = {
         }
       }
     },
-
-    "korea": {
-      name: "DIF Korea",
+    "africa": {
+      name: "DIF Africa",
       logo: null,
-      logoImage: "/images/korea.png",
       subtitle: "Special Interest Group",
       shortform: null,
       status: "active",
-      url: "/special-interest-groups/korea",
-      scope: "This group is a group of experts from industry, academia, and institutions located in Korea for the application of decentralized identity technology, focusing on activities such as standard technology consultation, opinion collection, policy direction presentation, and core technology demonstration. It is an open and non-IPR group.",
-      type: "open-non-ipr",
+      url: "/special-interest-groups/africa",
+      scope: "The DIF Africa Special Interest Group (SIG) is established to promote, advance, and support the development and adoption of decentralized identity technologies and standards within the context of Africa. The SIG operates within the framework of the Decentralized Identity Foundation (DIF), an industry consortium aimed at creating an open ecosystem for decentralized identity.",
+      type: "open",
+      meeting: {
+        calendar: "https://calendar.google.com/event?action=TEMPLATE&tmeid=NjFoM29qc2wxYTR1ZGo4ZDQ5NmV2Z3MyMG1fMjAyNTAxMTVUMTEwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
+      },
       charters: {
-        "Korea SIG documentation": {
+        "Africa SIG Documentation": {
           links: [
             {
-              text: "SIG Charter",
-              href: "https://github.com/decentralized-identity/SIG-Korea/SIG_charter.md"
+              text: "Discord Channel",
+              href: "https://discord.gg/wAk4FtRK"
             },
             {
-              text: "Mailing list",
-              href: "https://lists.identity.foundation/g/DIF-Korea-SIG/"
+              text: "Mailing List",
+              href: "https://lists.identity.foundation/g/africa"
             },
             {
-              text: "SIG GitHub Repos",
-              href: "https://github.com/decentralized-identity/SIG-Korea/"
+              text: "Group Charter",
+              href: "https://github.com/decentralized-identity/SIG-Africa/blob/main/CHARTER.md"
+            },
+            {
+              text: "GitHub Repository",
+              href: "https://github.com/decentralized-identity/SIG-Africa"
+            },
+            {
+              text: "Shared Drive",
+              href: "https://drive.google.com/drive/folders/1Yg9BhGAu92ZzvTPWiRNaxfa3Ju6P7bE1?usp=drive_link"
             }
           ]
         }
       },
       chairs: {
-        "Kyoungchul Park": {
-          title: "CEO K4-Security.Co.Ltd",
-          photo: "/images/photos/kyoungchul-park.jpg",
-          linkedin: "kyoungchul-park-68467a35",
-          twitter: "kyoungchul_park"
+        "Gideon Lombard": {
+          photo: "/images/photos/gideon-lombard.jpg",
+          linkedin: "gideon-lombard-1640523b"
+        },
+        "Jack Scott-King": {
+          photo: "/images/photos/jack-scott-king.jpg",
+          linkedin: "jack-scott-king-9614721ba"
         }
       }
     },
-
+    "apac": {
+      name: "DIF APAC/ASEAN",
+      logo: null,
+      logoImage: "/images/apac.png",
+      subtitle: "Regional Special Interest Group",
+      shortform: "Asia-Pacific",
+      status: "active",
+      url: "/special-interest-groups/apac",
+      scope: "The APAC Special Interest Group serves as a regional forum for collaboration and knowledge sharing among decentralized identity professionals across the Asia-Pacific region. The group focuses on regional adoption, regulatory compliance, and technological implementation of decentralized identity solutions while considering the diverse cultural and business practices across APAC.",
+      type: "open",
+      meeting: {
+        schedule: "Monthly meetings on the second Wednesday at 11:00 AM SGT (Singapore Time)",
+        calendar: "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=..."  // You'll need to add the actual calendar link
+      },
+      charters: {
+        "APAC SIG documentation": {
+          links: [
+            {
+              text: "SIG Charter",
+              href: "https://github.com/decentralized-identity/SIG-APAC/blob/main/charter.md"
+            },
+            {
+              text: "Mailing List",
+              href: "https://lists.identity.foundation/g/apac-sig"
+            },
+            {
+              text: "GitHub Repository",
+              href: "https://github.com/decentralized-identity/SIG-APAC"
+            }
+          ]
+        }
+      },
+      chairs: {
+        "Catherine Nabbala Seppuuya": {
+          title: "Business Development @ Finema",
+          photo: "/images/photos/catherine-nabbala.png",
+          linkedin: "catherine-nabbala",
+          twitter: "CatherineNabbala1"
+        },
+      }
+    },
     "china": {
       name: "DIF China",
       logo: null,
@@ -129,7 +180,6 @@ module.exports = {
         }
       }
     },
-
     "japan": {
       name: "DIF Japan",
       logo: null,
@@ -170,49 +220,43 @@ module.exports = {
         }
       }
     },
-
-    "apac": {
-      name: "APAC/ASEAN",
+    "korea": {
+      name: "DIF Korea",
       logo: null,
-      logoImage: "/images/apac.png",
-      subtitle: "Regional Special Interest Group",
-      shortform: "Asia-Pacific",
+      logoImage: "/images/korea.png",
+      subtitle: "Special Interest Group",
+      shortform: null,
       status: "active",
-      url: "/special-interest-groups/apac",
-      scope: "The APAC Special Interest Group serves as a regional forum for collaboration and knowledge sharing among decentralized identity professionals across the Asia-Pacific region. The group focuses on regional adoption, regulatory compliance, and technological implementation of decentralized identity solutions while considering the diverse cultural and business practices across APAC.",
-      type: "open",
-      meeting: {
-        schedule: "Monthly meetings on the second Wednesday at 11:00 AM SGT (Singapore Time)",
-        calendar: "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=..."  // You'll need to add the actual calendar link
-      },
+      url: "/special-interest-groups/korea",
+      scope: "This group is a group of experts from industry, academia, and institutions located in Korea for the application of decentralized identity technology, focusing on activities such as standard technology consultation, opinion collection, policy direction presentation, and core technology demonstration. It is an open and non-IPR group.",
+      type: "open-non-ipr",
       charters: {
-        "APAC SIG documentation": {
+        "Korea SIG documentation": {
           links: [
             {
               text: "SIG Charter",
-              href: "https://github.com/decentralized-identity/SIG-APAC/blob/main/charter.md"
+              href: "https://github.com/decentralized-identity/SIG-Korea/SIG_charter.md"
             },
             {
-              text: "Mailing List",
-              href: "https://lists.identity.foundation/g/apac-sig"
+              text: "Mailing list",
+              href: "https://lists.identity.foundation/g/DIF-Korea-SIG/"
             },
             {
-              text: "GitHub Repository",
-              href: "https://github.com/decentralized-identity/SIG-APAC"
+              text: "SIG GitHub Repos",
+              href: "https://github.com/decentralized-identity/SIG-Korea/"
             }
           ]
         }
       },
       chairs: {
-        "Catherine Nabbala Seppuuya": {
-          title: "Business Development @ Finema",
-          photo: "/images/photos/catherine-nabbala.png",
-          linkedin: "catherine-nabbala",
-          twitter: "CatherineNabbala1"
-        },
+        "Kyoungchul Park": {
+          title: "CEO K4-Security.Co.Ltd",
+          photo: "/images/photos/kyoungchul-park.jpg",
+          linkedin: "kyoungchul-park-68467a35",
+          twitter: "kyoungchul_park"
+        }
       }
-    },
-
+    }
   },
 
   // For any archived/inactive SIGs
