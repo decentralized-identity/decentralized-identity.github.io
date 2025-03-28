@@ -13,25 +13,36 @@
       <div class="meeting-link-item">
           <a class="block-link icon-link" href="{{ recordings_link | default(default_recordings) }}">Recordings of Recent Meetings</a>
       </div>
-    </div>
 
-    {% if type == "wg" %}
-    <p>You must be a DIF member to participate in this groups. <a href="https://identity.foundation/join">Join DIF</a></p>
-    {% endif %}
+      {% if discussionChannels %}
+        {% for channel in discussionChannels %}
+        <div class="meeting-link-item">
+            <a class="block-link icon-link" href="{{ channel.href }}">{{ channel.text }}</a>
+        </div>
+        
+        {% endfor %}
+      {% endif %}
 
-    {% if meetingSchedule %}
-    <div class="meeting-schedule-container">
+          {% if meetingSchedule %}
       {% for schedule in meetingSchedule %}
+    
         <p class="meeting-time">
           {% if schedule.key %}
            {{ schedule.key }}: {{ schedule.value }}
           {% else %}
             {{ schedule.value }}
           {% endif %}
-        </p>
       {% endfor %}
-    </div>
+      </p>
     {% endif %}
+      
+    </div>
+
+
+    {% if type == "wg" %}
+    <p><b><i>You must be a DIF member to participate in this group</i>: <a href="https://identity.foundation/join">Join DIF</a></b></p>
+    {% endif %}
+
 
 
   </div>

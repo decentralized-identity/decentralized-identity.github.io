@@ -14,6 +14,12 @@ module.exports = {
           value: "test"
         },
       ],
+      discussionChannels: [
+        {
+          text: "Mailing list",
+          href: "https://lists.identity.foundation/g/cc-wg"
+        },
+      ],
       charters: {
         "Claims and Credentials WG documentation": {
           links: [
@@ -24,10 +30,6 @@ module.exports = {
             {
               text: "Agenda/GitHub",
               href: "https://github.com/decentralized-identity/claims-credentials/blob/main/AGENDA.md"
-            },
-            {
-              text: "Mailing list",
-              href: "https://lists.identity.foundation/g/cc-wg"
             },
             {
               text: "WG GitHub Repos",
@@ -109,16 +111,18 @@ module.exports = {
           value: "test"
         },
       ],
+      discussionChannels: [
+        {
+          text: "Mailing list",
+          href: "https://lists.identity.foundation/g/did-methods-wg"
+        }
+      ],
       charters: {
         "DID Methods WG documentation": {
           links: [
             {
               text: "WG Charter",
               href: "https://github.com/decentralized-identity/org/blob/main/Org%20documents/WG%20documents/DIF_DID_Methods_WG_Charter_v1.pdf"
-            },
-            {
-              text: "Mailing list",
-              href: "https://lists.identity.foundation/g/did-methods-wg"
             }
           ]
         }
@@ -162,6 +166,12 @@ module.exports = {
           value: "test"
         }
       ],
+      discussionChannels: [
+        {
+          text: "Mailing list",
+          href: "https://lists.identity.foundation/g/cawg"
+        }
+      ],
       charters: {
         "Creator Assertions WG documentation": {
           links: [
@@ -176,10 +186,6 @@ module.exports = {
             {
               text: "WG Operating Addendum",
               href: "https://github.com/decentralized-identity/org/blob/main/Org%20documents/WG%20documents/DIF_CAWG_WG_Operating_Addendum_v1.pdf"
-            },
-            {
-              text: "Mailing list",
-              href: "https://lists.identity.foundation/g/cawg"
             }
           ]
         }
@@ -208,6 +214,12 @@ module.exports = {
           value: "test"
         },
       ],
+      discussionChannels: [
+        {
+          text: "Mailing list",
+          href: "https://lists.identity.foundation/g/didcomm-wg"
+        },
+      ],
       charters: {
         "DIDcomm WG documentation": {
           links: [
@@ -226,10 +238,6 @@ module.exports = {
             {
               text: "DIDComm Book",
               href: "https://book.didcomm.org"
-            },
-            {
-              text: "Mailing list",
-              href: "https://lists.identity.foundation/g/didcomm-wg"
             },
             {
               text: "DIDComm User Group Resources",
@@ -267,6 +275,12 @@ module.exports = {
           value: "test"
         },
       ],
+      discussionChannels: [
+        {
+          text: "Mailing list",
+          href: "https://lists.identity.foundation/g/id-wg"
+        }
+      ],
       charters: {
         "Identifiers and Discovery WG documentation": {
           links: [
@@ -277,10 +291,6 @@ module.exports = {
             {
               text: "Agenda/GitHub",
               href: "https://github.com/decentralized-identity/identifiers-discovery/"
-            },
-            {
-              text: "Mailing list",
-              href: "https://lists.identity.foundation/g/id-wg"
             }
           ]
         }
@@ -437,6 +447,12 @@ module.exports = {
           value: "test"
         },
       ],
+      discussionChannels: [
+        {
+          text: "Mailing list",
+          href: "https://lists.identity.foundation/g/crypto-wg"
+        },
+      ],
       charters: {
         "Crypto WG documentation": {
           links: [
@@ -447,10 +463,6 @@ module.exports = {
             {
               text: "Agenda/GitHub",
               href: "https://github.com/decentralized-identity/crypto-wg/blob/main/agenda.md"
-            },
-            {
-              text: "Mailing list",
-              href: "https://lists.identity.foundation/g/crypto-wg"
             },
             {
               text: "WG GitHub Repos",

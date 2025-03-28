@@ -56,6 +56,7 @@ module.exports = {
     },
     "africa": {
       name: "DIF Africa",
+      logo: "biz_discussion",
       shortform: null,
       status: "active",
       url: "/special-interest-groups/africa",
@@ -67,17 +68,19 @@ module.exports = {
           value: "test"
         },
       ],
+      discussionChannels: [
+        {
+          text: "Discord: #africa-sig",
+          href: "https://discord.gg/wAk4FtRK"
+        },
+        {
+          text: "Mailing List",
+          href: "https://lists.identity.foundation/g/africa"
+        },
+      ],
       charters: {
         "Africa SIG Documentation": {
           links: [
-            {
-              text: "Discord Channel: #africa-sig",
-              href: "https://discord.gg/wAk4FtRK"
-            },
-            {
-              text: "Mailing List",
-              href: "https://lists.identity.foundation/g/africa"
-            },
             {
               text: "Group Charter",
               href: "https://github.com/decentralized-identity/SIG-Africa/blob/main/CHARTER.md"
@@ -106,7 +109,7 @@ module.exports = {
     },
     "apac": {
       name: "DIF APAC/ASEAN",
-      logo: "/images/apac.png",
+      logo: "biz_discussion",
       shortform: "Asia-Pacific",
       status: "active",
       url: "/special-interest-groups/apac",
@@ -118,16 +121,18 @@ module.exports = {
           value: "test"
         },
       ],
+      discussionChannels: [
+        {
+          text: "Mailing List",
+          href: "https://lists.identity.foundation/g/dif-apac-asean/"
+        }
+      ],
       charters: {
         "APAC SIG documentation": {
           links: [
             {
               text: "SIG Charter",
               href: "https://github.com/decentralized-identity/SIG-APAC/blob/main/charter.md"
-            },
-            {
-              text: "Mailing List",
-              href: "https://lists.identity.foundation/g/dif-apac-asean/"
             },
             {
               text: "GitHub Repository",
@@ -152,8 +157,7 @@ module.exports = {
     },
     "china": {
       name: "DIF China",
-      logo: "/images/china.svg",
-      logoSize: { width: 90, height: 60 },
+      logo: "biz_discussion",
       shortform: null,
       status: "active",
       url: "/special-interest-groups/china",
@@ -168,6 +172,8 @@ module.exports = {
           key: "Meeting Time",
           value: ""
         }
+      ],
+      discussionChannels: [
       ],
       charters: {
         "China SIG documentation": {
@@ -193,8 +199,7 @@ module.exports = {
     },
     "japan": {
       name: "DIF Japan",
-      logo: null,
-      logo: "/images/japan.png",
+      logo: "biz_discussion",
       shortform: null,
       status: "active",
       url: "/special-interest-groups/japan",
@@ -206,16 +211,18 @@ module.exports = {
           value: "test"
         },
       ],
+      discussionChannels: [
+        {
+          text: "Mailing List",
+          href: "https://lists.identity.foundation/g/DIF-Japan-SIG/"
+        },
+      ],
       charters: {
         "Japan SIG documentation": {
           links: [
             {
               text: "SIG Charter",
               href: "https://github.com/decentralized-identity/SIG-Japan/blob/main/charter.md"
-            },
-            {
-              text: "Mailing List",
-              href: "https://lists.identity.foundation/g/DIF-Japan-SIG/"
             },
             {
               text: "GitHub Repository",
@@ -234,7 +241,7 @@ module.exports = {
     },
     "korea": {
       name: "DIF Korea",
-      logo: "/images/korea.png",
+      logo: "biz_discussion",
       shortform: null,
       status: "active",
       url: "/special-interest-groups/korea",
@@ -246,16 +253,18 @@ module.exports = {
           value: "test"
         },
       ],
+      discussionChannels: [
+        {
+          text: "Mailing list",
+          href: "https://lists.identity.foundation/g/DIF-Korea-SIG/"
+        },
+      ],
       charters: {
         "Korea SIG documentation": {
           links: [
             {
               text: "SIG Charter",
               href: "https://github.com/decentralized-identity/SIG-Korea/SIG_charter.md"
-            },
-            {
-              text: "Mailing list",
-              href: "https://lists.identity.foundation/g/DIF-Korea-SIG/"
             },
             {
               text: "SIG GitHub Repos",

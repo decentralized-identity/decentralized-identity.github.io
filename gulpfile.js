@@ -322,15 +322,11 @@ function generateTemplateVars(groupType, id, isArchived = false) {
   const group = groupMap[groupType];
   const commonFields = [
     'name', 'logo', 'title', 'scope', 'shortform', 
-    'charters', 'projects', 'chairs', 'type', 'meetingSchedule', 'repoTag'
+    'charters', 'projects', 'chairs', 'type', 'meetingSchedule', 'repoTag', 'discussionChannels'
   ];
-  
-  // Add group-specific fields
-  const extraFields = {
-    'sig': ['logoSize']
-  };
 
-  const fields = [...commonFields, ...(extraFields[groupType] || [])];
+
+  const fields = [...commonFields];
   
   return `{% extends "group_base.html.njk" %}
 {% set ${group.prefix}_id = "${id}" %}

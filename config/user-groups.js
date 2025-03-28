@@ -2,7 +2,7 @@ module.exports = {
   activeUserGroups: {
     "didcomm": {
       name: "DIDComm",
-      logo: "didcomm",
+      logo: "communicate_user",
       shortform: null,
       status: "active",
       url: "/user-groups/didcomm",
@@ -15,16 +15,18 @@ module.exports = {
           value: "test"
         },
       ],
+      discussionChannels: [
+        {
+          text: "Discord",
+          href: "https://discord.gg/eNN4Wns6Jb"
+        }
+      ],
       charters: {
         "DIDComm User Group documentation": {
           links: [
             {
               text: "Charter",
               href: "https://github.com/decentralized-identity/didcomm-usergroup/blob/main/charter.md"
-            },
-            {
-              text: "Discord Channel",
-              href: "https://discord.gg/eNN4Wns6Jb"
             },
             {
               text: "GitHub Repository",
@@ -44,7 +46,7 @@ module.exports = {
 
     "veramo": {
       name: "Veramo",
-      logo: "veramo",
+      logo: "validate_user",
       shortform: null,
       status: "active",
       repoTag: "veramo",
@@ -57,16 +59,18 @@ module.exports = {
           value: "test"
         },
       ],
+      discussionChannels: [
+        {
+          text: "Discord",
+          href: "https://discord.gg/eNN4Wns6Jb"
+        }
+      ],
       charters: {
         "Veramo User Group documentation": {
           links: [
             {
               text: "Charter",
               href: "https://github.com/decentralized-identity/veramo-usergroup/blob/main/charter.md"
-            },
-            {
-              text: "Discord Channel",
-              href: "https://discord.gg/eNN4Wns6Jb"
             },
             {
               text: "GitHub Repository",

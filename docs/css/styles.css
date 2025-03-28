@@ -293,6 +293,21 @@ h5 {
   vertical-align: sub;
 }
 
+.icon-link[href*="cawg.io"]:before,
+.icon-link[href*="calendar.google.com"]:before,
+.icon-link[href$=".md"]:before,
+.icon-link[href*="hackmd.io"]:before,
+.icon-link[href*="identity.foundation/specs"]:before,
+.icon-link[href*="drive.google.com"]:before,
+.icon-link[href*="docs.google"]:before,
+.icon-link[href*="notion.so"]:before,
+.icon-link[href*=".pdf"]:before,
+.icon-link[data-type="doc"]:before {
+  background: url(/icons/file.svg);
+  background-size: cover;
+  margin: 0 0.25em 0 0;
+}
+
 .icon-link[data-type="app"]:before {
   background: url(/icons/browser.svg) no-repeat center center;
 }
@@ -330,20 +345,25 @@ h5 {
   height: 15px;
 }
 
-.icon-link[href*="cawg.io"]:before,
-.icon-link[href*="calendar.google.com"]:before,
-.icon-link[href$=".md"]:before,
-.icon-link[href*="hackmd.io"]:before,
-.icon-link[href*="identity.foundation/specs"]:before,
-.icon-link[href*="drive.google.com"]:before,
-.icon-link[href*="docs.google"]:before,
-.icon-link[href*="bit.ly"]:before,
-.icon-link[href*="notion.so"]:before,
-.icon-link[href*=".pdf"]:before,
-.icon-link[data-type="doc"]:before {
-  background: url(/icons/file.svg);
+.icon-link[href*="discord"]:before {
+  background: url(/icons/communicate_user.svg);
   background-size: cover;
-  margin: 0 0.25em 0 0;
+}
+
+.icon-link[href*="didcomm.org"]:before {
+  background: url(/icons/user-network.svg);
+  background-size: cover;
+}
+
+
+.icon-link[href*="bit.ly"]:before {
+  background: url(/icons/chains.svg);
+  background-size: cover;
+}
+
+.icon-link[href*="dif-calendar"]:before {
+  background: url(/icons/calendar.svg);
+  background-size: cover;
 }
 
 .icon-link[href*="groups.io"]:before {
