@@ -1,11 +1,12 @@
 {% extends "group_base.html.njk" %}
 {% set ug_id = "didcomm" %}
-{% set name = userGroups.activeUserGroups[ug_id].name %}
-{% set logo = userGroups.activeUserGroups[ug_id].logo %}
-{% set title = userGroups.activeUserGroups[ug_id].title %}
-{% set scope = userGroups.activeUserGroups[ug_id].scope %}
-{% set shortform = userGroups.activeUserGroups[ug_id].shortform %}
-{% set charters = userGroups.activeUserGroups[ug_id].charters %}
-{% set type = userGroups.activeUserGroups[ug_id].type %}
-{% set chairs = userGroups.activeUserGroups[ug_id].chairs %}
-{% set meeting = userGroups.activeUserGroups[ug_id].meeting %}
+{% set name = userGroups.activeUserGroups["didcomm"].name %}
+{% set logo = userGroups.activeUserGroups["didcomm"].logo %}
+{% set title = userGroups.activeUserGroups["didcomm"].title %}
+{% set scope = userGroups.activeUserGroups["didcomm"].scope %}
+{% set shortform = userGroups.activeUserGroups["didcomm"].shortform %}
+{% set charters = userGroups.activeUserGroups["didcomm"].charters %}
+{% set projects = userGroups.activeUserGroups["didcomm"].projects %}
+{% set chairs = userGroups.activeUserGroups["didcomm"].chairs %}
+{% set type = userGroups.activeUserGroups["didcomm"].type %}
+{% set meeting = userGroups.activeUserGroups["didcomm"].meeting %}

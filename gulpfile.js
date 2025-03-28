@@ -9,7 +9,6 @@ const { rimraf } = require('rimraf');
 
 const { Transform } = require("stream");
 const File = require("vinyl");
-const { existsSync } = require("fs");
 const workingGroups = require('./config/working-groups');
 const specialInterestGroups = require('./config/special-interest-groups');
 const userGroups = require('./config/user-groups');
@@ -236,11 +235,8 @@ gulp.task("templates", async () => {
           userGroups: userGroups,
           navigation: {
             activeWorkingGroups: activeWGs,
-            archivedWorkingGroups: archivedWGs,
             activeSpecialInterestGroups: activeSIGs,
-            archivedSpecialInterestGroups: archivedSIGs,
-            activeUserGroups: activeUGs,
-            archivedUserGroups: archivedUGs
+            activeUserGroups: activeUGs
           }
         },
       }).on("error", (e) => {
@@ -278,7 +274,50 @@ gulp.task("repoCompilation", (done) => {
   repoCompilation.then((z) => done());
 });
 
-// Generate working group template files from config
+// Helper function to generate template variables
+function generateTemplateVars(groupType, id, isArchived = false) {
+  const status = isArchived ? 'archived' : 'active';
+  const groupMap = {
+    'wg': {
+      prefix: 'wg',
+      configKey: `${status === 'archived' ? 'archived' : 'active'}WorkingGroups`,
+      configSource: 'workingGroups'
+    },
+    'sig': {
+      prefix: 'sig',
+      configKey: `${status === 'archived' ? 'archived' : 'active'}SIGs`,
+      configSource: 'specialInterestGroups'
+    },
+    'ug': {
+      prefix: 'ug',
+      configKey: `${status === 'archived' ? 'archived' : 'active'}UserGroups`,
+      configSource: 'userGroups'
+    }
+  };
+
+  const group = groupMap[groupType];
+  const commonFields = [
+    'name', 'logo', 'title', 'scope', 'shortform', 
+    'charters', 'projects', 'chairs', 'type'
+  ];
+  
+  // Add group-specific fields
+  const extraFields = {
+    'sig': ['logoImage', 'logoSize', 'meeting'],
+    'ug': ['meeting'],
+    'wg': ['liaison', 'editors']
+  };
+
+  const fields = [...commonFields, ...(extraFields[groupType] || [])];
+  
+  return `{% extends "group_base.html.njk" %}
+{% set ${group.prefix}_id = "${id}" %}
+${fields.map(field => 
+  `{% set ${field} = ${group.configSource}.${group.configKey}["${id}"].${field} %}`
+).join('\n')}`;
+}
+
+// Update the template generation tasks
 gulp.task("generate-wg-templates", function(done) {
   const templateDir = './templates/pages/working-groups';
   
@@ -294,20 +333,7 @@ gulp.task("generate-wg-templates", function(done) {
     }
 
     const slug = normalizeSlug(id);
-    const mainContent = `{% extends "group_base.html.njk" %}
-{% set wg_id = "${id}" %}
-{% set name = workingGroups.activeWorkingGroups["${id}"].name %}
-{% set logo = workingGroups.activeWorkingGroups["${id}"].logo %}
-{% set title = workingGroups.activeWorkingGroups["${id}"].title %}
-{% set scope = workingGroups.activeWorkingGroups["${id}"].scope %}
-{% set shortform = workingGroups.activeWorkingGroups["${id}"].shortform %}
-{% set charters = workingGroups.activeWorkingGroups["${id}"].charters %}
-{% set projects = workingGroups.activeWorkingGroups["${id}"].projects %}
-{% set chairs = workingGroups.activeWorkingGroups["${id}"].chairs %}
-{% set liaison = workingGroups.activeWorkingGroups["${id}"].liaison %}
-{% set editors = workingGroups.activeWorkingGroups["${id}"].editors %}
-{% set type = workingGroups.activeWorkingGroups["${id}"].type %}`;
-
+    const mainContent = generateTemplateVars('wg', id);
     fs.writeFileSync(path.join(templateDir, `${slug}.html.njk`), mainContent);
   }
 
@@ -319,25 +345,14 @@ gulp.task("generate-wg-templates", function(done) {
     }
 
     const slug = normalizeSlug(id);
-    const mainContent = `{% extends "group_base.html.njk" %}
-{% set wg_id = "${id}" %}
-{% set name = workingGroups.archivedWorkingGroups["${id}"].name %}
-{% set logo = workingGroups.archivedWorkingGroups["${id}"].logo %}
-{% set title = workingGroups.archivedWorkingGroups["${id}"].title %}
-{% set scope = workingGroups.archivedWorkingGroups["${id}"].scope %}
-{% set shortform = workingGroups.archivedWorkingGroups["${id}"].shortform %}
-{% set charters = workingGroups.archivedWorkingGroups["${id}"].charters %}
-{% set projects = workingGroups.archivedWorkingGroups["${id}"].projects %}
-{% set chairs = workingGroups.archivedWorkingGroups["${id}"].chairs %}
-{% set type = workingGroups.archivedWorkingGroups["${id}"].type %}`;
-
+    const mainContent = generateTemplateVars('wg', id, true);
     fs.writeFileSync(path.join(templateDir, `${slug}.html.njk`), mainContent);
   }
 
   done();
 });
 
-// Modify the generate-sig-templates task
+// Similar updates for SIG templates
 gulp.task("generate-sig-templates", function(done) {
   const templateDir = './templates/pages/special-interest-groups';
   
@@ -345,78 +360,32 @@ gulp.task("generate-sig-templates", function(done) {
     fs.mkdirSync(templateDir, { recursive: true });
   }
   
-  // Generate template for each SIG
   for (const [id, group] of Object.entries(specialInterestGroups.activeSIGs)) {
-    // Skip template generation for external URLs
     if (group.externalUrl) {
       console.log(`Skipping template generation for external SIG: ${group.name}`);
       continue;
     }
     
     const slug = normalizeSlug(id);
-    
-    // Main content template (goes in the new location)
-    const mainContent = `{% extends "group_base.html.njk" %}
-{% set sig_id = "${id}" %}
-{% set name = specialInterestGroups.activeSIGs[sig_id].name %}
-{% set logo = specialInterestGroups.activeSIGs[sig_id].logo %}
-{% set logoImage = specialInterestGroups.activeSIGs[sig_id].logoImage %}
-{% set logoSize = specialInterestGroups.activeSIGs[sig_id].logoSize %}
-{% set title = specialInterestGroups.activeSIGs[sig_id].title %}
-{% set scope = specialInterestGroups.activeSIGs[sig_id].scope %}
-{% set shortform = specialInterestGroups.activeSIGs[sig_id].shortform %}
-{% set charters = specialInterestGroups.activeSIGs[sig_id].charters %}
-{% set projects = specialInterestGroups.activeSIGs[sig_id].projects %}
-{% set chairs = specialInterestGroups.activeSIGs[sig_id].chairs %}
-{% set type = specialInterestGroups.activeSIGs[sig_id].type %}
-{% set meeting = specialInterestGroups.activeSIGs[sig_id].meeting %}`;
-
-    // Redirect template (goes in the old location)
-    const redirectContent = `<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; URL=/special-interest-groups/${slug}.html">
-    <link rel="canonical" href="/special-interest-groups/${slug}.html">
-  </head>
-  <body>
-    <p>Redirecting to <a href="/special-interest-groups/${slug}.html">/special-interest-groups/${slug}.html</a>...</p>
-  </body>
-</html>`;
-    
-    // Write main content at new location
+    const mainContent = generateTemplateVars('sig', id);
     fs.writeFileSync(path.join(templateDir, `${slug}.html.njk`), mainContent);
-    
-    // If group has a custom URL, write redirect at old location
-    if (group.url && group.url !== `/special-interest-groups/${slug}.html`) {
-      const relativePath = group.url.replace(/^\//, '');
-      // Prevent overwriting root index
-      if (relativePath === 'index.html' || relativePath === '') {
-        console.warn(`Skipping redirect generation for root path: ${group.url}`);
-        continue;
-      }
-      
-      const oldPath = path.join('templates/pages', relativePath);
-      const dirPath = oldPath.endsWith('.html') ? 
-        path.dirname(oldPath) : 
-        oldPath;
-      
-      const fullPath = path.join(dirPath, 'index.html.njk');
-      
-      // Extra check to prevent overwriting root index
-      if (fullPath === 'templates/pages/index.html.njk') {
-        console.warn('Attempted to overwrite root index.html.njk, skipping...');
-        continue;
-      }
-      
-      fs.mkdirSync(path.dirname(fullPath), { recursive: true });
-      fs.writeFileSync(fullPath, redirectContent);
-      
-      console.log(`Created redirect at ${fullPath}`);
-    }
-    
-    console.log(`Generated template for ${group.name}`);
+  }
+  
+  done();
+});
+
+// And for user group templates
+gulp.task("generate-ug-templates", function(done) {
+  const templateDir = './templates/pages/user-groups';
+  
+  if (!fs.existsSync(templateDir)) {
+    fs.mkdirSync(templateDir, { recursive: true });
+  }
+  
+  for (const [id, group] of Object.entries(userGroups.activeUserGroups)) {
+    const slug = normalizeSlug(id);
+    const mainContent = generateTemplateVars('ug', id);
+    fs.writeFileSync(path.join(templateDir, `${slug}.html.njk`), mainContent);
   }
   
   done();
@@ -425,80 +394,6 @@ gulp.task("generate-sig-templates", function(done) {
 gulp.task('clean', function(cb) {
   return rimraf('docs/**/*', { preserveRoot: true }).then(() => cb());
 });
-
-// Update generate-ug-templates task with the same approach
-gulp.task("generate-ug-templates", function(done) {
-  const templateDir = './templates/pages/user-groups';
-  
-  // Create the directory if it doesn't exist
-  if (!fs.existsSync(templateDir)) {
-    fs.mkdirSync(templateDir, { recursive: true });
-  }
-  
-  // Generate template for each user group
-  for (const [id, group] of Object.entries(userGroups.activeUserGroups)) {
-    const slug = normalizeSlug(id);
-    
-    // Main content template
-    const mainContent = `{% extends "group_base.html.njk" %}
-{% set ug_id = "${id}" %}
-{% set name = userGroups.activeUserGroups[ug_id].name %}
-{% set logo = userGroups.activeUserGroups[ug_id].logo %}
-{% set title = userGroups.activeUserGroups[ug_id].title %}
-{% set scope = userGroups.activeUserGroups[ug_id].scope %}
-{% set shortform = userGroups.activeUserGroups[ug_id].shortform %}
-{% set charters = userGroups.activeUserGroups[ug_id].charters %}
-{% set type = userGroups.activeUserGroups[ug_id].type %}
-{% set chairs = userGroups.activeUserGroups[ug_id].chairs %}
-{% set meeting = userGroups.activeUserGroups[ug_id].meeting %}`;
-
-    // HTML redirect template
-    const redirectContent = `<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; URL=/user-groups/${slug}.html">
-    <link rel="canonical" href="/user-groups/${slug}.html">
-  </head>
-  <body>
-    <p>Redirecting to <a href="/user-groups/${slug}.html">/user-groups/${slug}.html</a>...</p>
-  </body>
-</html>`;
-    
-    // Write main content at new location
-    fs.writeFileSync(path.join(templateDir, `${slug}.html.njk`), mainContent);
-    
-    // If group has a custom URL, write redirect at old location
-    if (group.url && group.url !== `/user-groups/${slug}.html`) {
-      const relativePath = group.url.replace(/^\//, '');
-      // Prevent overwriting root index
-      if (relativePath === 'index.html' || relativePath === '') {
-        console.warn(`Skipping redirect generation for root path: ${group.url}`);
-        continue;
-      }
-      
-      const oldPath = path.join('templates/pages', relativePath);
-      const fullPath = oldPath.endsWith('.html') ? 
-        oldPath : 
-        path.join(path.dirname(oldPath), 'index.html.njk');
-      
-      // Extra check to prevent overwriting root index
-      if (fullPath === 'templates/pages/index.html.njk') {
-        console.warn('Attempted to overwrite root index.html.njk, skipping...');
-        continue;
-      }
-      
-      fs.mkdirSync(path.dirname(fullPath), { recursive: true });
-      fs.writeFileSync(fullPath, redirectContent);
-    }
-    
-    console.log(`Generated template for ${group.name} User Group`);
-  }
-  
-  done();
-});
-
 
 // Then define the build task
 gulp.task(

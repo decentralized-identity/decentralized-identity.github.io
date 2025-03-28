@@ -27,16 +27,8 @@ module.exports = {
               href: "https://difdn.slack.com/archives/C4X50SNUX"
             },
             {
-              text: "Calendar entry",
-              href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=NDUzZGpxcHE4ZjhtNDI0azdwMTFpOWVzOGlfMjAyNTAyMTFUMTgwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&tmsrc=decentralized.identity%40gmail.com&scp=ALLL"
-            },
-            {
               text: "WG GitHub Repos",
               href: "https://github.com/decentralized-identity?q=wg-cc&type=&language=&sort="
-            },
-            {
-              text: "WG Meeting Recordings",
-              href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit?gid=1252135265#gid=1252135265"
             }
           ]
         }
@@ -117,14 +109,6 @@ module.exports = {
             {
               text: "Mailing list",
               href: "https://lists.identity.foundation/g/did-methods-wg"
-            },
-            {
-              text: "Calendar entry",
-              href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=dTRpa3JmNThiZGczc2FzZHQ0bnFsdGRjcGxfMjAyNTAxMTVUMTcwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
-            },
-            {
-              text: "WG Meeting Recordings",
-              href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit?gid=242845701#gid=242845701"
             }
           ]
         }
@@ -230,14 +214,6 @@ module.exports = {
             {
               text: "DIDComm User Group Resources",
               href: "https://identity.foundation/didcomm-usergroup/"
-            },
-            {
-              text: "Calendar entry",
-              href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=amwwN242aWljN2dqa21pZmJyM3NuZjYyMHVfMjAyNTAyMDNUMjAwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
-            },
-            {
-              text: "WG Meeting Recordings",
-              href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit?gid=429611178#gid=429611178"
             }
           ]
         }
@@ -455,16 +431,8 @@ module.exports = {
               href: "https://difdn.slack.com/archives/C021JUSRXC0"
             },
             {
-              text: "Calendar entry",
-              href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=bGlsYWw4aDJwODljZGYyNGhkYnV2dW85bTNfMjAyNTAxMjBUMTkwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
-            },
-            {
               text: "WG GitHub Repos",
               href: "https://github.com/decentralized-identity?q=+wg-crypto&type=&language=&sort="
-            },
-            {
-              text: "WG Meeting Recordings",
-              href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit?gid=339046779#gid=339046779"
             }
           ]
         }
@@ -535,10 +503,6 @@ module.exports = {
             {
               text: "WG GitHub Repos",
               href: "https://github.com/decentralized-identity?q=wg-id&type=&language="
-            },
-            {
-              text: "WG Meeting Recordings",
-              href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit?gid=2130393558#gid=2130393558"
             }
           ]
         }
@@ -781,17 +745,9 @@ module.exports = {
               href: "https://lists.identity.foundation/g/wallet-security"
             },
             {
-              text: "Slack channel (members only)",
-              href: "https://difdn.slack.com/archives/C021M5U74F6"
-            },
-            {
               text: "WG GitHub Repos",
               href: "https://github.com/decentralized-identity?q=wg-ws&type=&language=&sort="
             },
-            {
-              text: "WG Meeting Recordings",
-              href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit?gid=194851117#gid=194851117"
-            }
           ]
         }
       },
@@ -877,14 +833,6 @@ module.exports = {
             {
               text: "Mailing list",
               href: "https://lists.identity.foundation/g/keri-wg"
-            },
-            {
-              text: "Calendar entry",
-              href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=dTRpa3JmNThiZGczc2FzZHQ0bnFsdGRjcGxfMjAyNTAxMTVUMTcwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0=&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
-            },
-            {
-              text: "WG Meeting Recordings",
-              href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit?gid=242845701#gid=242845701"
             }
           ]
         }

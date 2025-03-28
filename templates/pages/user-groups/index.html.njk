@@ -1,35 +1,12 @@
-{% extends "default.html.njk" %}
-{% from "partials/group-card.html.njk" import groupCard %}
-{% set title = "User Groups" %}
-{% set css = ['directory', 'group-cards'] %}
-
-{% block content %}
-<section class="page-title theme-bg">
-  <div class="container">
-    <h1>User Groups</h1>
-    <p class="lead text-white mb-0">Our User Groups provide collaborative spaces for implementers and developers to share experiences, best practices, and solutions around specific technologies and frameworks in the decentralized identity ecosystem.</p>
-  </div>
-</section>
-
-<section class="group-section">
-  <div class="container">
-    <div class="group-cards-grid">
-      {% for id, group in userGroups.activeUserGroups %}
-        {{ groupCard(group) }}
-      {% endfor %}
-    </div>
-
-    {% if userGroups.archivedUserGroups | length > 0 %}
-      <div class="section-header">
-        <h2>Archived User Groups</h2>
-        <p>Previously active user groups that have completed their focus or been integrated into other initiatives.</p>
-      </div>
-      <div class="group-cards-grid">
-        {% for id, group in userGroups.archivedUserGroups %}
-          {{ groupCard(group, "compact") }}
-        {% endfor %}
-      </div>
-    {% endif %}
-  </div>
-</section>
-{% endblock %} 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="0; URL=/user-groups/veramo.html">
+    <link rel="canonical" href="/user-groups/veramo.html">
+  </head>
+  <body>
+    <p>Redirecting to <a href="/user-groups/veramo.html">/user-groups/veramo.html</a>...</p>
+  </body>
+</html>

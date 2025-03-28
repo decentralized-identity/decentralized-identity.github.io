@@ -6,7 +6,7 @@ module.exports = {
       subtitle: "Special Interest Group",
       shortform: null,
       status: "active",
-      url: "/Hospitality-and-Travel-SIG",
+      url: "/special-interest-groups/hospitality-travel",
       scope: "This group is focussed on the interests of Hospitality and Travel industry professionals with a vested interest in the application of Decentralized Identity technologies",
       type: "open",
       meeting: {
@@ -23,10 +23,6 @@ module.exports = {
             {
               text: "SIG GitHub Repo",
               href: "https://github.com/decentralized-identity/Hospitality-and-Travel-SIG/"
-            },
-            {
-              text: "SIG Meeting Recordings",
-              href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit?gid=83576534#gid=83576534"
             }
           ]
         }
@@ -65,7 +61,7 @@ module.exports = {
       subtitle: "Special Interest Group",
       shortform: null,
       status: "active",
-      url: "/SIG-Korea",
+      url: "/special-interest-groups/korea",
       scope: "This group is a group of experts from industry, academia, and institutions located in Korea for the application of decentralized identity technology, focusing on activities such as standard technology consultation, opinion collection, policy direction presentation, and core technology demonstration. It is an open and non-IPR group.",
       type: "open-non-ipr",
       charters: {
@@ -82,10 +78,6 @@ module.exports = {
             {
               text: "SIG GitHub Repos",
               href: "https://github.com/decentralized-identity/SIG-Korea/"
-            },
-            {
-              text: "SIG Meeting Recordings",
-              href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit#gid=1343983492"
             }
           ]
         }
@@ -108,7 +100,7 @@ module.exports = {
       subtitle: "Special Interest Group",
       shortform: null,
       status: "active",
-      url: "/SIG-China",
+      url: "/special-interest-groups/china",
       scope: "This group is focussed on the interests of Chinese professionals with a vested interest in the application of Decentralized Identity technologies. This is an open, public, non-IPR group",
       type: "open-public",
       meeting: {
@@ -125,10 +117,6 @@ module.exports = {
             {
               text: "SIG GitHub Repos",
               href: "https://github.com/decentralized-identity/SIG-China/"
-            },
-            {
-              text: "SIG Meeting Recordings",
-              href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit?gid=552189536#gid=552189536"
             }
           ]
         }
@@ -149,7 +137,7 @@ module.exports = {
       subtitle: "Special Interest Group",
       shortform: null,
       status: "active",
-      url: "/SIG-Japan",
+      url: "/special-interest-groups/japan",
       scope: "This group focuses on the interests of Japanese professionals and organizations in the decentralized identity space, promoting collaboration, standards adoption, and technological innovation within Japan's unique business and regulatory environment.",
       type: "open",
       meeting: {
@@ -170,10 +158,6 @@ module.exports = {
             {
               text: "GitHub Repository",
               href: "https://github.com/decentralized-identity/SIG-Japan"
-            },
-            {
-              text: "Meeting Recordings",
-              href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit#gid=1343983492"
             }
           ]
         }
@@ -194,7 +178,7 @@ module.exports = {
       subtitle: "Regional Special Interest Group",
       shortform: "Asia-Pacific",
       status: "active",
-      url: "/SIG-APAC",
+      url: "/special-interest-groups/apac",
       scope: "The APAC Special Interest Group serves as a regional forum for collaboration and knowledge sharing among decentralized identity professionals across the Asia-Pacific region. The group focuses on regional adoption, regulatory compliance, and technological implementation of decentralized identity solutions while considering the diverse cultural and business practices across APAC.",
       type: "open",
       meeting: {
@@ -215,10 +199,6 @@ module.exports = {
             {
               text: "GitHub Repository",
               href: "https://github.com/decentralized-identity/SIG-APAC"
-            },
-            {
-              text: "Meeting Recordings",
-              href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit#gid=1343983492"
             }
           ]
         }
@@ -263,7 +243,7 @@ module.exports = {
       subtitle: "Working Group",
       shortform: "Interop",
       status: "active",
-      url: "/interop",
+      url: "/special-interest-groups/interop",
       scope: "Community collaboration and project management on Interoperability. Develop and publish definitions of success with respect to business interoperability, at the highest level. Defining points of protocol-defined touchpoints for maximum interchangeability of components at every layer; it is assumed that over time, that number will increase, not decrease. Community collaboration and project management on interoperability goal to seek the greatest interoperability in the greater good, not to pick winners. Provide feedback, input documents, members, and guidance to working groups producing standards, specifications, reference implementations and demonstrations hosted by community organizations including but not limited to IETF, W3C, W3C CCG, Hyperledger, Trust over IP.",
       type: "open",
       charters: {
@@ -280,18 +260,6 @@ module.exports = {
             {
               text: "Mailing list",
               href: "https://dif.groups.io/g/interop-wg/"
-            },
-            {
-              text: "Calendar entry - week A",
-              href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=bWc1YWRiaGZlYjZqMDRwb3NvdXM3a2YzcTBfMjAyMTEwMjBUMjEwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
-            },
-            {
-              text: "Calendar entry - week B",
-              href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=b2Nuc2NjdWwzamVjcmJtNzR1M3NubnVucWRfMjAyMTEwMjdUMTMwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0&tmsrc=decentralized.identity%40gmail.com&scp=ALL"
-            },
-            {
-              text: "WG Meeting Recordings",
-              href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit#gid=1343983492"
             }
           ]
         }
@@ -314,7 +282,7 @@ module.exports = {
       subtitle: "Special Interest Group",
       shortform: "Internet of Things",
       status: "active",
-      url: "/SIG-IoT",
+      url: "/special-interest-groups/iot",
       scope: "The IoT Special Interest Group focuses on the intersection of decentralized identity and Internet of Things devices, exploring standards, protocols, and implementations that enable secure identity management for IoT devices. The group works on solutions for device authentication, authorization, and credential management in decentralized IoT ecosystems.",
       type: "open",
       meeting: {
@@ -335,10 +303,6 @@ module.exports = {
             {
               text: "GitHub Repository",
               href: "https://github.com/decentralized-identity/SIG-IoT"
-            },
-            {
-              text: "Meeting Recordings",
-              href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit#gid=1343983492"
             }
           ]
         }
@@ -365,7 +329,7 @@ module.exports = {
       subtitle: "Special Interest Group",
       shortform: "DIF Glossary",
       status: "active",
-      url: "/open-groups/glossary.html",
+      url: "/special-interest-groups/glossary",
       scope: "The Glossary Special Interest Group is dedicated to developing and maintaining a comprehensive, standardized vocabulary for the decentralized identity ecosystem. The group works to ensure consistent terminology across DIF specifications, working groups, and the broader identity community.",
       type: "open",
       meeting: {
@@ -386,10 +350,6 @@ module.exports = {
             {
               text: "GitHub Repository",
               href: "https://github.com/decentralized-identity/SIG-Glossary"
-            },
-            {
-              text: "Meeting Recordings",
-              href: "https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit#gid=1343983492"
             }
           ]
         }
