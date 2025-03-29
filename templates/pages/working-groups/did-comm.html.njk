@@ -1,17 +1,14 @@
-{% extends "wg_base.html.njk" %}
+{% extends "group_base.html.njk" %}
 {% set wg_id = "did-comm" %}
-{% set name = workingGroups[wg_id].name %}
-{% set logo = workingGroups[wg_id].logo %}
-{% set title = workingGroups[wg_id].title %}
-{% set scope = workingGroups[wg_id].scope %}
-{% set shortform = workingGroups[wg_id].shortform %}
-{% set charters = workingGroups[wg_id].charters %}
-{% set projects = workingGroups[wg_id].projects %}
-{% set chairs = workingGroups[wg_id].chairs %}
-{% set liaison = workingGroups[wg_id].liaison %}
-{% set editors = workingGroups[wg_id].editors %}
-{% set status = workingGroups[wg_id].status %}
-{% set type = workingGroups[wg_id].type %}
-{% set repoTag = workingGroups[wg_id].repoTag %}
-{% set repoTopics = workingGroups[wg_id].repoTopics %}
-{% set meetings = workingGroups[wg_id].meetings %}
+{% set name = workingGroups.activeWorkingGroups["did-comm"].name %}
+{% set logo = workingGroups.activeWorkingGroups["did-comm"].logo %}
+{% set title = workingGroups.activeWorkingGroups["did-comm"].title %}
+{% set scope = workingGroups.activeWorkingGroups["did-comm"].scope %}
+{% set shortform = workingGroups.activeWorkingGroups["did-comm"].shortform %}
+{% set charters = workingGroups.activeWorkingGroups["did-comm"].charters %}
+{% set projects = workingGroups.activeWorkingGroups["did-comm"].projects %}
+{% set chairs = workingGroups.activeWorkingGroups["did-comm"].chairs %}
+{% set type = workingGroups.activeWorkingGroups["did-comm"].type %}
+{% set meetingSchedule = workingGroups.activeWorkingGroups["did-comm"].meetingSchedule %}
+{% set repoTag = workingGroups.activeWorkingGroups["did-comm"].repoTag %}
+{% set discussionChannels = workingGroups.activeWorkingGroups["did-comm"].discussionChannels %}

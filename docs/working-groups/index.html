@@ -12,9 +12,13 @@
   
     <link href="/css/directory.css" rel="stylesheet"/>
   
+    <link href="/css/group-cards.css" rel="stylesheet"/>
+  
   <!-- Theme Style -->
   <link href="/css/styles.css" rel="stylesheet"/>
   <link href="/css/candidate.css" rel="stylesheet"/>
+  <link href="/css/meeting-card.css" rel="stylesheet"/>
+  <link href="/css/group-cards.css" rel="stylesheet"/>
   <link href="/css/color/default.css" rel="stylesheet" id="color_theme"/> <!-- Favicon -->
   <link rel="icon" href="/favicon.ico"/>
   <link rel="icon" type="image/png" href="/favicon.png?r1"/>
@@ -43,101 +47,128 @@
               <ul class="navbar-nav">
                 <li>
                   <span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span>
-                  <a class="nav-link" href="/#wgs">Work</a>
+                  <a class="nav-link" href="/work">Work</a>
                   <ul class="sub-menu">
-                    <li> Working groups</li>
+
+                    
+                    <li class="dropdown-header">Working Groups</li>
+                    <li><a href="/working-groups"> Overview</a></li>
                     
                       <li>
-                        <a href="/working-groups/crypto.html">Applied Crypto</a>
-                      </li>
-                    
-                      <li>
-                        <a href="/working-groups/claims-credentials.html">Claims and Credentials</a>
-                      </li>
-                    
-                      <li>
-                        <a href="/working-groups/creator-assertions.html">Creator Assertions</a>
+                        <a href="/working-groups/crypto.html" >
+                          Applied Crypto
+                          
+                        </a>
                       </li>
                     
                       <li>
-                        <a href="/working-groups/did-methods.html">DID Methods</a>
+                        <a href="/working-groups/claims-credentials.html" >
+                          Claims and Credentials
+                          
+                        </a>
                       </li>
                     
                       <li>
-                        <a href="/working-groups/did-comm.html">DIDComm</a>
+                        <a href="/working-groups/creator-assertions.html" >
+                          Creator Assertions
+                          
+                        </a>
                       </li>
                     
                       <li>
-                        <a href="/working-groups/identifiers-discovery.html">Identifiers &amp; Discovery</a>
+                        <a href="/working-groups/did-methods.html" >
+                          DID Methods
+                          
+                        </a>
                       </li>
                     
                       <li>
-                        <a href="/working-groups/secure-data-storage.html">Secure Data Storage</a>
-                      </li>
-                    
-                    <li>User groups</li>
-                    <li>
-                      <a href="https://identity.foundation/didcomm-usergroup/">DIDComm Usergroup</a>
-                    </li>
-                    <li>
-                      <a href="https://identity.foundation/veramo-usergroup/">Veramo Usergroup</a>
-                    </li>
-                    <li>Special interest groups</li>
-                    <li>
-                      <a href="https://identity.foundation/Hospitality-and-Travel-SIG">Hospitality and Travel SIG</a>
-                    </li>
-                    <li>
-                      <a href="https://identity.foundation/SIG-Africa">DIF Africa SIG</a>
-                    </li>
-                    <li>
-                      <a href="https://identity.foundation/SIG-China">DIF China SIG</a>
-                    </li>
-                    <li>
-                      <a href="https://identity.foundation/SIG-Japan">DIF Japan SIG</a>
-                    </li>
-                    <li>
-                      <a href="https://identity.foundation/SIG-Korea">DIF Korea SIG</a>
-                    </li>
-                    <li>
-                      <a href="https://identity.foundation/SIG-APAC">APAC/ASEAN community call</a>
-                    </li>
-                    <li>Completed or archived</li>
-                    
-                      <li>
-                        <a href="/working-groups/authentication.html">DID Authentication</a>
+                        <a href="/working-groups/did-comm.html" >
+                          DIDComm
+                          
+                        </a>
                       </li>
                     
                       <li>
-                        <a href="/working-groups/keri.html">KERI</a>
+                        <a href="/working-groups/identifiers-discovery.html" >
+                          Identifiers &amp; Discovery
+                          
+                        </a>
                       </li>
                     
-                      <li>
-                        <a href="/working-groups/sidetree.html">Sidetree</a>
-                      </li>
+
                     
-                      <li>
-                        <a href="/working-groups/storage-compute.html">Storage and Compute</a>
-                      </li>
                     
-                      <li>
-                        <a href="/working-groups/wallet-security.html">Wallet Security</a>
-                      </li>
-                    
-                    <li>
-                        <a href="https://www.notion.so/dif/Banking-and-Finance-SIG-b2d528af578d44699aeb742ed47b81d2">Banking and Finance SIG</a>
-                      </li>
-                      <li>
-                        <a href="/open-groups/glossary.html">Glossary Project </a>
-                      </li>
+                      <li class="dropdown-divider"></li>
+                      <li class="dropdown-header">Special Interest Groups</li>
+                      <li><a href="/special-interest-groups"> Overview</a></li>
+                      
                         <li>
-                        <a href="https://www.notion.so/dif/Healthcare-SIG-842bc686d12e4a508a951afc4d6df47d">Healthcare SIG</a>
-                      </li>
-                       <li>
-                        <a href="https://identity.foundation/SIG-IoT">IoT SIG</a>
-                      </li>
-                      <li>
-                        <a href="https://dif.groups.io/g/id-productmanagers">Product managers </a>
-                      </li>
+                          <a href="/special-interest-groups/africa" >
+                            DIF Africa
+                            
+                          </a>
+                        </li>
+                      
+                        <li>
+                          <a href="/special-interest-groups/apac" >
+                            DIF APAC/ASEAN
+                            
+                          </a>
+                        </li>
+                      
+                        <li>
+                          <a href="/special-interest-groups/china" >
+                            DIF China
+                            
+                          </a>
+                        </li>
+                      
+                        <li>
+                          <a href="/special-interest-groups/japan" >
+                            DIF Japan
+                            
+                          </a>
+                        </li>
+                      
+                        <li>
+                          <a href="/special-interest-groups/korea" >
+                            DIF Korea
+                            
+                          </a>
+                        </li>
+                      
+                        <li>
+                          <a href="/special-interest-groups/hospitality-travel" >
+                            Hospitality and Travel
+                            
+                          </a>
+                        </li>
+                      
+                    
+
+                    
+                    
+                      <li class="dropdown-divider"></li>
+                      <li class="dropdown-header">User Groups</li>
+                       <li><a href="/user-groups"> Overview</a></li>
+                      
+                        <li>
+                          <a href="/user-groups/didcomm" >
+                            DIDComm
+                            
+                          </a>
+                        </li>
+                      
+                        <li>
+                          <a href="/user-groups/veramo" >
+                            Veramo
+                            
+                          </a>
+                        </li>
+                      
+                    
+
                   </ul>
                 </li>
                 <!-- <li><span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span> <a class="nav-link" href="javascript:;">Pages</a>
@@ -150,7 +181,6 @@
                     </li>
                   </ul>
                 </li> -->
-                <li><a class="nav-link" href="/interop">Interoperability</a></li>
                 <li>
                   <span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span>
                   <a class="nav-link"> Services</a>
@@ -213,266 +243,239 @@
 <section class="page-title theme-bg">
   <div class="container">
     <h1>Working Groups</h1>
+    <p class="lead text-white mb-0">As an engineering-driven development-focused organization, our Working Groups are at the core of everything we do.</p>
   </div>
 </section>
 
-<section>
+<section class="group-section">
   <div class="container">
-    <!-- Active Working Groups -->
-    <div class="row mb-5">
-      <div class="col-md-12">
-        <h2>Active Working Groups</h2>
-        <div class="row">
+    
+    <div class="group-cards-grid">
+      
         
-          
-          <div class="col-md-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <svg class="me-3"><use xlink:href="/images/icons.svg#login_screen"></use></svg>
-                  <h3 class="card-title mb-0">DID Authentication</h3>
-                </div>
-                
-                <p class="text-muted">DID Auth WG</p>
-                
-                <p>Since December 2020, this work is hosted by the Open Identity Foundation. This group to contribute to standards and technology that designs and...</p>
-                <a href="/working-groups/authentication.html" class="btn btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-          
+<div class="group-card ">
+  
+  <div class="icon-wrapper">
+    
+      <svg class="group-icon">
+        <use xlink:href="/images/icons.svg#validate_user"></use>
+      </svg>
+    
+  </div>
+   
+  
+  <h3>Claims and Credentials</h3>
+  
+  
+    <div class="description">
+      Join this group to contribute to the standards and technology that create, exchange, and verify claims and credentials in a decentralized identity ecosystem. For example, a cryptographically...
+    </div>
+    
+    
+  
+
+
+  <a href="/working-groups/claims-credentials.html" class="m-btn m-btn-t-dark" >
+    Learn More
+    
+  </a>
+</div>
+
+      
         
-          
-          <div class="col-md-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <svg class="me-3"><use xlink:href="/images/icons.svg#validate_user"></use></svg>
-                  <h3 class="card-title mb-0">Claims and Credentials</h3>
-                </div>
-                
-                <p class="text-muted">CC WG</p>
-                
-                <p>Join this group to contribute to the standards and technology that create, exchange, and verify claims and credentials in a decentralized identity...</p>
-                <a href="/working-groups/claims-credentials.html" class="btn btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-          
+<div class="group-card ">
+  
+  <div class="icon-wrapper">
+    
+      <svg class="group-icon">
+        <use xlink:href="/images/icons.svg#blueprint"></use>
+      </svg>
+    
+  </div>
+   
+  
+  <h3>DID Methods</h3>
+  
+  
+    <div class="description">
+      Members of this Working Group are creating specifications to standardize an initial set of commonly used DID methods and develop strategies for collaborative, scalable, self-help standardization of...
+    </div>
+    
+    
+  
+
+
+  <a href="/working-groups/did-methods.html" class="m-btn m-btn-t-dark" >
+    Learn More
+    
+  </a>
+</div>
+
+      
         
-          
-          <div class="col-md-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <svg class="me-3"><use xlink:href="/images/icons.svg#blueprint"></use></svg>
-                  <h3 class="card-title mb-0">DID Methods</h3>
-                </div>
-                
-                <p class="text-muted">DID Methods WG</p>
-                
-                <p>Members of this Working Group are creating specifications to standardize an initial set of commonly used DID methods and develop strategies for...</p>
-                <a href="/working-groups/did-methods.html" class="btn btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-          
+<div class="group-card ">
+  
+  <div class="icon-wrapper">
+    
+      <svg class="group-icon">
+        <use xlink:href="/images/icons.svg#signature"></use>
+      </svg>
+    
+  </div>
+   
+  
+  <h3>Creator Assertions</h3>
+  
+  
+    <div class="description">
+      The Creator Assertions Working Group builds upon the work of the Coalition for Content Provenance and Authenticity (C2PA) by defining additional assertions that allow content creators to express...
+    </div>
+    
+    
+  
+
+
+  <a href="/working-groups/creator-assertions.html" class="m-btn m-btn-t-dark" >
+    Learn More
+    
+  </a>
+</div>
+
+      
         
-          
-          <div class="col-md-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <svg class="me-3"><use xlink:href="/images/icons.svg#signature"></use></svg>
-                  <h3 class="card-title mb-0">Creator Assertions</h3>
-                </div>
-                
-                <p class="text-muted">CAWG</p>
-                
-                <p>The Creator Assertions Working Group builds upon the work of the Coalition for Content Provenance and Authenticity (C2PA) by defining additional...</p>
-                <a href="/working-groups/creator-assertions.html" class="btn btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-          
+<div class="group-card ">
+  
+  <div class="icon-wrapper">
+    
+      <svg class="group-icon">
+        <use xlink:href="/images/icons.svg#communicate_user"></use>
+      </svg>
+    
+  </div>
+   
+  
+  <h3>DIDComm</h3>
+  
+  
+    <div class="description">
+      Join this group to contribute to specs that embody a method for secure, private and authenticated message-based communication, where trust is rooted in DIDs and used over a wide variety of transports.
+    </div>
+    
+    
+  
+
+
+  <a href="/working-groups/did-comm.html" class="m-btn m-btn-t-dark" >
+    Learn More
+    
+  </a>
+</div>
+
+      
         
-          
-          <div class="col-md-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <svg class="me-3"><use xlink:href="/images/icons.svg#communicate_user"></use></svg>
-                  <h3 class="card-title mb-0">DIDComm</h3>
-                </div>
-                
-                <p class="text-muted">DIDcomm</p>
-                
-                <p>Join this group to contribute to specs that embody a method for secure, private and authenticated message-based communication, where trust is rooted...</p>
-                <a href="/working-groups/did-comm.html" class="btn btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-          
+<div class="group-card ">
+  
+  <div class="icon-wrapper">
+    
+      <svg class="group-icon">
+        <use xlink:href="/images/icons.svg#user_graph"></use>
+      </svg>
+    
+  </div>
+   
+  
+  <h3>Identifiers &amp; Discovery</h3>
+  
+  
+    <div class="description">
+      Members of the Working Group are engaged in development of protocols and systems that enable creation, resolution, and discovery of decentralized identifiers and names across underlying decentralized...
+    </div>
+    
+    
+  
+
+
+  <a href="/working-groups/identifiers-discovery.html" class="m-btn m-btn-t-dark" >
+    Learn More
+    
+  </a>
+</div>
+
+      
         
-          
-          <div class="col-md-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <svg class="me-3"><use xlink:href="/images/icons.svg#user_graph"></use></svg>
-                  <h3 class="card-title mb-0">Identifiers &amp; Discovery</h3>
-                </div>
-                
-                <p class="text-muted">ID WG</p>
-                
-                <p>Members of the Working Group are engaged in development of protocols and systems that enable creation, resolution, and discovery of decentralized...</p>
-                <a href="/working-groups/identifiers-discovery.html" class="btn btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-          
-        
-          
-          <div class="col-md-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <svg class="me-3"><use xlink:href="/images/icons.svg#box"></use></svg>
-                  <h3 class="card-title mb-0">Secure Data Storage</h3>
-                </div>
-                
-                <p class="text-muted">SDS WG</p>
-                
-                <p>Create one or more specifications to establish a foundational layer for secure data storage (including personal data), specifically data models for...</p>
-                <a href="/working-groups/secure-data-storage.html" class="btn btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-          
-        
-          
-          <div class="col-md-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <svg class="me-3"><use xlink:href="/images/icons.svg#sidetree"></use></svg>
-                  <h3 class="card-title mb-0">Sidetree</h3>
-                </div>
-                
-                <p class="text-muted">Sidetree</p>
-                
-                <p>The development and maintenance of the formal Sidetree specification, and a hub of coordination for Sidetree-based DID Method node operators. This...</p>
-                <a href="/working-groups/sidetree.html" class="btn btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-          
-        
-          
-          <div class="col-md-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <svg class="me-3"><use xlink:href="/images/icons.svg#wallet"></use></svg>
-                  <h3 class="card-title mb-0">Wallet Security</h3>
-                </div>
-                
-                <p class="text-muted">WS WG</p>
-                
-                <p>Define a common terminology for understanding the security requirements applicable to wallet architectures and wallet-to-wallet and...</p>
-                <a href="/working-groups/wallet-security.html" class="btn btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-          
-        
-          
-          <div class="col-md-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <svg class="me-3"><use xlink:href="/images/icons.svg#crypto"></use></svg>
-                  <h3 class="card-title mb-0">Applied Crypto</h3>
-                </div>
-                
-                <p class="text-muted">Crypto</p>
-                
-                <p>The Cryptography Working Group will explore cryptographic protocols and -primitives related to Decentralized Identity, including, but not limited to,...</p>
-                <a href="/working-groups/crypto.html" class="btn btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-          
-        
-          
-          <div class="col-md-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <svg class="me-3"><use xlink:href="/images/icons.svg#network"></use></svg>
-                  <h3 class="card-title mb-0">Storage and Compute</h3>
-                </div>
-                
-                <p>Secure, encrypted, privacy-preserving storage and computation of data is a critical component of decentralized identity systems. As with identifiers...</p>
-                <a href="/working-groups/storage-compute.html" class="btn btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-          
-        
-          
-          <div class="col-md-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <svg class="me-3"><use xlink:href="/images/icons.svg#key"></use></svg>
-                  <h3 class="card-title mb-0">KERI</h3>
-                </div>
-                
-                <p></p>
-                <a href="/working-groups/keri.html" class="btn btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-          
-        
-        </div>
-      </div>
+<div class="group-card ">
+  
+  <div class="icon-wrapper">
+    
+      <svg class="group-icon">
+        <use xlink:href="/images/icons.svg#crypto"></use>
+      </svg>
+    
+  </div>
+   
+  
+  <h3>Applied Crypto</h3>
+  
+  
+    <div class="description">
+      The Cryptography Working Group will explore cryptographic protocols and -primitives related to Decentralized Identity, including, but not limited to, specific and actual cryptographic topics, such as...
+    </div>
+    
+    
+  
+
+
+  <a href="/working-groups/crypto.html" class="m-btn m-btn-t-dark" >
+    Learn More
+    
+  </a>
+</div>
+
+      
     </div>
 
-    <!-- Archived Working Groups -->
-    <div class="row">
-      <div class="col-md-12">
-        <h2>Completed or Archived Working Groups</h2>
-        <div class="row">
-        
+    
+    
+      <div class="archived-section">
+        <div class="section-header">
+          <h2>Archived Working Groups</h2>
+          <p>Previously active working groups that have completed their charter or been superseded.</p>
+        </div>
+        <div class="group-cards-grid">
           
-        
+            <div class="group-card archived">
+              <h3>DID Authentication</h3>
+              <a href="/working-groups/authentication.html" class="learn-more-btn">Learn More</a>
+            </div>
           
-        
+            <div class="group-card archived">
+              <h3>Secure Data Storage</h3>
+              <a href="/working-groups/secure-data-storage.html" class="learn-more-btn">Learn More</a>
+            </div>
           
-        
+            <div class="group-card archived">
+              <h3>Sidetree</h3>
+              <a href="/working-groups/sidetree.html" class="learn-more-btn">Learn More</a>
+            </div>
           
-        
+            <div class="group-card archived">
+              <h3>Wallet Security</h3>
+              <a href="/working-groups/wallet-security.html" class="learn-more-btn">Learn More</a>
+            </div>
           
-        
+            <div class="group-card archived">
+              <h3>Storage and Compute</h3>
+              <a href="" class="learn-more-btn">Learn More</a>
+            </div>
           
-        
+            <div class="group-card archived">
+              <h3>KERI</h3>
+              <a href="/working-groups/keri.html" class="learn-more-btn">Learn More</a>
+            </div>
           
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         </div>
       </div>
-    </div>
+    
   </div>
 </section>
 
@@ -558,6 +561,7 @@
     
       <script src="/js/base.js"></script>
     
+
 
   </body>
 

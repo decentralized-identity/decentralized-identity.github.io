@@ -13,6 +13,8 @@
   <!-- Theme Style -->
   <link href="/css/styles.css" rel="stylesheet"/>
   <link href="/css/candidate.css" rel="stylesheet"/>
+  <link href="/css/meeting-card.css" rel="stylesheet"/>
+  <link href="/css/group-cards.css" rel="stylesheet"/>
   <link href="/css/color/default.css" rel="stylesheet" id="color_theme"/> <!-- Favicon -->
   <link rel="icon" href="/favicon.ico"/>
   <link rel="icon" type="image/png" href="/favicon.png?r1"/>
@@ -41,101 +43,128 @@
               <ul class="navbar-nav">
                 <li>
                   <span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span>
-                  <a class="nav-link" href="/#wgs">Work</a>
+                  <a class="nav-link" href="/work">Work</a>
                   <ul class="sub-menu">
-                    <li> Working groups</li>
+
+                    
+                    <li class="dropdown-header">Working Groups</li>
+                    <li><a href="/working-groups"> Overview</a></li>
                     
                       <li>
-                        <a href="/working-groups/crypto.html">Applied Crypto</a>
-                      </li>
-                    
-                      <li>
-                        <a href="/working-groups/claims-credentials.html">Claims and Credentials</a>
-                      </li>
-                    
-                      <li>
-                        <a href="/working-groups/creator-assertions.html">Creator Assertions</a>
+                        <a href="/working-groups/crypto.html" >
+                          Applied Crypto
+                          
+                        </a>
                       </li>
                     
                       <li>
-                        <a href="/working-groups/did-methods.html">DID Methods</a>
+                        <a href="/working-groups/claims-credentials.html" >
+                          Claims and Credentials
+                          
+                        </a>
                       </li>
                     
                       <li>
-                        <a href="/working-groups/did-comm.html">DIDComm</a>
+                        <a href="/working-groups/creator-assertions.html" >
+                          Creator Assertions
+                          
+                        </a>
                       </li>
                     
                       <li>
-                        <a href="/working-groups/identifiers-discovery.html">Identifiers &amp; Discovery</a>
+                        <a href="/working-groups/did-methods.html" >
+                          DID Methods
+                          
+                        </a>
                       </li>
                     
                       <li>
-                        <a href="/working-groups/secure-data-storage.html">Secure Data Storage</a>
-                      </li>
-                    
-                    <li>User groups</li>
-                    <li>
-                      <a href="https://identity.foundation/didcomm-usergroup/">DIDComm Usergroup</a>
-                    </li>
-                    <li>
-                      <a href="https://identity.foundation/veramo-usergroup/">Veramo Usergroup</a>
-                    </li>
-                    <li>Special interest groups</li>
-                    <li>
-                      <a href="https://identity.foundation/Hospitality-and-Travel-SIG">Hospitality and Travel SIG</a>
-                    </li>
-                    <li>
-                      <a href="https://identity.foundation/SIG-Africa">DIF Africa SIG</a>
-                    </li>
-                    <li>
-                      <a href="https://identity.foundation/SIG-China">DIF China SIG</a>
-                    </li>
-                    <li>
-                      <a href="https://identity.foundation/SIG-Japan">DIF Japan SIG</a>
-                    </li>
-                    <li>
-                      <a href="https://identity.foundation/SIG-Korea">DIF Korea SIG</a>
-                    </li>
-                    <li>
-                      <a href="https://identity.foundation/SIG-APAC">APAC/ASEAN community call</a>
-                    </li>
-                    <li>Completed or archived</li>
-                    
-                      <li>
-                        <a href="/working-groups/authentication.html">DID Authentication</a>
+                        <a href="/working-groups/did-comm.html" >
+                          DIDComm
+                          
+                        </a>
                       </li>
                     
                       <li>
-                        <a href="/working-groups/keri.html">KERI</a>
+                        <a href="/working-groups/identifiers-discovery.html" >
+                          Identifiers &amp; Discovery
+                          
+                        </a>
                       </li>
                     
-                      <li>
-                        <a href="/working-groups/sidetree.html">Sidetree</a>
-                      </li>
+
                     
-                      <li>
-                        <a href="/working-groups/storage-compute.html">Storage and Compute</a>
-                      </li>
                     
-                      <li>
-                        <a href="/working-groups/wallet-security.html">Wallet Security</a>
-                      </li>
-                    
-                    <li>
-                        <a href="https://www.notion.so/dif/Banking-and-Finance-SIG-b2d528af578d44699aeb742ed47b81d2">Banking and Finance SIG</a>
-                      </li>
-                      <li>
-                        <a href="/open-groups/glossary.html">Glossary Project </a>
-                      </li>
+                      <li class="dropdown-divider"></li>
+                      <li class="dropdown-header">Special Interest Groups</li>
+                      <li><a href="/special-interest-groups"> Overview</a></li>
+                      
                         <li>
-                        <a href="https://www.notion.so/dif/Healthcare-SIG-842bc686d12e4a508a951afc4d6df47d">Healthcare SIG</a>
-                      </li>
-                       <li>
-                        <a href="https://identity.foundation/SIG-IoT">IoT SIG</a>
-                      </li>
-                      <li>
-                        <a href="https://dif.groups.io/g/id-productmanagers">Product managers </a>
-                      </li>
+                          <a href="/special-interest-groups/africa" >
+                            DIF Africa
+                            
+                          </a>
+                        </li>
+                      
+                        <li>
+                          <a href="/special-interest-groups/apac" >
+                            DIF APAC/ASEAN
+                            
+                          </a>
+                        </li>
+                      
+                        <li>
+                          <a href="/special-interest-groups/china" >
+                            DIF China
+                            
+                          </a>
+                        </li>
+                      
+                        <li>
+                          <a href="/special-interest-groups/japan" >
+                            DIF Japan
+                            
+                          </a>
+                        </li>
+                      
+                        <li>
+                          <a href="/special-interest-groups/korea" >
+                            DIF Korea
+                            
+                          </a>
+                        </li>
+                      
+                        <li>
+                          <a href="/special-interest-groups/hospitality-travel" >
+                            Hospitality and Travel
+                            
+                          </a>
+                        </li>
+                      
+                    
+
+                    
+                    
+                      <li class="dropdown-divider"></li>
+                      <li class="dropdown-header">User Groups</li>
+                       <li><a href="/user-groups"> Overview</a></li>
+                      
+                        <li>
+                          <a href="/user-groups/didcomm" >
+                            DIDComm
+                            
+                          </a>
+                        </li>
+                      
+                        <li>
+                          <a href="/user-groups/veramo" >
+                            Veramo
+                            
+                          </a>
+                        </li>
+                      
+                    
+
                   </ul>
                 </li>
                 <!-- <li><span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span> <a class="nav-link" href="javascript:;">Pages</a>
@@ -148,7 +177,6 @@
                     </li>
                   </ul>
                 </li> -->
-                <li><a class="nav-link" href="/interop">Interoperability</a></li>
                 <li>
                   <span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span>
                   <a class="nav-link"> Services</a>
@@ -215,8 +243,14 @@
         <use xlink:href="/images/icons.svg#login_screen"></use>
       </svg>
       <h1>DID Authentication</h1>
+
+      <h3>
       
-        <h3>Working Group</h3>
+        Working Group
+      
+      </h3>
+
+      
       
       
         <h4>aka: DID Auth WG</h4>
@@ -248,23 +282,54 @@
           
             <a class="block-link icon-link" href="https://lists.identity.foundation/g/didauth-wg">Mailing list</a>
           
-            <a class="block-link icon-link" href="https://difdn.slack.com/archives/C7TFEG9B6">Slack channel (members only)</a>
-          
             <a class="block-link icon-link" href="https://github.com/decentralized-identity?q=wg-id&amp;type=&amp;language=">WG GitHub Repos</a>
-          
-            <a class="block-link icon-link" href="https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit?gid=2130393558#gid=2130393558">WG Meeting Recordings</a>
           
         
       </dd>
     
   </dl>
-</div> 
+</div>  
+
+      
+
+
+<div class="container">
+  <div class="col-10 col-md-8 col-lg-6 m-10px-t margin-center">
+    <dt>Get Involved</dt>
+
+    <div class="meeting-links-container">
+      <div class="meeting-link-item">
+          <a class="block-link icon-link" href="https://bit.ly/dif-calendar">Subscribe to DIF Calendar</a>
+      </div>
+      <div class="meeting-link-item">
+          <a class="block-link icon-link" href="https://identity.foundation/recordings">Recordings of Recent Meetings</a>
+      </div>
+
+      
+    </div>
+
+    
+    <div class="meeting-schedule-section">
+      <p class="no-meetings">Contact the chair for information about meeting times.</p>
+    </div>
+    
+
+    
+    <div class="membership-notice">
+      <p><em>You must be a DIF member to participate in this group:</em><br><a href="https://identity.foundation/join"><u>Join DIF</u></a></p>
+    </div>
+    
+  </div>
+</div>
+
+
     </div>
   </div>
 </section> 
 
   
-  <section class="counter-section gray-bg">
+  
+    <section class="counter-section gray-bg">
   <div class="container">
     <div class="counter-row">
       <div class="column justify-content-center">
@@ -274,7 +339,7 @@
             <div class="title-border">
               <span class="lg"></span><span class="md"></span><span class="sm"></span>
             </div>
-            <p>The active work items that are underway in the DIF DID Authentication Working Group</p>
+            <p>The active work items that are underway</p>
           </div>
         </div>
         <div class="col-6 col-md-8 col-lg-6 m-30px-t margin-center">
@@ -323,37 +388,13 @@
         </div>
         <!-- Debug info: repoTag = wg-auth -->
 
-  <div class="col-10 col-md-8 col-lg-6 m-30px-t margin-center">
-    <div class="section-title text-center">
-      <h5 style="text-align: center; margin: 2em 0 0;">All Repositories (3)</h5>
-      <div class="title-border">
-        <span class="lg"></span>
-        <span class="md"></span>
-        <span class="sm"></span>
-      </div>
-    </div>
-    
-      <a class="icon-link" href="https://github.com/decentralized-identity/did-siop" style="display: block; margin-bottom: 1em;">
-        <strong>did-siop</strong>
-        <div style="font-size: 85%; color: #777;"></div>
-      </a>
-    
-      <a class="icon-link" href="https://github.com/decentralized-identity/did-siop-browser-ext" style="display: block; margin-bottom: 1em;">
-        <strong>did-siop-browser-ext</strong>
-        <div style="font-size: 85%; color: #777;">DID based SIOP</div>
-      </a>
-    
-      <a class="icon-link" href="https://github.com/decentralized-identity/DIDComm-js" style="display: block; margin-bottom: 1em;">
-        <strong>DIDComm-js</strong>
-        <div style="font-size: 85%; color: #777;">JS implementation of pack and unpack</div>
-      </a>
-    
-  </div>
+  <!-- No repositories found for tag: wg-auth -->
 
       </div>
     </div>
   </div>
 </section> 
+  
 
   
   <section class="counter-section">
@@ -371,90 +412,16 @@
     </div>
     <div class="row justify-content-center">
       
-        <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
-          <div class="our-team">
-            <div class="img">
-              <img src="/images/photos/oliver-terbu.jpg"/>
-            </div>
-            <div class="info">
-              <h6>Oliver Terbu</h6>
-              <label>Identity Architect @ Spruce</label>
-            </div>
-            <ul class="social-icons">
-              
-                <li>
-                  <a class="linkedin" href="https://www.linkedin.com/in/oliver-terbu">
-                    <svg><use xlink:href="/images/icons.svg#linkedin"></use></svg>
-                  </a>
-                </li>
-              
-              
-                <li>
-                  <a class="twitter" href="https://twitter.com/OliverTerbu">
-                    <svg><use xlink:href="/images/icons.svg#twitter"></use></svg>
-                  </a>
-                </li>
-              
-            </ul>
-          </div>
-        </div>
-      
     </div>
   </div>
 </section> 
 
   
   
-    <section class="counter-section">
-  <div class="container">
-    <div class="row justify-content-center m-45px-b md-m-20px-b sm-m-15px-b">
-      <div class="col-12 col-md-10 col-lg-7">
-        <div class="section-title text-center">
-          <h2 class="font-alt">Liaison</h2>
-          <div class="title-border">
-            <span class="lg"></span><span class="md"></span><span class="sm"></span>
-          </div>
-          <p>The following DIF members connect DIF with other community organisations</p>
-        </div>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      
-        <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
-          <div class="our-team">
-            <div class="img">
-              <img src="/images/photos/kristina_yasuda.jpg"/>
-            </div>
-            <div class="info">
-              <h6>Kristina Yasuda</h6>
-              <label>OIDC liaison / Microsoft</label>
-            </div>
-            <ul class="social-icons">
-              
-                <li>
-                  <a class="linkedin" href="https://www.linkedin.com/in/kristina-yasuda-6263b5a2">
-                    <svg><use xlink:href="/images/icons.svg#linkedin"></use></svg>
-                  </a>
-                </li>
-              
-              
-                <li>
-                  <a class="twitter" href="https://twitter.com/kristinayasuda">
-                    <svg><use xlink:href="/images/icons.svg#twitter"></use></svg>
-                  </a>
-                </li>
-              
-            </ul>
-          </div>
-        </div>
-      
-    </div>
-  </div>
-</section> 
-  
 
   
   
+
 
     </main>
 
@@ -538,6 +505,7 @@
     
       <script src="/js/base.js"></script>
     
+
 
   </body>
 

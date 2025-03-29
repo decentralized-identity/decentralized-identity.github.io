@@ -1,17 +1,14 @@
-{% extends "wg_base.html.njk" %}
+{% extends "group_base.html.njk" %}
 {% set wg_id = "crypto" %}
-{% set name = workingGroups[wg_id].name %}
-{% set logo = workingGroups[wg_id].logo %}
-{% set title = workingGroups[wg_id].title %}
-{% set scope = workingGroups[wg_id].scope %}
-{% set shortform = workingGroups[wg_id].shortform %}
-{% set charters = workingGroups[wg_id].charters %}
-{% set projects = workingGroups[wg_id].projects %}
-{% set chairs = workingGroups[wg_id].chairs %}
-{% set liaison = workingGroups[wg_id].liaison %}
-{% set editors = workingGroups[wg_id].editors %}
-{% set status = workingGroups[wg_id].status %}
-{% set type = workingGroups[wg_id].type %}
-{% set repoTag = workingGroups[wg_id].repoTag %}
-{% set repoTopics = workingGroups[wg_id].repoTopics %}
-{% set meetings = workingGroups[wg_id].meetings %}
+{% set name = workingGroups.activeWorkingGroups["crypto"].name %}
+{% set logo = workingGroups.activeWorkingGroups["crypto"].logo %}
+{% set title = workingGroups.activeWorkingGroups["crypto"].title %}
+{% set scope = workingGroups.activeWorkingGroups["crypto"].scope %}
+{% set shortform = workingGroups.activeWorkingGroups["crypto"].shortform %}
+{% set charters = workingGroups.activeWorkingGroups["crypto"].charters %}
+{% set projects = workingGroups.activeWorkingGroups["crypto"].projects %}
+{% set chairs = workingGroups.activeWorkingGroups["crypto"].chairs %}
+{% set type = workingGroups.activeWorkingGroups["crypto"].type %}
+{% set meetingSchedule = workingGroups.activeWorkingGroups["crypto"].meetingSchedule %}
+{% set repoTag = workingGroups.activeWorkingGroups["crypto"].repoTag %}
+{% set discussionChannels = workingGroups.activeWorkingGroups["crypto"].discussionChannels %}
