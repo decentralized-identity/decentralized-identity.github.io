@@ -8,9 +8,6 @@
     "type": "git",
     "url": "git://github.com/decentralized-identity/decentralized-identity.github.io.git"
   },
-  "engines": {
-    "node": ">=18.0.0"
-  },
   "devDependencies": {
     "axios": "1.6",
     "gulp": "^4.0.2",
