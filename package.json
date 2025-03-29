@@ -22,17 +22,6 @@
     "glob": "^8.1.0",
     "lru-cache": "^10.2.0"
   },
-  "dependencies": {
-    "gulp-watch": "^5.0.1",
-    "chokidar": "^3.5.3",
-    "fsevents": "^2.3.3"
-  },
-  "overrides": {
-    "glob": "^8.1.0",
-    "fsevents": "^2.3.3",
-    "source-map-resolve": "^0.6.0",
-    "resolve-url": "^0.2.1"
-  },
   "prettier": {
     "proseWrap": "always"
   },
