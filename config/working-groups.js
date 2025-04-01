@@ -523,9 +523,44 @@ module.exports = {
         }
       },
       url: "/working-groups/crypto.html"
-    }
+    },
+    "labs": {
+      name: "Labs",
+      logo: "flask",
+      title: "Labs Working Group",
+      shortform: "Labs",
+      type: "wg",
+      repoTag: "wg-labs",
+      scope: "The DIF Labs Working Group serves as an incubation environment for decentralized identity-based user applications and spec implementations. The WG provides an IP-safe environment for general implementation-related discussion, and allows participants to propose and participate in WG Work Items, each of which is focused on a user application and/or spec implementation.",
+      discussionChannels: [
+        {
+          text: "Discord: #labs-discussion",
+          href: "https://discord.gg/wAk4FtRK"
+        },
+      ],
+      meetingSchedule: [
+        {
+          key: "Labs Meetings",
+          value: "When in session, meets every third Tuesday of the month 17:00:00 UTC. See https://labs.identity.foundation/ for more information."
+        }
+      ],
+      charters: {
+        "Labs WG documentation": {
+          links: [
+            {
+              text: "DIF Labs Official Site",
+              href: "https://labs.identity.foundation/"
+            },
+            {
+              text: "WG Charter",
+              href: "https://github.com/decentralized-identity/labs/blob/d2036078b7c743eb6b86347557f215e880c6dcb5/docs/charter.md"
+            }
+          ]
+        }
+      },
+      url: "/working-groups/labs.html"
+    },
   },
-
   archivedWorkingGroups: {
     "authentication": {
       name: "DID Authentication",
@@ -560,11 +595,11 @@ module.exports = {
             {
               text: "OIDF - SIOP v2 (draft)",
               href: "https://openid.net/specs/openid-connect-self-issued-v2-1_0.html"
-            },  
+            },
             {
               text: "OIDF - SIOP v2 (most recent editor's draft )",
               href: "https://openid.bitbucket.io/connect/openid-connect-self-issued-v2-1_0.html"
-            },  
+            },
             {
               text: "Explainer - outdated. New work carried out under OIDF",
               href: "https://github.com/decentralized-identity/papers/blob/master/did-authn/siop/did-authn-siop-profile.md"

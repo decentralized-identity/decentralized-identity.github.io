@@ -355,7 +355,7 @@ h5 {
   background-size: cover;
 }
 
-
+.icon-link[href*="labs.identity.foundation"]:before,
 .icon-link[href*="bit.ly"]:before {
   background: url(/icons/chains.svg);
   background-size: cover;
