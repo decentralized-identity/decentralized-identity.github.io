@@ -326,10 +326,6 @@ module.exports = {
       externalUrl: "https://www.notion.so/dif/IoT-SIG-00000000000000000000000000000000",
       scope: "The IoT Special Interest Group focuses on the intersection of decentralized identity and Internet of Things devices, exploring standards, protocols, and implementations that enable secure identity management for IoT devices. The group works on solutions for device authentication, authorization, and credential management in decentralized IoT ecosystems.",
       type: "sig",
-      meeting: {
-        schedule: "Monthly meetings on the first Thursday at 11:00 AM ET",
-        calendar: "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=..."  // Add actual calendar link
-      },
       charters: {
         "IoT SIG documentation": {
           links: [
@@ -369,10 +365,6 @@ module.exports = {
       externalUrl: "https://www.notion.so/dif/Glossary-SIG-00000000000000000000000000000000",
       scope: "The Glossary Special Interest Group is dedicated to developing and maintaining a comprehensive, standardized vocabulary for the decentralized identity ecosystem. The group works to ensure consistent terminology across DIF specifications, working groups, and the broader identity community.",
       type: "sig",
-      meeting: {
-        schedule: "Bi-weekly meetings on Wednesdays at 1:00 PM ET",
-        calendar: "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=..."  // Add actual calendar link
-      },
       charters: {
         "Glossary SIG documentation": {
           links: [
