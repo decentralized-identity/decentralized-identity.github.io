@@ -265,6 +265,45 @@ module.exports = {
       },
       url: "/working-groups/did-comm.html"
     },
+    "hospitality-travel-wg": {
+      name: "Hospitality & Travel WG",
+      logo: "communicate_user",
+      title: "Hospitality & Travel Working Group",
+      type: "wg",
+      shortform: "HT WG",
+      repoTag: "wg-ht",
+      scope: "To create standards, schemas, processes, and related documentation designed to support the exchange of self-sovereign data of travelers, services, and intermediaries in the hospitality and travel industry, and their AI agents.",
+      meetingSchedule: [
+        {
+          key: "Working Group Meetings",
+          value: "Occurs every week on Tuesday, Friday at 14:00:00 UTC"
+        }
+      ],
+      discussionChannels: [
+        {
+          text: "Mailing list",
+          href: "hospitalityandtravel-wg@lists.identity.foundation"
+        }
+      ],
+      charters: {
+        "Hospitality Travel WG documentation": {
+          links: [
+            {
+              text: "WG Charter",
+              href: "https://github.com/decentralized-identity/org/blob/main/Org%20documents/WG%20documents/DIF_HT_WG_charter_v1.pdf"
+            }
+          ]
+        }
+      },
+      chairs: {
+        "Douglas Rice": {
+          title: "Sole Member @ Hospitality Technology Network, LLC",
+          photo: "/images/photos/doug-rice.jpg",
+          linkedin: "ricedouglas"
+        }
+      },
+      url: "/working-groups/hospitality-travel-wg.html"
+    },
     "identifiers-discovery": {
       name: "Identifiers & Discovery",
       logo: "user_graph",
