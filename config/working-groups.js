@@ -276,7 +276,7 @@ module.exports = {
       meetingSchedule: [
         {
           key: "Working Group Meetings",
-          value: "Occurs every week on Tuesday, Friday at 14:00:00 UTC"
+          value: "Starting April 29 2025. Occurs every Tuesday and Friday at 14:00:00 UTC"
         }
       ],
       discussionChannels: [
