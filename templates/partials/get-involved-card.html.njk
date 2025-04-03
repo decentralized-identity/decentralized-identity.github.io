@@ -1,0 +1,57 @@
+{% set default_calendar = "https://bit.ly/dif-calendar" %}
+{% set default_recordings = "https://identity.foundation/recordings" %}
+
+<div class="container">
+  <div class="col-10 col-md-8 col-lg-6 m-10px-t margin-center">
+    <dt>Get Involved</dt>
+
+    <div class="meeting-links-container">
+      <div class="meeting-link-item">
+          <a class="block-link icon-link" href="{{ calendar_link | default(default_calendar) }}">Subscribe to DIF Calendar</a>
+      </div>
+      <div class="meeting-link-item">
+          <a class="block-link icon-link" href="{{ recordings_link | default(default_recordings) }}">Recordings of Recent Meetings</a>
+      </div>
+
+      {% if discussionChannels %}
+        {% for channel in discussionChannels %}
+        <div class="meeting-link-item">
+            <a class="block-link icon-link" href="{{ channel.href }}">{{ channel.text }}</a>
+        </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    {% if meetingSchedule %}
+    <div class="meeting-schedule-section">
+      <dt>Meeting Schedule</dt>
+      <div class="meeting-times">
+        {% for schedule in meetingSchedule %}
+        <div class="meeting-time-item">
+          {% if schedule.key %}
+          <span class="meeting-icon">📅</span>
+          <div class="meeting-text">
+            <span class="meeting-label">{{ schedule.key }}</span>
+            <span class="meeting-value">{{ schedule.value }}</span>
+          </div>
+          {% else %}
+          <span class="meeting-icon">📅</span>
+          <span class="meeting-value">{{ schedule.value }}</span>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% else %}
+    <div class="meeting-schedule-section">
+      <p class="no-meetings">Contact the chair for information about meeting times.</p>
+    </div>
+    {% endif %}
+
+    {% if type == "wg" %}
+    <div class="membership-notice">
+      <p><em>You must be a DIF member to participate in this group:</em><br><a href="https://identity.foundation/join"><u>Join DIF</u></a></p>
+    </div>
+    {% endif %}
+  </div>
+</div>
