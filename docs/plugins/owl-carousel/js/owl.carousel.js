@@ -3005,7 +3005,7 @@
 	};
 
 	/**
-	 * Gets the current succesor/predecessor position.
+	 * Gets the current successor/predecessor position.
 	 * @protected
 	 * @returns {Number}
 	 */
