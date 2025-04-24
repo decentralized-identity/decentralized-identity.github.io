@@ -496,11 +496,7 @@ module.exports = {
         {
           key: "BBS+ Work Item",
           value: "Occurs every week on Monday at 18:00:00 UTC"
-        },
-        {
-          key: "Applied Crypto WG",
-          value: "Occurs every 2 weeks on Thursday at 14:00:00 UTC"
-        },
+        }
       ],
       discussionChannels: [
         {
