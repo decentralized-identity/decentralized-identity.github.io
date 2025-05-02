@@ -282,7 +282,7 @@ module.exports = {
       discussionChannels: [
         {
           text: "Mailing list",
-          href: "hospitalityandtravel-wg@lists.identity.foundation"
+          href: "https://lists.identity.foundation/g/hospitalityandtravel-wg"
         }
       ],
       charters: {
