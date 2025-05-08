@@ -77,7 +77,6 @@ for (const [id, group] of Object.entries(workingGroups.archivedWorkingGroups)) {
   }
 }
 
-var repoTopics = {};
 for (const [id, group] of Object.entries(userGroups.activeUserGroups)) {
   if (group.repoTag) {
     repoTopics[group.repoTag] = 1;
@@ -409,20 +408,6 @@ gulp.task("generate-ug-templates", function(done) {
   done();
 });
 
-// Helper function to generate redirect pages
-function generateRedirectPage(fromPath, toPath) {
-  const redirectContent = nunjucksRender.renderString(
-    fs.readFileSync('templates/redirect.html.njk', 'utf8'),
-    { redirect_url: toPath }
-  );
-  
-  const dirPath = path.dirname(fromPath);
-  if (!fs.existsSync(dirPath)) {
-    fs.mkdirSync(dirPath, { recursive: true });
-  }
-  
-  fs.writeFileSync(fromPath, redirectContent);
-}
 
 gulp.task('clean', function(cb) {
   return rimraf('docs/**/*', { preserveRoot: true }).then(() => cb());

@@ -112,7 +112,7 @@ module.exports = {
       meetingSchedule: [
         {
           key: "",
-          value: "Occurs every 2 weeks on Wednesday at 16:00:00 UTC"
+          value: "Occurs every Wednesday at 16:00:00 UTC"
         },
       ],
       discussionChannels: [
@@ -127,6 +127,14 @@ module.exports = {
             {
               text: "WG Charter",
               href: "https://github.com/decentralized-identity/org/blob/main/Org%20documents/WG%20documents/DIF_DID_Methods_WG_Charter_v1.pdf"
+            },
+            {
+              text: "Group Working Repository",
+              href: "https://github.com/decentralized-identity/did-methods"
+            },
+            {
+              text: "WG GitHub Repos",
+              href: "https://github.com/decentralized-identity?q=+wg-dm&type=&language=&sort="
             }
           ]
         }
