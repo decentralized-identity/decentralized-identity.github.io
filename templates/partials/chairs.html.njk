@@ -37,6 +37,20 @@
                   </a>
                 </li>
               {% endif %}
+              {% if val.medium %}
+                <li>
+                  <a class="medium" href="https://medium.com/{{ val.medium }}">
+                    <svg><use xlink:href="/images/icons.svg#medium"></use></svg>
+                  </a>
+                </li>
+              {% endif %}
+              {% if val.bluesky %}
+                <li>
+                  <a class="bluesky" href="https://bsky.app/profile/{{ val.bluesky }}">
+                    <svg><use xlink:href="/images/icons.svg#bluesky"></use></svg>
+                  </a>
+                </li>
+              {% endif %}
             </ul>
           </div>
         </div>

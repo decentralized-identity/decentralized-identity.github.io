@@ -207,7 +207,7 @@ module.exports = {
           title: "Identity Standards Architect, Content Authenticity Initiative @ Adobe",
           photo: "/images/photos/eric-scouten.jpg",
           linkedin: "ericscouten",
-          bluesky: "https://bsky.app/profile/ericscouten.me"
+          bluesky: "ericscouten.me"
         }
       },
       url: "/working-groups/creator-assertions.html"
@@ -308,6 +308,13 @@ module.exports = {
           title: "Sole Member @ Hospitality Technology Network, LLC",
           photo: "/images/photos/doug-rice.jpg",
           linkedin: "ricedouglas"
+        },
+        "Neil Thompson": {
+          title: "Principal Consultant @ QueryVision",
+          photo: "/images/photos/neil-thomson.jpg",
+          linkedin: "neiljthomson",
+          twitter: "NJT_Techno",
+          bluesky: "njt-techno.bsky.social"
         }
       },
       url: "/working-groups/hospitality-travel-wg.html"

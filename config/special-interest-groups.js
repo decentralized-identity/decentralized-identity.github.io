@@ -153,6 +153,12 @@ module.exports = {
           linkedin: "catherine-nabbala",
           twitter: "CatherineNabbala1"
         },
+        "Victor Fernando R. Ocampo": {
+          title: "Co-Founder & CTO @ Mulles & Ocampo Infinite Library Pte Ltd",
+          photo: "/images/photos/victor-ocampo.jpeg",
+          linkedin: "vrocampo",
+          medium: "@victorfernandorocampo"
+        }
       }
     },
     "china": {
