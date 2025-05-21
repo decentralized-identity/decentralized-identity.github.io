@@ -208,6 +208,11 @@ module.exports = {
           photo: "/images/photos/eric-scouten.jpg",
           linkedin: "ericscouten",
           bluesky: "ericscouten.me"
+        },
+        "Scott Perry": {
+          title: "CEO @ Digital Governance Institute",
+          photo: "/images/photos/scott-perry.jpg",
+          linkedin: "scott-perry-1b7a254"
         }
       },
       url: "/working-groups/creator-assertions.html"
