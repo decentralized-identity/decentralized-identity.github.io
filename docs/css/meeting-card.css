@@ -1,0 +1,87 @@
+body .container .meeting-schedule-section {
+  margin-top: 1.5rem !important;
+  padding: 1rem !important;
+  background-color: #f8f9fa !important;
+  border-radius: 4px !important;
+}
+
+body .container .meeting-schedule-section dt {
+  font-size: 1.25rem;
+  color: #4a5568;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+body .container .meeting-times {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+}
+
+body .container .meeting-time-item {
+  display: flex;
+  align-items: flex-start;
+}
+
+body .container .meeting-icon {
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #718096;
+}
+
+body .container .meeting-text {
+  flex: 1;
+}
+
+body .container .meeting-value {
+  color: #4a5568;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+body .container .no-meetings {
+  color: #718096;
+  font-style: italic;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Add !important to critical styles if still being overridden */
+body .container .meeting-schedule-section {
+  background-color: #f8f9fa !important;
+  padding: 1.5rem !important;
+}
+
+/* Add membership notice styles */
+.membership-notice {
+  margin-top: 1.5rem;
+  text-align: center;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border: 2px solid #0066cc;
+  border-radius: 4px;
+}
+
+.membership-notice p {
+  margin: 0;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.membership-notice em {
+  font-style: normal;
+  color: #0066cc;
+}
+
+.membership-notice a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 700;
+  margin-left: 0.5rem;
+}
+
+.membership-notice a:hover {
+  text-decoration: underline;
+  color: #004c99;
+}
