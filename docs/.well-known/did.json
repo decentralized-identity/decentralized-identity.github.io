@@ -31,5 +31,5 @@
   "keyAgreement": [
     "did:web:identity.foundation#6e6b416461e001f17961bbb0df763ed46cd9dcb64a2f37ade0f85579520de5f9"
   ],
-  "service": []
+  "services": []
 }
