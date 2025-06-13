@@ -314,7 +314,7 @@ module.exports = {
           photo: "/images/photos/doug-rice.jpg",
           linkedin: "ricedouglas"
         },
-        "Neil Thompson": {
+        "Neil Thomson": {
           title: "Principal Consultant @ QueryVision",
           photo: "/images/photos/neil-thomson.jpg",
           linkedin: "neiljthomson",
