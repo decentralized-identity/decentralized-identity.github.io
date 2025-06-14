@@ -304,6 +304,10 @@ module.exports = {
             {
               text: "WG Charter",
               href: "https://github.com/decentralized-identity/org/blob/main/Org%20documents/WG%20documents/DIF_HT_WG_charter_v1.pdf"
+            },
+            {
+              text: "Hospitality & Travel WG website",
+              href: "https://htwg.identity.foundation/"
             }
           ]
         }
