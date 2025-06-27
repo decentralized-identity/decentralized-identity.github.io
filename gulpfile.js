@@ -156,11 +156,11 @@ gulp.task("assets", function () {
 gulp.task("assetsCopy", () => {
   return gulp.src([
     "assets/**/*",
+    "assets/.*/**/*",
     "assets/favicon.ico",
     "assets/favicon.png",
     "static/docs/**/*",
-    ".well-known/**/*",
-    "CNAME"
+    "CNAME",
   ]).pipe(gulp.dest("docs"));
 });
 
