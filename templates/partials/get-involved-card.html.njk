@@ -1,4 +1,5 @@
-{% set default_calendar = "https://bit.ly/dif-calendar" %}
+{% set default_calendar = "https://bit.ly/dif-group-cal" %}
+{% set default_ical = "https://bit.ly/dif-ical" %}
 {% set default_recordings = "https://identity.foundation/recordings" %}
 
 <div class="container">
@@ -8,6 +9,7 @@
     <div class="meeting-links-container">
       <div class="meeting-link-item">
           <a class="block-link icon-link" href="{{ calendar_link | default(default_calendar) }}">Subscribe to DIF Calendar</a>
+          <a class="block-link icon-link" href="{{ ical_link | default(default_ical) }}">DIF Calendar (ical format)</a>
       </div>
       <div class="meeting-link-item">
           <a class="block-link icon-link" href="{{ recordings_link | default(default_recordings) }}">Recordings of Recent Meetings</a>
