@@ -354,10 +354,6 @@ module.exports = {
           key: "did:webvh",
           value: "Occurs every 2 weeks on Thursday at 16:00:00 UTC",
         },
-        {
-          key: "DID Traits",
-          value: "Occurs every 2 weeks on Friday at 13:00:00 UTC",
-        },
       ],
       discussionChannels: [
         {
