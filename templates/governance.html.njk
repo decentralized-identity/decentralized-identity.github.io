@@ -1,0 +1,267 @@
+{% extends "default.html.njk" %}
+
+{% block content %}
+  <section class="page-title theme-bg">
+    <div class="container">
+      <svg><use xlink:href="/images/icons.svg#{{logo}}"></use></svg>
+      <h1>{{name}}</h1>
+      <h3>Decentralized Identity Foundation</h3>
+    </div>
+  </section>
+
+  <section class="counter-section">
+    <div class="container">
+      <div class="row justify-content-center  md-m-20px-b sm-m-15px-b">
+        <div class="col-12 col-md-10 col-lg-10">
+          <div class="section-title text-center">
+            <h2 class="font-alt">Vision</h2>
+            <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+            <h3 align="left">{{scope}}</h3>
+            </div>
+            </div>
+            </div>
+        </div>
+  </section>
+  <section class="counter-section">
+    <div class="container">
+      <div class="row justify-content-center  md-m-20px-b sm-m-15px-b">
+        <div class="col-12 col-md-10 col-lg-10">
+          <div class="section-title text-center">
+            <h2 class="font-alt">Mission</h2>
+            <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+            <h6 align="left">{{Mission1}}</h6><br>
+            <h6 align="left">{{Mission2}}</h6><br>
+            <h6 align="left">{{Mission3}}</h6><br>
+            <h6 align="left">{{Mission4}}</h6><br>
+            </div>
+            </div>
+            </div>
+        </div>
+  </section>
+
+  <section class="counter-section gray-bg">
+    <div class="container">
+      <div class="counter-row">
+        <div class="column justify-content-center">
+          <div class="col-12">
+            <div class="section-title text-center">
+              <h2 class="font-alt">Governing Documents</h2>
+              <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+              <p>The documents that are currently accepted by the foundation</p>
+            </div>
+          </div>
+          <div class="col-10 col-md-8 col-lg-6 m-30px-t margin-center">
+            <dl>
+              {% for key, val in projects %}
+                <dt>{{key}}</dt>
+                <dd>
+                  <p>{{val.desc}}</p>
+                  {% if val.links %}
+                    {% for link in val.links %}
+                      <a class="block-link icon-link" href="{{link.href}}">{{link.text}}</a>
+                    {% endfor %}
+                  {% endif %}
+                </dd>
+              {% endfor %}
+            </dl>
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+    </div>
+    <!-- container -->
+  </section>
+
+  <section class="counter-section">
+    <div class="container">
+      <div class="row justify-content-center m-45px-b md-m-20px-b sm-m-15px-b">
+        <div class="col-12 col-md-10 col-lg-7">
+          <div class="section-title text-center">
+            <h2 class="font-alt">Steering Committee members</h2>
+            <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+            <p>The following DIF members are the elected representatives of DIF's Steering Committee</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        {% for key, val in chairs %}
+          <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
+            <div class="our-team">
+              {% if val.photo %}
+                <div class="img">
+                  <img src="{{ val.photo }}"/>
+                </div>
+              {% endif %}
+              <div class="info m-30px-tb">
+                <h6>{{key}}</h6>
+                <label>{{val.title}}</label>
+              </div>
+              <ul class="social-icons">
+                {% if val.linkedin %}
+                  <li><a class="linkedin" href="https://www.linkedin.com/in/{{val.linkedin}}"><svg><use xlink:href="/images/icons.svg#linkedin"></use></svg></a></li>
+                {% endif %}
+                {% if val.twitter %}
+                  <li><a class="twitter" href="https://twitter.com/{{val.twitter}}"><svg><use xlink:href="/images/icons.svg#twitter"></use></svg></a></li>
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="col-10 col-md-8 col-lg-6 m-30px-t margin-center">
+        <dl>
+          {% for key, val in meetings %}
+            <dt>{{key}}</dt>
+            <dd>
+              <p>{{val.desc}}</p>
+              {% if val.links %}
+                {% for link in val.links %}
+                  <a class="block-link icon-link" href="{{link.href}}">{{link.text}}</a>
+                {% endfor %}
+              {% endif %}
+            </dd>
+          {% endfor %}
+        </dl>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="counter-section">
+    <div class="container">
+      <div class="row justify-content-center m-45px-b md-m-20px-b sm-m-15px-b">
+        <div class="col-12 col-md-10 col-lg-7">
+          <div class="section-title text-center">
+            <h2 class="font-alt">DIF Ambassadors</h2>
+            <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+            <p>The thought leaders and subject matter experts spreading awareness of decentralized identity technologies among businesses and the general public</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        {% for key, val in ambassadors %}
+          <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
+            <div class="our-team">
+              {% if val.photo %}
+              <div class="img">
+                <img src="{{ val.photo }}"/>
+              </div>
+              {% endif %}
+              <div class="info m-10px-tb">
+                <h6>{{key}}</h6>
+                <label>{{val.title}}</label>
+              </div>
+              {% if val.bio %}
+                {% for entry in val.bio %}
+                  <div class="info m-10px-tb">
+                    <label>{{entry}}</label>
+                  </div>
+                {% endfor %}
+              {% endif %}
+              <ul class="social-icons">
+                {% if val.linkedin %}
+                  <li><a class="linkedin" href="https://www.linkedin.com/in/{{val.linkedin}}"><svg><use xlink:href="/images/icons.svg#linkedin"></use></svg></a></li>
+                {% endif %}
+                {% if val.twitter %}
+                  <li><a class="twitter" href="https://twitter.com/{{val.twitter}}"><svg><use xlink:href="/images/icons.svg#twitter"></use></svg></a></li>
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+    </div>
+  </section>
+
+    <section class="counter-section">
+    <div class="container">
+      <div class="row justify-content-center m-45px-b md-m-20px-b sm-m-15px-b">
+        <div class="col-12 col-md-10 col-lg-7">
+          <div class="section-title text-center">
+            <h2 class="font-alt">Developer Advocates</h2>
+            <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+            <p>DIF's developer advocates empower and inspire developers to achieve more by providing access, information, and resources</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        {% for key, val in advocates %}
+          <div class="col-10 col-md-6 d-flex align-items-stretch col-lg-4 m-15px-tb"> 
+            <div class="our-team">
+              {% if val.photo %}
+              <div class="img">
+                <img src="{{ val.photo }}"/>
+              </div>
+              {% endif %}
+              <div class="info m-10px-tb">
+                <h6>{{key}}</h6>
+                <label>{{val.title}}</label>
+              </div>
+              {% if val.bio %}
+                {% for entry in val.bio %}
+                  <div class="info m-10px-tb">
+                    <label>{{entry}}</label>
+                  </div>
+                {% endfor %}
+              {% endif %}
+              <ul class="social-icons">
+                {% if val.linkedin %}
+                  <li><a class="linkedin" href="https://www.linkedin.com/in/{{val.linkedin}}"><svg><use xlink:href="/images/icons.svg#linkedin"></use></svg></a></li>
+                {% endif %}
+                {% if val.twitter %}
+                  <li><a class="twitter" href="https://twitter.com/{{val.twitter}}"><svg><use xlink:href="/images/icons.svg#twitter"></use></svg></a></li>
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+    </div>
+  </section>
+
+  <section class="counter-section">
+    <div class="container">
+      <div class="row justify-content-center m-45px-b md-m-20px-b sm-m-15px-b">
+        <div class="col-12 col-md-10 col-lg-7">
+          <div class="section-title text-center">
+            <h2 class="font-alt">DIF team</h2>
+            <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+            <p>The team helping the DIF community</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        {% for key, val in team %}
+          <div class="col-10 col-md-6 col-lg-4 m-15px-tb">
+            <div class="our-team">
+              {% if val.photo %}
+              <div class="img">
+                <img src="{{ val.photo }}"/>
+              </div>
+              {% endif %}
+              <div class="info m-30px-tb">
+                <h6>{{key}}</h6>
+                <label>{{val.title}}</label>
+              </div>
+              <ul class="social-icons">
+                {% if val.linkedin %}
+                  <li><a class="linkedin" href="https://www.linkedin.com/in/{{val.linkedin}}"><svg><use xlink:href="/images/icons.svg#linkedin"></use></svg></a></li>
+                {% endif %}
+                {% if val.twitter %}
+                  <li><a class="twitter" href="https://twitter.com/{{val.twitter}}"><svg><use xlink:href="/images/icons.svg#twitter"></use></svg></a></li>
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+    </div>
+  </section>
+
+ 
+{% endblock %}
