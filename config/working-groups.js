@@ -296,8 +296,7 @@ module.exports = {
       meetingSchedule: [
         {
           key: "Working Group Meetings",
-          value:
-            "Starting April 29 2025. Occurs every Tuesday and Friday at 14:00:00 UTC",
+          value: "Meets every Tuesday and Friday at 14:00:00 UTC",
         },
       ],
       discussionChannels: [
@@ -608,7 +607,7 @@ module.exports = {
         {
           key: "Labs Meetings",
           value:
-            "When in session, meets every third Tuesday of the month 17:00:00 UTC. See https://labs.identity.foundation/ for more information.",
+            "When in session, meets every fourth Tuesday of the month 15:00:00 UTC. See https://labs.identity.foundation/ for more information.",
         },
       ],
       charters: {
@@ -626,6 +625,56 @@ module.exports = {
         },
       },
       url: "/working-groups/labs.html",
+    },
+    "trusted-agents": {
+      name: "Trusted AI Agents",
+      logo: "ai-agent",
+      title: "Trusted AI Agents Working Group",
+      shortform: "Trusted Agents",
+      type: "wg",
+      repoTag: "wg-ag",
+      scope:
+        "The Trusted AI Agents Working Group (WG) at the Decentralized Identity Foundation (DIF) focuses on defining an opinionated, interoperable stack to enable trustworthy, privacy-preserving, and secure AI agents. These agents act on behalf of users or systems and require robust mechanisms for identity, authority, and governance.",
+      discussionChannels: [],
+      meetingSchedule: [
+        {
+          key: "",
+          value: "Starts Sept 30, 2025. Meets every Tuesday at 15:00:00 UTC.",
+        },
+      ],
+      charters: {
+        "Trusted AI Agents WG documentation": {
+          links: [
+            {
+              text: "Charter",
+              href: "https://github.com/decentralized-identity/org/blob/main/Org%20documents/WG%20documents/DIF_Trusted_AI_Agents_WG_charter_v1.pdf",
+            },
+            {
+              text: "Operating Addendum",
+              href: "https://github.com/decentralized-identity/org/blob/main/Org%20documents/WG%20documents/DIF_Trusted_AI_Agents_WG_Operating_Addendum_v1.pdf",
+            },
+          ],
+        },
+      },
+      chairs: {
+        "Nicola Gallo": {
+          title: "Cofounder and CTO @ Nitro Agility S.r.l.",
+          photo: "/images/photos/nicola-gallo.jpg",
+          linkedin: "nicolagallo83",
+          twitter: "ngallo83",
+        },
+        "Andor Kesselman ": {
+          title: "CEO @ Agent Overlay, Inc",
+          photo: "/images/photos/andor-kesselman.jpg",
+          linkedin: "andorsk",
+        },
+        "Dmitri Zagidulin": {
+          title: "Lead Architect @ Digital Credentials Consortium",
+          photo: "/images/photos/dima.jpg",
+          linkedin: "dzagidulin",
+        },
+      },
+      url: "/working-groups/trusted-agents.html",
     },
   },
   archivedWorkingGroups: {
