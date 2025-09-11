@@ -635,7 +635,12 @@ module.exports = {
       repoTag: "wg-ag",
       scope:
         "The Trusted AI Agents Working Group (WG) at the Decentralized Identity Foundation (DIF) focuses on defining an opinionated, interoperable stack to enable trustworthy, privacy-preserving, and secure AI agents. These agents act on behalf of users or systems and require robust mechanisms for identity, authority, and governance.",
-      discussionChannels: [],
+      discussionChannels: [
+        {
+          text: "Mailing list",
+          href: "https://lists.identity.foundation/g/taawg",
+        },
+      ],
       meetingSchedule: [
         {
           key: "",
