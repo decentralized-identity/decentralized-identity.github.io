@@ -18,7 +18,13 @@
       {% if discussionChannels %}
         {% for channel in discussionChannels %}
         <div class="meeting-link-item">
+            {% if channel.key %}
+            <span class="icon-link block-link slack-icon">
+            {{ channel.key }}: {{ channel.value }}
+            </span>
+            {% else %}
             <a class="block-link icon-link" href="{{ channel.href }}">{{ channel.text }}</a>
+            {% endif %}
         </div>
         {% endfor %}
       {% endif %}

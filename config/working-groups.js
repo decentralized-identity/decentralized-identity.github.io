@@ -187,6 +187,10 @@ module.exports = {
           text: "Mailing list",
           href: "https://lists.identity.foundation/g/cawg",
         },
+        {
+          key: "Slack",
+          value: "#wg-cawg",
+        },
       ],
       charters: {
         "Creator Assertions WG documentation": {
@@ -241,6 +245,10 @@ module.exports = {
         {
           text: "Mailing list",
           href: "https://lists.identity.foundation/g/didcomm-wg",
+        },
+        {
+          key: "Slack",
+          value: "#wg-didcomm",
         },
       ],
       charters: {
@@ -358,6 +366,10 @@ module.exports = {
         {
           text: "Mailing list",
           href: "https://lists.identity.foundation/g/id-wg",
+        },
+        {
+          key: "Slack",
+          value: "#wg-id",
         },
       ],
       charters: {
@@ -639,6 +651,10 @@ module.exports = {
         {
           text: "Mailing list",
           href: "https://lists.identity.foundation/g/taawg",
+        },
+        {
+          key: "Slack",
+          value: "#wg-trusted-ai-agents",
         },
       ],
       meetingSchedule: [
