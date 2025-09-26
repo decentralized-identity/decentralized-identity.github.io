@@ -429,16 +429,16 @@ module.exports = {
             {
               text: "Specification",
               type: "doc",
-              href: "https://identity.foundation/specs/did-configuration/",
+              href: "https://identity.foundation/well-known-did-configuration/",
             },
             {
               text: "Main Repo",
-              href: "https://github.com/decentralized-identity/.well-known/",
+              href: "https://github.com/decentralized-identity/well-known-did-configuration",
             },
             {
               text: "Demo Web App",
               type: "app",
-              href: "https://identity.foundation/.well-known/resources/did-configuration/demo/build/index.html",
+              href: "https://identity.foundation/.well-known/did-configuration.json",
             },
           ],
         },
