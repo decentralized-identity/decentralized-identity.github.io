@@ -6,6 +6,8 @@ This guide explains how to update the DIF website for common tasks.
 
 - [Adding Associate Member Logos](#adding-associate-member-logos)
 - [Adding Contributors](#adding-contributors)
+- [Steering Committee](#steering-committee)
+- [DIF Staff](#dif-staff)
 - [Working Groups (WGs)](#working-groups)
 - [Special Interest Groups (SIGs)](#special-interest-groups)
 - [User Groups (UGs)](#user-groups)
@@ -77,6 +79,119 @@ Contributors (free tier members) are listed by name only, not with logos.
 - Contributors are plain text, not linked
 - Maintain alphabetical order for easier maintenance
 - Remove companies when they are no longer contributors
+
+---
+
+## Steering Committee
+
+Steering Committee members are displayed on the Governance/About page.
+
+### Configuration File
+
+Edit `templates/pages/governance/about.html`
+
+### Adding a Steering Committee Member
+
+1. **Add the member's photo** to `assets/images/photos/`
+
+   - Use a square or near-square image
+   - Use lowercase, hyphenated names (e.g., `first-last.jpg`)
+
+2. **Edit** `templates/pages/governance/about.html`
+
+3. Find the `chairs` variable (around line 75) and add a new entry:
+
+   ```javascript
+   {% set chairs = {
+       // ... existing members ...
+       "Full Name": {
+         title: "Role @ Company",
+         photo: "/images/photos/first-last.jpg",
+         linkedin: "linkedin-username",
+         twitter: "twitter-handle",    // Optional
+         bluesky: "handle.bsky.social" // Optional
+       }
+     }
+   %}
+   ```
+
+4. **Build and test locally**:
+   ```bash
+   npm run build
+   npx serve docs
+   ```
+
+### Removing a Steering Committee Member
+
+1. Delete the member's entry from the `chairs` variable in
+   `templates/pages/governance/about.html`
+
+2. Optionally remove their photo from `assets/images/photos/` if not used
+   elsewhere
+
+3. **Build and test locally**
+
+### Notes
+
+- Members are displayed in the order they appear in the `chairs` object
+- The `title` field typically shows their role and company affiliation
+- Social links are optional - only `linkedin` is commonly used
+
+---
+
+## DIF Staff
+
+DIF staff members are displayed on the Governance/About page below the Steering
+Committee.
+
+### Configuration File
+
+Edit `templates/pages/governance/about.html`
+
+### Adding a Staff Member
+
+1. **Add the staff member's photo** to `assets/images/photos/`
+
+   - Use a square or near-square image
+   - Use lowercase, hyphenated names (e.g., `first-last.jpg`)
+
+2. **Edit** `templates/pages/governance/about.html`
+
+3. Find the `team` variable (around line 192) and add a new entry:
+
+   ```javascript
+   {% set team = {
+       // ... existing members ...
+       "Full Name": {
+         title: "Job Title @ DIF",
+         photo: "/images/photos/first-last.jpg",
+         linkedin: "linkedin-username"
+       }
+     }
+   %}
+   ```
+
+4. **Build and test locally**:
+   ```bash
+   npm run build
+   npx serve docs
+   ```
+
+### Removing a Staff Member
+
+1. Delete the member's entry from the `team` variable in
+   `templates/pages/governance/about.html`
+
+2. Optionally remove their photo from `assets/images/photos/` if not used
+   elsewhere
+
+3. **Build and test locally**
+
+### Notes
+
+- The same file also contains `ambassadors` and `advocates` variables for DIF
+  Ambassadors and Advocates, which follow a similar structure but include a
+  `bio` array field for biographical paragraphs
 
 ---
 
