@@ -660,11 +660,11 @@ module.exports = {
       meetingSchedule: [
         {
           key: "Quarterly Working Group Meeting",
-          value: "Occurs quarterly Tuesday at 15:00:00 UTC",
+          value: "Occurs quarterly Tuesday at 9:00:00 PST (usually UTC-8)",
         },
         {
           key: "Agentic Authority Use Cases",
-          value: "Occurs every week on Monday at 16:00:00 UTC",
+          value: "Occurs every week on Monday at 9:00:00 PST (usually UTC-8)",
         },
       ],
       charters: {
