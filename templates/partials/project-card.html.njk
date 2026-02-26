@@ -1,0 +1,37 @@
+<section class="counter-section gray-bg">
+    <div class="container">
+    <div class="counter-row">
+        <div class="column justify-content-center">
+        <div class="col-12">
+            <div class="section-title text-center">
+            <h2 class="font-alt">Specs &amp; Projects</h2>
+            <div class="title-border">
+                <span class="lg"></span>
+                <span class="md"></span>
+                <span class="sm"></span>
+            </div>
+            <p>The active work items that are underway in the {{name}} Special Interest Group</p>
+            </div>
+        </div>
+        <div class="col-10 col-md-8 col-lg-6 m-30px-t margin-center">
+            <dl>
+            {% for key, val in projects %}
+                <dt>{{key}}</dt>
+                <dd>
+                {% if val.desc %}<p>{{val.desc}}</p>{% endif %}
+                {% if val.links %}
+                    {% for link in val.links %}
+                    <div>
+                        <a class="icon-link" href="{{link.href}}">{{link.text}}</a>
+                        {% if link.note %} {{link.note}}{% endif %}
+                    </div>
+                    {% endfor %}
+                {% endif %}
+                </dd>
+            {% endfor %}
+            </dl>
+        </div>
+        </div>
+    </div>
+    </div>
+</section>

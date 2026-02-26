@@ -1,0 +1,141 @@
+
+  <header>
+    <nav class="navbar header-nav fixed-top navbar-expand-lg">
+      <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand" href="/"><img src="/images/logo-white-small.png" /></a>
+        <!-- / <span class="theme-bg"></span> -->
+        {% block nav_replacement %}{% endblock %}
+        {% if nav_empty == undefined %}
+          <!-- Mobile Toggle -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+              <span></span>
+              <span></span>
+              <span></span>
+          </button>
+          <!-- / -->
+
+          <!-- Top Menu -->
+          <div class="collapse navbar-collapse justify-content-end" id="navbar">
+              <ul class="navbar-nav">
+                <li>
+                  <span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span>
+                  <a class="nav-link" href="/work">Work</a>
+                  <ul class="sub-menu">
+
+                    {# Working Groups section #}
+                    <li class="dropdown-header">Working Groups</li>
+                    <li><a href="/working-groups"> Overview</a></li>
+                    {% for wg in navigation.activeWorkingGroups %}
+                      <li>
+                        <a href="{{ wg.url }}" {% if wg.isExternal %}target="_blank" rel="noopener"{% endif %}>
+                          {{ wg.name }}
+                          {% if wg.isExternal %}
+                            <svg class="external-link-icon"><use xlink:href="/images/icons.svg#external"></use></svg>
+                          {% endif %}
+                        </a>
+                      </li>
+                    {% endfor %}
+
+                    {# Special Interest Groups section #}
+                    {% if navigation.activeSpecialInterestGroups.length > 0 %}
+                      <li class="dropdown-divider"></li>
+                      <li class="dropdown-header">Special Interest Groups</li>
+                      <li><a href="/special-interest-groups"> Overview</a></li>
+                      {% for sig in navigation.activeSpecialInterestGroups %}
+                        <li>
+                          <a href="{{ sig.url }}" {% if sig.isExternal %}target="_blank" rel="noopener"{% endif %}>
+                            {{ sig.name }}
+                            {% if sig.isExternal %}
+                              <svg class="external-link-icon"><use xlink:href="/images/icons.svg#external"></use></svg>
+                            {% endif %}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    {% endif %}
+
+                    {# User Groups section #}
+                    {% if navigation.activeUserGroups.length > 0 %}
+                      <li class="dropdown-divider"></li>
+                      <li class="dropdown-header">User Groups</li>
+                       <li><a href="/user-groups"> Overview</a></li>
+                      {% for ug in navigation.activeUserGroups %}
+                        <li>
+                          <a href="{{ ug.url }}" {% if ug.isExternal %}target="_blank" rel="noopener"{% endif %}>
+                            {{ ug.name }}
+                            {% if ug.isExternal %}
+                              <svg class="external-link-icon"><use xlink:href="/images/icons.svg#external"></use></svg>
+                            {% endif %}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    {% endif %}
+
+                  </ul>
+                </li>
+                <!-- <li><span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span> <a class="nav-link" href="javascript:;">Pages</a>
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="faq.html">Faq's</a>
+                    </li>
+                    <li>
+                      <a href="blog.html">Blog List</a>
+                    </li>
+                  </ul>
+                </li> -->
+                <li>
+                  <span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span>
+                  <a class="nav-link"> Services</a>
+                  <ul class="sub-menu">
+                    <li> Education resources </li>
+                        <li>
+                          <a href="/education">Education page</a>
+                      </li>
+                      <li>
+                        <a href="/faq">Decentralized Identity FAQ</a>
+                    </li>
+                    <li> Universal Resolver </li>
+                        <li>
+                          <a href="https://resolver.identity.foundation/">Stable</a>
+                        </li>
+                        <li>
+                          <a href="https://dev.uniresolver.io/">Experimental</a>
+                        </li>
+                        <li>
+                          <a href="https://medium.com/decentralized-identity/the-universal-resolver-infrastructure-395281d2b540?source=friends_link&sk=306a37f289dcf61a89d19cd11f5be04e">more info... </a>
+                        </li>
+
+                      <li> Community services </li>
+                      <li>
+                        <a href="https://lists.identity.foundation/">Mailing Lists</a>
+                    </li>
+                    <li>Decentralized Web Nodes</li>
+                      <li><a href="/dwn">DWN Community Node</a></li>
+
+                  </ul>
+                </li>
+                <li><a class="nav-link" href="/events">Events</a></li>
+                <li><a class="nav-link" href="/join">Join DIF</a></li>
+                <li><a class="nav-link" href="https://blog.identity.foundation/">Blog</a></li>
+                <li>
+                  <span class="sub-menu-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-angle-down"></i></span>
+                  <a class="nav-link" href="#governance">About</a>
+                    <ul class="sub-menu">
+                      <li>
+                        <a href="/governance/about">Governance</a>
+                      </li>
+                      <li>
+                        <a href="/#contatus">Contact us</a>
+                      </li>
+                    </ul>
+                </li>
+                <li class="inline-nav-item"><a title="@DecentralizedID on Twitter" class="nav-link" href="https://twitter.com/DecentralizedID"><svg><use xlink:href="/images/icons.svg#twitter"></use></svg></a></li>
+                <li class="inline-nav-item"><a title="GitHub Repos" class="nav-link" href="https://github.com/decentralized-identity"><svg><use xlink:href="/images/icons.svg#github"></use></svg></a></li>
+                <li class="inline-nav-item"><a title="DIF Calendar" class="nav-link" href="https://bit.ly/dif-group-cal"><svg><use xlink:href="/images/icons.svg#calendar"></use></svg></a></li>
+              </ul>
+          </div>
+        {% endif %}
+
+      </div><!-- Container -->
+    </nav>
+  </header>

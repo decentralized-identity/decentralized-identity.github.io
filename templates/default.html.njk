@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include "partials/head.html.njk" %}
+
+  <body>
+    {% include "partials/nav.html.njk" %}
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+
+    {% include "partials/footer.html.njk" %}
+    {% for file in js %}
+      <script src="/js/{{ file }}.js"></script>
+    {% endfor %}
+
+    {% block scripts %}
+      <script src="/js/base.js"></script>
+    {% endblock %}
+
+
+  </body>
+
+</html>
