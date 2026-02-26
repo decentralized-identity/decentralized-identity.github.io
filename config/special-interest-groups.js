@@ -11,7 +11,7 @@ module.exports = {
       meetingSchedule: [
         {
           key: "",
-          value: "Occurs every week on Thursday at 14:00:00 UTC"
+          value: "Occurs bi-weekly on Thursday at 13:00:00 UTC"
         },
       ],
       charters: {
