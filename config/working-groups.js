@@ -142,22 +142,15 @@ module.exports = {
         },
       },
       chairs: {
-        "Matt McKinney": {
-          title: "Growth @ ArcBlock",
-          photo: "/images/photos/matt-mckinney.jpeg",
-          linkedin: "mtmckinney",
-          twitter: "RobRoyHobbs",
-        },
         "Jonathan Rayback": {
           title: "Owner @ Future Forge Innovation",
           photo: "/images/photos/jonathan-rayback.jpg",
           linkedin: "jonathan-rayback",
         },
-        "Markus Sabadello": {
-          title: "Founder @ Danube Tech",
-          photo: "/images/photos/markus-sabadello.jpg",
-          linkedin: "markus-sabadello-353a0821",
-          twitter: "peacekeeper",
+        "Christian Saucier": {
+          title: "Founder @ Archetech Distributed",
+          photo: "/images/photos/christian-saucier.jpg",
+          linkedin: "csaucier",
         },
       },
       url: "/working-groups/did-methods.html",
@@ -659,12 +652,16 @@ module.exports = {
       ],
       meetingSchedule: [
         {
-          key: "Quarterly Working Group Meeting",
-          value: "Occurs quarterly Tuesday at 9:00:00 PST (usually UTC-8)",
+          key: "Working Group Syncs",
+          value: "Occurs every week on Monday at 9:30:00 PST (usually UTC-8)",
         },
         {
-          key: "Agentic Authority Use Cases",
-          value: "Occurs every week on Monday at 9:00:00 PST (usually UTC-8)",
+          key: "Delegated Authority Task Force",
+          value: "Occurs every week on Monday at 7:00:00 PST (usually UTC-8)",
+        },
+        {
+          key: "MCP-i Task Force",
+          value: "Occurs every week on Tuesday at 7:00:00 PST (usually UTC-8)",
         },
       ],
       charters: {
