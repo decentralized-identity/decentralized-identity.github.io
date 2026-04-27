@@ -660,7 +660,7 @@ module.exports = {
           value: "Occurs every week on Monday at 7:00:00 PST (usually UTC-8)",
         },
         {
-          key: "MCP-i Task Force",
+          key: "KYA-OS Task Force",
           value: "Occurs every week on Tuesday at 7:00:00 PST (usually UTC-8)",
         },
       ],
