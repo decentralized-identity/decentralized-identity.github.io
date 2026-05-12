@@ -464,6 +464,18 @@ h5 {
   height: 3px
 }
 
+.slack-icon:before {
+  content: " ";
+  margin: 0 0.35em 0 0;
+  color: #000;
+  height: 1.25em;
+  width: 1.25em;
+  display: inline-block;
+  vertical-align: sub;
+  background: url(/icons/slack.svg);
+  background-size: cover;
+}
+
 @media (max-width: 767px){
   .section-title h2 {
     font-size: 25px;

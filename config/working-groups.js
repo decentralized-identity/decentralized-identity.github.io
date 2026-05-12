@@ -142,22 +142,15 @@ module.exports = {
         },
       },
       chairs: {
-        "Matt McKinney": {
-          title: "Growth @ ArcBlock",
-          photo: "/images/photos/matt-mckinney.jpeg",
-          linkedin: "mtmckinney",
-          twitter: "RobRoyHobbs",
-        },
         "Jonathan Rayback": {
           title: "Owner @ Future Forge Innovation",
           photo: "/images/photos/jonathan-rayback.jpg",
           linkedin: "jonathan-rayback",
         },
-        "Markus Sabadello": {
-          title: "Founder @ Danube Tech",
-          photo: "/images/photos/markus-sabadello.jpg",
-          linkedin: "markus-sabadello-353a0821",
-          twitter: "peacekeeper",
+        "Christian Saucier": {
+          title: "Founder @ Archetech Distributed",
+          photo: "/images/photos/christian-saucier.jpg",
+          linkedin: "csaucier",
         },
       },
       url: "/working-groups/did-methods.html",
@@ -186,6 +179,10 @@ module.exports = {
         {
           text: "Mailing list",
           href: "https://lists.identity.foundation/g/cawg",
+        },
+        {
+          key: "Slack",
+          value: "#wg-cawg",
         },
       ],
       charters: {
@@ -242,6 +239,10 @@ module.exports = {
           text: "Mailing list",
           href: "https://lists.identity.foundation/g/didcomm-wg",
         },
+        {
+          key: "Slack",
+          value: "#wg-didcomm",
+        },
       ],
       charters: {
         "DIDcomm WG documentation": {
@@ -296,7 +297,7 @@ module.exports = {
       meetingSchedule: [
         {
           key: "Working Group Meetings",
-          value: "Meets every Tuesday and Friday at 14:00:00 UTC",
+          value: "Meets every Tuesday 15:00:00 UTC and Thursday at 14:00:00 UTC",
         },
       ],
       discussionChannels: [
@@ -359,6 +360,10 @@ module.exports = {
           text: "Mailing list",
           href: "https://lists.identity.foundation/g/id-wg",
         },
+        {
+          key: "Slack",
+          value: "#wg-id",
+        },
       ],
       charters: {
         "Identifiers and Discovery WG documentation": {
@@ -417,16 +422,16 @@ module.exports = {
             {
               text: "Specification",
               type: "doc",
-              href: "https://identity.foundation/specs/did-configuration/",
+              href: "https://identity.foundation/well-known-did-configuration/",
             },
             {
               text: "Main Repo",
-              href: "https://github.com/decentralized-identity/.well-known/",
+              href: "https://github.com/decentralized-identity/well-known-did-configuration",
             },
             {
               text: "Demo Web App",
               type: "app",
-              href: "https://identity.foundation/.well-known/resources/did-configuration/demo/build/index.html",
+              href: "https://identity.foundation/.well-known/did-configuration.json",
             },
           ],
         },
@@ -635,11 +640,28 @@ module.exports = {
       repoTag: "wg-ag",
       scope:
         "The Trusted AI Agents Working Group (WG) at the Decentralized Identity Foundation (DIF) focuses on defining an opinionated, interoperable stack to enable trustworthy, privacy-preserving, and secure AI agents. These agents act on behalf of users or systems and require robust mechanisms for identity, authority, and governance.",
-      discussionChannels: [],
+      discussionChannels: [
+        {
+          text: "Mailing list",
+          href: "https://lists.identity.foundation/g/taawg",
+        },
+        {
+          key: "Slack",
+          value: "#wg-trusted-ai-agents",
+        },
+      ],
       meetingSchedule: [
         {
-          key: "",
-          value: "Starts Sept 30, 2025. Meets every Tuesday at 15:00:00 UTC.",
+          key: "Working Group Syncs",
+          value: "Occurs every week on Monday at 9:30:00 PST (usually UTC-8)",
+        },
+        {
+          key: "Delegated Authority Task Force",
+          value: "Occurs every week on Monday at 7:00:00 PST (usually UTC-8)",
+        },
+        {
+          key: "KYA-OS Task Force",
+          value: "Occurs every week on Tuesday at 7:00:00 PST (usually UTC-8)",
         },
       ],
       charters: {
