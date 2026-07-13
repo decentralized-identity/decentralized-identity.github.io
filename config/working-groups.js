@@ -368,7 +368,7 @@ module.exports = {
         },
         {
           key: "did:webvh",
-          value: "Occurs every 2 weeks on Thursday at 11:00:00 Eastern Time",
+          value: "Occurs every 2 weeks on Thursday at 12:00:00 Eastern Time",
         },
       ],
       discussionChannels: [
