@@ -11,7 +11,7 @@ module.exports = {
       meetingSchedule: [
         {
           key: "",
-          value: "Occurs bi-weekly on Thursday at 13:00:00 UTC"
+          value: "Occurs every two weeks on Thursday at 10:00:00 Eastern Time"
         },
       ],
       charters: {
@@ -64,8 +64,8 @@ module.exports = {
       type: "sig",
       meetingSchedule: [
         {
-          key: "",
-          value: "Occurs every month on Wednesday at 11:00:00 UTC"
+          key: "On hiatus",
+          value: "Inquire on the #general channel in Slack to propose a meeting"
         },
       ],
       discussionChannels: [
@@ -117,8 +117,8 @@ module.exports = {
       type: "sig",
       meetingSchedule: [
         {
-          key: "",
-          value: "Occurs every month on fourth Thursday at 07:00:00 UTC"
+          key: "On Hiatus",
+          value: "Inquire on the #general channel in Slack to propose a meeting"
         },
       ],
       discussionChannels: [
@@ -171,7 +171,7 @@ module.exports = {
       type: "sig",
       meetingSchedule: [
         {
-          key: "Meeting Link",
+          key: "Meeting Link (Tencent)",
           value: "https://meeting.tencent.com/dm/c4cNcDCmssbcst"
         }
       ],
