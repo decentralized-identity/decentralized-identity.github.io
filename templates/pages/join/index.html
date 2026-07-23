@@ -1,0 +1,290 @@
+{% set name = "Join" %}
+{% set logo = "algorithm" %}
+{% set title = "Join" %}
+{% set repoTag = "" %}
+
+{% extends "default.html.njk" %}
+
+{% block content %}
+<section class="page-title theme-bg">
+  <div class="container">
+    <svg><use xlink:href="/images/icons.svg#{{logo}}"></use></svg>
+    <h1>{{name}}</h1>
+    {% if subtitle %}
+      <h3>{{subtitle}}</h3>
+    {% else %}
+      <h3>the Decentralized Identity Foundation</h3>
+    {% endif %}
+  </div>
+</section>
+
+<section class="counter-section">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-12">
+        <div class="section-title text-center">
+          <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+          <p>
+            Collaborate with a global community to build open standards and open source technical components for decentralized identity.
+            Companies, research clusters, most non-profits, and government agencies can sign up directly as described below. 
+            Please note that all variants of the DIF agreement grants Intellectual Property Rights over all DIF activity to DIF.
+            If you sign our membership agreement, you attest that you control and can waive all intellectual property rights over anything you share in DIF meetings or on DIF repositories.
+          </p>
+          <p>
+            Open-Source foundations and other member organizations, please get in touch via membership@identity.foundation prior to filling out the application.
+          </p>
+          <h2 class="font-alt">
+            Choose the Membership that's right for you
+          </h2>
+          
+          <div class="section-title text-center minitable">
+            <!-- table start-->
+            <table style="width:100%">
+              <tr style="height: 45px;"/>
+                <th colspan="3" style="width:30%; vertical-align: top;">
+                  <div style="padding: 5px; text-align:left; vertical-align: top;">
+                  <h2 class="font-alt text-center" style="background-color: green; color:white;">Contributor</h2> 
+                  <p>For startups, small organizations, academics, or non-profit organizations. (Free membership.)</p>
+                  <p>If there are any concerns about your ability to sign an intellectual property rights agreement on behalf of your organization, please contact <a href="mailto:membership@identity.foundation">membership@identity.foundation</a>.</p>
+                  </div>  
+                </th>
+                <th colspan="3" style="width:30%; vertical-align: top;">
+                  <div style="padding: 5px;  text-align:left; vertical-align: top;">
+                  <h2 class="font-alt text-center" style="background-color: purple; color:white;">Associate</h2>
+                  <p>For organizations and government agencies that wish to support DIF's mission and participate as organizational members. We encourage funded and revenue-generating organizations of any size to join as Associate members.</p>
+                  <p>If there are any concerns about your ability to sign an intellectual property rights agreement on behalf of your organization, please contact <a href="mailto:membership@identity.foundation">membership@identity.foundation</a>.</p>
+                  </div>
+                </th>
+                <th colspan="6" style="width:40%; vertical-align: top;">
+                  <div style="color: white; background-color: rgb(81, 80, 80); padding : 5px ; text-align:left ; vertical-align: top ;">
+                  <h2 class="font-alt text-center" style="color: white; background-color: rgb(81, 80, 80);">Feedback Only</h2>
+                  <p>Personal capacity only. Feedback and review comments.</p>
+                  <p>✅ The only rights this grants: submitting feedback / review comments on published specifications.</p>
+                  <p>⚠️Employed or otherwise IP-bound to an org? You are ineligible to give unencumbered Feedback, and should apply as a Contributor or Associate membership instead.</p>
+                  <p>⚠️ If you are a freelancer or sole founder, please use “Contributor” with your LLC/org email instead.</p>              
+                  </div>
+                </th>
+              </tr>
+            </table>
+          </div>
+          
+          <div>
+            <h2 class="font-alt">
+              DIF is entirely supported by member contributions.
+            </h2>
+            <p> 
+              If you are able to support DIF with an Associate Membership, we encourage you to do so.
+            </p> 
+          </div>
+          <div>
+            <h1 class="font-alt">
+              <br><br>Membership Comparison
+            </h2>
+          </div>
+      </div>
+</section>
+
+<section id="company" class="counter-section gray-bg">
+  <div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-12">
+          <div class="section-title text-center">
+            <!-- table start-->
+            <table style="width:100%" class="bg-light">
+              <tr>
+                <th>&nbsp;</th>
+                <th><h2 class="font-alt" style="background-color: green; color:white;">Contributor</h2></th>
+                <th><h2 class="font-alt" style="background-color: purple; color:white;">Associate</h2></th>
+                <th><h2 class="font-alt" style="background-color: grey; color:white;">Feedback only</h2></th>
+              </tr>
+              <tr>
+                <td class="section-title text-left shade-bg shade-contrast-text" colspan="3"><h5>PRICING</h5></td>
+                <td style="background-color: rgb(172, 171, 171);">&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="section-title text-left">Price</td>
+                <td>Free</td>
+                <td><a href="https://github.com/decentralized-identity/org/blob/main/Org%20documents/Membership%20agreements/DIF%20Project%20Charter%20_4.0.3_appendix_C.pdf">Tiered (↗️)</a></td>
+                <td style="background-color: rgb(172, 171, 171); color:white;">Free</td>
+              </tr>
+              <tr>
+                <td class="section-title text-left">Employee Limit</td>
+                <td>Up to 1000 employees</td>
+                <td>Any size</td>
+                <td style="background-color: rgb(172, 171, 171); color:white;">No IP claims<a href="#unencumberedIP">**</a></td>
+              </tr>
+
+              <tr>
+                <td class="section-title text-left shade-bg shade-contrast-text" colspan="3"><h5>GOVERNANCE</h5></td>
+                <td style="background-color: rgb(172, 171, 171);">&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="section-title text-left">Eligible to serve on Steering Committee</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td style="background-color: rgb(172, 171, 171); color:white;">No</td>
+              </tr>
+              <tr>
+                <td class="section-title text-left">Eligible to serve as WG Chair</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td style="background-color: rgb(172, 171, 171); color:white;">No</td>
+              </tr>
+
+              <tr>
+                <td class="section-title text-left shade-bg shade-contrast-text" colspan="3"><h5>CONTRIBUTION</h5></td>
+                <td style="background-color: rgb(172, 171, 171);">&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="section-title text-left">May contribute to specifications (technical requirements, review comments)
+</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td style="background-color: rgb(172, 171, 171); color:white;">Yes</td>
+              </tr>
+              <tr>
+                <td class="section-title text-left">May initiate and support a work item</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td style="background-color: rgb(172, 171, 171); color:white;">No</td>
+              </tr>
+              <tr>
+                <td class="section-title text-left">May make technical contributions to specifications</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td style="background-color: rgb(172, 171, 171); color:white;">With Approval Only</td>
+              </tr>
+
+              <tr>
+                <td class="section-title text-left shade-bg shade-contrast-text" colspan="3"><h5>VOTING</h5></td>
+                <td style="background-color: rgb(172, 171, 171);">&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="section-title text-left">Participate in WG consensus</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td style="background-color: rgb(172, 171, 171); color:white;">No</td>
+              </tr>
+              <tr>
+                <td class="section-title text-left">Participate in Supermajority WG votes</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td style="background-color: rgb(172, 171, 171); color:white;">No</td>
+              </tr>
+              <tr>
+                <td class="section-title text-left">Vote in Steering Committee elections</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td style="background-color: rgb(172, 171, 171); color:white;">No</td>
+              </tr>
+
+              <tr>
+                <td class="section-title text-left shade-bg shade-contrast-text" colspan="3"><h5>MEETINGS</h5></td>
+                <td style="background-color: rgb(172, 171, 171);">&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="section-title text-left">Attend Working Group meetings.</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td style="background-color: rgb(172, 171, 171); color:white;">No</td>
+              </tr>
+              <tr>
+                <td class="section-title text-left">Attend User Group and Special Interest Group meetings</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td style="background-color: rgb(172, 171, 171); color:white;">Yes</td>
+              </tr>
+
+              <tr>
+                <td class="section-title text-left shade-bg shade-contrast-text" colspan="3"><h5>ACCESS TO SERVICES</h5></td>
+                <td style="background-color: rgb(172, 171, 171);">&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="section-title text-left">Members-only Slack</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td style="background-color: rgb(172, 171, 171); color:white;">No</td>
+              </tr>
+              <tr>
+                <td class="section-title text-left">Contribute to WG mailing lists</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td style="background-color: rgb(172, 171, 171); color:white;">Yes</td>
+              </tr>
+              <tr>
+                <td class="section-title text-left">Code contributions on GitHub</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td style="background-color: rgb(172, 171, 171); color:white;">With Approval Only</td>
+              </tr>            
+
+  <tr>
+                <td class="section-title text-left shade-bg shade-contrast-text" colspan="3"><h5>MEMBERSHIP BENEFITS</h5></td>
+                <td style="background-color: rgb(172, 171, 171);">&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="section-title text-left">Logo on Website</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td style="background-color: rgb(172, 171, 171); color:white;">No</td>
+              </tr>
+              <tr>
+                <td class="section-title text-left">Company news in monthly newsletter</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td style="background-color: rgb(172, 171, 171); color:white;">No</td>
+              </tr>
+              <tr>
+                <td class="section-title text-left">Represent DIF at industry events</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td style="background-color: rgb(172, 171, 171); color:white;">No</td>
+              </tr>                      
+
+            </table>
+            <!-- table ends-->
+            <p></p>
+          </div>
+        </div>
+    </div>
+  </div>
+  <!-- container -->
+</section>
+
+<section id="individual" class="counter-section">
+  <div class="container">
+    <div class="row justify-content-center m-45px-b md-m-20px-b sm-m-15px-b">
+      <div class="col-12">
+        <div class="section-title text-center">
+          <div class="title-border"><span class="lg"></span><span class="md"></span><span class="sm"></span></div>
+          <h2 class="font-alt">
+              Join DIF as
+            </h2>                
+        </div>
+        <div class="col-12">
+          <!-- table start-->
+          <table style="width:100%">
+            <tr style="height: 45px;"/>
+            <table style="width:100%" class="bg-light">
+              <tr>
+                <th>&nbsp;</th>
+                <th><h2 class="font-alt" style="vertical-align: middle; text-align: center; background-color: green; color:white; "><a style="color:inherit" href="https://forms.zohopublic.com/identityfoundation1/form/ContributorMembership1/formperma/0qKFR8C7t9eH_umRe4gD8wEGNeWF_eqTpFIyBP6emBw">Contributor</a></h2></th>
+                <th><h2 class="font-alt" style="vertical-align: middle; text-align: center; background-color: purple; color:white;"><a style="color:inherit" href="https://forms.zohopublic.com/identityfoundation1/form/AssociateMembership/formperma/5liS6WU7fu-HpS-5rHR0ZRyGct5owUrQAKb85nKTYQQ">Associate</a></h2></th>
+                <th><h2 class="font-alt" style="vertical-align: middle; text-align: center; background-color: grey; color:white;"><a style="color:inherit" href="https://forms.zohopublic.com/identityfoundation1/form/FeedbackMembership1/formperma/6MmdtwUwBHNr-EIYM3HOF5IoLL8tv-X3TmjYiEaPrM4">Feedback only</a></h2></th>
+              </tr>
+          </table>
+        </div>
+        <div class="col-12 text-center">
+            <p><br>You can also view the <a href="https://github.com/decentralized-identity/org/blob/main/Org%20documents/Membership%20agreements/DIF%20Project%20Charter%20_4.0.3.pdf">DIF Charter</a> directly to drill into the formalities.</p>
+        </div>  
+        <div class="text-left" id="unencumberedIP">
+            <p>
+              ** You must sign the Intellectual Property clearance on your unencumbered behalf as an individual.
+              If you are under any contractual obligation affecting your Intellectual Property rights (including but not limited to employment, work under contract, or grant agreements pertaining to software or other intellectual property rights), you must submit to DIF legal proof that such obligations are expressly and consentfully waived with respect to your DIF contributions.
+              If you are a freelancer or sole founder, please join at the Contributing Member level.
+            </p>
+        </div>  
+    </div>
+  </div>
+</section>
+{% endblock %}

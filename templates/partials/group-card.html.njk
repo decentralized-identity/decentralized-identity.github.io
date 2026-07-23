@@ -1,0 +1,38 @@
+{% macro groupCard(group, style="full") %}
+<div class="group-card {% if style == 'compact' %}compact{% endif %}">
+  {% if style == "full" %}
+  <div class="icon-wrapper">
+    {% if group.logo %}
+      <svg class="group-icon">
+        <use xlink:href="/images/icons.svg#{{ group.logo }}"></use>
+      </svg>
+    {% elif group.logoImage %}
+      <img src="{{ group.logoImage }}" alt="{{ group.name }} icon" class="group-icon">
+    {% endif %}
+  </div>
+   {% endif %}
+  
+  <h3>{{ group.name }}</h3>
+  
+  {% if style == "full" %}
+    <div class="description">
+      {{ group.scope | truncate(200) }}
+    </div>
+    
+    {% if group.meeting %}
+    <div class="meeting-info">
+      <svg class="calendar-icon"><use xlink:href="/images/icons.svg#calendar"></use></svg>
+      {{ group.meeting.schedule }}
+    </div>
+    {% endif %}
+  {% endif %}
+
+
+  <a href="{{ group.url }}" class="m-btn m-btn-t-dark" {% if group.isExternal %}target="_blank" rel="noopener"{% endif %}>
+    Learn More
+    {% if group.isExternal %}
+      <svg class="external-icon"><use xlink:href="/images/icons.svg#external"></use></svg>
+    {% endif %}
+  </a>
+</div>
+{% endmacro %} 

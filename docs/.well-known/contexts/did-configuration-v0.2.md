@@ -1,0 +1,25 @@
+# DID Configuration Context
+
+- [Latest JSON-LD Context](./did-configuration-v0.2.jsonld)
+
+### Terminology
+
+<h4 id="DomainLinkageCredential"><a href="#DomainLinkageCredential">DomainLinkageCredentials</a></h4>
+
+A claim object with fields for domain linkage credentials.
+
+<h4 id="origin"><a href="#origin">origin</a></h4>
+
+The origin being claimed to be linked to the DID in the DomainLinkageCredential.
+
+<h4 id="linked_dids"><a href="#linked_dids">linked_dids</a></h4>
+
+The list of did entities that are linked with this domain configuration by vc data model proofs.
+
+<h4 id="did"><a href="#did">did</a></h4>
+
+A decentralized identifier that is linked via a domain linkage assertion vc.
+
+<h4 id="vc"><a href="#vc">vc</a></h4>
+
+A verifiable credential proof for domain linkage assertion. Must be a valid VC-JWT or Linked Data Credential.
