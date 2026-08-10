@@ -313,7 +313,7 @@ module.exports = {
       meetingSchedule: [
         {
           key: "Working Group Meetings",
-          value: "Meets every Tuesday 10:00:00 Eastern Time and Thursday at 9:00:00 Eastern Time",
+          value: "Meets every Tuesday and Thursday at 10:00:00 Eastern Time",
         },
       ],
       discussionChannels: [
