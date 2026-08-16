@@ -703,7 +703,7 @@ module.exports = {
         },
         "Damian Glover ": {
           title: "Independent",
-          photo: "/images/photos/damian-glover.jpg",
+          photo: "/images/photos/damian-glover.png",
           linkedin: "damianglover",
         },
         "Juan 'Bumblefudge' Caballero": {
