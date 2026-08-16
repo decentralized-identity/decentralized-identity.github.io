@@ -696,20 +696,20 @@ module.exports = {
       },
       chairs: {
         "Nicola Gallo": {
-          title: "Cofounder and CTO @ Nitro Agility S.r.l.",
+          title: "Cofounder and CTO @ Nitro Agility S.R.L.",
           photo: "/images/photos/nicola-gallo.jpg",
           linkedin: "nicolagallo83",
           twitter: "ngallo83",
         },
-        "Andor Kesselman ": {
-          title: "CEO @ Agent Overlay, Inc",
-          photo: "/images/photos/andor-kesselman.jpg",
-          linkedin: "andorsk",
+        "Damian Glover ": {
+          title: "Independent",
+          photo: "/images/photos/damian-glover.jpg",
+          linkedin: "damianglover",
         },
-        "Dmitri Zagidulin": {
-          title: "Lead Architect @ Digital Credentials Consortium",
-          photo: "/images/photos/dima.jpg",
-          linkedin: "dzagidulin",
+        "Juan 'Bumblefudge' Caballero": {
+          title: "Founder @ learningProof U.G.",
+          photo: "/images/photos/bumblefudge.jpeg",
+          linkedin: "juan-caballero",
         },
       },
       url: "/working-groups/trusted-agents.html",
