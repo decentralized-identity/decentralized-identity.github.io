@@ -1,0 +1,53 @@
+{% extends "default.html.njk" %}
+
+{% block content %}
+  {# Header section #}
+  <section class="page-title theme-bg">
+    <div class="container">
+      <svg viewBox="0 0 50 50">
+        <use xlink:href="/images/icons.svg#{{ logo }}"></use>
+      </svg>
+      <h1>{{ name }}</h1>
+
+      <h3>
+      {% if type == "wg" %}
+        Working Group
+      {% elif type == "sig" %}
+        Special Interest Group
+      {% else %}
+        User Group
+      {% endif %}
+      </h3>
+
+      {% if type !== "wg" %}
+      <h4>This is an open, public group</h4>
+      {% endif %}
+      
+      {% if shortform %}
+        <h4>aka: {{ shortform }}</h4>
+      {% endif %}
+    </div>
+  </section>
+
+  {# Group details section #}
+  {% include "partials/group-details-card.html.njk" %}
+
+  {# Projects section #}
+  {% if (projects) or (repoTag) %}
+    {% include "partials/projects.html.njk" %}
+  {% endif %}
+
+  {# Chairs section #}
+  {% include "partials/chairs.html.njk" %}
+
+  {# Optional liaison section #}
+  {% if liaison %}
+    {% include "partials/liaison.html.njk" %}
+  {% endif %}
+
+  {# Optional editors section #}
+  {% if editors %}
+    {% include "partials/editors.html.njk" %}
+  {% endif %}
+
+{% endblock %} 

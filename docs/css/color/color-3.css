@@ -1,0 +1,60 @@
+::selection {
+  background-color:#330867;
+  color: #fff;
+}
+::-moz-selection {
+  background-color:#330867;
+  color: #fff;
+}
+
+
+
+.m-btn-t-theme,
+.blog-item .blog-content h4 a:hover,
+.theme-color {
+  color:#330867;
+}
+
+
+.form-group .input-focus-effect,
+.m-btn-t-theme:hover,
+.theme-after-bg:after,
+.btn-theme,
+.theme-bg {
+  background:#330867;
+}
+
+.m-btn-t-theme,
+.border-theme,
+.btn-theme {
+  border-color:#330867;
+}
+
+.tab-style-1 .nav .nav-item a.active,
+.owl-dots .owl-dot.active,
+.m-btn-theme, 
+.title-section h2:after,
+.theme-before:before,
+.theme-after:after,
+.theme-hover:hover,
+.theme-g-bg{
+  background: #30cfd0;
+  background: -webkit-linear-gradient(to right, #330867, #30cfd0);
+  background: linear-gradient(to right, #330867, #30cfd0);
+}
+
+
+/*Reverce*/
+.about-text li:hover i,
+.m-btn-theme:hover{
+  background: #330867;
+  background: -webkit-linear-gradient(to right, #30cfd0, #330867);
+  background: linear-gradient(to right, #30cfd0, #330867);
+}
+
+
+@media (max-width: 991px){
+  .header {
+    background:#330867;
+  }
+}
