@@ -11,12 +11,8 @@ module.exports = {
       repoTag: "didcomm",
       meetingSchedule: [
         {
-          key: "EU Timezone",
-          value: "Occurs every month on second Thursday at 13:00:00 UTC"
-        },
-        {
           key: "US Timezone",
-          value: "Occurs every month on Thursday at 16:00:00 UTC"
+          value: "Occurs every second, third, and fourth (but not fifth!) Monday at 15:00:00 Eastern Time"
         }
       ],
       discussionChannels: [
@@ -59,12 +55,8 @@ module.exports = {
       type: "ug",
       meetingSchedule: [
         {
-          key: "APAC/EU Timezone",
-          value: "Occurs every week on Monday at 06:30:00 UTC"
-        },
-        {
-          key: "US Timezone",
-          value: "Occurs every week on Monday at 19:00:00 UTC"
+          key: "Sporadic/By Request",
+          value: "Request on Slack"
         }
       ],
       discussionChannels: [

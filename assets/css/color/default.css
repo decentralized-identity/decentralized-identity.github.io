@@ -24,6 +24,24 @@
   background:#1e6fb0;
 }
 
+.shade-bg {
+  background:#e8eef7;
+}
+
+.shade-contrast-text {
+  color: #1e6fb0;
+  font-weight: bold;
+  font-size: small;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.minitable {
+  vertical-align: top;
+}
+
 .m-btn-t-theme,
 .border-theme,
 .btn-theme {

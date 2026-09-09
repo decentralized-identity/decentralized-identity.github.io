@@ -11,12 +11,8 @@ module.exports = {
         "Join this group to contribute to the standards and technology that create, exchange, and verify claims and credentials in a decentralized identity ecosystem. For example, a cryptographically verifiable credential that proves an individual has a college degree or is of a certain age. Our members focus on specs that are vendor agnostic and based on industry standards.",
       meetingSchedule: [
         {
-          key: "Credential Trust Establishment",
-          value: "Occurs every week on Monday at 17:00:00 UTC",
-        },
-        {
           key: "Credential Schemas",
-          value: "Occurs every 2 weeks on Tuesday at 17:00:00 UTC",
+          value: "Sporadic/by request (inquire on Slack)",
         },
       ],
       discussionChannels: [
@@ -114,7 +110,7 @@ module.exports = {
       meetingSchedule: [
         {
           key: "",
-          value: "Occurs every Wednesday at 16:00:00 UTC",
+          value: "Occurs every Wednesday at 18:00:00 Central European Time",
         },
       ],
       discussionChannels: [
@@ -166,13 +162,33 @@ module.exports = {
         "The Creator Assertions Working Group builds upon the work of the Coalition for Content Provenance and Authenticity (C2PA) by defining additional assertions that allow content creators to express individual and organizational intent about their content.",
       meetingSchedule: [
         {
-          key: "Americas/EU Time Zones",
-          value: "Occurs every 2 weeks on Monday at 16:00:00 UTC",
+          key: "Core WG Sync",
+          value: "Occurs every 2 weeks on Monday at 11:00:00 Eastern Time",
         },
         {
-          key: "Topical Calls - Media Industry Identifiers",
+          key: "Topical Calls - Consent Task Force",
           value:
-            "Occurs every 2 weeks on Monday at 16:00:00 UTC, alternating with the Americas/EU meeting",
+            "Occurs every 2 weeks on Thursday at 12:00:00 Eastern Time, on the same weeks as the sync call",
+        },
+        {
+          key: "Topical Calls - Trust Task Force",
+          value:
+            "Occurs every 2 weeks on Monday at 11:00:00 Eastern Time, alternating weeks with the sync call",
+        },
+        {
+          key: "Topical Calls - VC/VP Task Force",
+          value:
+            "Occurs every 2 weeks on Monday at 12:00:00 Eastern Time, alternating weeks with the sync call",
+        },
+        {
+          key: "Topical Calls - vLEI Task Force",
+          value:
+            "Occurs every 2 weeks on Tuesday at 10:00:00 Eastern Time, alternating weeks with the sync call",
+        },
+        {
+          key: "Topical Calls - UX Task Force",
+          value:
+            "Occurs every 2 weeks on Tuesday at 11:00:00 Eastern Time, alternating weeks with the sync call",
         },
       ],
       discussionChannels: [
@@ -231,7 +247,7 @@ module.exports = {
       meetingSchedule: [
         {
           key: "",
-          value: "Occurs every month on first Monday at 19:00:00 UTC",
+          value: "Occurs every month on first Monday at 15:00:00 Eastern Time",
         },
       ],
       discussionChannels: [
@@ -297,7 +313,7 @@ module.exports = {
       meetingSchedule: [
         {
           key: "Working Group Meetings",
-          value: "Meets every Tuesday 15:00:00 UTC and Thursday at 14:00:00 UTC",
+          value: "Meets every Tuesday and Thursday at 10:00:00 Eastern Time",
         },
       ],
       discussionChannels: [
@@ -348,11 +364,11 @@ module.exports = {
       meetingSchedule: [
         {
           key: "Bi-weekly Identifiers & Discovery",
-          value: "Occurs every 2 weeks on Monday at 18:00:00 UTC",
+          value: "Occurs every 2 weeks on Monday at 20:00:00 Central Europe Time",
         },
         {
           key: "did:webvh",
-          value: "Occurs every 2 weeks on Thursday at 16:00:00 UTC",
+          value: "Occurs every 2 weeks on Thursday at 12:00:00 Eastern Time",
         },
       ],
       discussionChannels: [
@@ -529,7 +545,7 @@ module.exports = {
       meetingSchedule: [
         {
           key: "BBS+ Work Item",
-          value: "Occurs every week on Monday at 18:00:00 UTC",
+          value: "Occurs every week on Monday at 14:00:00 Eastern Time",
         },
       ],
       discussionChannels: [
@@ -653,15 +669,15 @@ module.exports = {
       meetingSchedule: [
         {
           key: "Working Group Syncs",
-          value: "Occurs every week on Monday at 9:30:00 PST (usually UTC-8)",
+          value: "Occurs every week on Monday at 12:30:00 Eastern Time",
         },
         {
           key: "Delegated Authority Task Force",
-          value: "Occurs every week on Monday at 7:00:00 PST (usually UTC-8)",
+          value: "Occurs every week on Monday at 10:00:00 Eastern Time",
         },
         {
           key: "KYA-OS Task Force",
-          value: "Occurs every week on Tuesday at 7:00:00 PST (usually UTC-8)",
+          value: "Occurs every week on Tuesday at 9:00:00 Eastern Time",
         },
       ],
       charters: {
@@ -680,20 +696,20 @@ module.exports = {
       },
       chairs: {
         "Nicola Gallo": {
-          title: "Cofounder and CTO @ Nitro Agility S.r.l.",
+          title: "Cofounder and CTO @ Nitro Agility S.R.L.",
           photo: "/images/photos/nicola-gallo.jpg",
           linkedin: "nicolagallo83",
           twitter: "ngallo83",
         },
-        "Andor Kesselman ": {
-          title: "CEO @ Agent Overlay, Inc",
-          photo: "/images/photos/andor-kesselman.jpg",
-          linkedin: "andorsk",
+        "Damian Glover ": {
+          title: "Independent",
+          photo: "/images/photos/damian-glover.png",
+          linkedin: "damianglover",
         },
-        "Dmitri Zagidulin": {
-          title: "Lead Architect @ Digital Credentials Consortium",
-          photo: "/images/photos/dima.jpg",
-          linkedin: "dzagidulin",
+        "Juan 'Bumblefudge' Caballero": {
+          title: "Founder @ learningProof U.G.",
+          photo: "/images/photos/bumblefudge.jpeg",
+          linkedin: "juan-caballero",
         },
       },
       url: "/working-groups/trusted-agents.html",
