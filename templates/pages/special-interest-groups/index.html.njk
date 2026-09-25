@@ -1,0 +1,46 @@
+{% extends "default.html.njk" %}
+{% from "partials/group-card.html.njk" import groupCard %}
+{% set title = "Special Interest Groups" %}
+{% set css = ['directory', 'group-cards'] %}
+
+{% block content %}
+<section class="page-title theme-bg">
+  <div class="container">
+    <h1>Special Interest Groups</h1>
+    <p class="lead text-white mb-0">Our Special Interest Groups (SIGs) focus on specific industries, regions, and use cases, bringing together experts to drive adoption and innovation in decentralized identity across different domains.</p>
+  </div>
+</section>
+
+<section class="group-section">
+  <div class="container">
+    <div class="group-cards-grid">
+      {% for id, group in specialInterestGroups.activeSIGs %}
+        {{ groupCard(group) }}
+      {% endfor %}
+    </div>
+
+    {# Archived Special Interest Groups #}
+    {% if specialInterestGroups.archivedSIGs | length > 0 %}
+      <div class="archived-section">
+        <div class="section-header">
+        <h2>Archived Special Interest Groups</h2>
+        <p>Previously active special interest groups that have completed their mission or been consolidated.</p>
+        </div>
+        <div class="group-cards-grid">
+          {% for id, wg in specialInterestGroups.archivedSIGs %}
+            <div class="group-card archived">
+              <h3>{{ wg.name }}</h3>
+              {% if wg.externalUrl %}
+                <a href="{{ wg.externalUrl }}" class="learn-more-btn">Learn More</a>
+              {% else %}
+                <a href="{{ wg.url }}" class="learn-more-btn">Learn More</a>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endblock %} 

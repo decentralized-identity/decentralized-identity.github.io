@@ -1,0 +1,60 @@
+{% set css = ['directory', 'events'] %} {% set js = ['jsonp', 'events'] %} {%
+extends "default.html.njk" %} {% block content %}
+<section class="page-title theme-bg">
+  <div class="container">
+    <svg><use xlink:href="/images/icons.svg#event"></use></svg>
+    <h1>Events &amp; Activities</h1>
+  </div>
+</section>
+
+<!--
+  <section id="item_filter" class="gray-bg">
+    <div class="row justify-content-center p-15px-rl p-20px-tb">
+      <div class="form-group">
+        <div id="filter_search" class="filter-search">
+          <input id="filter_search_input" class="form-control" type="text" placeholder="Search events by name, date, and location">
+          <a href="/events" id="filter_clear"><svg><use xlink:href="/images/icons.svg#close_x"></use></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>-->
+
+<div class="row justify-content-center p-15px-rl p-20px-tb">
+  <iframe
+    src="https://calendar.google.com/calendar/embed?src=4330ce450b94ab669deaa120732903f098216669bb587922d0d9fb294790b962%40group.calendar.google.com&ctz=America%2FNew_York"
+    style="border: 0; padding: 4px;"
+    width="1000"
+    height="800"
+    frameborder="0"
+    scrolling="no"
+  ></iframe>
+</div>
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-9">
+        <ul id="item_list" styled>
+          <!----------------------------->
+          <!-- Start of Event Listings -->
+          <!----------------------------->
+          <!--  
+            <li data-filter="${searchStrings}">
+              <div class="item-list-left">
+              
+                <a href="https://internetidentityworkshop.com" target="_blank">
+                  <img src="/images/logos/IIW-XXXIV.jpg"/>
+                </a>
+              </div>
+              <dl class="item-list-center">
+                <dt><a href="https://" target="_blank"> </a></dt>
+                <dd class="item-location"><strong>Location:</strong>  </dd>
+                <dd class="item-location"><strong>Date:</strong>  </dd>
+                <dd>Description</dd>
+              </dl>
+            </li>-->
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,31 @@
+{
+  "name": "dif-website",
+  "description": "The website for the Decentralized Identity Foundation",
+  "version": "0.0.1",
+  "homepage": "https://identity.foundation",
+  "license": "Apache 2",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/decentralized-identity/decentralized-identity.github.io.git"
+  },
+  "devDependencies": {
+    "axios": "1.6",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.6.1",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-uglify": "^3.0.1",
+    "nunjucks": "^3.2.4",
+    "prettier": "2.4.1",
+    "rimraf": "^5.0.1",
+    "serve": "^14",
+    "glob": "^8.1.0",
+    "lru-cache": "^10.2.0"
+  },
+  "prettier": {
+    "proseWrap": "always"
+  },
+  "scripts": {
+    "build": "gulp build"
+  }
+}
