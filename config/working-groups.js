@@ -695,12 +695,6 @@ module.exports = {
         },
       },
       chairs: {
-        "Nicola Gallo": {
-          title: "Cofounder and CTO @ Nitro Agility S.R.L.",
-          photo: "/images/photos/nicola-gallo.jpg",
-          linkedin: "nicolagallo83",
-          twitter: "ngallo83",
-        },
         "Damian Glover ": {
           title: "Independent",
           photo: "/images/photos/damian-glover.png",
