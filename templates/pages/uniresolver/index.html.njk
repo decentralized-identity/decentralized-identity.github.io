@@ -35,17 +35,25 @@
             </div>
             <br>
             <p>
-              <i>As of October X, 2026, The Decentralized Identity Foundation is no longer hosting a "community staging 
+              As of October X, 2026, The Decentralized Identity Foundation is no longer hosting a "community staging 
               server" for the Universal Resolver. The complexity of hosting and administering it as a public resource has 
-              grown over the years, and the number of commercial implementations of the Universal Resolver specification 
+              grown over the years, and the number of production-grade implementations of the Universal Resolver specification 
               (with free tiers) have largely obviated the need for DIF to "seed" the market, which is growing into 
-              maturity.</i>
+              maturity.
             </p>
             <p>
-            Developers who were using DIF's community resolver (which was powered, all along, by GoDiddy's staging backend) 
-            are encouraged to consider using one of the two commercial resolvers (with free-tiers) below. Both commercial 
-            implementations are operated by DIF members, who maintain the respective reference implementations, including 
-            ongoing review of new drivers. In historical order:
+              Developers who were using DIF's community resolver (which was powered, all along, by GoDiddy's staging backend) 
+              are encouraged to consider using one of the two resolvers listed below for experimentation and research, and to 
+              consider DIF-affiliated commercial options for production infrastructural needs. Both deployments are 
+              deployed and funded by DIF members, who maintain the respective reference implementations they are based on through
+              DIF, including change requests, bug fixes, and ongoing review of new drivers, whether dockerized, NPM-packaged, or 
+              both. Some of these drivers, like those for 
+              <a href=https://github.com/decentralized-identity/ethr-did-resolver><code>did:ethr</code></a> and 
+              <a href=https://github.com/decentralized-identity/uni-resolver-driver-did-webvh><code>did:webvh</code></a>
+              are, in turn, also DIF work items, and thus good examples to analyze if you are planning your own driver contribution.
+           </p>
+           <p>
+             In historical order, the main DIF-member deployments are:
            </p>
         </div>
       </div>
@@ -71,7 +79,7 @@
             <a href="https://godiddy.com/app/resolve">GoDiddy's production front-end</a>, which continues to run DanubeTech's
              foundational reference implementation of the specification they 
              <a href="https://github.com/decentralized-identity/universal-resolver">donated to DIF</a> and managed here.
-             It is comprised of a workhorse Java router and docker containers per method.
+             It is comprised of a workhorse Java router and docker containers per method to support the widest possible range of resolution designs.
              </p>
           </div>
         </div>
@@ -79,7 +87,7 @@
           <div class="section-title text-center">
             <h2 class="font-alt">ThisDID, by GoPlausible</h2>
             <p>
-              <i>Edge-worker-optimized and multi-backend version of the reference implementation for NPM-packaged drivers</i>
+              <i>Edge-worker-optimized and proxy-fallback wrapper around DIF's NPM-based resolver engine</i>
             </p>
             <div class="title-border">
               <span class="lg"></span>
@@ -88,11 +96,11 @@
             </div>
             <br>
             <p>
-            They might also consider using <a href="https://thisdid.com">ThisDID.com</a>, a more recent productionization of the 
-            <a href="https://github.com/decentralized-identity/did-resolver">TypeScript/NPM reference implementation</a>, which instead
-             uses edge-worker to route and proxy resolution, and NPM packages per method. Both commercial implementations are 
-             operated by DIF members, who maintain the respective reference implementations, including ongoing review of new 
-             drivers.
+            <a href="https://thisdid.com">ThisDID.com</a>, is a more recent re-architecting of the Veramo-project-maintained
+            <a href="https://github.com/decentralized-identity/did-resolver">TypeScript/NPM reference implementation</a>. It uses 
+            an edge-worker deployment to route and proxy resolution to optimize for low latency and operational cost for methods
+            which have been packaged as NPM packages, and has a "fallback" to proxied resolution everywhere else, load-balancing
+            (and ranking) where multiple backends support these non-NPM resolution drivers.
              </p>
           </div>
         </div>
