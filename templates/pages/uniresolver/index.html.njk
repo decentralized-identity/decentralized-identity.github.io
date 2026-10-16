@@ -37,14 +37,19 @@
             <p>
               As of October 14, 2026, The Decentralized Identity Foundation is no longer hosting a "community staging 
               server" for the Universal Resolver. The complexity of hosting and administering it as a public resource has 
-              grown over the years, and the number of production-grade implementations of the Universal Resolver specification 
+              grown over the years, and the number of production-grade Universal Resolver service providers
               (with free tiers) have largely obviated the need for DIF to "seed" the market, which is growing into 
               maturity.
             </p>
             <p>
-              Developers who were using DIF's community resolver (which was powered, all along, by GoDiddy's staging backend) 
-              are encouraged to consider using one of the two resolvers listed below for experimentation and research, and to 
-              consider DIF-affiliated commercial options for production infrastructural needs. Both deployments are 
+              Developers who were using DIF's community resolver can continue to contribute to and use the
+              <a href="https://github.com/decentralized-identity/universal-resolver/">Universal Resolver open-source
+              work item</a>, including for self-hosting a DID resolution service, and for submitting
+              new drivers for DID methods.
+            </p>
+            <p>
+              In addition, developers are encouraged to consider using one of the two services listed below for experimentation and research,
+              and to consider DIF-affiliated commercial options for production infrastructural needs. Both deployments are 
               deployed and funded by DIF members, who maintain the respective reference implementations they are based on through
               DIF, including change requests, bug fixes, and ongoing review of new drivers, whether dockerized, NPM-packaged, or 
               both. Some of these drivers, like those for 
@@ -76,10 +81,11 @@
             </div>
             <br>
             <p>
-            <a href="https://godiddy.com/app/resolve">GoDiddy's production front-end</a>, which continues to run DanubeTech's
-             foundational reference implementation of the specification they 
-             <a href="https://github.com/decentralized-identity/universal-resolver">donated to DIF</a> and managed here.
-             It is comprised of a workhorse Java router and docker containers per method to support the widest possible range of resolution designs.
+            <a href="https://uniresolver.io">uniresolver.io</a>, based on the original
+             Universal Resolver foundational reference implementation
+             <a href="https://github.com/decentralized-identity/universal-resolver">developed at DIF</a>,
+             continuously maintained by the community with over 100 contributors.
+             It is comprised of a workhorse Java router and Docker containers to support the widest possible range of DID methods.
              </p>
           </div>
         </div>
