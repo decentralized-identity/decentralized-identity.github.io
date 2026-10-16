@@ -1,0 +1,92 @@
+
+#schema_filters .form-group {
+  display: flex;
+  max-width: 400px;
+  margin-bottom: 0;
+}
+
+#schema_filters .form-group a {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  height: 100%;
+  width: 3em;
+  margin: auto 0.3em;
+  padding: 0 0.5em;
+  cursor: pointer;
+}
+
+
+#schema_filters .form-group a svg {
+  width: 100%;
+  height: 100%;
+  color: var(--secondary);
+}
+
+#filter_clear {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#filter_search {
+  position: relative;
+  flex: 1;
+}
+
+#schema_viewer {
+  position: relative;
+  max-width: 700px;
+}
+
+#schema_viewer dt + dd {
+  font-size: 0.8em;
+}
+
+body[searching] #filter_clear {
+  opacity: 1;
+}
+
+#schema_list {
+  position: absolute;
+  transition: opacity 0.5s ease;
+}
+
+body[searching] #schema_list dt,
+body[searching] #schema_list dt + dd {
+  display: none;
+}
+
+body[searching] #schema_list dd {
+  margin: 0 0 0 0;
+}
+
+#schema_objects {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.5s ease;
+}
+
+.schema-object {
+  display: none;
+}
+
+[selected-schema-object] {
+  display: block;
+}
+
+body[viewing-schema-object] #schema_list {
+  opacity: 0;
+  z-index: -1;
+}
+
+body:not([viewing-schema-object]) #schema_list {
+  position: relative;
+}
+
+body[viewing-schema-object] #schema_objects {
+  position: relative;
+  opacity: 1;
+  z-index: 1;
+}

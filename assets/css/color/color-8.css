@@ -1,0 +1,56 @@
+::selection {
+  background-color:#FFC107;
+  color: #fff;
+}
+::-moz-selection {
+  background-color:#FFC107;
+  color: #fff;
+}
+
+
+
+.m-btn-t-theme,
+.blog-item .blog-content h4 a:hover,
+.theme-color {
+  color:#FFC107;
+}
+
+
+.form-group .input-focus-effect,
+.m-btn-t-theme:hover,
+.theme-after-bg:after,
+.btn-theme,
+.theme-bg {
+  background:#FFC107;
+}
+
+.m-btn-t-theme,
+.border-theme,
+.btn-theme {
+  border-color:#FFC107;
+}
+
+.tab-style-1 .nav .nav-item a.active,
+.owl-dots .owl-dot.active,
+.m-btn-theme, 
+.title-section h2:after,
+.theme-before:before,
+.theme-after:after,
+.theme-hover:hover,
+.theme-g-bg{
+  background: #FFC107;
+}
+
+
+/*Reverce*/
+.about-text li:hover i,
+.m-btn-theme:hover{
+  background: #FFC107;
+}
+
+
+@media (max-width: 991px){
+  .header {
+    background:#FFC107;
+  }
+}

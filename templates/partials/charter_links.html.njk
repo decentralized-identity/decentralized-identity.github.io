@@ -1,0 +1,14 @@
+<div class="col-10 col-md-8 col-lg-6 m-30px-t margin-center">
+  <dl>
+    {% for key, val in charters %}
+      <dt>{{ key }}</dt>
+      <dd>
+        {% if val.links %}
+          {% for link in val.links %}
+            <a class="block-link icon-link" href="{{ link.href }}">{{ link.text }}</a>
+          {% endfor %}
+        {% endif %}
+      </dd>
+    {% endfor %}
+  </dl>
+</div> 
