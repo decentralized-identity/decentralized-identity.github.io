@@ -1,0 +1,11 @@
+{
+  "@context": [
+    {
+      "@version": 1.1,
+      "@protected": true,
+      "DomainLinkageCredential": "https://identity.foundation/.well-known/contexts/did-configuration-v0.2#DomainLinkageCredential",
+      "origin": "https://identity.foundation/.well-known/contexts/did-configuration-v0.2#origin",
+      "linked_dids": "https://identity.foundation/.well-known/contexts/did-configuration-v0.2#linked_dids"
+    }
+  ]
+}
