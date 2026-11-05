@@ -42,20 +42,15 @@
               maturity.
             </p>
             <p>
-              Developers who were using DIF's community resolver can continue to contribute to and use the
-              <a href="https://github.com/decentralized-identity/universal-resolver/">Universal Resolver open-source
-              work item</a>, including for self-hosting a DID resolution service, and for submitting
-              new drivers for DID methods.
-            </p>
-            <p>
-              In addition, developers are encouraged to consider using one of the two services listed below for experimentation and research,
-              and to consider DIF-affiliated commercial options for production infrastructural needs. Both deployments are 
-              deployed and funded by DIF members, who maintain the respective reference implementations they are based on through
-              DIF, including change requests, bug fixes, and ongoing review of new drivers, whether dockerized, NPM-packaged, or 
+              DID-curious developers are encouraged to check out one of the two member-hosted services listed below for 
+              experimentation and early research, to self-host (and contribute) to the open-source work items powering them, 
+              and to consider DIF-affiliated commercial options for production-grade infrastructural needs. Both deployments below are 
+              deployed and funded by DIF members, who maintain at DIF the respective reference implementations they are based on. 
+              This includes change requests, bug fixes, and ongoing review of new drivers, whether dockerized, NPM-packaged, or 
               both. Some of these drivers, like those for 
               <a href=https://github.com/decentralized-identity/ethr-did-resolver><code>did:ethr</code></a> and 
-              <a href=https://github.com/decentralized-identity/uni-resolver-driver-did-webvh><code>did:webvh</code></a>
-              are, in turn, also DIF work items, and thus good examples to analyze if you are planning your own driver contribution.
+              <a href=https://github.com/decentralized-identity/uni-resolver-driver-did-webvh><code>did:webvh</code></a>,
+              are also DIF work items in their own right, and thus good examples to analyze if you are planning your own driver contribution.
            </p>
            <p>
              In historical order, the main DIF-member deployments are:
@@ -70,7 +65,7 @@
       <div class="row justify-content-md-center">
         <div class="col-3">
           <div class="section-title text-center">
-            <h2 class="font-alt">GoDiddy, by DanubeTech</h2>
+            <h2 class="font-alt">GoDiddy Universal Resolver, hosted by DanubeTech</h2>
             <p>
               <i>Productionized reference implementation of the original Universal Resolver form-factor.</i>
             </p>
@@ -81,11 +76,12 @@
             </div>
             <br>
             <p>
-            <a href="https://uniresolver.io">uniresolver.io</a>, based on the original
-             Universal Resolver foundational reference implementation
-             <a href="https://github.com/decentralized-identity/universal-resolver">developed at DIF</a>,
-             continuously maintained by the community with over 100 contributors.
-             It is comprised of a workhorse Java router and Docker containers to support the widest possible range of DID methods.
+             In addition to the more full-featured <a href="https://godiddy.com">GoDiddy</a> product, DanubeTech hosts an instance of the
+             classic white-label Universal Resolver interface at <a href="https://uniresolver.io">uniresolver.io</a>, 
+             against which self-hosters can compare and test their own deployments of the 
+             <a href="https://github.com/decentralized-identity/universal-resolver">Universal Resolver</a> reference implementation,
+             developed at DIF and continuously maintained by the community with over 100 contributors and counting.
+             It is comprised of a workhorse Java router and Docker containers to support the widest possible range of DID methods. 
              </p>
           </div>
         </div>
@@ -102,11 +98,14 @@
             </div>
             <br>
             <p>
-            <a href="https://thisdid.com">ThisDID.com</a>, is a more recent re-architecting of the Veramo-project-maintained
-            <a href="https://github.com/decentralized-identity/did-resolver">TypeScript/NPM reference implementation</a>. It uses 
-            an edge-worker deployment to route and proxy resolution to optimize for low latency and operational cost for methods
-            which have been packaged as NPM packages, and has a "fallback" to proxied resolution everywhere else, load-balancing
-            (and ranking) where multiple backends support these non-NPM resolution drivers.
+            <a href="https://thisdid.com">ThisDID.com</a>, is a sample deployment of the recent 
+            <a href="https://github.com/decentralized-identity/universal-resolver-ts">TypeScript/NPM
+            re-implementation of the Universal Resolver</a>, applying an alternate architectural approach.
+            It uses an "edge-worker" deployment pattern to optimize for low latency and operational cost for methods which 
+            have been packaged as NPM packages (using the 
+            <a href="https://github.com/decentralized-identity/did-resolver">DID resolver NPM API and template</a> designed and 
+            maintained by DIF's <a href="https://veramo.io/">Veramo</a> project). It "falls back" to proxy resolution for all other 
+            drivers, load-balancing (and ranking) where multiple backends support these non-NPM resolution drivers.
              </p>
           </div>
         </div>
