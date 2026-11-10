@@ -419,7 +419,7 @@ module.exports = {
           links: [
             {
               text: "Monorepo of ThisDID edge-worker driver engine and sample deployment",
-              href: "https://github.com/decentralized-identity/thisdid/",
+              href: "https://github.com/decentralized-identity/cloud-did-resolver/",
             },
             {
               text: "JavaScript Driver Development (formerly NPM-based driver system of Veramo)",
