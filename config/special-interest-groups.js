@@ -53,6 +53,46 @@ module.exports = {
         }
       }
     },
+    "korea": {
+      name: "DIF Korea",
+      logo: "biz_discussion",
+      shortform: null,
+      status: "active",
+      url: "/special-interest-groups/korea",
+      scope: "This group is a group of experts from industry, academia, and institutions located in Korea for the application of decentralized identity technology, focusing on activities such as standard technology consultation, opinion collection, policy direction presentation, and core technology demonstration. It is an open and non-IPR group.",
+      type: "sig",
+      discussionChannels: [
+        {
+          text: "Mailing list",
+          href: "https://lists.identity.foundation/g/DIF-Korea-SIG/"
+        },
+      ],
+      charters: {
+        "Korea SIG documentation": {
+          links: [
+            {
+              text: "SIG Charter",
+              href: "https://github.com/decentralized-identity/SIG-Korea/SIG_charter.md"
+            },
+            {
+              text: "SIG GitHub Repos",
+              href: "https://github.com/decentralized-identity/SIG-Korea/"
+            }
+          ]
+        }
+      },
+      chairs: {
+        "Kyoungchul Park": {
+          title: "CEO K4-Security.Co.Ltd",
+          photo: "/images/photos/kyoungchul-park.jpg",
+          linkedin: "kyoungchul-park-68467a35",
+          twitter: "kyoungchul_park"
+        }
+      }
+    }
+  },
+  // For any archived/inactive SIGs
+  archivedSIGs: {
     "africa": {
       name: "DIF Africa",
       logo: "biz_discussion",
@@ -234,47 +274,6 @@ module.exports = {
         }
       }
     },
-    "korea": {
-      name: "DIF Korea",
-      logo: "biz_discussion",
-      shortform: null,
-      status: "active",
-      url: "/special-interest-groups/korea",
-      scope: "This group is a group of experts from industry, academia, and institutions located in Korea for the application of decentralized identity technology, focusing on activities such as standard technology consultation, opinion collection, policy direction presentation, and core technology demonstration. It is an open and non-IPR group.",
-      type: "sig",
-      discussionChannels: [
-        {
-          text: "Mailing list",
-          href: "https://lists.identity.foundation/g/DIF-Korea-SIG/"
-        },
-      ],
-      charters: {
-        "Korea SIG documentation": {
-          links: [
-            {
-              text: "SIG Charter",
-              href: "https://github.com/decentralized-identity/SIG-Korea/SIG_charter.md"
-            },
-            {
-              text: "SIG GitHub Repos",
-              href: "https://github.com/decentralized-identity/SIG-Korea/"
-            }
-          ]
-        }
-      },
-      chairs: {
-        "Kyoungchul Park": {
-          title: "CEO K4-Security.Co.Ltd",
-          photo: "/images/photos/kyoungchul-park.jpg",
-          linkedin: "kyoungchul-park-68467a35",
-          twitter: "kyoungchul_park"
-        }
-      }
-    }
-  },
-
-  // For any archived/inactive SIGs
-  archivedSIGs: {
     "banking-and-finance": {
       name: "Banking and Finance",
       type: "sig",
