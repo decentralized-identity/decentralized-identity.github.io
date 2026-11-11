@@ -1,0 +1,221 @@
+/* Add the diagonal background to the section containing group cards */
+.group-section {
+  position: relative;
+  background: linear-gradient(135deg, #f8f9fa 50%, #fff 50%);
+  padding: 80px 0;
+}
+
+.group-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+  position: relative;
+}
+
+/* Archive section specific styling */
+.archived-section {
+  margin-top: 60px;
+  border-top: 1px solid #eee;
+  padding-top: 40px;
+}
+
+.archived-section .section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.archived-section .section-header h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.archived-section .section-header p {
+  color: #888;
+  font-family: "Open Sans", sans-serif;
+}
+
+.archived-section .group-cards-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Active group card styling */
+.group-card {
+  background: #fff;
+  border-radius: 5px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.group-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.group-card .icon-wrapper {
+  margin-bottom: 20px;
+}
+
+.group-card .group-icon {
+  width: 60px;
+  height: 60px;
+  color: var(--primary-color);
+}
+
+.group-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin: 15px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.group-card .description {
+  color: #666;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  font-size: 15px;
+  line-height: 1.7;
+  font-family: "Open Sans", sans-serif;
+}
+
+.group-card .learn-more-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  margin-top: auto;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* Archived group card styling */
+.group-card.archived {
+  padding: 20px;
+  background: #f8f9fa;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.group-card.archived:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.group-card.archived h3 {
+  font-size: 16px;
+  margin: 0 0 10px 0;
+  color: #666;
+}
+
+.group-card.archived .learn-more-btn {
+  padding: 8px 20px;
+  font-size: 13px;
+  background: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.group-card.archived .learn-more-btn:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* Hide icon wrapper for archived cards */
+.group-card.archived .icon-wrapper {
+  display: none;
+}
+
+/* For archived/compact cards */
+.group-card.compact {
+  padding: 20px;
+}
+
+.group-card.compact .group-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.group-card.compact h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Meeting info styling */
+.group-card .meeting-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.group-card .meeting-info .calendar-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .group-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .archived-section .group-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .group-card {
+    padding: 20px;
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.group-card.view-all {
+  background: rgba(var(--primary-rgb), 0.05);
+  border: 2px dashed rgba(var(--primary-rgb), 0.2);
+}
+
+.group-card.view-all:hover {
+  background: rgba(var(--primary-rgb), 0.1);
+  border-style: solid;
+}
+
+.group-card.view-all .group-icon {
+  opacity: 0.5;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+} 
