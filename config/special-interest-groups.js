@@ -10,8 +10,8 @@ module.exports = {
       scope: "This group is focused on the interests of Hospitality and Travel industry professionals with a vested interest in the application of Decentralized Identity technologies. This is an open, non-IPR group.",
       meetingSchedule: [
         {
-          key: "Meeting Schedule",
-          value: "Biweekly Wednesdays at 10 EST, starting January 13, 2027"
+          key: "Biweekly Open Meetings",
+          value: "Wednesdays at 10 EST, starting January 13, 2027"
         },
       ],
       charters: {
