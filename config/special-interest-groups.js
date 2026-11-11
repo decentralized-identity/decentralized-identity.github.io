@@ -10,8 +10,8 @@ module.exports = {
       scope: "This group is focused on the interests of Hospitality and Travel industry professionals with a vested interest in the application of Decentralized Identity technologies. This is an open, non-IPR group.",
       meetingSchedule: [
         {
-          key: "",
-          value: "Currently on hiatus, check back soon"
+          key: "Meeting Schedule",
+          value: "Biweekly Wednesdays at 10 EST, starting January 13, 2027"
         },
       ],
       charters: {
@@ -41,16 +41,15 @@ module.exports = {
         }
       },
       chairs: {
-        "Nick Price": {
-          title: "CEO @ NetSys Technology",
-          photo: "/images/photos/nick-price.jpg",
-          linkedin: "nickprice1",
-          twitter: "NetSysNick"
+        "Douglas Rice": {
+          title: "Founder & CEO @ Hospitality Technology Next Generation, LLC",
+          photo: "/images/photos/doug-rice.jpg",
+          linkedin: "ricedouglas"
         },
-        "Gene Quinn": {
-          title: "Board Chairman, TravelScrum, Inc.\nPresident, Confluence Partners, LLC",
-          photo: "/images/photos/gene-quinn.jpeg",
-          linkedin: "gquinn1975"
+        "Gee Mann": {
+          title: "Founder, Travlr ID",
+          photo: "/images/photos/gee-mann.jpg",
+          linkedin: "geemann"
         }
       }
     },
