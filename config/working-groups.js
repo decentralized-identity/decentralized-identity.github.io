@@ -397,20 +397,33 @@ module.exports = {
       },
       projects: {
         "Universal Resolver": {
-          desc: "Specification and implementation of a driver-based framework that enables resolution of DIDs.",
+          desc: "Specification and implementation of a driver-based framework that enables resolution of any possible HTTP-bindable DID method.",
           links: [
             {
               text: "Main Repo",
               href: "https://github.com/decentralized-identity/universal-resolver",
             },
             {
-              text: "Public Instance",
+              text: "Public Example Instance (hosted by Danube Tech)",
               type: "app",
               href: "https://uniresolver.io/",
             },
             {
               text: "Driver Development",
               href: "https://github.com/decentralized-identity/universal-resolver/blob/master/docs/driver-development.md",
+            },
+          ],
+        },
+        "Targetted Multi-Method Resolvers": {
+          desc: "Lightweight driver-based JavaScript frameworks that enables resolution of multiple DID methods on various platforms.",
+          links: [
+            {
+              text: "Monorepo of ThisDID edge-worker driver engine and sample deployment",
+              href: "https://github.com/decentralized-identity/cloud-did-resolver/",
+            },
+            {
+              text: "JavaScript Driver Development (formerly NPM-based driver system of Veramo)",
+              href: "https://github.com/decentralized-identity/did-resolver/",
             },
           ],
         },
