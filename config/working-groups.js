@@ -139,7 +139,7 @@ module.exports = {
       },
       chairs: {
         "Sumit Vekariya": {
-          title: "Owner @ Future Forge Innovation",
+          title: "Founder @ ZKred.tech",
           photo: "/images/photos/sumit-vekariya.jpg",
           linkedin: "sumitvekariya",
         },
