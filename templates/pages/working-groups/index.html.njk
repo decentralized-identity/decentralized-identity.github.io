@@ -1,0 +1,42 @@
+{% extends "default.html.njk" %}
+{% from "partials/group-card.html.njk" import groupCard %}
+{% set title = "Working Groups" %}
+{% set css = ['directory', 'group-cards'] %}
+
+{% block content %}
+<section class="page-title theme-bg">
+  <div class="container">
+    <h1>Working Groups</h1>
+    <p class="lead text-white mb-0">As an engineering-driven development-focused organization, our Working Groups are at the core of everything we do.</p>
+  </div>
+</section>
+
+<section class="group-section">
+  <div class="container">
+    {# Active Working Groups #}
+    <div class="group-cards-grid">
+      {% for id, wg in workingGroups.activeWorkingGroups %}
+        {{ groupCard(wg) }}
+      {% endfor %}
+    </div>
+
+    {# Archived Working Groups #}
+    {% if workingGroups.archivedWorkingGroups | length > 0 %}
+      <div class="archived-section">
+        <div class="section-header">
+          <h2>Archived Working Groups</h2>
+          <p>Previously active working groups that have completed their charter or been superseded.</p>
+        </div>
+        <div class="group-cards-grid">
+          {% for id, wg in workingGroups.archivedWorkingGroups %}
+            <div class="group-card archived">
+              <h3>{{ wg.name }}</h3>
+              <a href="{{ wg.url }}" class="learn-more-btn">Learn More</a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %} 

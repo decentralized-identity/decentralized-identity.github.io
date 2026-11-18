@@ -1,0 +1,29 @@
+{
+  "@context": "https://identity.foundation/.well-known/did-configuration/v1",
+  "linked_dids": [
+    {
+      "@context": [
+        "https://www.w3.org/2018/credentials/v1",
+        "https://identity.foundation/.well-known/did-configuration/v1",
+        "https://w3id.org/security/suites/jws-2020/v1"
+      ],
+      "type": [
+        "VerifiableCredential",
+        "DomainLinkageCredential"
+      ],
+      "credentialSubject": {
+        "id": "did:web:identity.foundation",
+        "origin": "https://identity.foundation"
+      },
+      "issuer": "did:web:identity.foundation",
+      "issuanceDate": "2025-07-14T18:56:50Z",
+      "proof": {
+        "type": "JsonWebSignature2020",
+        "proofPurpose": "assertionMethod",
+        "verificationMethod": "did:web:identity.foundation#XXS7zTsbIIAxgNlYEXJ4y810GFeLkYdqfK3ChhoQn7c",
+        "created": "2025-07-14T18:56:51.005958359Z",
+        "jws": "eyJhbGciOiJFUzI1NiIsImtpZCI6IlhYUzd6VHNiSUlBeGdObFlFWEo0eTgxMEdGZUxrWWRxZkszQ2hob1FuN2MiLCJjcml0IjpbImI2NCJdLCJiNjQiOmZhbHNlfQ..rH3-XqGEq5TtJ6x3wiWFTviF3gR6tGRLJeNVBE9nZ2hNhfmXhLZHPiwaqRWCTOAwwC3-al9X_AZdTRZijQYBeQ"
+      }
+    }
+  ]
+}

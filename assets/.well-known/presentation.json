@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://w3id.org/security/suites/jws-2020/v1"
+  ],
+  "type": [
+    "VerifiablePresentation"
+  ],
+  "verifiableCredential": [
+    {
+      "@context": [
+        "https://www.w3.org/2018/credentials/v1",
+        "https://w3id.org/security/suites/jws-2020/v1",
+        {
+          "schema": "https://schema.org/"
+        }
+      ],
+      "type": [
+        "VerifiableCredential",
+        "schema:Organization"
+      ],
+      "credentialSubject": {
+        "id": "did:web:identity.foundation",
+        "schema:location": {
+          "schema:addressCountry": "USA",
+          "schema:addressLocality": "San Francisco",
+          "schema:addressRegion": "CA",
+          "schema:postalCode": "94104-5401",
+          "schema:streetAddress": "548 Market Street\nPMB 57274",
+          "type": "schema:PostalAddress"
+        },
+        "schema:email": "press@identity.foundation",
+        "schema:legalName": "Linux Foundation, Unit: Decentralized Identity Foundation"
+      },
+      "issuer": "did:web:identity.foundation",
+      "issuanceDate": "2025-07-14T19:00:59Z",
+      "proof": {
+        "type": "JsonWebSignature2020",
+        "proofPurpose": "assertionMethod",
+        "verificationMethod": "did:web:identity.foundation#XXS7zTsbIIAxgNlYEXJ4y810GFeLkYdqfK3ChhoQn7c",
+        "created": "2025-07-14T19:01:00.465731320Z",
+        "jws": "eyJhbGciOiJFUzI1NiIsImtpZCI6IlhYUzd6VHNiSUlBeGdObFlFWEo0eTgxMEdGZUxrWWRxZkszQ2hob1FuN2MiLCJjcml0IjpbImI2NCJdLCJiNjQiOmZhbHNlfQ..EZCKropgZ1Vm9430_K3IJeAsNgDIzr1O_tlesPAKOj06Vlo4y-SzzXlevlyfTz9NUYNl_fgzteff1UbuHRhdbg"
+      }
+    }
+  ],
+  "proof": {
+    "type": "JsonWebSignature2020",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "did:web:identity.foundation#XXS7zTsbIIAxgNlYEXJ4y810GFeLkYdqfK3ChhoQn7c",
+    "created": "2025-07-14T19:01:15.907379395Z",
+    "jws": "eyJhbGciOiJFUzI1NiIsImtpZCI6IlhYUzd6VHNiSUlBeGdObFlFWEo0eTgxMEdGZUxrWWRxZkszQ2hob1FuN2MiLCJjcml0IjpbImI2NCJdLCJiNjQiOmZhbHNlfQ..elMSFyVQ-OxewzWTbAZkBhMNxF7qTZkUvLfdaoLYrns4wtaJcHMA94f-5Blr9EfTIal5ffvbzG7hNiNAtgt4Jw"
+  },
+  "holder": "did:web:identity.foundation"
+}
