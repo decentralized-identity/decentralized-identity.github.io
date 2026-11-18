@@ -422,7 +422,7 @@ module.exports = {
               href: "https://github.com/decentralized-identity/cloud-did-resolver/",
             },
             {
-              text: "JavaScript Driver Development (formerly NPM-based driver system of Veramo)",
+              text: "JavaScript Driver Development (originally the NPM-based driver system of Veramo)",
               href: "https://github.com/decentralized-identity/did-resolver/",
             },
           ],

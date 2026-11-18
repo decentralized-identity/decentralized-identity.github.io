@@ -45,8 +45,8 @@
               DID-curious developers are encouraged to check out one of the two member-hosted services listed below for 
               experimentation and early research, to self-host (and contribute) to the open-source work items powering them, 
               and to consider DIF-affiliated commercial options for production-grade infrastructural needs. Both deployments below are 
-              deployed and funded by DIF members, who maintain at DIF the respective reference implementations they are based on. 
-              both. Some of these drivers, like those for 
+              deployed and funded by DIF members, who maintain at DIF the respective reference implementations they deploy.
+              Some of these drivers, like those for 
               <a href=https://github.com/decentralized-identity/ethr-did-resolver><code>did:ethr</code></a> and 
               <a href=https://github.com/decentralized-identity/uni-resolver-driver-did-webvh><code>did:webvh</code></a>,
               are also DIF work items in their own right, and thus good examples to analyze if you are planning your own driver contribution.
@@ -97,14 +97,16 @@
             </div>
             <br>
             <p>
-            <a href="https://thisdid.com">ThisDID.com</a>, is a sample deployment of the recent 
-            <a href="https://github.com/decentralized-identity/universal-resolver-ts">TypeScript/NPM
-            re-implementation of the Universal Resolver</a>, applying an alternate architectural approach.
-            It uses an "edge-worker" deployment pattern to optimize for low latency and operational cost for methods which 
-            have been packaged as NPM packages (using the 
+            <a href="https://thisdid.com">ThisDID.com</a> is a sample deployment of the  
+            <a href="https://github.com/decentralized-identity/universal-resolver-ts">Cloud DID Resolver</a>,
+            which applies an alternate architectural approach by replacing the static front-end of the Universal Resolver
+            with a faster, cheaper, and less-universal "Cloud" Resolver.
+            It uses a modern "edge-worker" deployment pattern to optimize for low latency and operational cost those methods
+            which have been packaged as NPM packages (using the 
             <a href="https://github.com/decentralized-identity/did-resolver">DID resolver NPM API and template</a> designed and 
-            maintained by DIF's <a href="https://veramo.io/">Veramo</a> project). It "falls back" to proxy resolution for all other 
-            drivers, load-balancing (and ranking) where multiple backends support these non-NPM resolution drivers.
+            maintained by DIF's <a href="https://veramo.io/">Veramo</a> project). For all non-NPM drivers packaged as a Docker
+            container, the Cloud Resolver proxies resolution to a Universal-Resolver API hosting said container; where there
+            are multiple of these available, it load-balances (and ranks) the backends.
              </p>
           </div>
         </div>
