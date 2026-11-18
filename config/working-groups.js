@@ -110,7 +110,7 @@ module.exports = {
       meetingSchedule: [
         {
           key: "",
-          value: "Occurs every Wednesday at 18:00:00 Central European Time",
+          value: "Occurs every Monday at 15:00:00 Central European Time",
         },
       ],
       discussionChannels: [
@@ -138,16 +138,17 @@ module.exports = {
         },
       },
       chairs: {
-        "Jonathan Rayback": {
-          title: "Owner @ Future Forge Innovation",
-          photo: "/images/photos/jonathan-rayback.jpg",
-          linkedin: "jonathan-rayback",
+        "Sumit Vekariya": {
+          title: "Founder @ ZKred.tech",
+          photo: "/images/photos/sumit-vekariya.jpg",
+          linkedin: "sumitvekariya",
         },
-        "Christian Saucier": {
-          title: "Founder @ Archetech Distributed",
-          photo: "/images/photos/christian-saucier.jpg",
-          linkedin: "csaucier",
-        },
+        "Markus Sabadello": {
+          title: "Founder @ Danube Tech",
+          photo: "/images/photos/markus-sabadello.jpg",
+          linkedin: "markus-sabadello-353a0821",
+          twitter: "peacekeeper",
+        }
       },
       url: "/working-groups/did-methods.html",
     },
